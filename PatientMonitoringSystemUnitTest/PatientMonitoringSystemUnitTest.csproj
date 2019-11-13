@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestDBConnect_YapWingChun.cs" />
+    <Compile Include="UnitTestReadingHandler.cs" />
     <Compile Include="UnitTestDBConnect_LokeChunMent.cs" />
     <Compile Include="UnitTestAlarmHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
