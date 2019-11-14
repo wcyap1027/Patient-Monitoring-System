@@ -48,16 +48,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alarm.cs" />
+    <Compile Include="AlarmHandler.cs" />
+    <Compile Include="AlarmScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmScreen.Designer.cs">
+      <DependentUpon>AlarmScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="bloodPressure.cs" />
     <Compile Include="breathingRate.cs" />
     <Compile Include="DBConnection_LiewYongJia.cs" />
     <Compile Include="DBConnector_YapWingChun.cs" />
     <Compile Include="DBConnect_LokeChunMent.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="MedicalStaff.cs" />
@@ -70,6 +77,12 @@
     <Compile Include="role.cs" />
     <Compile Include="temperature.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AlarmScreen.resx">
+      <DependentUpon>AlarmScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

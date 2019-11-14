@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Patient_Monitoring_System
 {
-    public partial class Form1 : Form
+    public partial class AlarmScreen : Form
     {
-        public Form1()
+        public AlarmScreen()
         {
             InitializeComponent();
         }

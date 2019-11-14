@@ -25,7 +25,7 @@ namespace Patient_Monitoring_System
                 return e.ToString();
             }
 
-            return "Connected Succesfully!";
+            return "Connect Success";
         }
 
 
