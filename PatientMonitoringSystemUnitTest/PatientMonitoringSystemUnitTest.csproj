@@ -55,7 +55,7 @@
     <Compile Include="UnitTestTemperatureHandler.cs" />
     <Compile Include="UnitTestPulseHandler.cs" />
     <Compile Include="UnitTestReadingHandler.cs" />
-    <Compile Include="UnitTestDBConnect_LokeChunMent.cs" />
+    <Compile Include="UnitTestDBConnector.cs" />
     <Compile Include="UnitTestAlarmHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

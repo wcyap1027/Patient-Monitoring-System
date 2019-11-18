@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Patient_Monitoring_System
 {
-    public class DBConnect_LokeChunMent
+    public class DBConnector
     {
         MySqlConnection conn;
 

@@ -57,7 +57,7 @@
     </Compile>
     <Compile Include="bloodPressure.cs" />
     <Compile Include="breathingRate.cs" />
-    <Compile Include="DBConnect_LokeChunMent.cs" />
+    <Compile Include="DBConnector.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
