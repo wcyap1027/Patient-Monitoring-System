@@ -57,7 +57,6 @@
     </Compile>
     <Compile Include="bloodPressure.cs" />
     <Compile Include="breathingRate.cs" />
-    <Compile Include="DBConnection_LiewYongJia.cs" />
     <Compile Include="DBConnector_YapWingChun.cs" />
     <Compile Include="DBConnect_LokeChunMent.cs" />
     <Compile Include="Login.cs">
