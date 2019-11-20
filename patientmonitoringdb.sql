@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2019 at 05:43 AM
+-- Generation Time: Nov 20, 2019 at 06:40 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -145,8 +145,8 @@ CREATE TABLE `reading` (
 
 CREATE TABLE `role` (
   `id` int(11) NOT NULL,
-  `user_account_id` int(11) NOT NULL,
-  `position` varchar(20) NOT NULL
+  `position` varchar(20) NOT NULL,
+  `user_account_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -171,14 +171,14 @@ CREATE TABLE `temperature` (
 
 CREATE TABLE `user_account` (
   `id` int(11) NOT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `loginStatus` varchar(20) DEFAULT NULL,
-  `NRIC` int(30) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
-  `dateTimeRegister` datetime DEFAULT NULL,
-  `dateTimeLogin` datetime DEFAULT NULL,
-  `dateTimeLogOut` datetime DEFAULT NULL
+  `password` varchar(20) NOT NULL,
+  `loginStatus` varchar(20) NOT NULL,
+  `NRIC` int(30) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phone` int(20) NOT NULL,
+  `dateTimeRegister` datetime NOT NULL,
+  `dateTimeLogin` datetime NOT NULL,
+  `dateTimeLogOut` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -330,6 +330,65 @@ ALTER TABLE `temperature`
 --
 ALTER TABLE `user_account`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `alarm`
+--
+ALTER TABLE `alarm`
+  ADD CONSTRAINT `alarm - reading_id` FOREIGN KEY (`reading_id`) REFERENCES `reading` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bedsidemonitor`
+--
+ALTER TABLE `bedsidemonitor`
+  ADD CONSTRAINT `bedsidemonitor - centralStation` FOREIGN KEY (`centralStation_id`) REFERENCES `centralstation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bedsidemonitor - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bloodpressure`
+--
+ALTER TABLE `bloodpressure`
+  ADD CONSTRAINT `bloodpressure - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `breathingrate`
+--
+ALTER TABLE `breathingrate`
+  ADD CONSTRAINT `breathingrate - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `centralstation`
+--
+ALTER TABLE `centralstation`
+  ADD CONSTRAINT `centralstation - alarm_id` FOREIGN KEY (`alarm_id`) REFERENCES `alarm` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `patient`
+--
+ALTER TABLE `patient`
+  ADD CONSTRAINT `patient - reading_id` FOREIGN KEY (`reading_id`) REFERENCES `reading` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pulserate`
+--
+ALTER TABLE `pulserate`
+  ADD CONSTRAINT `pulserate - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `role`
+--
+ALTER TABLE `role`
+  ADD CONSTRAINT `role - user_account_id` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `temperature`
+--
+ALTER TABLE `temperature`
+  ADD CONSTRAINT `temperature - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
