@@ -4,89 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatientMonitoringSystem
+namespace Patient_Monitoring_System
 {
-    class Patient : User
+    public class Patient
     {
-        //string
-        private string patient_id, patient_fullname, patient_email, patient_address, pic;
+        private string fullName, address, email, gender;
+        private long nric;
+        private int id, phone, age;
 
-        //int
-        private int patient_nric, patient_phonenumber, patient_emergencycontactnumber;
-
-        //double
-        private double patient_bloodpressure, patient_breathingrate, patient_pulserate, patient_temperature;
-
-        public string PatientID
-        {
-            get { return patient_id; }
-            set { patient_id = value; }
-        }
-
-        public string PatientFullname
-        {
-            get { return patient_fullname; }
-            set { patient_fullname = value; }
-        }
-
-        public string PatientEmail
-        {
-            get { return patient_email; }
-            set { patient_email = value; }
-        }
-
-        public string PatientAddress
-        {
-            get { return patient_address; }
-            set { patient_address = value; }
-        }
-
-        public string NamePic
-        {
-            get { return pic; }
-            set { pic = value; }
-        }
-
-        public int PatientNRIC
-        {
-            get { return patient_nric; }
-            set { patient_nric = value; }
-        }
-
-        public int PatientPhoneNumber
-        {
-            get { return patient_phonenumber; }
-            set { patient_phonenumber = value; }
-        }
-
-        public int PatientEmergencyContactNumber
-        {
-            get { return patient_emergencycontactnumber; }
-            set { patient_emergencycontactnumber = value; }
-        }
-
-        public double PatientBloodPressure
-        {
-            get { return patient_bloodpressure; }
-            set { patient_bloodpressure = value; }
-        }
-
-        public double PatientBreathingRate
-        {
-            get { return patient_breathingrate; }
-            set { patient_breathingrate = value; }
-        }
-
-        public double PatientPulseRate
-        {
-            get { return patient_pulserate; }
-            set { patient_pulserate = value; }
-        }
-
-        public double PatientTemperature
-        {
-            get { return patient_temperature; }
-            set { patient_temperature = value; }
-        }
+        public int Id { get => id; set => id = value; }
+        public string FullName { get => fullName; set => fullName = value; }
+        public string Address { get => address; set => address = value; }
+        public string Email { get => email; set => email = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public long Nric { get => nric; set => nric = value; }
+        public int Phone { get => phone; set => phone = value; }
+        public int Age { get => age; set => age = value; }
     }
 }

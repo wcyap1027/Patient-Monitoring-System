@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PatientMonitoringSystem
 {
-    class User
+    public class User
     {
         //string
         private string userid, password, role;
