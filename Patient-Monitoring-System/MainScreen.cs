@@ -12,6 +12,8 @@ namespace Patient_Monitoring_System
 {
     public partial class MainScreen : Form
     {
+        
+
         public MainScreen()
         {
             InitializeComponent();
