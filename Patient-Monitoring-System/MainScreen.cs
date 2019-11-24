@@ -13,7 +13,6 @@ namespace Patient_Monitoring_System
     public partial class MainScreen : Form
     {
         
-
         public MainScreen()
         {
             InitializeComponent();
@@ -21,10 +20,14 @@ namespace Patient_Monitoring_System
 
         private void patientButton_Click(object sender, EventArgs e)
         {
-            DBConnector dBconn = new DBConnector();
-            dBconn.connect();
+            PatientScreen patientScreen = new PatientScreen();
+            patientScreen.Show();
+        }
 
-            patientGridView.DataSource = PatientHandler.Instance.getAllPatient(dBconn.getConn());
+        private void centralStationbtn_Click(object sender, EventArgs e)
+        {
+            central_station_screen centralStationScreen = new central_station_screen();
+            centralStationScreen.Show();
         }
     }
 }

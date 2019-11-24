@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bPAlarmType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.bPMin = new System.Windows.Forms.TextBox();
             this.bPMax = new System.Windows.Forms.TextBox();
+            this.bPMin = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bPAlarmType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tempMax = new System.Windows.Forms.TextBox();
             this.tempMin = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.bPMax);
             this.panel1.Controls.Add(this.bPMin);
             this.panel1.Controls.Add(this.label4);
@@ -83,47 +83,21 @@
             this.panel1.Size = new System.Drawing.Size(399, 184);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // bPMax
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Blood Pressure";
+            this.bPMax.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPMax.Location = new System.Drawing.Point(168, 131);
+            this.bPMax.Name = "bPMax";
+            this.bPMax.Size = new System.Drawing.Size(205, 30);
+            this.bPMax.TabIndex = 6;
             // 
-            // bPAlarmType
+            // bPMin
             // 
-            this.bPAlarmType.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPAlarmType.FormattingEnabled = true;
-            this.bPAlarmType.Location = new System.Drawing.Point(168, 52);
-            this.bPAlarmType.Name = "bPAlarmType";
-            this.bPAlarmType.Size = new System.Drawing.Size(206, 28);
-            this.bPAlarmType.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Alarm Type:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Min Value:";
+            this.bPMin.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPMin.Location = new System.Drawing.Point(168, 92);
+            this.bPMin.Name = "bPMin";
+            this.bPMin.Size = new System.Drawing.Size(205, 30);
+            this.bPMin.TabIndex = 5;
             // 
             // label4
             // 
@@ -136,21 +110,47 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Max Value:";
             // 
-            // bPMin
+            // label3
             // 
-            this.bPMin.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPMin.Location = new System.Drawing.Point(168, 92);
-            this.bPMin.Name = "bPMin";
-            this.bPMin.Size = new System.Drawing.Size(205, 30);
-            this.bPMin.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Min Value:";
             // 
-            // bPMax
+            // label2
             // 
-            this.bPMax.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPMax.Location = new System.Drawing.Point(168, 131);
-            this.bPMax.Name = "bPMax";
-            this.bPMax.Size = new System.Drawing.Size(205, 30);
-            this.bPMax.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Alarm Type:";
+            // 
+            // bPAlarmType
+            // 
+            this.bPAlarmType.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPAlarmType.FormattingEnabled = true;
+            this.bPAlarmType.Location = new System.Drawing.Point(168, 52);
+            this.bPAlarmType.Name = "bPAlarmType";
+            this.bPAlarmType.Size = new System.Drawing.Size(206, 28);
+            this.bPAlarmType.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(252, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Blood Pressure";
             // 
             // panel2
             // 
@@ -429,6 +429,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(832, 450);
             this.Controls.Add(this.resetAlarmBtn);
             this.Controls.Add(this.confirmBtnAlarm);
