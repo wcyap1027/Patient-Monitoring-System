@@ -29,5 +29,15 @@ namespace Patient_Monitoring_System
             central_station_screen centralStationScreen = new central_station_screen();
             centralStationScreen.Show();
         }
+
+        private void centralStationbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
