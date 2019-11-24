@@ -16,7 +16,17 @@ namespace BedsideSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BedsideLogin());
+            var bedside = new BedsideLogin();
+            bedside.FormClosed += new FormClosedEventHandler(FormClosed);
+            bedside.Show();
+            Application.Run();
+        }
+
+        static void FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= FormClosed;
+            if (Application.OpenForms.Count == 0) Application.ExitThread();
+            else Application.OpenForms[0].FormClosed += FormClosed;
         }
     }
 }
