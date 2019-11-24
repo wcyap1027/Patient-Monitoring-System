@@ -10,11 +10,57 @@ using System.Windows.Forms;
 
 namespace Manager
 {
-    public partial class Form1 : Form
+    public partial class ManagerForm : Form
     {
-        public Form1()
+        public ManagerForm()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(usernameT.Text))
+            {
+                MessageBox.Show("Please enter username");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(passwordT.Text))
+            {
+                MessageBox.Show("Please enter password");
+                return;
+            }
+
+            if ((usernameT.Text == "monitor") && (passwordT.Text == "123456"))
+            {
+                this.Hide();
+                ManagerMainScreen mainScreen = new ManagerMainScreen();
+                mainScreen.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+                usernameT.Text = "";
+                passwordT.Text = "";
+            }
+
+        }
+
+        private void ManagerForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            usernameT.Text = "";
+            passwordT.Text = "";
         }
     }
 }
