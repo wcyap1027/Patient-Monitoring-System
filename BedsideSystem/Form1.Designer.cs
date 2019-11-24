@@ -113,6 +113,7 @@
             this.buttonReset.TabIndex = 7;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // BedsideLogin
             // 

@@ -49,5 +49,10 @@ namespace BedsideSystem
                 }
             }
         }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            patientIDTextBox.Text = "";
+        }
     }
 }
