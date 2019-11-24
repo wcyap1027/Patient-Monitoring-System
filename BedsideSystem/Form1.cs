@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BedsideSystem
 {
     public partial class BedsideLogin : Form
     {
+        string id;
         public BedsideLogin()
         {
             InitializeComponent();
@@ -24,20 +26,26 @@ namespace BedsideSystem
 
             if (string.IsNullOrEmpty(patientIDTextBox.Text))
             {
-                MessageBox.Show("Please enter a correct patient ID", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a correct patient ID", "Invalid key", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if(patientIDTextBox.Text != null)
+            if(patientIDTextBox.Text != "")
             {
-                try
+                dbCon.connect();
+                string query = "SELECT * FROM patient where id ='" + patientIDTextBox.Text+"'";
+                MySqlDataReader row;
+                MySqlCommand sqlComm = new MySqlCommand(query, dbCon.getConn());
+                row = sqlComm.ExecuteReader();
+                if(row.HasRows)
                 {
-                    dbCon.connect();
-                    string query = "SELECT id FROM patient WHERE id=" + patientIDTextBox;
+                    MainScreen mainScreen = new MainScreen();
+                    mainScreen.Show();
+                    this.Close();
                 }
-                catch(Exception e)
+                else
                 {
-
+                    MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
