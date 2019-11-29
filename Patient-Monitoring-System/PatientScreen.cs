@@ -49,6 +49,9 @@ namespace Patient_Monitoring_System
             updateRecordPanel.Width = 879;
             updateRecordPanel.Height = 365;
             updateRecordPanel.Location = new Point(5, 195);
+            deleteRecordPanel.Width = 879;
+            deleteRecordPanel.Height = 365;
+            deleteRecordPanel.Location = new Point(5, 195);
             DBConnector dBconn = new DBConnector();
             dBconn.connect();
 
@@ -58,9 +61,10 @@ namespace Patient_Monitoring_System
             viewControlPanel.Show();
             addRecordPanel.Hide();
             updateRecordPanel.Hide();
+            deleteRecordPanel.Hide();
 
         }
-
+        //-----------------------------------------------------------Add Record----------------------------------------------------------------------------//
         private void viewRecordBtn_Click(object sender, EventArgs e)
         {
             DBConnector dBconn = new DBConnector();
@@ -71,8 +75,9 @@ namespace Patient_Monitoring_System
             viewControlPanel.Show();
             addRecordPanel.Hide();
             updateRecordPanel.Hide();
+            deleteRecordPanel.Hide();
         }
-
+        //-----------------------------------------------------------Add Record----------------------------------------------------------------------------//
         private void addRecordBtn_Click(object sender, EventArgs e)
         {
             DBConnector dBconn = new DBConnector();
@@ -84,6 +89,7 @@ namespace Patient_Monitoring_System
             viewControlPanel.Hide();
             addRecordPanel.Show();
             updateRecordPanel.Hide();
+            deleteRecordPanel.Hide();
         }
 
         private void savePatientBtn_Click(object sender, EventArgs e)
@@ -169,28 +175,48 @@ namespace Patient_Monitoring_System
             ageTextBox.Text = "";
         }
 
+        //-----------------------------------------------------------Update Record----------------------------------------------------------------------------//
         private void updateRecordBtn_Click(object sender, EventArgs e)
         {
-            FetchId();
+
+            closeAllTextBox(fullNameUpdateTextBox, nricUpdateTextBox, emailUpdateTextBox, phoneTextBox, addressUpdateTextBox, ageUpdateTextBox, bedsideIdUpdateTextBox, choosePatientIDUpdateComboBox, genderUpdatecomboBox);
+            FetchId(choosePatientIDUpdateComboBox);
             viewControlPanel.Hide();
             addRecordPanel.Hide();
             updateRecordPanel.Show();
-            phoneUpdateTextBox.Text = "";
-            addressUpdateTextBox.Text = "";
-            ageUpdateTextBox.Text = "";
-            bedsideIdUpdateTextBox.Text = "";
-            nricUpdateTextBox.Text = "";
-            fullNameUpdateTextBox.Text = "";
-            emailUpdateTextBox.Text = "";
-            genderUpdatecomboBox.Items.Clear();
+            closeAllTextBox(fullNameDeleteTextBox, nricDeleteTextBox, emailDeleteTextBox, phoneDeleteTextBox, addressDeleteRichTextBox, ageDeleteTextBox, bedsideIdDeleteTextBox, choosePatientIDDeleteComboBox, genderDeleteComboBox);
+            
 
         }
 
-        private void FetchId()
+        //use in update record and delete record
+        private void closeAllTextBox(TextBox fullName, TextBox nric, TextBox email, TextBox phone, RichTextBox address, TextBox age, TextBox bedsideId,ComboBox choosePatientComboBox, ComboBox genderComboBox)
         {
-            choosePatientComboBox.Items.Add("--Select ID--");
+            fullName.Text = "";
+            nric.Text = "";
+            phone.Text = "";
+            address.Text = "";
+            age.Text = "";
+            bedsideId.Text = "";
+            email.Text = "";
+            choosePatientComboBox.Items.Clear();
+            genderComboBox.Items.Clear();
+            fullName.Enabled = false;
+            nric.Enabled = false;
+            email.Enabled = false;
+            genderComboBox.Enabled = false;
+            phone.Enabled = false;
+            address.Enabled = false;
+            age.Enabled = false;
+            bedsideId.Enabled = false;
+        }
 
-            choosePatientComboBox.SelectedIndex = 0;
+        //use in update record and delete record
+        private void FetchId(ComboBox selectedcomboBox)
+        {
+            selectedcomboBox.Items.Add("--Select ID--");
+
+            selectedcomboBox.SelectedIndex = 0;
             DBConnector dbC = new DBConnector();
             dbC.connect();
             PatientHandler patientHandler = new PatientHandler();
@@ -198,7 +224,7 @@ namespace Patient_Monitoring_System
             patientList = patientHandler.getAllPatient(dbC.getConn());
             for (int i = 0; i < patientList.Count; i++)
             {
-                choosePatientComboBox.Items.Add(patientList[i].Id);
+                selectedcomboBox.Items.Add(patientList[i].Id);
             }
         }
 
@@ -206,12 +232,20 @@ namespace Patient_Monitoring_System
         {
             if(e.KeyChar == (char)Keys.Enter)
             {
-                if(choosePatientComboBox.SelectedIndex == 0)
+                if(choosePatientIDUpdateComboBox.SelectedIndex == 0)
                 {
                     MessageBox.Show("Please select valid ID");
                 }
                 else
                 {
+                    nricUpdateTextBox.Enabled = true;
+                    fullNameUpdateTextBox.Enabled = true;
+                    emailUpdateTextBox.Enabled = true;
+                    genderUpdatecomboBox.Enabled = true;
+                    phoneUpdateTextBox.Enabled = true;
+                    addressUpdateTextBox.Enabled = true;
+                    ageUpdateTextBox.Enabled = true;
+                    bedsideIdUpdateTextBox.Enabled = true;
                     genderUpdatecomboBox.Items.Add("Male");
                     genderUpdatecomboBox.Items.Add("Female");
                     DBConnector dbC = new DBConnector();
@@ -221,7 +255,7 @@ namespace Patient_Monitoring_System
                     patientList = patientHandler.getAllPatient(dbC.getConn());
                     for(int i = 0; i < patientList.Count; i++)
                     {
-                        if(choosePatientComboBox.SelectedItem.ToString() == patientList[i].Id.ToString())
+                        if(choosePatientIDUpdateComboBox.SelectedItem.ToString() == patientList[i].Id.ToString())
                         {
                             nricUpdateTextBox.Text = patientList[i].Nric.ToString();
                             fullNameUpdateTextBox.Text = patientList[i].FullName;
@@ -238,11 +272,158 @@ namespace Patient_Monitoring_System
                             phoneUpdateTextBox.Text = patientList[i].Phone.ToString();
                             addressUpdateTextBox.Text = patientList[i].Address;
                             ageUpdateTextBox.Text = patientList[i].Age.ToString();
-                            bedsideIdUpdateTextBox.Text = patientList[i].BedsideId;
+                            bedsideIdUpdateTextBox.Text = patientList[i].BedsideId.ToString();
                             
                         }
                     }
                 }
+            }
+        }
+
+        private void updatePatientButton_Click(object sender, EventArgs e)
+        {
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            PatientHandler patientHandler = new PatientHandler();
+            Patient oldPatientData = new Patient();
+            if(choosePatientIDUpdateComboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select valid ID");
+                return;     
+            }
+            if (nricUpdateTextBox.Enabled == false)
+            {
+                MessageBox.Show("Please press 'Enter' to generate data first");
+                return;
+            }
+            else
+            {
+                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDUpdateComboBox.SelectedItem.ToString());
+            }
+
+            if ((oldPatientData.Nric.ToString() != nricUpdateTextBox.Text) || (oldPatientData.FullName != fullNameUpdateTextBox.Text) || (oldPatientData.Email != emailUpdateTextBox.Text) || (oldPatientData.Gender != genderUpdatecomboBox.SelectedItem.ToString()) || (oldPatientData.Phone.ToString() != phoneUpdateTextBox.Text) || (oldPatientData.Address != addressUpdateTextBox.Text) || (oldPatientData.Age.ToString() != ageUpdateTextBox.Text) || (oldPatientData.BedsideId.ToString() != bedsideIdUpdateTextBox.Text))
+            {
+                Patient newPatientData = new Patient();
+                newPatientData.Id = int.Parse(choosePatientIDUpdateComboBox.SelectedItem.ToString());
+                newPatientData.Nric = long.Parse(nricUpdateTextBox.Text);
+                newPatientData.FullName = fullNameUpdateTextBox.Text;
+                newPatientData.Email = emailUpdateTextBox.Text;
+                newPatientData.Gender = genderUpdatecomboBox.SelectedItem.ToString();
+                newPatientData.Phone = int.Parse(phoneUpdateTextBox.Text);
+                newPatientData.Address = addressUpdateTextBox.Text;
+                newPatientData.Age = int.Parse(ageUpdateTextBox.Text);
+                newPatientData.BedsideId = int.Parse(bedsideIdUpdateTextBox.Text);
+
+                int updateResult = patientHandler.updatePatientData(dbC.getConn(), newPatientData);
+
+                if (updateResult == 1)
+                {
+                    MessageBox.Show("Update Successfully");
+                    closeAllTextBox(fullNameUpdateTextBox, nricUpdateTextBox, emailUpdateTextBox, phoneTextBox, addressUpdateTextBox, ageUpdateTextBox, bedsideIdUpdateTextBox, choosePatientIDUpdateComboBox, genderUpdatecomboBox);
+                    FetchId(choosePatientIDUpdateComboBox);
+                }
+                else
+                {
+                    MessageBox.Show("Update Failed");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Nothing is changes");
+
+                
+            }
+            
+        }
+        //-----------------------------------------------------------Delete Record----------------------------------------------------------------------------//
+        private void deleteRecordBtn_Click(object sender, EventArgs e)
+        {
+            viewControlPanel.Hide();
+            addRecordPanel.Hide();
+            updateRecordPanel.Hide();
+            deleteRecordPanel.Show();
+            closeAllTextBox(fullNameDeleteTextBox, nricDeleteTextBox, emailDeleteTextBox, phoneDeleteTextBox, addressDeleteRichTextBox, ageDeleteTextBox, bedsideIdDeleteTextBox, choosePatientIDDeleteComboBox, genderDeleteComboBox);
+            FetchId(choosePatientIDDeleteComboBox);
+        }
+
+        private void choosePatientIDDeleteComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (choosePatientIDDeleteComboBox.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Please select valid ID");
+                }
+                else
+                {
+                    genderDeleteComboBox.Items.Add("Male");
+                    genderDeleteComboBox.Items.Add("Female");
+                    DBConnector dbC = new DBConnector();
+                    dbC.connect();
+                    PatientHandler patientHandler = new PatientHandler();
+                    List<Patient> patientList = new List<Patient>();
+                    patientList = patientHandler.getAllPatient(dbC.getConn());
+                    for (int i = 0; i < patientList.Count; i++)
+                    {
+                        if (choosePatientIDDeleteComboBox.SelectedItem.ToString() == patientList[i].Id.ToString())
+                        {
+                            nricDeleteTextBox.Text = patientList[i].Nric.ToString();
+                            fullNameDeleteTextBox.Text = patientList[i].FullName;
+                            emailDeleteTextBox.Text = patientList[i].Email;
+
+                            for (int n = 0; n < genderDeleteComboBox.Items.Count; n++)
+                            {
+                                if (patientList[i].Gender == genderDeleteComboBox.Items[n].ToString())
+                                {
+                                    genderDeleteComboBox.SelectedIndex = n;
+                                }
+                            }
+
+                            phoneDeleteTextBox.Text = patientList[i].Phone.ToString();
+                            addressDeleteRichTextBox.Text = patientList[i].Address;
+                            ageDeleteTextBox.Text = patientList[i].Age.ToString();
+                            bedsideIdDeleteTextBox.Text = patientList[i].BedsideId.ToString();
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void deletePatientRecordBtn_Click(object sender, EventArgs e)
+        {
+
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            PatientHandler patientHandler = new PatientHandler();
+            Patient oldPatientData = new Patient();
+            if (choosePatientIDUpdateComboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select valid ID");
+                return;
+            }
+            if (string.IsNullOrEmpty(nricDeleteTextBox.Text))
+            {
+                MessageBox.Show("Please press 'Enter' to generate data first");
+                return;
+            }
+            else
+            {
+                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDUpdateComboBox.SelectedItem.ToString());
+            }
+
+            int deleteResult = patientHandler.deletePatientData(dbC.getConn(), oldPatientData.Id);
+
+            if(deleteResult ==1)
+            {
+                MessageBox.Show("Delete Record Successfully");
+                closeAllTextBox(fullNameDeleteTextBox, nricDeleteTextBox, emailDeleteTextBox, phoneDeleteTextBox, addressDeleteRichTextBox, ageDeleteTextBox, bedsideIdDeleteTextBox, choosePatientIDDeleteComboBox, genderDeleteComboBox);
+                FetchId(choosePatientIDDeleteComboBox);
+            }
+            else
+            {
+                MessageBox.Show("Delete Failed");
             }
         }
     }

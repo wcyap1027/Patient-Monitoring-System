@@ -53,7 +53,7 @@ namespace Patient_Monitoring_System
                     sPatient.Age = (int)myReader.GetValue(7);
                     if(myReader.GetValue(8) == null)
                     {
-                        sPatient.BedsideId = "null";
+                        sPatient.BedsideId = 0;
                     }
                     
                     listPatient.Add(sPatient);
@@ -111,8 +111,6 @@ namespace Patient_Monitoring_System
             return table;
         }
 
-        
-
         public string getLastRecordID(MySqlConnection conn)
         {
             int id = 0;
@@ -131,6 +129,61 @@ namespace Patient_Monitoring_System
             string lastId = (aId + id).ToString();
 
             return lastId;
+        }
+
+        public Patient getSpecificPatient(MySqlConnection conn, string selectedId)
+        {
+            int userId = int.Parse(selectedId);
+            Patient oldPatient = new Patient();
+            string sql = "SELECT * FROM patient WHERE id= '" + userId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            try
+            {
+                MySqlDataReader myReader;
+                myReader = sqlComm.ExecuteReader();
+                if (myReader.Read())
+                {
+                    
+                    oldPatient.Id = (int)myReader.GetValue(0);
+                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.FullName = (string)myReader.GetValue(2);
+                    oldPatient.Address = (string)myReader.GetValue(3);
+                    oldPatient.Email = (string)myReader.GetValue(4);
+                    oldPatient.Gender = (string)myReader.GetValue(5);
+                    oldPatient.Phone = (int)myReader.GetValue(6);
+                    oldPatient.Age = (int)myReader.GetValue(7);
+                    if (myReader.GetValue(8) == null)
+                    {
+                        oldPatient.BedsideId = 0;
+                    }
+
+                    
+                }
+                myReader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Console.WriteLine(e.ToString());
+            }
+
+            return oldPatient;
+        }
+
+        public int updatePatientData(MySqlConnection conn, Patient patient)
+        {
+            string sql = "UPDATE patient SET NRIC='" + patient.Nric + "', fullName= '"+patient.FullName+"', address='" + patient.Address + "', email='"+patient.Email +"', gender='"+patient.Gender+"', phone='"+patient.Phone+"', age='"+patient.Age+"', bedsideId='" + patient.BedsideId+"' WHERE id='" + patient.Id + "'";
+            MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+            return updateComm.ExecuteNonQuery();
+            
+        }
+
+        public int deletePatientData(MySqlConnection conn, int id)
+        {
+            string sql = "DELETE * FROM patient WHERE id= '" + id + "'";
+            MySqlCommand deleteComm = new MySqlCommand(sql, conn);
+            return deleteComm.ExecuteNonQuery();
         }
     }
 }
