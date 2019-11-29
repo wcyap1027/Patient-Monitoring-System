@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-    public class role
+    public class Role
     {
-        private string role_type;
+        //int
+        private int id;
+        //string
+        private string represent, position;
 
-        public string Role_type { get => role_type; set => role_type = value; }
+        public Role()
+        {
+            //
+        }
+
+        public Role(string position)
+        {
+            this.position = position;
+        }
+
+        public string Position { get => position; set => position = value; }
+        public string Represent { get => represent; set => represent = value; }
     }
 }

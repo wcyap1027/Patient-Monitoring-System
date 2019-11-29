@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestUserHandler.cs" />
     <Compile Include="UnitTestPatientHandler.cs" />
     <Compile Include="UnitTestCentralStationHandler.cs" />
     <Compile Include="UnitTestRoleHandler.cs" />

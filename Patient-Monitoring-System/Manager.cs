@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatientMonitoringSystem
+namespace Patient_Monitoring_System
 {
     class Manager : User
     {

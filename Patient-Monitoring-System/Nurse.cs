@@ -4,50 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatientMonitoringSystem
+namespace Patient_Monitoring_System
 {
-    class Nurse : User
+    public class Nurse : User
     {
-        //string 
-        private string nurse_id, nurse_fullname, nurse_email, nurse_address;
+        private int userAccountId, phone;
+        private string nurseId, firstName, lastName, address, email;
+        private long NRIC;
 
-        //int
-        private int nurse_nric, nurse_phonenumber;
-
-        public string NurseID
-        {
-            get { return nurse_id; }
-            set { nurse_id = value; }
-        }
-
-        public string NurseFullName
-        {
-            get { return nurse_fullname; }
-            set { nurse_fullname = value; }
-        }
-
-        public string NurseEmail
-        {
-            get { return nurse_email; }
-            set { nurse_email = value; }
-        }
-
-        public string NurseAddress
-        {
-            get { return nurse_address; }
-            set { nurse_address = value; }
-        }
-
-        public int NurseNRIC
-        {
-            get { return nurse_nric; }
-            set { nurse_nric = value; }
-        }
-
-        public int NursePhoneNumber
-        {
-            get { return nurse_phonenumber; }
-            set { nurse_phonenumber = value; }
-        }
+        public int UserAccountId { get => userAccountId; set => userAccountId = value; }
+        public int Phone { get => phone; set => phone = value; }
+        public string NurseId { get => nurseId; set => nurseId = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Address { get => address; set => address = value; }
+        public string Email { get => email; set => email = value; }
+        public long NRIC1 { get => NRIC; set => NRIC = value; }
     }
 }
