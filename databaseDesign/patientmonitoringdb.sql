@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2019 at 06:40 AM
+-- Generation Time: Nov 29, 2019 at 09:54 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -43,9 +43,9 @@ CREATE TABLE `alarm` (
 --
 
 CREATE TABLE `bedsidemonitor` (
-  `id` int(11) NOT NULL,
-  `patient_id` int(11) NOT NULL,
-  `centralStation_id` int(11) NOT NULL
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `centralStation_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -84,8 +84,16 @@ CREATE TABLE `breathingrate` (
 
 CREATE TABLE `centralstation` (
   `id` int(11) NOT NULL,
-  `alarm_id` int(11) NOT NULL
+  `centralStationName` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `centralstation`
+--
+
+INSERT INTO `centralstation` (`id`, `centralStationName`) VALUES
+(2001, 'Bay SE'),
+(2002, 'Bay NE');
 
 -- --------------------------------------------------------
 
@@ -95,15 +103,23 @@ CREATE TABLE `centralstation` (
 
 CREATE TABLE `patient` (
   `id` int(11) NOT NULL,
-  `reading_id` int(11) NOT NULL,
+  `NRIC` bigint(12) NOT NULL,
   `fullName` varchar(20) NOT NULL,
-  `NRIC` int(30) NOT NULL,
   `address` varchar(100) NOT NULL,
   `email` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `phone` int(30) NOT NULL,
-  `age` int(11) NOT NULL
+  `age` int(11) NOT NULL,
+  `bedsideId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patient`
+--
+
+INSERT INTO `patient` (`id`, `NRIC`, `fullName`, `address`, `email`, `gender`, `phone`, `age`, `bedsideId`) VALUES
+(1001, 978563421233, 'bob', 'jalan jalan', 'bob@gmail.com', 'Male', 134567819, 17, NULL),
+(1002, 956034567890, 'jason', 'jalan t', 'jason@gmail.com', 'Male', 134568812, 18, NULL);
 
 -- --------------------------------------------------------
 
@@ -127,6 +143,7 @@ CREATE TABLE `pulserate` (
 
 CREATE TABLE `reading` (
   `id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
   `minValueBloodPressure` double NOT NULL,
   `maxValueBloodPressure` double NOT NULL,
   `minValueTemperature` double NOT NULL,
@@ -145,9 +162,19 @@ CREATE TABLE `reading` (
 
 CREATE TABLE `role` (
   `id` int(11) NOT NULL,
-  `position` varchar(20) NOT NULL,
-  `user_account_id` int(11) NOT NULL
+  `represent` varchar(20) NOT NULL,
+  `position` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`id`, `represent`, `position`) VALUES
+(1, 'MS', 'Medical Staff'),
+(2, 'MG', 'Management'),
+(3, 'C', 'Consultant'),
+(4, 'N', 'Nurse');
 
 -- --------------------------------------------------------
 
@@ -171,15 +198,41 @@ CREATE TABLE `temperature` (
 
 CREATE TABLE `user_account` (
   `id` int(11) NOT NULL,
+  `role_representative` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `loginStatus` varchar(20) NOT NULL,
-  `NRIC` int(30) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `phone` int(20) NOT NULL,
+  `loginStatus` tinyint(1) NOT NULL,
   `dateTimeRegister` datetime NOT NULL,
   `dateTimeLogin` datetime NOT NULL,
   `dateTimeLogOut` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_account`
+--
+
+INSERT INTO `user_account` (`id`, `role_representative`, `password`, `loginStatus`, `dateTimeRegister`, `dateTimeLogin`, `dateTimeLogOut`) VALUES
+(1001, 'N', '123456', 0, '2019-10-27 00:00:00', '2019-11-29 11:38:46', '2019-10-27 00:00:00'),
+(1002, 'N', '123456', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1003, 'N', '123456', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1004, 'N', '123456', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1005, 'N', '123456', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1006, 'C', '3456789', 0, '2019-11-26 00:00:00', '2019-11-29 11:41:16', '2019-11-26 00:00:00'),
+(1007, 'C', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1008, 'C', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1009, 'C', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1010, 'C', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1011, 'MS', '4567890', 0, '2019-11-26 00:00:00', '2019-11-29 11:43:09', '2019-11-26 00:00:00'),
+(1012, 'MS', '4567890', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1013, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1014, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1015, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1016, 'MS', '4567890', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1017, 'MS', '123456', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1018, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1019, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1020, 'MS', '3456789', 0, '2019-11-26 00:00:00', '2019-11-26 00:00:00', '2019-11-26 00:00:00'),
+(1021, 'MG', '555555', 0, '2019-11-03 00:00:00', '2019-11-29 11:31:27', '2019-11-03 00:00:00'),
+(1022, 'MG', '444444', 0, '2019-11-04 00:00:00', '2019-11-29 11:44:48', '2019-11-04 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -197,7 +250,6 @@ ALTER TABLE `alarm`
 --
 ALTER TABLE `bedsidemonitor`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `patient_id` (`patient_id`),
   ADD KEY `centralStation_id` (`centralStation_id`);
 
 --
@@ -218,15 +270,14 @@ ALTER TABLE `breathingrate`
 -- Indexes for table `centralstation`
 --
 ALTER TABLE `centralstation`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `alarm_id` (`alarm_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `reading_id` (`reading_id`);
+  ADD UNIQUE KEY `NRIC` (`NRIC`);
 
 --
 -- Indexes for table `pulserate`
@@ -239,14 +290,15 @@ ALTER TABLE `pulserate`
 -- Indexes for table `reading`
 --
 ALTER TABLE `reading`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `patient_id` (`patient_id`);
 
 --
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_account_id` (`user_account_id`);
+  ADD UNIQUE KEY `represent` (`represent`);
 
 --
 -- Indexes for table `temperature`
@@ -259,7 +311,8 @@ ALTER TABLE `temperature`
 -- Indexes for table `user_account`
 --
 ALTER TABLE `user_account`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `role_representative` (`role_representative`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -275,7 +328,7 @@ ALTER TABLE `alarm`
 -- AUTO_INCREMENT for table `bedsidemonitor`
 --
 ALTER TABLE `bedsidemonitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bloodpressure`
@@ -293,13 +346,13 @@ ALTER TABLE `breathingrate`
 -- AUTO_INCREMENT for table `centralstation`
 --
 ALTER TABLE `centralstation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2003;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
 
 --
 -- AUTO_INCREMENT for table `pulserate`
@@ -317,7 +370,7 @@ ALTER TABLE `reading`
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `temperature`
@@ -329,7 +382,7 @@ ALTER TABLE `temperature`
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1023;
 
 --
 -- Constraints for dumped tables
@@ -345,8 +398,7 @@ ALTER TABLE `alarm`
 -- Constraints for table `bedsidemonitor`
 --
 ALTER TABLE `bedsidemonitor`
-  ADD CONSTRAINT `bedsidemonitor - centralStation` FOREIGN KEY (`centralStation_id`) REFERENCES `centralstation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bedsidemonitor - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `bedsidemonitor - centralStation` FOREIGN KEY (`centralStation_id`) REFERENCES `centralstation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `bloodpressure`
@@ -361,34 +413,22 @@ ALTER TABLE `breathingrate`
   ADD CONSTRAINT `breathingrate - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `centralstation`
---
-ALTER TABLE `centralstation`
-  ADD CONSTRAINT `centralstation - alarm_id` FOREIGN KEY (`alarm_id`) REFERENCES `alarm` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `patient`
---
-ALTER TABLE `patient`
-  ADD CONSTRAINT `patient - reading_id` FOREIGN KEY (`reading_id`) REFERENCES `reading` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `pulserate`
 --
 ALTER TABLE `pulserate`
   ADD CONSTRAINT `pulserate - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `role`
---
-ALTER TABLE `role`
-  ADD CONSTRAINT `role - user_account_id` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `temperature`
 --
 ALTER TABLE `temperature`
   ADD CONSTRAINT `temperature - patient_id` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_account`
+--
+ALTER TABLE `user_account`
+  ADD CONSTRAINT `user_account - role_represent` FOREIGN KEY (`role_representative`) REFERENCES `role` (`represent`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
