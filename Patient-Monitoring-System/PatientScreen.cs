@@ -161,6 +161,7 @@ namespace Patient_Monitoring_System
                 genderComboBox.SelectedIndex = 0;
                 phoneTextBox.Text = "";
                 ageTextBox.Text = "";
+                patientIdTextBox.Text = patientHandler.getLastRecordID(dBconn.getConn());
             }
         }
 
@@ -398,7 +399,7 @@ namespace Patient_Monitoring_System
             dbC.connect();
             PatientHandler patientHandler = new PatientHandler();
             Patient oldPatientData = new Patient();
-            if (choosePatientIDUpdateComboBox.SelectedIndex == 0)
+            if (choosePatientIDDeleteComboBox.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select valid ID");
                 return;
@@ -410,16 +411,18 @@ namespace Patient_Monitoring_System
             }
             else
             {
-                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDUpdateComboBox.SelectedItem.ToString());
+                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDDeleteComboBox.SelectedItem.ToString());
             }
 
             int deleteResult = patientHandler.deletePatientData(dbC.getConn(), oldPatientData.Id);
 
             if(deleteResult ==1)
             {
-                MessageBox.Show("Delete Record Successfully");
-                closeAllTextBox(fullNameDeleteTextBox, nricDeleteTextBox, emailDeleteTextBox, phoneDeleteTextBox, addressDeleteRichTextBox, ageDeleteTextBox, bedsideIdDeleteTextBox, choosePatientIDDeleteComboBox, genderDeleteComboBox);
-                FetchId(choosePatientIDDeleteComboBox);
+
+                    MessageBox.Show("Delete Record Successfully");
+                    closeAllTextBox(fullNameDeleteTextBox, nricDeleteTextBox, emailDeleteTextBox, phoneDeleteTextBox, addressDeleteRichTextBox, ageDeleteTextBox, bedsideIdDeleteTextBox, choosePatientIDDeleteComboBox, genderDeleteComboBox);
+                    FetchId(choosePatientIDDeleteComboBox);
+
             }
             else
             {

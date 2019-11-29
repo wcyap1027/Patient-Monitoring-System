@@ -181,9 +181,16 @@ namespace Patient_Monitoring_System
 
         public int deletePatientData(MySqlConnection conn, int id)
         {
-            string sql = "DELETE * FROM patient WHERE id= '" + id + "'";
+            string sql = "DELETE FROM patient WHERE id= '" + id + "'";
             MySqlCommand deleteComm = new MySqlCommand(sql, conn);
             return deleteComm.ExecuteNonQuery();
         }
+
+        //public int alterTable(MySqlConnection conn, int id)
+        //{
+        //    string sql = "ALTER TABLE patient AUTO INCREMENT= '" + id + "'";
+        //    MySqlCommand alterCommand = new MySqlCommand(sql, conn);
+        //    return alterCommand.ExecuteNonQuery();
+        //}
     }
 }
