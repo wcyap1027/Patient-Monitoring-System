@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Manager
-{   
+{
     public partial class ManagerMainScreen : Form
     {
         public ManagerMainScreen()
@@ -30,23 +31,33 @@ namespace Manager
 
         private void patientNRICT_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void csvReportBtn_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(patientNRICT.Text))
-            {
-                MessageBox.Show("Please enter patient's IC number");
-                return;
-            }
+        }
 
-            DbConnector dbcon = new DbConnector();
-            dbcon.connect();
+        private void staffScheduleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StaffSchedule staffSchedule = new StaffSchedule();
+            staffSchedule.ShowDialog();
+            this.Close();
+        }
 
-           
-            }
+        private void staffReportBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StaffReport staffReport = new StaffReport();
+            staffReport.ShowDialog();
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
+}
