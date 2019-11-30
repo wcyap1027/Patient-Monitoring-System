@@ -76,6 +76,7 @@
             this.patientIDTextBox.Name = "patientIDTextBox";
             this.patientIDTextBox.Size = new System.Drawing.Size(181, 31);
             this.patientIDTextBox.TabIndex = 4;
+            this.patientIDTextBox.TextChanged += new System.EventHandler(this.patientIDTextBox_TextChanged_1);
             // 
             // label2
             // 

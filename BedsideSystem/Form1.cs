@@ -54,5 +54,15 @@ namespace BedsideSystem
         {
             patientIDTextBox.Text = "";
         }
+
+        private void patientIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void patientIDTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
