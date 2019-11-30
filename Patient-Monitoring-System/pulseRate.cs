@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-    public class pulseRate
+    public class PulseRate
     {
         private DateTime pulseRateTime, pulseRateDate;
         private double pulseRateValue;

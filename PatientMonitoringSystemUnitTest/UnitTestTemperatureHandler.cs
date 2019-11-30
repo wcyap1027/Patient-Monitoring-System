@@ -10,7 +10,7 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void TestTemperatureHandler()
         {
-            temperature Temperature = new temperature();
+            Temperature Temperature = new Temperature();
             Assert.IsInstanceOfType(Temperature, typeof(object));
         }
     }

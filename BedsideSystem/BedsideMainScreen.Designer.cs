@@ -1,6 +1,6 @@
 ﻿namespace BedsideSystem
 {
-    partial class MainScreen
+    partial class BedsideMainScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend28 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -53,12 +53,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.bloodPressureCurrentValue = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.historyBtn = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.testLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,16 +101,17 @@
             this.chart1.BackImageTransparentColor = System.Drawing.Color.DarkOliveGreen;
             this.chart1.BackSecondaryColor = System.Drawing.Color.DarkSeaGreen;
             this.chart1.BorderlineColor = System.Drawing.Color.Green;
-            chartArea25.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea25);
-            legend25.Name = "Legend1";
-            this.chart1.Legends.Add(legend25);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(7, 41);
             this.chart1.Name = "chart1";
-            series25.ChartArea = "ChartArea1";
-            series25.Legend = "Legend1";
-            series25.Name = "Series1";
-            this.chart1.Series.Add(series25);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(928, 118);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -133,16 +139,16 @@
             // 
             // chart2
             // 
-            chartArea26.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea26);
-            legend26.Name = "Legend1";
-            this.chart2.Legends.Add(legend26);
+            chartArea10.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart2.Legends.Add(legend10);
             this.chart2.Location = new System.Drawing.Point(7, 41);
             this.chart2.Name = "chart2";
-            series26.ChartArea = "ChartArea1";
-            series26.Legend = "Legend1";
-            series26.Name = "Series1";
-            this.chart2.Series.Add(series26);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(928, 118);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -170,16 +176,16 @@
             // 
             // chart3
             // 
-            chartArea27.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea27);
-            legend27.Name = "Legend1";
-            this.chart3.Legends.Add(legend27);
+            chartArea11.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.chart3.Legends.Add(legend11);
             this.chart3.Location = new System.Drawing.Point(7, 41);
             this.chart3.Name = "chart3";
-            series27.ChartArea = "ChartArea1";
-            series27.Legend = "Legend1";
-            series27.Name = "Series1";
-            this.chart3.Series.Add(series27);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.chart3.Series.Add(series11);
             this.chart3.Size = new System.Drawing.Size(928, 118);
             this.chart3.TabIndex = 3;
             this.chart3.Text = "chart3";
@@ -207,16 +213,16 @@
             // 
             // chart4
             // 
-            chartArea28.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea28);
-            legend28.Name = "Legend1";
-            this.chart4.Legends.Add(legend28);
+            chartArea12.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chart4.Legends.Add(legend12);
             this.chart4.Location = new System.Drawing.Point(7, 44);
             this.chart4.Name = "chart4";
-            series28.ChartArea = "ChartArea1";
-            series28.Legend = "Legend1";
-            series28.Name = "Series1";
-            this.chart4.Series.Add(series28);
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            this.chart4.Series.Add(series12);
             this.chart4.Size = new System.Drawing.Size(928, 118);
             this.chart4.TabIndex = 3;
             this.chart4.Text = "chart4";
@@ -224,10 +230,21 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel5.Controls.Add(this.bloodPressureCurrentValue);
             this.panel5.Location = new System.Drawing.Point(957, 13);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 161);
             this.panel5.TabIndex = 3;
+            // 
+            // bloodPressureCurrentValue
+            // 
+            this.bloodPressureCurrentValue.AutoSize = true;
+            this.bloodPressureCurrentValue.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureCurrentValue.Location = new System.Drawing.Point(39, 56);
+            this.bloodPressureCurrentValue.Name = "bloodPressureCurrentValue";
+            this.bloodPressureCurrentValue.Size = new System.Drawing.Size(35, 47);
+            this.bloodPressureCurrentValue.TabIndex = 0;
+            this.bloodPressureCurrentValue.Text = "?";
             // 
             // panel6
             // 
@@ -255,6 +272,9 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.testLabel);
+            this.panel9.Controls.Add(this.historyBtn);
+            this.panel9.Controls.Add(this.startBtn);
             this.panel9.Controls.Add(this.button2);
             this.panel9.Controls.Add(this.button1);
             this.panel9.Location = new System.Drawing.Point(1224, 12);
@@ -262,30 +282,66 @@
             this.panel9.Size = new System.Drawing.Size(148, 705);
             this.panel9.TabIndex = 5;
             // 
-            // button1
+            // historyBtn
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(16, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 81);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Patient Profile";
-            this.button1.UseVisualStyleBackColor = true;
+            this.historyBtn.BackColor = System.Drawing.Color.Yellow;
+            this.historyBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.historyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historyBtn.Location = new System.Drawing.Point(16, 300);
+            this.historyBtn.Name = "historyBtn";
+            this.historyBtn.Size = new System.Drawing.Size(116, 81);
+            this.historyBtn.TabIndex = 3;
+            this.historyBtn.Text = "History";
+            this.historyBtn.UseVisualStyleBackColor = false;
+            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
+            // 
+            // startBtn
+            // 
+            this.startBtn.BackColor = System.Drawing.Color.Chartreuse;
+            this.startBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Location = new System.Drawing.Point(16, 13);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(116, 81);
+            this.startBtn.TabIndex = 2;
+            this.startBtn.Text = "Start";
+            this.startBtn.UseVisualStyleBackColor = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.IndianRed;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(16, 118);
+            this.button2.Location = new System.Drawing.Point(16, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 81);
             this.button2.TabIndex = 1;
             this.button2.Text = "SOS";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // MainScreen
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(16, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 81);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Patient Profile";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testLabel.Location = new System.Drawing.Point(32, 456);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(35, 47);
+            this.testLabel.TabIndex = 4;
+            this.testLabel.Text = "?";
+            // 
+            // BedsideMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,9 +358,10 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "MainScreen";
+            this.Name = "BedsideMainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainScreen";
+            this.Load += new System.EventHandler(this.BedsideMainScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -317,7 +374,10 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +404,9 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label bloodPressureCurrentValue;
+        private System.Windows.Forms.Button startBtn;
+        private System.Windows.Forms.Button historyBtn;
+        private System.Windows.Forms.Label testLabel;
     }
 }

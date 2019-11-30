@@ -255,9 +255,9 @@
             this.addRecordPanel.Controls.Add(this.label4);
             this.addRecordPanel.Controls.Add(this.label3);
             this.addRecordPanel.Controls.Add(this.label1);
-            this.addRecordPanel.Location = new System.Drawing.Point(813, 337);
+            this.addRecordPanel.Location = new System.Drawing.Point(222, 221);
             this.addRecordPanel.Name = "addRecordPanel";
-            this.addRecordPanel.Size = new System.Drawing.Size(86, 80);
+            this.addRecordPanel.Size = new System.Drawing.Size(459, 316);
             this.addRecordPanel.TabIndex = 45;
             // 
             // resetPatientBtn
@@ -316,7 +316,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(508, 97);
             this.phoneTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(140, 35);
+            this.phoneTextBox.Size = new System.Drawing.Size(204, 35);
             this.phoneTextBox.TabIndex = 63;
             // 
             // emailTextBox
@@ -325,7 +325,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(121, 97);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(140, 35);
+            this.emailTextBox.Size = new System.Drawing.Size(222, 35);
             this.emailTextBox.TabIndex = 62;
             // 
             // addressTextBox
@@ -343,7 +343,7 @@
             this.fullNameTextBox.Location = new System.Drawing.Point(121, 52);
             this.fullNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.Size = new System.Drawing.Size(140, 35);
+            this.fullNameTextBox.Size = new System.Drawing.Size(222, 35);
             this.fullNameTextBox.TabIndex = 60;
             // 
             // nricTextBox
@@ -352,7 +352,7 @@
             this.nricTextBox.Location = new System.Drawing.Point(508, 10);
             this.nricTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nricTextBox.Name = "nricTextBox";
-            this.nricTextBox.Size = new System.Drawing.Size(140, 35);
+            this.nricTextBox.Size = new System.Drawing.Size(204, 35);
             this.nricTextBox.TabIndex = 59;
             // 
             // patientIdTextBox
@@ -476,7 +476,7 @@
             this.updateRecordPanel.Controls.Add(this.label11);
             this.updateRecordPanel.Location = new System.Drawing.Point(5, 196);
             this.updateRecordPanel.Name = "updateRecordPanel";
-            this.updateRecordPanel.Size = new System.Drawing.Size(777, 353);
+            this.updateRecordPanel.Size = new System.Drawing.Size(92, 93);
             this.updateRecordPanel.TabIndex = 46;
             // 
             // genderUpdatecomboBox
@@ -687,9 +687,9 @@
             this.deleteRecordPanel.Controls.Add(this.label27);
             this.deleteRecordPanel.Controls.Add(this.choosePatientIDDeleteComboBox);
             this.deleteRecordPanel.Controls.Add(this.label28);
-            this.deleteRecordPanel.Location = new System.Drawing.Point(788, 460);
+            this.deleteRecordPanel.Location = new System.Drawing.Point(16, 321);
             this.deleteRecordPanel.Name = "deleteRecordPanel";
-            this.deleteRecordPanel.Size = new System.Drawing.Size(208, 141);
+            this.deleteRecordPanel.Size = new System.Drawing.Size(103, 103);
             this.deleteRecordPanel.TabIndex = 47;
             // 
             // genderDeleteComboBox
@@ -896,7 +896,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PatientScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PatientScreen";
+            this.Text = "Patient";
             this.Load += new System.EventHandler(this.PatientScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).EndInit();
             this.panel1.ResumeLayout(false);

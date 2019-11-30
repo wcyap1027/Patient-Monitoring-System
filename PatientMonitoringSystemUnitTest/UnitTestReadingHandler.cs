@@ -10,7 +10,7 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void AddReadingHandler()
         {
-            reading readingclass = new reading();
+            Reading readingclass = new Reading();
             Assert.IsInstanceOfType(readingclass, typeof(object));
         }
     }

@@ -16,7 +16,7 @@ namespace BedsideSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var bedside = new BedsideLogin();
+            var bedside = new BedsideLoginScreen();
             bedside.FormClosed += new FormClosedEventHandler(FormClosed);
             bedside.Show();
             Application.Run();

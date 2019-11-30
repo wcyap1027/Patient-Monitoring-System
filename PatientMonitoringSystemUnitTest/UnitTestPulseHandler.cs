@@ -10,7 +10,7 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void TestPulseHandler()
         {
-            pulseRate PulseRate = new pulseRate();
+            PulseRate PulseRate = new PulseRate();
             Assert.IsInstanceOfType(PulseRate, typeof(object));
         }
     }
