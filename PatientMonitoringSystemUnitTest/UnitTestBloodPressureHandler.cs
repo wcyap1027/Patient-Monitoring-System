@@ -10,7 +10,7 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void TestBloodPressureHandler()
         {
-            bloodPressure BloodPressure = new bloodPressure();
+            BloodPressure BloodPressure = new BloodPressure();
             Assert.IsInstanceOfType(BloodPressure, typeof(object));
         }
     }

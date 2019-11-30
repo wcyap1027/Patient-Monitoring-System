@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedsideSystem
+namespace Patient_Monitoring_System.Screen
 {
-    public partial class MainScreen : Form
+    public partial class BedsideScreen : Form
     {
-        public MainScreen()
+        public BedsideScreen()
         {
             InitializeComponent();
         }

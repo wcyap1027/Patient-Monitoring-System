@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-   public class bloodPressure
+   public class BloodPressure
     {
+       
         private DateTime bloodPressureTime, bloodPressureDate;
         private double bloodPressureValue;
 

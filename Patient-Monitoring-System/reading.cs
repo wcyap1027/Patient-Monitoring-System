@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-    public class reading
+    public class Reading
     {
         private string reading_id;
         private double minBloodPressure;

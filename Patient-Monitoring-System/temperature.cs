@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-    public class temperature
+    public class Temperature
     {
         private DateTime temperatureTime, temperatureDate;
         private double temperatureValue;

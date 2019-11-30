@@ -10,7 +10,7 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void TestBreathingRateHandler()
         {
-            breathingRate BreathingRate = new breathingRate();
+            BreathingRate BreathingRate = new BreathingRate();
             Assert.IsInstanceOfType(BreathingRate, typeof(object));
         }
     }

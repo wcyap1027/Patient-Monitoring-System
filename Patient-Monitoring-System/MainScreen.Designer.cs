@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.centralStationbtn = new System.Windows.Forms.Button();
             this.patientButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bedsideBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -43,9 +43,10 @@
             this.centralStationbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.centralStationbtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.centralStationbtn.Image = ((System.Drawing.Image)(resources.GetObject("centralStationbtn.Image")));
-            this.centralStationbtn.Location = new System.Drawing.Point(88, 192);
+            this.centralStationbtn.Location = new System.Drawing.Point(66, 156);
+            this.centralStationbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.centralStationbtn.Name = "centralStationbtn";
-            this.centralStationbtn.Size = new System.Drawing.Size(200, 120);
+            this.centralStationbtn.Size = new System.Drawing.Size(168, 98);
             this.centralStationbtn.TabIndex = 1;
             this.centralStationbtn.Text = "Central Station";
             this.centralStationbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -60,29 +61,32 @@
             this.patientButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.patientButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientButton.Image = ((System.Drawing.Image)(resources.GetObject("patientButton.Image")));
-            this.patientButton.Location = new System.Drawing.Point(332, 192);
+            this.patientButton.Location = new System.Drawing.Point(249, 156);
+            this.patientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.patientButton.Name = "patientButton";
-            this.patientButton.Size = new System.Drawing.Size(200, 120);
+            this.patientButton.Size = new System.Drawing.Size(150, 98);
             this.patientButton.TabIndex = 2;
             this.patientButton.Text = "Patient";
             this.patientButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.patientButton.UseVisualStyleBackColor = false;
             this.patientButton.Click += new System.EventHandler(this.patientButton_Click);
             // 
-            // button1
+            // bedsideBtn
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Cyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(562, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 120);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Bedside";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.bedsideBtn.AutoSize = true;
+            this.bedsideBtn.BackColor = System.Drawing.Color.Cyan;
+            this.bedsideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bedsideBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideBtn.Image = ((System.Drawing.Image)(resources.GetObject("bedsideBtn.Image")));
+            this.bedsideBtn.Location = new System.Drawing.Point(422, 156);
+            this.bedsideBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bedsideBtn.Name = "bedsideBtn";
+            this.bedsideBtn.Size = new System.Drawing.Size(150, 108);
+            this.bedsideBtn.TabIndex = 3;
+            this.bedsideBtn.Text = "Bedside";
+            this.bedsideBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bedsideBtn.UseVisualStyleBackColor = false;
+            this.bedsideBtn.Click += new System.EventHandler(this.bedsideBtn_Click);
             // 
             // label1
             // 
@@ -90,23 +94,25 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(842, 75);
+            this.label1.Size = new System.Drawing.Size(632, 61);
             this.label1.TabIndex = 4;
             this.label1.Text = "Patient Monitoring System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(842, 453);
+            this.ClientSize = new System.Drawing.Size(632, 368);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bedsideBtn);
             this.Controls.Add(this.patientButton);
             this.Controls.Add(this.centralStationbtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Screen";
@@ -118,7 +124,7 @@
         #endregion
         private System.Windows.Forms.Button centralStationbtn;
         private System.Windows.Forms.Button patientButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bedsideBtn;
         private System.Windows.Forms.Label label1;
     }
 }

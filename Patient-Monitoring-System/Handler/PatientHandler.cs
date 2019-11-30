@@ -23,7 +23,7 @@ namespace Patient_Monitoring_System
 
         public int addNewPatient(MySqlConnection conn, Patient patient)
         {
-            string sql = "INSERT into patient( fullName, NRIC, address, email, gender, phone, age)" + "VALUES('" + patient.FullName + "', '" + patient.Nric + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "')";
+            string sql = "INSERT into patient( fullName, NRIC, address, email, gender, phone, age, bedsideId)" + "VALUES('" + patient.FullName + "', '" + patient.Nric + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "', '"+patient.BedsideId+"')";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             return sqlComm.ExecuteNonQuery();
@@ -51,10 +51,8 @@ namespace Patient_Monitoring_System
                     sPatient.Gender = (string)myReader.GetValue(5);
                     sPatient.Phone = (int)myReader.GetValue(6);
                     sPatient.Age = (int)myReader.GetValue(7);
-                    if(myReader.GetValue(8) == null)
-                    {
-                        sPatient.BedsideId = 0;
-                    }
+                    sPatient.BedsideId = (int)myReader.GetValue(8);
+                    
                     
                     listPatient.Add(sPatient);
                 }
@@ -192,5 +190,21 @@ namespace Patient_Monitoring_System
         //    MySqlCommand alterCommand = new MySqlCommand(sql, conn);
         //    return alterCommand.ExecuteNonQuery();
         //}
+
+        public void FetchId(ComboBox selectedcomboBox)
+        {
+            selectedcomboBox.Items.Add("--Select ID--");
+
+            selectedcomboBox.SelectedIndex = 0;
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            PatientHandler patientHandler = new PatientHandler();
+            List<Patient> patientList = new List<Patient>();
+            patientList = patientHandler.getAllPatient(dbC.getConn());
+            for (int i = 0; i < patientList.Count; i++)
+            {
+                selectedcomboBox.Items.Add(patientList[i].Id);
+            }
+        }
     }
 }
