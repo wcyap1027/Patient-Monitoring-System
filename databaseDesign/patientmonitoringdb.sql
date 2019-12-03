@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2019 at 12:11 PM
+-- Generation Time: Nov 30, 2019 at 04:24 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -43,10 +43,24 @@ CREATE TABLE `alarm` (
 --
 
 CREATE TABLE `bedsidemonitor` (
-  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `id` int(4) NOT NULL,
   `centralStation_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bedsidemonitor`
+--
+
+INSERT INTO `bedsidemonitor` (`id`, `centralStation_id`, `status`) VALUES
+(1, 2001, 1),
+(2, 2001, 0),
+(3, 2001, 0),
+(4, 2001, 0),
+(5, 2001, 0),
+(6, 2001, 0),
+(7, 2001, 0),
+(8, 2001, 1);
 
 -- --------------------------------------------------------
 
@@ -61,6 +75,52 @@ CREATE TABLE `bloodpressure` (
   `bloodPressureTime` time NOT NULL,
   `bloodPressureDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bloodpressure`
+--
+
+INSERT INTO `bloodpressure` (`id`, `patient_id`, `bloodPressureValue`, `bloodPressureTime`, `bloodPressureDate`) VALUES
+(1, 1003, 0, '21:47:42', '2019-11-30'),
+(2, 1003, 10, '21:47:43', '2019-11-30'),
+(3, 1003, 20, '21:47:44', '2019-11-30'),
+(4, 1003, 30, '21:47:45', '2019-11-30'),
+(5, 1003, 40, '21:47:46', '2019-11-30'),
+(6, 1003, 50, '21:47:47', '2019-11-30'),
+(7, 1003, 60, '21:47:48', '2019-11-30'),
+(8, 1003, 70, '21:47:49', '2019-11-30'),
+(9, 1003, 80, '21:47:50', '2019-11-30'),
+(10, 1003, 80, '21:47:51', '2019-11-30'),
+(11, 1003, 70, '21:47:52', '2019-11-30'),
+(12, 1003, 60, '21:47:53', '2019-11-30'),
+(13, 1003, 50, '21:47:54', '2019-11-30'),
+(14, 1003, 40, '21:47:55', '2019-11-30'),
+(15, 1003, 30, '21:47:56', '2019-11-30'),
+(16, 1003, 20, '21:47:57', '2019-11-30'),
+(17, 1003, 10, '21:47:58', '2019-11-30'),
+(18, 1003, 20, '21:47:59', '2019-11-30'),
+(19, 1003, 10, '21:48:00', '2019-11-30'),
+(20, 1003, 30, '21:48:01', '2019-11-30'),
+(21, 1001, 0, '23:19:33', '2019-11-30'),
+(22, 1001, 10, '23:19:34', '2019-11-30'),
+(23, 1001, 20, '23:19:35', '2019-11-30'),
+(24, 1001, 30, '23:19:36', '2019-11-30'),
+(25, 1001, 40, '23:19:37', '2019-11-30'),
+(26, 1001, 50, '23:19:38', '2019-11-30'),
+(27, 1001, 60, '23:19:39', '2019-11-30'),
+(28, 1001, 70, '23:19:40', '2019-11-30'),
+(29, 1001, 80, '23:19:41', '2019-11-30'),
+(30, 1001, 80, '23:19:42', '2019-11-30'),
+(31, 1001, 70, '23:19:43', '2019-11-30'),
+(32, 1001, 60, '23:19:44', '2019-11-30'),
+(33, 1001, 50, '23:19:45', '2019-11-30'),
+(34, 1001, 40, '23:19:46', '2019-11-30'),
+(35, 1001, 30, '23:19:47', '2019-11-30'),
+(36, 1001, 20, '23:19:48', '2019-11-30'),
+(37, 1001, 10, '23:19:49', '2019-11-30'),
+(38, 1001, 20, '23:19:50', '2019-11-30'),
+(39, 1001, 10, '23:19:51', '2019-11-30'),
+(40, 1001, 30, '23:19:52', '2019-11-30');
 
 -- --------------------------------------------------------
 
@@ -240,8 +300,10 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`id`, `NRIC`, `fullName`, `address`, `email`, `gender`, `phone`, `age`, `bedsideId`) VALUES
-(1001, 978563421234, 'Bob', 'jalan jalan', 'bob1234@gmail.com', 'Male', 134567819, 17, 0),
-(1002, 956034567890, 'Jason', 'jalan t', 'jason4576@gmail.com', 'Male', 134568812, 18, 0);
+(1001, 978563421234, 'Bob', 'jalan jalan', 'bob1234@gmail.com', 'Male', 134567819, 17, 8),
+(1002, 956034567890, 'Jason', 'jalan t', 'jason4576@gmail.com', 'Male', 134568812, 18, 0),
+(1003, 908678756789, 'raymond', 'fdasdf', 'raymond', 'Male', 123456789, 20, 1),
+(1004, 987623451110, 'huya', 'jalan ja', 'huya@gmail.com', 'Female', 125678890, 30, 0);
 
 -- --------------------------------------------------------
 
@@ -486,13 +548,13 @@ ALTER TABLE `alarm`
 -- AUTO_INCREMENT for table `bedsidemonitor`
 --
 ALTER TABLE `bedsidemonitor`
-  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `bloodpressure`
 --
 ALTER TABLE `bloodpressure`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `breathingrate`
@@ -534,7 +596,7 @@ ALTER TABLE `nurse`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- AUTO_INCREMENT for table `pulserate`
