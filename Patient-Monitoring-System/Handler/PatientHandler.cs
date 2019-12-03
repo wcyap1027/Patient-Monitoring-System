@@ -134,6 +134,69 @@ namespace Patient_Monitoring_System
             return lastId;
         }
 
+        //check patient id
+        public bool checkPatientID(MySqlConnection conn, int patientId)
+        {
+            bool status = false;
+            string sql = "SELECT id FROM patient WHERE id='" + patientId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var qId = sqlComm.ExecuteScalar();
+
+            if(qId != null)
+            {
+                status = true;
+                MessageBox.Show("Exist");
+            }
+            else
+            {
+                status = false;
+            }
+
+            return status;
+        }
+
+        public List<Patient> getSpecificPatientList(MySqlConnection conn, string selectedId)
+        {
+            int userId = int.Parse(selectedId);
+            List<Patient> listpatient = new List<Patient>();
+            Patient oldPatient = new Patient();
+            string sql = "SELECT * FROM patient WHERE id= '" + userId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            try
+            {
+                MySqlDataReader myReader;
+                myReader = sqlComm.ExecuteReader();
+                if (myReader.Read())
+                {
+
+                    oldPatient.Id = (int)myReader.GetValue(0);
+                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.FullName = (string)myReader.GetValue(2);
+                    oldPatient.Address = (string)myReader.GetValue(3);
+                    oldPatient.Email = (string)myReader.GetValue(4);
+                    oldPatient.Gender = (string)myReader.GetValue(5);
+                    oldPatient.Phone = (int)myReader.GetValue(6);
+                    oldPatient.Age = (int)myReader.GetValue(7);
+                    if (myReader.GetValue(8) == null)
+                    {
+                        oldPatient.BedsideId = 0;
+                    }
+                    listpatient.Add(oldPatient);
+
+
+                }
+                myReader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Console.WriteLine(e.ToString());
+            }
+
+            return listpatient;
+        }
+
         public Patient getSpecificPatient(MySqlConnection conn, string selectedId)
         {
             int userId = int.Parse(selectedId);
