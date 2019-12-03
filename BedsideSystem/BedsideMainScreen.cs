@@ -27,6 +27,7 @@ namespace BedsideSystem
         private async void readAllData(string pathName, string seriesName, System.Windows.Forms.DataVisualization.Charting.Chart chart, Label showData, Label showStatus)
         {
             kayChart dataChart = new kayChart(chart, 60);
+            
             dataChart.serieName = seriesName;
             string path = pathName;
             string[] lines = System.IO.File.ReadAllLines(path);
@@ -39,6 +40,7 @@ namespace BedsideSystem
                     await Task.Factory.StartNew(() =>
                     {
                         dataChart.TriggeredUpdate(double.Parse(column));
+                        
                     });
                     double value = double.Parse(column);
                     if (value <= 90)
@@ -113,6 +115,7 @@ namespace BedsideSystem
                     await Task.Factory.StartNew(() =>
                      {
                          bloodPressureData.TriggeredUpdate(double.Parse(column));
+                         
                      });
                     double value = double.Parse(column);
                     if(value <= 90)
@@ -121,6 +124,7 @@ namespace BedsideSystem
                         bloodPressureCurrentValue.ForeColor = Color.Blue;
                         bloodPressureStatus.Text = "LOW";
                         bloodPressureStatus.ForeColor = Color.Blue;
+                       
                     }
                     else if(value > 90 && value <= 120)
                     {
@@ -128,6 +132,7 @@ namespace BedsideSystem
                         bloodPressureCurrentValue.ForeColor = Color.LightGreen;
                         bloodPressureStatus.Text = "OK";
                         bloodPressureStatus.ForeColor = Color.LightGreen;
+                        
                     }
                     else if(value > 120 && value <= 140)
                     {
@@ -142,6 +147,7 @@ namespace BedsideSystem
                         bloodPressureCurrentValue.ForeColor = Color.Red;
                         bloodPressureStatus.Text = "HIGH";
                         bloodPressureStatus.ForeColor = Color.Red;
+                        
                     }
                     
                     bloodPressureCurrentValue.Text = column;
@@ -158,6 +164,7 @@ namespace BedsideSystem
             readAllData("../../data files/bloodPressureCSV.csv", "Pulse Rate", pulseRateLineGraph, pulseRateCurrentValue, pulseRateStatus);
             readAllData("../../data files/bloodPressureCSV.csv", "Breathing Rate", breathingRateLineGraph, breathingRateCurrentValue, breathingRateStatus);
             readAllData("../../data files/bloodPressureCSV.csv", "Temperature", temperatureLineGraph, temperatureCurrentValue, temperatureStatus);
+           
         }
 
         private void historyBtn_Click(object sender, EventArgs e)

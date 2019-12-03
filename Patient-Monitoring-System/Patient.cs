@@ -10,8 +10,8 @@ namespace Patient_Monitoring_System
     {
         private string fullName, address, email, gender;
         private long nric;
-        private int id, phone, age;
-        private int bedsideId;
+        private int id, phone, age, bedsideId;
+        private DateTime registerDateTime;
 
         public int Id { get => id; set => id = value; }
         public string FullName { get => fullName; set => fullName = value; }
@@ -22,5 +22,6 @@ namespace Patient_Monitoring_System
         public int Phone { get => phone; set => phone = value; }
         public int Age { get => age; set => age = value; }
         public int BedsideId { get => bedsideId; set => bedsideId = value; }
+        public DateTime RegisterDateTime { get => registerDateTime; set => registerDateTime = value; }
     }
 }
