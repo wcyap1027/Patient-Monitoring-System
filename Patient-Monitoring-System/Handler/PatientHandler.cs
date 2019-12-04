@@ -138,7 +138,7 @@ namespace Patient_Monitoring_System
         public bool checkPatientID(MySqlConnection conn, int patientId)
         {
             bool status = false;
-            string sql = "SELECT id FROM patient WHERE id='" + patientId + "'";
+            string sql = "SELECT patient_id FROM bloodpressure WHERE patient_id='" + patientId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             var qId = sqlComm.ExecuteScalar();

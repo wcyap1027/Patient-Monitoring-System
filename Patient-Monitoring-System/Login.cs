@@ -174,5 +174,10 @@ namespace Patient_Monitoring_System
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

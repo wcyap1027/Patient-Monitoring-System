@@ -11,6 +11,14 @@ namespace Patient_Monitoring_System
        
         private DateTime bloodPressureTime, bloodPressureDate;
         private double bloodPressureValue;
+        private int bloodPressureId;
+
+        public int BloodPressureId
+        {
+            get { return bloodPressureId; }
+            set { bloodPressureId = value; }
+        }
+
 
         public DateTime BloodPressureDate
         {

@@ -163,19 +163,54 @@ namespace Manager
                        
         }
 
+
+        
+
         private void ViewB_Click(object sender, EventArgs e)
         {
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
             PatientHandler patientHandler = new PatientHandler();
+            BloodPressureHandler bphandler = new BloodPressureHandler();
 
-            int patientId = int.Parse(patientIDcomboBox.Text);
+            int patientId = int.Parse(patientIDcb.Text);
+            //string optionId = option1ComboBox.Text;
 
             bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
+            //bool status1 = bphandler.checkOption(dbConn.getConn(), optionId);
+
+            string selected = this.option1ComboBox.GetItemText(this.option1ComboBox.SelectedItem);
 
             if (status)
             {
-                readingGridView.DataSource = patientHandler.getSpecificPatientList(dbConn.getConn(), patientIDcomboBox.Text);
+                if(selected == "Blood Pressure")
+                {
+                    status = true;
+                    MessageBox.Show("Exist");
+                    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                }
+                
+                //string sql = "SELECT patient_id FROM bloodpressure WHERE patient_id='" + patientIDcb.Text + "'";
+                //MySqlCommand sqlComm = new MySqlCommand(sql, dbConn.getConn());
+
+                //var qId = sqlComm.ExecuteScalar();
+
+                //if (qId != null)
+                //{
+                //    status = true;
+                //    MessageBox.Show("Exist");
+                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                //}
+                //else
+                //{
+                //    status = false;
+                //}
+
+                //if (status1)
+                //{
+
+                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                //}
             }
             else
             {
@@ -191,13 +226,12 @@ namespace Manager
 
         private void option1ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            option1ComboBox.Items.Add("Blood Pressure");
-            option1ComboBox.Items.Add("Pulse Rate");
-            option1ComboBox.Items.Add("Temperature");
-            option1ComboBox.Items.Add("Breathing Rate");
+            
+        }
 
-            var item = this.option1ComboBox.GetItemText(this.option1ComboBox.SelectedItem);
-            MessageBox.Show(item);
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

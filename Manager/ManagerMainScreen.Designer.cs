@@ -51,13 +51,14 @@
             this.AlarmIDcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.option1ComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.patientIDcb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.readingGridView = new System.Windows.Forms.DataGridView();
             this.ResetB = new System.Windows.Forms.Button();
             this.ViewB = new System.Windows.Forms.Button();
-            this.option1ComboBox = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -178,6 +179,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.patientComboBox);
             this.panel2.Controls.Add(this.readingIDtb);
             this.panel2.Controls.Add(this.label7);
@@ -188,10 +190,11 @@
             this.panel2.Controls.Add(this.ViewButton);
             this.panel2.Controls.Add(this.AlarmIDcomboBox);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(265, 3);
+            this.panel2.Location = new System.Drawing.Point(533, 159);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(380, 276);
             this.panel2.TabIndex = 11;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // patientComboBox
             // 
@@ -203,7 +206,7 @@
             // 
             // readingIDtb
             // 
-            this.readingIDtb.Location = new System.Drawing.Point(154, 84);
+            this.readingIDtb.Location = new System.Drawing.Point(154, 88);
             this.readingIDtb.Name = "readingIDtb";
             this.readingIDtb.Size = new System.Drawing.Size(100, 20);
             this.readingIDtb.TabIndex = 13;
@@ -211,7 +214,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(73, 84);
+            this.label7.Location = new System.Drawing.Point(73, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 12;
@@ -220,7 +223,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 36);
+            this.label6.Location = new System.Drawing.Point(28, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 13);
             this.label6.TabIndex = 11;
@@ -264,7 +267,7 @@
             // AlarmIDcomboBox
             // 
             this.AlarmIDcomboBox.FormattingEnabled = true;
-            this.AlarmIDcomboBox.Location = new System.Drawing.Point(154, 56);
+            this.AlarmIDcomboBox.Location = new System.Drawing.Point(154, 61);
             this.AlarmIDcomboBox.Name = "AlarmIDcomboBox";
             this.AlarmIDcomboBox.Size = new System.Drawing.Size(121, 21);
             this.AlarmIDcomboBox.TabIndex = 6;
@@ -272,7 +275,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 59);
+            this.label2.Location = new System.Drawing.Point(87, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 5;
@@ -282,7 +285,6 @@
             // 
             this.panel3.Controls.Add(this.option1ComboBox);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.patientIDcb);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.readingGridView);
@@ -292,6 +294,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(380, 347);
             this.panel3.TabIndex = 12;
+            // 
+            // option1ComboBox
+            // 
+            this.option1ComboBox.FormattingEnabled = true;
+            this.option1ComboBox.Items.AddRange(new object[] {
+            "Blood Pressure",
+            "Breathing Rate",
+            "Pulse Rate ",
+            "Temperature"});
+            this.option1ComboBox.Location = new System.Drawing.Point(136, 44);
+            this.option1ComboBox.Name = "option1ComboBox";
+            this.option1ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.option1ComboBox.TabIndex = 12;
+            this.option1ComboBox.SelectedIndexChanged += new System.EventHandler(this.option1ComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -305,11 +321,6 @@
             // patientIDcb
             // 
             this.patientIDcb.FormattingEnabled = true;
-            this.patientIDcb.Items.AddRange(new object[] {
-            "Blood Pressure",
-            "Breathing Rate",
-            "Pulse Rate ",
-            "Temperature"});
             this.patientIDcb.Location = new System.Drawing.Point(136, 10);
             this.patientIDcb.Name = "patientIDcb";
             this.patientIDcb.Size = new System.Drawing.Size(121, 21);
@@ -354,19 +365,12 @@
             this.ViewB.UseVisualStyleBackColor = true;
             this.ViewB.Click += new System.EventHandler(this.ViewB_Click);
             // 
-            // option1ComboBox
+            // dateTimePicker1
             // 
-            this.option1ComboBox.FormattingEnabled = true;
-            this.option1ComboBox.Items.AddRange(new object[] {
-            "Blood Pressure",
-            "Breathing Rate",
-            "Pulse Rate ",
-            "Temperature"});
-            this.option1ComboBox.Location = new System.Drawing.Point(136, 44);
-            this.option1ComboBox.Name = "option1ComboBox";
-            this.option1ComboBox.Size = new System.Drawing.Size(121, 21);
-            this.option1ComboBox.TabIndex = 12;
-            this.option1ComboBox.SelectedIndexChanged += new System.EventHandler(this.option1ComboBox_SelectedIndexChanged);
+            this.dateTimePicker1.Location = new System.Drawing.Point(154, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 15;
             // 
             // ManagerMainScreen
             // 
@@ -375,6 +379,7 @@
             this.ClientSize = new System.Drawing.Size(845, 402);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.alarmReportBtn);
             this.Controls.Add(this.patientInformationBtn);
             this.Controls.Add(this.readingBtn);
@@ -429,5 +434,6 @@
         private System.Windows.Forms.ComboBox patientIDcb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox option1ComboBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
