@@ -71,7 +71,7 @@
             this.usernameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.usernameTextBox.Location = new System.Drawing.Point(59, 23);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(200, 27);
+            this.usernameTextBox.Size = new System.Drawing.Size(200, 22);
             this.usernameTextBox.TabIndex = 3;
             this.usernameTextBox.Text = "Enter your user id";
             this.usernameTextBox.Enter += new System.EventHandler(this.usernameTextBox_Enter);
@@ -86,7 +86,7 @@
             this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passwordTextBox.Location = new System.Drawing.Point(59, 23);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(200, 27);
+            this.passwordTextBox.Size = new System.Drawing.Size(200, 22);
             this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.Text = "Enter password";
             this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
@@ -164,8 +164,9 @@
             this.departmentComboBox.FormattingEnabled = true;
             this.departmentComboBox.Location = new System.Drawing.Point(59, 17);
             this.departmentComboBox.Name = "departmentComboBox";
-            this.departmentComboBox.Size = new System.Drawing.Size(200, 36);
+            this.departmentComboBox.Size = new System.Drawing.Size(200, 29);
             this.departmentComboBox.TabIndex = 16;
+            this.departmentComboBox.SelectedIndexChanged += new System.EventHandler(this.departmentComboBox_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -202,7 +203,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

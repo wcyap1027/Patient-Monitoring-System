@@ -418,5 +418,10 @@ namespace Patient_Monitoring_System
                 MessageBox.Show("Delete Failed");
             }
         }
+
+        private void genderComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

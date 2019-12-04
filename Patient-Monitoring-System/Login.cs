@@ -169,5 +169,10 @@ namespace Patient_Monitoring_System
                 departmentComboBox.Items.Add(rolesList[i].Position);
             }
         }
+
+        private void departmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
