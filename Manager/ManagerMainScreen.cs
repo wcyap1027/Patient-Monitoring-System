@@ -188,5 +188,16 @@ namespace Manager
         {
 
         }
+
+        private void option1ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            option1ComboBox.Items.Add("Blood Pressure");
+            option1ComboBox.Items.Add("Pulse Rate");
+            option1ComboBox.Items.Add("Temperature");
+            option1ComboBox.Items.Add("Breathing Rate");
+
+            var item = this.option1ComboBox.GetItemText(this.option1ComboBox.SelectedItem);
+            MessageBox.Show(item);
+        }
     }
 }

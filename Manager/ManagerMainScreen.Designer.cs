@@ -57,7 +57,7 @@
             this.readingGridView = new System.Windows.Forms.DataGridView();
             this.ResetB = new System.Windows.Forms.Button();
             this.ViewB = new System.Windows.Forms.Button();
-            this.BloodPressureCB = new System.Windows.Forms.ComboBox();
+            this.option1ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -280,6 +280,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.option1ComboBox);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.patientIDcb);
@@ -287,7 +288,6 @@
             this.panel3.Controls.Add(this.readingGridView);
             this.panel3.Controls.Add(this.ResetB);
             this.panel3.Controls.Add(this.ViewB);
-            this.panel3.Controls.Add(this.BloodPressureCB);
             this.panel3.Location = new System.Drawing.Point(186, 169);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(380, 347);
@@ -354,19 +354,19 @@
             this.ViewB.UseVisualStyleBackColor = true;
             this.ViewB.Click += new System.EventHandler(this.ViewB_Click);
             // 
-            // BloodPressureCB
+            // option1ComboBox
             // 
-            this.BloodPressureCB.FormattingEnabled = true;
-            this.BloodPressureCB.Items.AddRange(new object[] {
+            this.option1ComboBox.FormattingEnabled = true;
+            this.option1ComboBox.Items.AddRange(new object[] {
             "Blood Pressure",
             "Breathing Rate",
             "Pulse Rate ",
             "Temperature"});
-            this.BloodPressureCB.Location = new System.Drawing.Point(136, 45);
-            this.BloodPressureCB.Name = "BloodPressureCB";
-            this.BloodPressureCB.Size = new System.Drawing.Size(121, 21);
-            this.BloodPressureCB.TabIndex = 6;
-            this.BloodPressureCB.SelectedIndexChanged += new System.EventHandler(this.readingTypeTB_SelectedIndexChanged);
+            this.option1ComboBox.Location = new System.Drawing.Point(136, 44);
+            this.option1ComboBox.Name = "option1ComboBox";
+            this.option1ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.option1ComboBox.TabIndex = 12;
+            this.option1ComboBox.SelectedIndexChanged += new System.EventHandler(this.option1ComboBox_SelectedIndexChanged);
             // 
             // ManagerMainScreen
             // 
@@ -420,7 +420,6 @@
         private System.Windows.Forms.DataGridView readingGridView;
         private System.Windows.Forms.Button ResetB;
         private System.Windows.Forms.Button ViewB;
-        private System.Windows.Forms.ComboBox BloodPressureCB;
         private System.Windows.Forms.TextBox readingIDtb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -429,5 +428,6 @@
         private System.Windows.Forms.ComboBox patientComboBox;
         private System.Windows.Forms.ComboBox patientIDcb;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox option1ComboBox;
     }
 }

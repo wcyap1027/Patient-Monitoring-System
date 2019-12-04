@@ -54,8 +54,8 @@ namespace Patient_Monitoring_System
 
             DBConnector dbcon = new DBConnector();
             dbcon.connect();
-            sessionId = bedside
-            string query = 
+            //sessionId = bedside
+            //string query = 
 
         
         }
