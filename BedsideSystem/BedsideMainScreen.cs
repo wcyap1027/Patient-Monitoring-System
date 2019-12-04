@@ -188,5 +188,11 @@ namespace BedsideSystem
             AlarmScreen alarmScreen = new AlarmScreen();
             alarmScreen.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            patient_profile_screen patientprofileScreen = new patient_profile_screen();
+            patientprofileScreen.Show();
+        }
     }
 }

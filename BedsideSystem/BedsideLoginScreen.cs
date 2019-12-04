@@ -148,6 +148,7 @@ namespace BedsideSystem
             if (status)
             {
                 bedside_patient_id = patientId;
+           
                 BedsideMainScreen bedsideMainScreen = new BedsideMainScreen();
                 bedsideMainScreen.Show();
                 
