@@ -78,7 +78,7 @@
             this.testLabel = new System.Windows.Forms.Label();
             this.historyBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.haltButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bloodPressureLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pulseRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -455,7 +455,7 @@
             this.panel9.Controls.Add(this.testLabel);
             this.panel9.Controls.Add(this.historyBtn);
             this.panel9.Controls.Add(this.startBtn);
-            this.panel9.Controls.Add(this.button2);
+            this.panel9.Controls.Add(this.haltButton);
             this.panel9.Controls.Add(this.button1);
             this.panel9.Location = new System.Drawing.Point(1224, 13);
             this.panel9.Name = "panel9";
@@ -469,7 +469,7 @@
             this.setAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.setAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setAlarmBtn.Image = ((System.Drawing.Image)(resources.GetObject("setAlarmBtn.Image")));
-            this.setAlarmBtn.Location = new System.Drawing.Point(16, 434);
+            this.setAlarmBtn.Location = new System.Drawing.Point(16, 299);
             this.setAlarmBtn.Name = "setAlarmBtn";
             this.setAlarmBtn.Size = new System.Drawing.Size(116, 81);
             this.setAlarmBtn.TabIndex = 5;
@@ -480,7 +480,7 @@
             // 
             this.testLabel.AutoSize = true;
             this.testLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(17, 384);
+            this.testLabel.Location = new System.Drawing.Point(48, 542);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(35, 47);
             this.testLabel.TabIndex = 4;
@@ -490,8 +490,9 @@
             // 
             this.historyBtn.BackColor = System.Drawing.Color.Yellow;
             this.historyBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.historyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.historyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historyBtn.Location = new System.Drawing.Point(16, 300);
+            this.historyBtn.Location = new System.Drawing.Point(16, 212);
             this.historyBtn.Name = "historyBtn";
             this.historyBtn.Size = new System.Drawing.Size(116, 81);
             this.historyBtn.TabIndex = 3;
@@ -503,26 +504,30 @@
             // 
             this.startBtn.BackColor = System.Drawing.Color.Chartreuse;
             this.startBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.Location = new System.Drawing.Point(16, 13);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(116, 81);
             this.startBtn.TabIndex = 2;
-            this.startBtn.Text = "Start";
+            this.startBtn.Text = "START";
             this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
-            // button2
+            // haltButton
             // 
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(16, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 81);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "SOS";
-            this.button2.UseVisualStyleBackColor = false;
+            this.haltButton.BackColor = System.Drawing.Color.IndianRed;
+            this.haltButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.haltButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.haltButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.haltButton.Location = new System.Drawing.Point(16, 13);
+            this.haltButton.Name = "haltButton";
+            this.haltButton.Size = new System.Drawing.Size(116, 81);
+            this.haltButton.TabIndex = 1;
+            this.haltButton.Text = "HALT";
+            this.haltButton.UseVisualStyleBackColor = false;
+            this.haltButton.Visible = false;
+            this.haltButton.Click += new System.EventHandler(this.haltButton_Click);
             // 
             // button1
             // 
@@ -734,7 +739,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button haltButton;
         private System.Windows.Forms.Label bloodPressureCurrentValue;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button historyBtn;

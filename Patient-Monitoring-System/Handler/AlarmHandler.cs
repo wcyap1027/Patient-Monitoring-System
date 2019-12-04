@@ -7,10 +7,14 @@ using MySql.Data.MySqlClient;
 
 namespace Patient_Monitoring_System
 {
-    class AlarmHandler
+    public class AlarmHandler
     {
-        //public int addNewAlarm(MySqlConnection conn, Alarm alarm)
+        //public int addNewAlarm(MySqlConnection conn, Alarm alarm, int patientId)
         //{
+        //    string sql = "INSERT into temperature( patient_id, temperatureValue, temperatureTime, temperatureDate)" + "VALUES('" + patientId + "', '" + temperature.TemperatureValue + "', '" + temperature.TemperatureTime.ToString("HH:mm:ss") + "', '" + temperature.TemperatureDate.ToString("yyyy-MM-dd") + "')";
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+        //    return sqlComm.ExecuteNonQuery();
 
         //}
     }

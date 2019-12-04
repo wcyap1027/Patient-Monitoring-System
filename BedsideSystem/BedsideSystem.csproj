@@ -51,35 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BedsideLoginScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BedsideLoginScreen.Designer.cs">
-      <DependentUpon>BedsideLoginScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BedsideMainScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BedsideMainScreen.Designer.cs">
-      <DependentUpon>BedsideMainScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HistoryScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HistoryScreen.Designer.cs">
-      <DependentUpon>HistoryScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BedsideLoginScreen.resx">
-      <DependentUpon>BedsideLoginScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BedsideMainScreen.resx">
-      <DependentUpon>BedsideMainScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HistoryScreen.resx">
-      <DependentUpon>HistoryScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
