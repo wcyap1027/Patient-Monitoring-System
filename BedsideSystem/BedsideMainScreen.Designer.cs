@@ -79,7 +79,7 @@
             this.historyBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.patient_profile = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.bloodPressureLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pulseRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.breathingRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -455,7 +455,7 @@
             this.panel9.Controls.Add(this.historyBtn);
             this.panel9.Controls.Add(this.startBtn);
             this.panel9.Controls.Add(this.button2);
-            this.panel9.Controls.Add(this.patient_profile);
+            this.panel9.Controls.Add(this.button1);
             this.panel9.Location = new System.Drawing.Point(1224, 13);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(148, 745);
@@ -523,22 +523,22 @@
             this.button2.Text = "SOS";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // patient_profile
+            // button1
             // 
-            this.patient_profile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.patient_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient_profile.Location = new System.Drawing.Point(16, 117);
-            this.patient_profile.Name = "patient_profile";
-            this.patient_profile.Size = new System.Drawing.Size(116, 81);
-            this.patient_profile.TabIndex = 0;
-            this.patient_profile.Text = "Patient Profile";
-            this.patient_profile.UseVisualStyleBackColor = true;
-            this.patient_profile.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(16, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 81);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Patient Profile";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // bloodPressureLineGraph
             // 
             this.bloodPressureLineGraph.BackColor = System.Drawing.Color.Black;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderWidth = 5;
             chartArea1.InnerPlotPosition.Auto = false;
             chartArea1.InnerPlotPosition.Height = 30.3125F;
             chartArea1.InnerPlotPosition.Width = 96.74647F;
@@ -558,6 +558,7 @@
             this.bloodPressureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.BackSecondaryColor = System.Drawing.Color.Transparent;
             series1.BorderColor = System.Drawing.Color.Transparent;
+            series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -591,6 +592,7 @@
             this.pulseRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.BackSecondaryColor = System.Drawing.Color.Transparent;
             series2.BorderColor = System.Drawing.Color.Transparent;
+            series2.BorderWidth = 5;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -624,6 +626,7 @@
             this.breathingRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series3.BackSecondaryColor = System.Drawing.Color.Transparent;
             series3.BorderColor = System.Drawing.Color.Transparent;
+            series3.BorderWidth = 5;
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -657,6 +660,7 @@
             this.temperatureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series4.BackSecondaryColor = System.Drawing.Color.Transparent;
             series4.BorderColor = System.Drawing.Color.Transparent;
+            series4.BorderWidth = 5;
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -672,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1384, 761);
             this.Controls.Add(this.temperatureLineGraph);
             this.Controls.Add(this.breathingRateLineGraph);
             this.Controls.Add(this.pulseRateLineGraph);
@@ -724,7 +728,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button patient_profile;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label bloodPressureCurrentValue;
         private System.Windows.Forms.Button startBtn;

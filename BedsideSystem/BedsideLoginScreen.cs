@@ -83,6 +83,8 @@ namespace BedsideSystem
 
         private void backAssignBtn_Click(object sender, EventArgs e)
         {
+            bedsideIdAssignComboBox.Items.Clear();
+            patientIDAssignComboBox.Items.Clear();
             showMenuPanel.Show();
             existingPanel.Hide();
             assignPanel.Hide();
@@ -90,6 +92,7 @@ namespace BedsideSystem
 
         private void backExistingBtn_Click(object sender, EventArgs e)
         {
+            bedsideIdExistingComboBox.Items.Clear();
             showMenuPanel.Show();
             existingPanel.Hide();
             assignPanel.Hide();

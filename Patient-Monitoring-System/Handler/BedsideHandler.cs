@@ -138,7 +138,8 @@ namespace Patient_Monitoring_System.Handler
                     oldPatient.Gender = (string)myReader.GetValue(5);
                     oldPatient.Phone = (int)myReader.GetValue(6);
                     oldPatient.Age = (int)myReader.GetValue(7);
-                   oldPatient.BedsideId = (int)myReader.GetValue(8);
+                    oldPatient.RegisterDateTime = (DateTime)myReader.GetValue(8);
+                   oldPatient.BedsideId = (int)myReader.GetValue(9);
                     
                 }
                 myReader.Close();

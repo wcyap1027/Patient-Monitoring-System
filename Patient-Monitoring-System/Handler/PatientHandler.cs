@@ -23,7 +23,9 @@ namespace Patient_Monitoring_System
 
         public int addNewPatient(MySqlConnection conn, Patient patient)
         {
-            string sql = "INSERT into patient( fullName, NRIC, address, email, gender, phone, age, bedsideId)" + "VALUES('" + patient.FullName + "', '" + patient.Nric + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "', '"+patient.BedsideId+"')";
+            DateTime currentDateTime = DateTime.Now;
+            patient.RegisterDateTime = currentDateTime;
+            string sql = "INSERT into patient( fullName, NRIC, address, email, gender, phone, age, registerDateTime, bedsideId)" + "VALUES('" + patient.FullName + "', '" + patient.Nric + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "', '" + patient.RegisterDateTime.ToString("yyyy-MM-dd HH:mm:ss") + "' , '" + patient.BedsideId + "')";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             return sqlComm.ExecuteNonQuery();
@@ -51,11 +53,14 @@ namespace Patient_Monitoring_System
                     sPatient.Gender = (string)myReader.GetValue(5);
                     sPatient.Phone = (int)myReader.GetValue(6);
                     sPatient.Age = (int)myReader.GetValue(7);
-                    sPatient.BedsideId = (int)myReader.GetValue(8);
+                    sPatient.RegisterDateTime = (DateTime)myReader.GetValue(8);
+                    sPatient.BedsideId = (int)myReader.GetValue(9);
                     
                     
                     listPatient.Add(sPatient);
                 }
+                myReader.Close();
+                myReader.Close();
             }
             catch(Exception e)
             {
