@@ -21,26 +21,10 @@ namespace BedsideSystem
         public static int counterTemp = 0;
         public static List<BloodPressure> listbloodPressure = new List<BloodPressure>();
         public static List<double> listDouble = new List<double>();
+        public static System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         public BedsideMainScreen()
         {
             InitializeComponent();
-        }
-
-        private int readFileSize(string pathName)
-        {
-            List<string> listValue = new List<string>();
-            string path = pathName;
-            string[] lines = System.IO.File.ReadAllLines(path);
-            foreach(string line in lines)
-            {
-                string[] columns = line.Split(',');
-                foreach(string column in columns)
-                {
-                    listValue.Add(column);
-                }
-            }
-
-            return listValue.Count;
         }
 
         private async void readTemperatureData()
@@ -48,7 +32,7 @@ namespace BedsideSystem
             kayChart dataCha = new kayChart(temperatureLineGraph, 60);
             kayChart dataChart = new kayChart(temperatureLineGraph, 60);
             dataChart.serieName = "Temperature";
-            string path = "../../data files/temperatureCSV.csv";
+            string path = "../../../Patient-Monitoring-System/data files/temperatureCSV.csv";
             string line;
 
             try
@@ -60,9 +44,10 @@ namespace BedsideSystem
                     string[] columns = line.Split(',');
                     foreach(string column in columns)
                     {
-                        
+                        if (run)
+                        {
                             double value = double.Parse(column);
-                            await Task.Delay(2000);
+                            await Task.Delay(1500);
                             await Task.Factory.StartNew(() =>
                             {
                                 dataChart.TriggeredUpdate(value);
@@ -83,7 +68,7 @@ namespace BedsideSystem
                                 temperatureStatus.ForeColor = Color.Red;
                             }
 
-                            temperatureCurrentValue.Text = value.ToString()+ "°C";
+                            temperatureCurrentValue.Text = value.ToString() + "°C";
                             //add each value to database *DONT Delete*
                             //DateTime currentDate = DateTime.Now;
                             //DateTime currentTime = DateTime.Now;
@@ -105,8 +90,11 @@ namespace BedsideSystem
                             //   MessageBox.Show("Insert Data failed");
                             //   break;
                             //}
-                        
-
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                         
                     line = sr.ReadLine();
@@ -123,7 +111,8 @@ namespace BedsideSystem
         {
             kayChart dataChart = new kayChart(bloodPressureLineGraph, 60);
             dataChart.serieName = "Blood Pressure";
-            string path = "../../data files/bloodPressureCSV.csv";
+            string path = "../../../Patient-Monitoring-System/data files/bloodPressureCSV.csv";
+       
             string line;
 
             try
@@ -135,9 +124,10 @@ namespace BedsideSystem
                     string[] columns = line.Split(',');
                     foreach (string column in columns)
                     {
-                        
+                        if (run)
+                        {
                             double value = double.Parse(column);
-                            await Task.Delay(2000);
+                            await Task.Delay(1500);
                             await Task.Factory.StartNew(() =>
                             {
                                 dataChart.TriggeredUpdate(value);
@@ -194,7 +184,13 @@ namespace BedsideSystem
                             //    MessageBox.Show("Insert Data failed");
                             //    break;
                             //}
-                        
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+
 
                     }
 
@@ -212,7 +208,7 @@ namespace BedsideSystem
         {
             kayChart dataChart = new kayChart(pulseRateLineGraph, 60);
             dataChart.serieName = "Pulse Rate";
-            string path = "../../data files/pulseRateCSV.csv";
+            string path = "../../../Patient-Monitoring-System/data files/pulseRateCSV.csv";
             string line;
 
             try
@@ -224,9 +220,10 @@ namespace BedsideSystem
                     string[] columns = line.Split(',');
                     foreach (string column in columns)
                     {
-                        
+                        if (run)
+                        {
                             double value = double.Parse(column);
-                            await Task.Delay(2000);
+                            await Task.Delay(1500);
                             await Task.Factory.StartNew(() =>
                             {
                                 dataChart.TriggeredUpdate(value);
@@ -277,7 +274,13 @@ namespace BedsideSystem
                             //    MessageBox.Show("Insert Data failed");
                             //    break;
                             //}
-                        
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+
 
                     }
 
@@ -295,7 +298,7 @@ namespace BedsideSystem
         {
             kayChart dataChart = new kayChart(breathingRateLineGraph, 60);
             dataChart.serieName = "Breathing Rate";
-            string path = "../../data files/breathingRateCSV.csv";
+            string path = "../../../Patient-Monitoring-System/data files/breathingRateCSV.csv";
             string line;
 
             try
@@ -307,9 +310,10 @@ namespace BedsideSystem
                     string[] columns = line.Split(',');
                     foreach (string column in columns)
                     {
-                        
+                        if (run)
+                        {
                             double value = double.Parse(column);
-                            await Task.Delay(2000);
+                            await Task.Delay(1500);
                             await Task.Factory.StartNew(() =>
                             {
                                 dataChart.TriggeredUpdate(value);
@@ -353,7 +357,13 @@ namespace BedsideSystem
                             //    MessageBox.Show("Insert Data failed");
                             //    break;
                             //}
-                        
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+
 
                     }
 
@@ -372,14 +382,14 @@ namespace BedsideSystem
             run = true;
             haltButton.Visible = true;
             startBtn.Visible = false;
-            
-                backgroundWorkerBeep.RunWorkerAsync(1000);
-                readBloodPressureData();
-                readPulseRateData();
-                readTemperatureData();
-                readBreathingRateData();   
-            
-            
+
+            readBloodPressureData();
+            readPulseRateData();
+            readTemperatureData();
+            readBreathingRateData();
+
+            backgroundWorkerBeep.RunWorkerAsync(1000);
+
         }
 
 
@@ -421,38 +431,21 @@ namespace BedsideSystem
 
         private void backgroundWorkerBeep_DoWork(object sender, DoWorkEventArgs e)
         {
-            counterBP = readFileSize("../../data files/bloodPressureCSV.csv");
-            counterPR = readFileSize("../../data files/pulseRateCSV.csv");
-            counterBR = readFileSize("../../data files/breathingRateCSV.csv"); 
-            counterTemp = readFileSize("../../data files/temperatureCSV.csv");
-            if (counterBP >= counterPR)
-            {
-                if(counterBP >= counterBR){
-                    if(counterBP >= counterTemp)
-                    {
-                        for (int i = 0; i < counterBP; i++)
-                        {
-                            Thread.Sleep(2000);
-                            Console.Beep();
-                        }
-                    }
-                    else
-                    {
-                        for (int i = 0; i < counterTemp; i++)
-                        {
-                            Thread.Sleep(2000);
-                            Console.Beep();
-                        }
-                    }
-                }
-            }   
+            //counterBP = readFileSize("../../data files/bloodPressureCSV.csv");
+            //counterPR = readFileSize("../../data files/pulseRateCSV.csv");
+            //counterBR = readFileSize("../../data files/breathingRateCSV.csv"); 
+            //counterTemp = readFileSize("../../data files/temperatureCSV.csv");
 
-            for(int i = 0; i < counterBP; i++)
+            player.SoundLocation = "../../../Patient-Monitoring-System/Sound/Beep-SoundBible.com-923660219.wav";
+            while (run)
             {
-                Thread.Sleep(-2000);
-                Console.Beep();
+                Thread.Sleep(1500);
+                player.PlaySync();
             }
-        }
+            
+        }   
+
+           
 
         private void haltButton_Click(object sender, EventArgs e)
         {

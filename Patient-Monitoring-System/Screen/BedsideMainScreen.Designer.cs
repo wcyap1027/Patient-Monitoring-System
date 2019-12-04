@@ -85,6 +85,8 @@
             this.breathingRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.temperatureLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorkerBeep = new System.ComponentModel.BackgroundWorker();
+            this.warningPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pulseRateLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.breathingRateLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureLineGraph)).BeginInit();
+            this.warningPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -681,12 +684,39 @@
             // 
             this.backgroundWorkerBeep.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBeep_DoWork);
             // 
+            // warningPanel
+            // 
+            this.warningPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.warningPanel.BackColor = System.Drawing.Color.Red;
+            this.warningPanel.Controls.Add(this.label5);
+            this.warningPanel.Location = new System.Drawing.Point(12, 210);
+            this.warningPanel.Name = "warningPanel";
+            this.warningPanel.Size = new System.Drawing.Size(1357, 264);
+            this.warningPanel.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(410, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(529, 128);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "WARNING";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // BedsideMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1384, 761);
+            this.Controls.Add(this.warningPanel);
             this.Controls.Add(this.temperatureLineGraph);
             this.Controls.Add(this.breathingRateLineGraph);
             this.Controls.Add(this.pulseRateLineGraph);
@@ -724,6 +754,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pulseRateLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.breathingRateLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureLineGraph)).EndInit();
+            this.warningPanel.ResumeLayout(false);
+            this.warningPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -773,5 +805,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart breathingRateLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperatureLineGraph;
         private System.ComponentModel.BackgroundWorker backgroundWorkerBeep;
+        private System.Windows.Forms.Panel warningPanel;
+        private System.Windows.Forms.Label label5;
     }
 }

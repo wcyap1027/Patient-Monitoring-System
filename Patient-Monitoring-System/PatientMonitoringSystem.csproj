@@ -180,6 +180,10 @@
     <EmbeddedResource Include="Screen\BedsideScreen.resx">
       <DependentUpon>BedsideScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data files\bloodPressureCSV.csv" />
+    <None Include="data files\breathingRateCSV.csv" />
+    <None Include="data files\pulseRateCSV.csv" />
+    <None Include="data files\temperatureCSV.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -204,6 +208,9 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\nugetexample.js" />
+    <Content Include="Sound\Beep-SoundBible.com-923660219.wav" />
+    <Content Include="Sound\beep.mp3" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
