@@ -34,36 +34,36 @@
             this.patientInformationBtn = new System.Windows.Forms.Button();
             this.alarmReportBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.patientIDcomboBox = new System.Windows.Forms.ComboBox();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.viewBtn = new System.Windows.Forms.Button();
+            this.patientIdLabel = new System.Windows.Forms.Label();
+            this.patientGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.patientComboBox = new System.Windows.Forms.ComboBox();
+            this.readingIDtb = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.AlarmGridView = new System.Windows.Forms.DataGridView();
             this.ResetButton = new System.Windows.Forms.Button();
             this.ViewButton = new System.Windows.Forms.Button();
             this.AlarmIDcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.viewBtn = new System.Windows.Forms.Button();
-            this.patientIDTextBox = new System.Windows.Forms.TextBox();
-            this.patientIdLabel = new System.Windows.Forms.Label();
-            this.patientGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.patientIDTB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.patientIDcb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.readingGridView = new System.Windows.Forms.DataGridView();
             this.ResetB = new System.Windows.Forms.Button();
             this.ViewB = new System.Windows.Forms.Button();
-            this.readingTypeTB = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.patientidtextboxx = new System.Windows.Forms.TextBox();
-            this.readingIDtb = new System.Windows.Forms.TextBox();
+            this.BloodPressureCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readingGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +88,7 @@
             // 
             // readingBtn
             // 
-            this.readingBtn.Location = new System.Drawing.Point(449, 91);
+            this.readingBtn.Location = new System.Drawing.Point(451, 91);
             this.readingBtn.Name = "readingBtn";
             this.readingBtn.Size = new System.Drawing.Size(84, 62);
             this.readingBtn.TabIndex = 6;
@@ -118,16 +118,25 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.patientIDcomboBox);
             this.panel1.Controls.Add(this.resetBtn);
             this.panel1.Controls.Add(this.viewBtn);
-            this.panel1.Controls.Add(this.patientIDTextBox);
             this.panel1.Controls.Add(this.patientIdLabel);
             this.panel1.Controls.Add(this.patientGridView);
-            this.panel1.Location = new System.Drawing.Point(26, 160);
+            this.panel1.Location = new System.Drawing.Point(27, 204);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 201);
+            this.panel1.Size = new System.Drawing.Size(548, 201);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // patientIDcomboBox
+            // 
+            this.patientIDcomboBox.FormattingEnabled = true;
+            this.patientIDcomboBox.Location = new System.Drawing.Point(140, 9);
+            this.patientIDcomboBox.Name = "patientIDcomboBox";
+            this.patientIDcomboBox.Size = new System.Drawing.Size(121, 21);
+            this.patientIDcomboBox.TabIndex = 5;
+            this.patientIDcomboBox.SelectedIndexChanged += new System.EventHandler(this.patientIDcomboBox_SelectedIndexChanged);
             // 
             // resetBtn
             // 
@@ -139,10 +148,38 @@
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
+            // viewBtn
+            // 
+            this.viewBtn.Location = new System.Drawing.Point(96, 35);
+            this.viewBtn.Name = "viewBtn";
+            this.viewBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewBtn.TabIndex = 3;
+            this.viewBtn.Text = "View";
+            this.viewBtn.UseVisualStyleBackColor = true;
+            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
+            // 
+            // patientIdLabel
+            // 
+            this.patientIdLabel.AutoSize = true;
+            this.patientIdLabel.Location = new System.Drawing.Point(73, 12);
+            this.patientIdLabel.Name = "patientIdLabel";
+            this.patientIdLabel.Size = new System.Drawing.Size(60, 13);
+            this.patientIdLabel.TabIndex = 1;
+            this.patientIdLabel.Text = "Patient ID :";
+            // 
+            // patientGridView
+            // 
+            this.patientGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientGridView.Location = new System.Drawing.Point(0, 69);
+            this.patientGridView.Name = "patientGridView";
+            this.patientGridView.Size = new System.Drawing.Size(585, 132);
+            this.patientGridView.TabIndex = 0;
+            this.patientGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.patientComboBox);
             this.panel2.Controls.Add(this.readingIDtb);
-            this.panel2.Controls.Add(this.patientidtextboxx);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -151,10 +188,52 @@
             this.panel2.Controls.Add(this.ViewButton);
             this.panel2.Controls.Add(this.AlarmIDcomboBox);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(81, 159);
+            this.panel2.Location = new System.Drawing.Point(265, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(380, 276);
             this.panel2.TabIndex = 11;
+            // 
+            // patientComboBox
+            // 
+            this.patientComboBox.FormattingEnabled = true;
+            this.patientComboBox.Location = new System.Drawing.Point(154, 8);
+            this.patientComboBox.Name = "patientComboBox";
+            this.patientComboBox.Size = new System.Drawing.Size(121, 21);
+            this.patientComboBox.TabIndex = 14;
+            // 
+            // readingIDtb
+            // 
+            this.readingIDtb.Location = new System.Drawing.Point(154, 84);
+            this.readingIDtb.Name = "readingIDtb";
+            this.readingIDtb.Size = new System.Drawing.Size(100, 20);
+            this.readingIDtb.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(73, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Reading ID :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Alarm Date and Time :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(80, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Patient ID :";
             // 
             // AlarmGridView
             // 
@@ -199,62 +278,43 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Alarm ID :";
             // 
-            // viewBtn
-            // 
-            this.viewBtn.Location = new System.Drawing.Point(96, 35);
-            this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Size = new System.Drawing.Size(75, 23);
-            this.viewBtn.TabIndex = 3;
-            this.viewBtn.Text = "View";
-            this.viewBtn.UseVisualStyleBackColor = true;
-            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
-            // 
-            // patientIDTextBox
-            // 
-            this.patientIDTextBox.Location = new System.Drawing.Point(139, 9);
-            this.patientIDTextBox.Name = "patientIDTextBox";
-            this.patientIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.patientIDTextBox.TabIndex = 2;
-            this.patientIDTextBox.TextChanged += new System.EventHandler(this.patientIDTextBox_TextChanged);
-            // 
-            // patientIdLabel
-            // 
-            this.patientIdLabel.AutoSize = true;
-            this.patientIdLabel.Location = new System.Drawing.Point(73, 12);
-            this.patientIdLabel.Name = "patientIdLabel";
-            this.patientIdLabel.Size = new System.Drawing.Size(60, 13);
-            this.patientIdLabel.TabIndex = 1;
-            this.patientIdLabel.Text = "Patient ID :";
-            // 
-            // patientGridView
-            // 
-            this.patientGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientGridView.Location = new System.Drawing.Point(0, 69);
-            this.patientGridView.Name = "patientGridView";
-            this.patientGridView.Size = new System.Drawing.Size(475, 132);
-            this.patientGridView.TabIndex = 0;
-            this.patientGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.patientIDTB);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.patientIDcb);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.readingGridView);
             this.panel3.Controls.Add(this.ResetB);
             this.panel3.Controls.Add(this.ViewB);
-            this.panel3.Controls.Add(this.readingTypeTB);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(453, 159);
+            this.panel3.Controls.Add(this.BloodPressureCB);
+            this.panel3.Location = new System.Drawing.Point(186, 169);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 237);
+            this.panel3.Size = new System.Drawing.Size(380, 347);
             this.panel3.TabIndex = 12;
             // 
-            // patientIDTB
+            // label3
             // 
-            this.patientIDTB.Location = new System.Drawing.Point(136, 10);
-            this.patientIDTB.Name = "patientIDTB";
-            this.patientIDTB.Size = new System.Drawing.Size(100, 20);
-            this.patientIDTB.TabIndex = 9;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Optional :";
+            // 
+            // patientIDcb
+            // 
+            this.patientIDcb.FormattingEnabled = true;
+            this.patientIDcb.Items.AddRange(new object[] {
+            "Blood Pressure",
+            "Breathing Rate",
+            "Pulse Rate ",
+            "Temperature"});
+            this.patientIDcb.Location = new System.Drawing.Point(136, 10);
+            this.patientIDcb.Name = "patientIDcb";
+            this.patientIDcb.Size = new System.Drawing.Size(121, 21);
+            this.patientIDcb.TabIndex = 10;
+            this.patientIDcb.SelectedIndexChanged += new System.EventHandler(this.patientIDcb_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -265,17 +325,18 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Patient ID :";
             // 
-            // dataGridView1
+            // readingGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(475, 132);
-            this.dataGridView1.TabIndex = 5;
+            this.readingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.readingGridView.Location = new System.Drawing.Point(7, 132);
+            this.readingGridView.Name = "readingGridView";
+            this.readingGridView.Size = new System.Drawing.Size(475, 215);
+            this.readingGridView.TabIndex = 5;
+            this.readingGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.readingGridView_CellContentClick);
             // 
             // ResetB
             // 
-            this.ResetB.Location = new System.Drawing.Point(182, 72);
+            this.ResetB.Location = new System.Drawing.Point(182, 83);
             this.ResetB.Name = "ResetB";
             this.ResetB.Size = new System.Drawing.Size(75, 23);
             this.ResetB.TabIndex = 7;
@@ -285,75 +346,27 @@
             // 
             // ViewB
             // 
-            this.ViewB.Location = new System.Drawing.Point(50, 72);
+            this.ViewB.Location = new System.Drawing.Point(63, 83);
             this.ViewB.Name = "ViewB";
             this.ViewB.Size = new System.Drawing.Size(75, 23);
             this.ViewB.TabIndex = 5;
             this.ViewB.Text = "View";
             this.ViewB.UseVisualStyleBackColor = true;
+            this.ViewB.Click += new System.EventHandler(this.ViewB_Click);
             // 
-            // readingTypeTB
+            // BloodPressureCB
             // 
-            this.readingTypeTB.FormattingEnabled = true;
-            this.readingTypeTB.Items.AddRange(new object[] {
+            this.BloodPressureCB.FormattingEnabled = true;
+            this.BloodPressureCB.Items.AddRange(new object[] {
             "Blood Pressure",
             "Breathing Rate",
             "Pulse Rate ",
             "Temperature"});
-            this.readingTypeTB.Location = new System.Drawing.Point(136, 45);
-            this.readingTypeTB.Name = "readingTypeTB";
-            this.readingTypeTB.Size = new System.Drawing.Size(121, 21);
-            this.readingTypeTB.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Reading Type :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Patient ID :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Alarm Date and Time :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(73, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Reading ID :";
-            // 
-            // patientidtextboxx
-            // 
-            this.patientidtextboxx.Location = new System.Drawing.Point(154, 11);
-            this.patientidtextboxx.Name = "patientidtextboxx";
-            this.patientidtextboxx.Size = new System.Drawing.Size(100, 20);
-            this.patientidtextboxx.TabIndex = 10;
-            // 
-            // readingIDtb
-            // 
-            this.readingIDtb.Location = new System.Drawing.Point(154, 84);
-            this.readingIDtb.Name = "readingIDtb";
-            this.readingIDtb.Size = new System.Drawing.Size(100, 20);
-            this.readingIDtb.TabIndex = 13;
+            this.BloodPressureCB.Location = new System.Drawing.Point(136, 45);
+            this.BloodPressureCB.Name = "BloodPressureCB";
+            this.BloodPressureCB.Size = new System.Drawing.Size(121, 21);
+            this.BloodPressureCB.TabIndex = 6;
+            this.BloodPressureCB.SelectedIndexChanged += new System.EventHandler(this.readingTypeTB_SelectedIndexChanged);
             // 
             // ManagerMainScreen
             // 
@@ -361,7 +374,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 402);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.alarmReportBtn);
             this.Controls.Add(this.patientInformationBtn);
@@ -373,13 +385,13 @@
             this.Load += new System.EventHandler(this.ManagerMainScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readingGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +406,6 @@
         private System.Windows.Forms.Button alarmReportBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView patientGridView;
-        private System.Windows.Forms.TextBox patientIDTextBox;
         private System.Windows.Forms.Label patientIdLabel;
         private System.Windows.Forms.Button resetBtn;
         private System.Windows.Forms.Button viewBtn;
@@ -405,17 +416,18 @@
         private System.Windows.Forms.ComboBox AlarmIDcomboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox patientIDTB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView readingGridView;
         private System.Windows.Forms.Button ResetB;
         private System.Windows.Forms.Button ViewB;
-        private System.Windows.Forms.ComboBox readingTypeTB;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox BloodPressureCB;
         private System.Windows.Forms.TextBox readingIDtb;
-        private System.Windows.Forms.TextBox patientidtextboxx;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox patientIDcomboBox;
+        private System.Windows.Forms.ComboBox patientComboBox;
+        private System.Windows.Forms.ComboBox patientIDcb;
+        private System.Windows.Forms.Label label3;
     }
 }
