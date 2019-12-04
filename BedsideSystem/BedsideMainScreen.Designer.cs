@@ -84,6 +84,7 @@
             this.pulseRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.breathingRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.temperatureLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.backgroundWorkerBeep = new System.ComponentModel.BackgroundWorker();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -671,6 +672,10 @@
             this.temperatureLineGraph.TabIndex = 8;
             this.temperatureLineGraph.Text = "chart1";
             // 
+            // backgroundWorkerBeep
+            // 
+            this.backgroundWorkerBeep.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBeep_DoWork);
+            // 
             // BedsideMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,5 +767,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart pulseRateLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart breathingRateLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperatureLineGraph;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerBeep;
     }
 }

@@ -240,4 +240,7 @@
         Cs4D4bfAUHVik1cf3xHBf6dzxy/xXy9evHjx4sXL82DAgP8BjIGXGs6ViusAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="backgroundWorkerBeep.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
