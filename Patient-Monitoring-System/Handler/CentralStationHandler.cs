@@ -3,12 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Patient_Monitoring_System.Class;
 
 namespace Patient_Monitoring_System
 {
     public class CentralStationHandler
     {
+        public List<CentralStation> getAllCentralStation(MySqlConnection conn)
+        {
+            List<CentralStation> listCentralStation = new List<CentralStation>();
+            string sql = "SELECT * FROM centralstation";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            try
+            {
+                MySqlDataReader myReader;
+                myReader = sqlComm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    CentralStation centralStation = new CentralStation();
+                    centralStation.Id = (int)myReader.GetValue(0);
+                    centralStation.CentralStationName = (string)myReader.GetValue(1);
+                    listCentralStation.Add(centralStation);
+                }
+                myReader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return listCentralStation;
+        }
         public string getBayName(MySqlConnection conn, string bayN)
         {
             CentralStation centralStation = new CentralStation();
@@ -25,8 +53,8 @@ namespace Patient_Monitoring_System
                     
                     centralStation.Id = (int)myReader.GetValue(0);
                     centralStation.CentralStationName = (string)myReader.GetValue(1);
-                    
                 }
+                myReader.Close();
             }
             catch(Exception e)
             {
@@ -35,8 +63,99 @@ namespace Patient_Monitoring_System
 
             bayName = centralStation.CentralStationName;
             return bayName;
+        }
 
+        public List<Bedside> getAllBedsideMonitor(MySqlConnection conn, string bayN)
+        {
+            int id = 0;
 
+            List<Bedside> listBedside = new List<Bedside>();
+            string sql = "SELECT id FROM centralstation WHERE centralStationName='"+bayN+"'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var qrId = sqlComm.ExecuteScalar();
+
+            if (qrId != null)
+            {
+                id = Convert.ToInt32(qrId);
+            }
+
+            string getAllBedsideSql = "Select * FROM bedsidemonitor WHERE centralStation_id='" + id + "'";
+            MySqlCommand comm = new MySqlCommand(getAllBedsideSql, conn);
+
+            try
+            {
+                MySqlDataReader myReader;
+                myReader = comm.ExecuteReader();
+                while(myReader.Read())
+                {
+                    Bedside bedside = new Bedside();
+                    bedside.Id = (int)myReader.GetValue(0);
+                    bedside.Status = (bool)myReader.GetValue(2);
+                    listBedside.Add(bedside);
+                }
+                myReader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return listBedside;
+        }
+
+        public double getMaxValue(MySqlConnection conn, Bedside bedside)
+        {
+            int id = 0;
+            int lastId = 0;
+            double bloodpressurevalue = 0.0;
+
+            string sql = "SELECT patient.id FROM patient WHERE bedsideId='" + bedside.Id + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            var qrId = sqlComm.ExecuteScalar();
+            if(qrId != null)
+            {
+                id = Convert.ToInt32(qrId);   
+                if(id > 0)
+                {
+                    string sqlmaxId = "SELECT MAX(ID) FROM bloodpressure WHERE patient_id='" + id + "'";
+                    MySqlCommand sqlComm2 = new MySqlCommand(sqlmaxId, conn);
+
+                    var maxId = sqlComm2.ExecuteScalar();
+                    if (maxId != null)
+                    {
+                        lastId = Convert.ToInt32(maxId);
+                        string sqlMaxBP = "SELECT bloodPressureValue FROM bloodpressure WHERE patient_id='" + id + "' AND id='" + lastId + "'";
+                        MySqlCommand sqlComm3 = new MySqlCommand(sqlMaxBP, conn);
+
+                        var lastBloodPressureValue = sqlComm3.ExecuteScalar();
+
+                        if (lastBloodPressureValue != null)
+                        {
+                            bloodpressurevalue = Convert.ToDouble(lastBloodPressureValue);
+                        }
+                    }
+
+                }
+            }
+
+            return bloodpressurevalue;
+        }
+
+        public void FetchCentralStationName(ComboBox selectedcomboBox)
+        {
+            selectedcomboBox.Items.Add("--Select ID--");
+
+            selectedcomboBox.SelectedIndex = 0;
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            CentralStationHandler centralStationHand = new CentralStationHandler();
+            List<CentralStation> listCentralStation = new List<CentralStation>();
+            listCentralStation = centralStationHand.getAllCentralStation(dbC.getConn());
+            for (int i = 0; i < listCentralStation.Count; i++)
+            {
+                selectedcomboBox.Items.Add(listCentralStation[i].CentralStationName);
+            }
         }
     }
 }

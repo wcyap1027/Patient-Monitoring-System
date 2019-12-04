@@ -43,12 +43,12 @@
             this.assignBtn = new System.Windows.Forms.Button();
             this.existingBtn = new System.Windows.Forms.Button();
             this.existingPanel = new System.Windows.Forms.Panel();
+            this.patientIdTextBox = new System.Windows.Forms.TextBox();
             this.backExistingBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.continueExistingBtn = new System.Windows.Forms.Button();
             this.bedsideIdExistingComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.patientIdTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.assignPanel.SuspendLayout();
@@ -219,6 +219,15 @@
             this.existingPanel.Size = new System.Drawing.Size(304, 178);
             this.existingPanel.TabIndex = 12;
             // 
+            // patientIdTextBox
+            // 
+            this.patientIdTextBox.Enabled = false;
+            this.patientIdTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientIdTextBox.Location = new System.Drawing.Point(104, 55);
+            this.patientIdTextBox.Name = "patientIdTextBox";
+            this.patientIdTextBox.Size = new System.Drawing.Size(168, 29);
+            this.patientIdTextBox.TabIndex = 11;
+            // 
             // backExistingBtn
             // 
             this.backExistingBtn.BackColor = System.Drawing.Color.DodgerBlue;
@@ -277,21 +286,12 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Patient ID:";
             // 
-            // patientIdTextBox
-            // 
-            this.patientIdTextBox.Enabled = false;
-            this.patientIdTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientIdTextBox.Location = new System.Drawing.Point(104, 55);
-            this.patientIdTextBox.Name = "patientIdTextBox";
-            this.patientIdTextBox.Size = new System.Drawing.Size(168, 29);
-            this.patientIdTextBox.TabIndex = 11;
-            // 
-            // BedsideLogin
+            // BedsideLoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(808, 266);
+            this.ClientSize = new System.Drawing.Size(814, 261);
             this.Controls.Add(this.existingPanel);
             this.Controls.Add(this.showMenuPanel);
             this.Controls.Add(this.assignPanel);
@@ -301,7 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BedsideLogin";
+            this.Name = "BedsideLoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bedside System";
             this.Load += new System.EventHandler(this.BedsideLogin_Load);
