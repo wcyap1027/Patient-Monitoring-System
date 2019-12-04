@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlarmScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bPMax = new System.Windows.Forms.TextBox();
             this.bPMin = new System.Windows.Forms.TextBox();
@@ -62,13 +63,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.bPMax);
             this.panel1.Controls.Add(this.bPMin);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Location = new System.Drawing.Point(51, 29);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 150);
@@ -82,6 +83,7 @@
             this.bPMax.Name = "bPMax";
             this.bPMax.Size = new System.Drawing.Size(145, 26);
             this.bPMax.TabIndex = 6;
+            this.bPMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bPMax_KeyPress);
             // 
             // bPMin
             // 
@@ -91,6 +93,7 @@
             this.bPMin.Name = "bPMin";
             this.bPMin.Size = new System.Drawing.Size(145, 26);
             this.bPMin.TabIndex = 5;
+            this.bPMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bPMin_KeyPress);
             // 
             // label4
             // 
@@ -130,12 +133,13 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.tempMax);
             this.panel2.Controls.Add(this.tempMin);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(313, 10);
+            this.panel2.Location = new System.Drawing.Point(401, 29);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 150);
@@ -149,6 +153,7 @@
             this.tempMax.Name = "tempMax";
             this.tempMax.Size = new System.Drawing.Size(144, 26);
             this.tempMax.TabIndex = 6;
+            this.tempMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tempMax_KeyPress);
             // 
             // tempMin
             // 
@@ -158,6 +163,7 @@
             this.tempMin.Name = "tempMin";
             this.tempMin.Size = new System.Drawing.Size(144, 26);
             this.tempMin.TabIndex = 5;
+            this.tempMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tempMin_KeyPress);
             // 
             // label5
             // 
@@ -197,12 +203,13 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.pulseMax);
             this.panel3.Controls.Add(this.pulseMin);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(9, 164);
+            this.panel3.Location = new System.Drawing.Point(51, 196);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(299, 150);
@@ -216,6 +223,7 @@
             this.pulseMax.Name = "pulseMax";
             this.pulseMax.Size = new System.Drawing.Size(144, 26);
             this.pulseMax.TabIndex = 6;
+            this.pulseMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pulseMax_KeyPress);
             // 
             // pulseMin
             // 
@@ -225,6 +233,7 @@
             this.pulseMin.Name = "pulseMin";
             this.pulseMin.Size = new System.Drawing.Size(144, 26);
             this.pulseMin.TabIndex = 5;
+            this.pulseMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pulseMin_KeyPress);
             // 
             // label9
             // 
@@ -264,12 +273,13 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.breathMax);
             this.panel4.Controls.Add(this.breathMin);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Location = new System.Drawing.Point(313, 164);
+            this.panel4.Location = new System.Drawing.Point(401, 196);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(299, 150);
@@ -283,6 +293,7 @@
             this.breathMax.Name = "breathMax";
             this.breathMax.Size = new System.Drawing.Size(145, 26);
             this.breathMax.TabIndex = 6;
+            this.breathMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.breathMax_KeyPress);
             // 
             // breathMin
             // 
@@ -292,6 +303,7 @@
             this.breathMin.Name = "breathMin";
             this.breathMin.Size = new System.Drawing.Size(144, 26);
             this.breathMin.TabIndex = 5;
+            this.breathMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.breathMin_KeyPress);
             // 
             // label13
             // 
@@ -333,9 +345,10 @@
             // 
             this.confirmBtnAlarm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.confirmBtnAlarm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmBtnAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirmBtnAlarm.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmBtnAlarm.ForeColor = System.Drawing.Color.White;
-            this.confirmBtnAlarm.Location = new System.Drawing.Point(212, 323);
+            this.confirmBtnAlarm.Location = new System.Drawing.Point(284, 407);
             this.confirmBtnAlarm.Margin = new System.Windows.Forms.Padding(2);
             this.confirmBtnAlarm.Name = "confirmBtnAlarm";
             this.confirmBtnAlarm.Size = new System.Drawing.Size(96, 32);
@@ -348,9 +361,10 @@
             // 
             this.resetAlarmBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.resetAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetAlarmBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetAlarmBtn.ForeColor = System.Drawing.Color.White;
-            this.resetAlarmBtn.Location = new System.Drawing.Point(313, 323);
+            this.resetAlarmBtn.Location = new System.Drawing.Point(425, 407);
             this.resetAlarmBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetAlarmBtn.Name = "resetAlarmBtn";
             this.resetAlarmBtn.Size = new System.Drawing.Size(96, 32);
@@ -363,8 +377,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(624, 366);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.resetAlarmBtn);
             this.Controls.Add(this.confirmBtnAlarm);
             this.Controls.Add(this.panel4);
@@ -372,9 +388,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "AlarmScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AlarmScreen";
+            this.Text = "Reading Screen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
