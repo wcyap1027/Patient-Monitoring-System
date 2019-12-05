@@ -59,6 +59,18 @@ namespace Manager
             dBConn.connect();
             PatientHandler patientHandler = new PatientHandler();
             patientHandler.FetchId(patientIDcomboBox);
+            
+        }
+
+        private void FetchTableName(ComboBox selectedcomboBox)
+        {
+            selectedcomboBox.Items.Clear();
+            selectedcomboBox.Items.Add("--Select Table Name--");
+            selectedcomboBox.Items.Add("BloodPressure");
+            selectedcomboBox.Items.Add("BreathingRate");
+            selectedcomboBox.Items.Add("PulseRate");
+            selectedcomboBox.Items.Add("Temperature");
+            selectedcomboBox.SelectedIndex = 0;
         }
 
         private void readingBtn_Click(object sender, EventArgs e)
@@ -70,6 +82,9 @@ namespace Manager
             dBConn.connect();
             PatientHandler patientHandler = new PatientHandler();
             patientHandler.FetchId(patientIDcb);
+            FetchTableName(optional1ComboBox);
+            //FetchTableName(optional2ComboBox);
+            //FetchTableName(optional3ComboBox);
         }
 
         private void viewBtn_Click(object sender, EventArgs e)
@@ -129,6 +144,10 @@ namespace Manager
             panel1.Hide();
             panel2.Show();
             panel3.Hide();
+            DbConnector dBConn = new DbConnector();
+            dBConn.connect();
+            PatientHandler patientHandler = new PatientHandler();
+            patientHandler.FetchId(patientComboBox);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -163,15 +182,12 @@ namespace Manager
                        
         }
 
-
-        
-
         private void ViewB_Click(object sender, EventArgs e)
         {
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
             PatientHandler patientHandler = new PatientHandler();
-            BloodPressureHandler bphandler = new BloodPressureHandler();
+            //BloodPressureHandler bphandler = new BloodPressureHandler();
 
             int patientId = int.Parse(patientIDcb.Text);
             //string optionId = option1ComboBox.Text;
@@ -179,38 +195,49 @@ namespace Manager
             bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
             //bool status1 = bphandler.checkOption(dbConn.getConn(), optionId);
 
-            string selected = this.option1ComboBox.GetItemText(this.option1ComboBox.SelectedItem);
+            string selected1 = optional1ComboBox.SelectedItem.ToString().ToLower();
+            //string selected2 = optional2ComboBox.SelectedItem.ToString().ToLower();
+            //string selected3 = optional3ComboBox.SelectedItem.ToString().ToLower();
 
             if (status)
             {
-                if(selected == "Blood Pressure")
+                if(optional1ComboBox.SelectedIndex > 0 /*&& optional2ComboBox.SelectedIndex == 0 && optional3ComboBox.SelectedIndex == 0*/)
                 {
-                    status = true;
-                    MessageBox.Show("Exist");
-                    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                    readingGridView.DataSource = patientHandler.patientWithOptional(dbConn.getConn(), patientId, selected1);
                 }
-                
-                //string sql = "SELECT patient_id FROM bloodpressure WHERE patient_id='" + patientIDcb.Text + "'";
-                //MySqlCommand sqlComm = new MySqlCommand(sql, dbConn.getConn());
+                //else if (optional1ComboBox.SelectedIndex > 0 && optional2ComboBox.SelectedIndex > 0 && optional3ComboBox.SelectedIndex == 0)
+                //{
+                //    readingGridView.DataSource = patientHandler.patientWith2Optional(dbConn.getConn(), patientId, selected1, selected2);
+                //}
 
-                //var qId = sqlComm.ExecuteScalar();
-
-                //if (qId != null)
+                //if(selected == "Blood Pressure")
                 //{
                 //    status = true;
                 //    MessageBox.Show("Exist");
-                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
-                //}
-                //else
-                //{
-                //    status = false;
+                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), optionalComboBox.Text);
                 //}
 
-                //if (status1)
-                //{
+                    //string sql = "SELECT patient_id FROM bloodpressure WHERE patient_id='" + patientIDcb.Text + "'";
+                    //MySqlCommand sqlComm = new MySqlCommand(sql, dbConn.getConn());
 
-                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
-                //}
+                    //var qId = sqlComm.ExecuteScalar();
+
+                    //if (qId != null)
+                    //{
+                    //    status = true;
+                    //    MessageBox.Show("Exist");
+                    //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                    //}
+                    //else
+                    //{
+                    //    status = false;
+                    //}
+
+                    //if (status1)
+                    //{
+
+                    //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
+                    //}
             }
             else
             {
@@ -230,6 +257,36 @@ namespace Manager
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
+            PatientHandler patientHandler = new PatientHandler();
+
+            int patientId = int.Parse(patientComboBox.Text);
+
+            bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
+
+            string selected = optional1ComboBox.SelectedItem.ToString().ToLower();
+
+            if (status)
+            {
+                if (optional1ComboBox.SelectedIndex > 0)
+                {
+                    AlarmGridView.DataSource = patientHandler.patientAlarm(dbConn.getConn(), patientId, selected);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void alarmDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
         }

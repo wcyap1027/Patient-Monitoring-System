@@ -275,6 +275,93 @@ namespace Patient_Monitoring_System
             }
         }
 
-       
+        public DataTable patientWithOptional(MySqlConnection conn, int patientId, string optional1)
+        {
+            string columnName = "";
+            if(optional1 == "bloodpressure")
+            {
+                columnName = "bloodPressure";
+            }
+            else if(optional1 == "pulserate")
+            {
+                columnName = "pulseRate";
+            }
+            else if(optional1 == "breathingrate")
+            {
+                columnName = "breathingRate";
+            }
+            else if(optional1 == "temperature")
+            {
+                columnName = "temperature";
+            }
+
+            string sql = "SELECT "+ optional1 + ".id, "+ optional1 + "."+columnName+"Value, "+ optional1 + "." + columnName + "Time, " + optional1 + "." + columnName + "Date FROM " + optional1 + " WHERE "+ optional1 + ".patient_id='" + patientId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sqlComm);
+            DataTable dt = new DataTable();
+            mySqlDataAdapter.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
+        public DataTable patientAlarm(MySqlConnection conn, int patientId, ComboBox selectedComboBox)
+        {
+            
+            string sql = "SELECT alarm.id, alarm.alarmLevel, alarm.dateTimeTrigger, alarm.dateTimeMuted, reading.patient_id FROM alarm INNER JOIN reading ON alarm.reading_id = reading.id where reading.patient_id = ;" + patientId;
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sqlComm);
+            DataTable dt = new DataTable();
+            mySqlDataAdapter.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
+        //public DataTable patientWith2Optional(MySqlConnection conn, int patientId, string optional1, string optional2)
+        //{
+        //    string columnName1 = "";
+        //    string columnName2 = "";
+        //    if (optional1 == "bloodpressure")
+        //    {
+        //        columnName1 = "bloodPressure";
+        //    }
+        //    else if (optional1 == "pulserate")
+        //    {
+        //        columnName1 = "pulseRate";
+        //    }
+        //    else if (optional1 == "breathingrate")
+        //    {
+        //        columnName1 = "breathingRate";
+        //    }
+        //    else if (optional1 == "temperature")
+        //    {
+        //        columnName1 = "temperature";
+        //    }
+
+        //    if (optional2 == "bloodpressure")
+        //    {
+        //        columnName2 = "bloodPressure";
+        //    }
+        //    else if (optional2 == "pulserate")
+        //    {
+        //        columnName2 = "pulseRate";
+        //    }
+        //    else if (optional2 == "breathingrate")
+        //    {
+        //        columnName2 = "breathingRate";
+        //    }
+        //    else if (optional2 == "temperature")
+        //    {
+        //        columnName2 = "temperature";
+        //    }
+
+        //    string sql = "SELECT " + optional1 + "." + columnName1 + "Value, " + optional1 + "." + columnName1 + "Time, " + optional1 + "." + columnName1 + "Date, "+optional2+"."+columnName2+"Value, "+optional2+"."+columnName2+"Time, "+optional2+"."+columnName2+"Date FROM patient INNER JOIN "+optional1+" ON +"+optional1+".patient_id = "+patientId+" INNER JOIN "+optional2+" ON "+optional2+".patient_id= "+patientId+"";
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+        //    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sqlComm);
+        //    DataTable dt = new DataTable();
+        //    mySqlDataAdapter.Fill(dt);
+        //    conn.Close();
+        //    return dt;
+        //}
+
     }
 }
