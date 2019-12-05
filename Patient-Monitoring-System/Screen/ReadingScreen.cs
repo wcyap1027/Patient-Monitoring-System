@@ -130,6 +130,7 @@ namespace Patient_Monitoring_System
                 if (result == 1)
                 {
                     MessageBox.Show("The minimum and maximum value is ready to test");
+                    Close();
                 }
                 else
                 {
