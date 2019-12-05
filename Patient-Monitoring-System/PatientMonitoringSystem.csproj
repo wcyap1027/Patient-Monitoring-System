@@ -208,8 +208,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\nugetexample.js" />
-    <Content Include="Sound\Beep-SoundBible.com-923660219.wav" />
-    <Content Include="Sound\beep.mp3" />
+    <Content Include="Sound\alarm.wav" />
+    <Content Include="Sound\beep.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

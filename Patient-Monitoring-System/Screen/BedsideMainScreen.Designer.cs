@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedsideMainScreen));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend29 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend30 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea31 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend31 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea32 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend32 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.bloodPressureStatus = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.minBloodPressureLabel = new System.Windows.Forms.Label();
+            this.maxBloodPressureLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bloodPressureCurrentValue = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pulseRateStatus = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.minPulseRateLabel = new System.Windows.Forms.Label();
+            this.maxPulseRateLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pulseRateCurrentValue = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.breathingRateStatus = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.minBreathingRateLabel = new System.Windows.Forms.Label();
+            this.maxBreathingRateLabel = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.breathingRateCurrentValue = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.temperatureStatus = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.minTemperatureLabel = new System.Windows.Forms.Label();
+            this.maxTemperatureLabel = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.temperatureCurrentValue = new System.Windows.Forms.Label();
@@ -85,8 +85,9 @@
             this.breathingRateLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.temperatureLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorkerBeep = new System.ComponentModel.BackgroundWorker();
-            this.warningPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.backgroundWorkerAlarmReading = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerAlarmZero = new System.ComponentModel.BackgroundWorker();
+            this.muteAlarmBtn = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pulseRateLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.breathingRateLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureLineGraph)).BeginInit();
-            this.warningPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -152,12 +152,12 @@
             this.panel5.BackColor = System.Drawing.Color.SkyBlue;
             this.panel5.Controls.Add(this.bloodPressureStatus);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.minBloodPressureLabel);
+            this.panel5.Controls.Add(this.maxBloodPressureLabel);
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.bloodPressureCurrentValue);
-            this.panel5.Location = new System.Drawing.Point(957, 13);
+            this.panel5.Location = new System.Drawing.Point(953, 13);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 175);
             this.panel5.TabIndex = 3;
@@ -173,25 +173,25 @@
             this.bloodPressureStatus.Text = "PRE-HIGH";
             this.bloodPressureStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // minBloodPressureLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 25);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "120";
+            this.minBloodPressureLabel.AutoSize = true;
+            this.minBloodPressureLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minBloodPressureLabel.Location = new System.Drawing.Point(36, 142);
+            this.minBloodPressureLabel.Name = "minBloodPressureLabel";
+            this.minBloodPressureLabel.Size = new System.Drawing.Size(45, 25);
+            this.minBloodPressureLabel.TabIndex = 4;
+            this.minBloodPressureLabel.Text = "120";
             // 
-            // label8
+            // maxBloodPressureLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 25);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "120";
+            this.maxBloodPressureLabel.AutoSize = true;
+            this.maxBloodPressureLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxBloodPressureLabel.Location = new System.Drawing.Point(36, 106);
+            this.maxBloodPressureLabel.Name = "maxBloodPressureLabel";
+            this.maxBloodPressureLabel.Size = new System.Drawing.Size(45, 25);
+            this.maxBloodPressureLabel.TabIndex = 3;
+            this.maxBloodPressureLabel.Text = "120";
             // 
             // pictureBox2
             // 
@@ -228,15 +228,15 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Goldenrod;
             this.panel6.Controls.Add(this.pulseRateStatus);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.minPulseRateLabel);
+            this.panel6.Controls.Add(this.maxPulseRateLabel);
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.pulseRateCurrentValue);
-            this.panel6.Location = new System.Drawing.Point(957, 195);
+            this.panel6.Location = new System.Drawing.Point(953, 194);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 161);
+            this.panel6.Size = new System.Drawing.Size(250, 175);
             this.panel6.TabIndex = 4;
             // 
             // pulseRateStatus
@@ -250,25 +250,25 @@
             this.pulseRateStatus.Text = "PRE-HIGH";
             this.pulseRateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // minPulseRateLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 133);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 25);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "120";
+            this.minPulseRateLabel.AutoSize = true;
+            this.minPulseRateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minPulseRateLabel.Location = new System.Drawing.Point(39, 133);
+            this.minPulseRateLabel.Name = "minPulseRateLabel";
+            this.minPulseRateLabel.Size = new System.Drawing.Size(45, 25);
+            this.minPulseRateLabel.TabIndex = 8;
+            this.minPulseRateLabel.Text = "120";
             // 
-            // label11
+            // maxPulseRateLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(39, 97);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 25);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "120";
+            this.maxPulseRateLabel.AutoSize = true;
+            this.maxPulseRateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxPulseRateLabel.Location = new System.Drawing.Point(39, 97);
+            this.maxPulseRateLabel.Name = "maxPulseRateLabel";
+            this.maxPulseRateLabel.Size = new System.Drawing.Size(45, 25);
+            this.maxPulseRateLabel.TabIndex = 7;
+            this.maxPulseRateLabel.Text = "120";
             // 
             // pictureBox3
             // 
@@ -304,15 +304,15 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel7.Controls.Add(this.breathingRateStatus);
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.minBreathingRateLabel);
+            this.panel7.Controls.Add(this.maxBreathingRateLabel);
             this.panel7.Controls.Add(this.pictureBox5);
             this.panel7.Controls.Add(this.pictureBox6);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.breathingRateCurrentValue);
-            this.panel7.Location = new System.Drawing.Point(957, 375);
+            this.panel7.Location = new System.Drawing.Point(953, 375);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(250, 161);
+            this.panel7.Size = new System.Drawing.Size(250, 174);
             this.panel7.TabIndex = 4;
             // 
             // breathingRateStatus
@@ -326,25 +326,25 @@
             this.breathingRateStatus.Text = "PRE-HIGH";
             this.breathingRateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // minBreathingRateLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(39, 131);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 25);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "120";
+            this.minBreathingRateLabel.AutoSize = true;
+            this.minBreathingRateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minBreathingRateLabel.Location = new System.Drawing.Point(39, 131);
+            this.minBreathingRateLabel.Name = "minBreathingRateLabel";
+            this.minBreathingRateLabel.Size = new System.Drawing.Size(45, 25);
+            this.minBreathingRateLabel.TabIndex = 8;
+            this.minBreathingRateLabel.Text = "120";
             // 
-            // label13
+            // maxBreathingRateLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 95);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 25);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "120";
+            this.maxBreathingRateLabel.AutoSize = true;
+            this.maxBreathingRateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxBreathingRateLabel.Location = new System.Drawing.Point(39, 95);
+            this.maxBreathingRateLabel.Name = "maxBreathingRateLabel";
+            this.maxBreathingRateLabel.Size = new System.Drawing.Size(45, 25);
+            this.maxBreathingRateLabel.TabIndex = 7;
+            this.maxBreathingRateLabel.Text = "120";
             // 
             // pictureBox5
             // 
@@ -380,15 +380,15 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.IndianRed;
             this.panel8.Controls.Add(this.temperatureStatus);
-            this.panel8.Controls.Add(this.label14);
-            this.panel8.Controls.Add(this.label15);
+            this.panel8.Controls.Add(this.minTemperatureLabel);
+            this.panel8.Controls.Add(this.maxTemperatureLabel);
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Controls.Add(this.pictureBox8);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Controls.Add(this.temperatureCurrentValue);
-            this.panel8.Location = new System.Drawing.Point(957, 555);
+            this.panel8.Location = new System.Drawing.Point(953, 555);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(250, 165);
+            this.panel8.Size = new System.Drawing.Size(250, 176);
             this.panel8.TabIndex = 4;
             // 
             // temperatureStatus
@@ -402,25 +402,25 @@
             this.temperatureStatus.Text = "PRE-HIGH";
             this.temperatureStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // minTemperatureLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(39, 136);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 25);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "120";
+            this.minTemperatureLabel.AutoSize = true;
+            this.minTemperatureLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minTemperatureLabel.Location = new System.Drawing.Point(39, 136);
+            this.minTemperatureLabel.Name = "minTemperatureLabel";
+            this.minTemperatureLabel.Size = new System.Drawing.Size(45, 25);
+            this.minTemperatureLabel.TabIndex = 8;
+            this.minTemperatureLabel.Text = "120";
             // 
-            // label15
+            // maxTemperatureLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(39, 100);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 25);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "120";
+            this.maxTemperatureLabel.AutoSize = true;
+            this.maxTemperatureLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxTemperatureLabel.Location = new System.Drawing.Point(39, 100);
+            this.maxTemperatureLabel.Name = "maxTemperatureLabel";
+            this.maxTemperatureLabel.Size = new System.Drawing.Size(45, 25);
+            this.maxTemperatureLabel.TabIndex = 7;
+            this.maxTemperatureLabel.Text = "120";
             // 
             // pictureBox7
             // 
@@ -460,9 +460,9 @@
             this.panel9.Controls.Add(this.startBtn);
             this.panel9.Controls.Add(this.haltButton);
             this.panel9.Controls.Add(this.button1);
-            this.panel9.Location = new System.Drawing.Point(1224, 13);
+            this.panel9.Location = new System.Drawing.Point(1220, 13);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(148, 745);
+            this.panel9.Size = new System.Drawing.Size(148, 455);
             this.panel9.TabIndex = 5;
             // 
             // setAlarmBtn
@@ -483,7 +483,7 @@
             // 
             this.testLabel.AutoSize = true;
             this.testLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(48, 542);
+            this.testLabel.Location = new System.Drawing.Point(46, 399);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(35, 47);
             this.testLabel.TabIndex = 4;
@@ -546,34 +546,34 @@
             // bloodPressureLineGraph
             // 
             this.bloodPressureLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderWidth = 5;
-            chartArea1.InnerPlotPosition.Auto = false;
-            chartArea1.InnerPlotPosition.Height = 30.3125F;
-            chartArea1.InnerPlotPosition.Width = 96.74647F;
-            chartArea1.InnerPlotPosition.X = 3F;
-            chartArea1.InnerPlotPosition.Y = 30F;
-            chartArea1.IsSameFontSizeForAllAxes = true;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 100F;
-            chartArea1.Position.Width = 100F;
-            this.bloodPressureLineGraph.ChartAreas.Add(chartArea1);
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.bloodPressureLineGraph.Legends.Add(legend1);
+            chartArea29.BackColor = System.Drawing.Color.Transparent;
+            chartArea29.BorderWidth = 5;
+            chartArea29.InnerPlotPosition.Auto = false;
+            chartArea29.InnerPlotPosition.Height = 30.3125F;
+            chartArea29.InnerPlotPosition.Width = 96.74647F;
+            chartArea29.InnerPlotPosition.X = 3F;
+            chartArea29.InnerPlotPosition.Y = 30F;
+            chartArea29.IsSameFontSizeForAllAxes = true;
+            chartArea29.Name = "ChartArea1";
+            chartArea29.Position.Auto = false;
+            chartArea29.Position.Height = 100F;
+            chartArea29.Position.Width = 100F;
+            this.bloodPressureLineGraph.ChartAreas.Add(chartArea29);
+            legend29.Enabled = false;
+            legend29.Name = "Legend1";
+            this.bloodPressureLineGraph.Legends.Add(legend29);
             this.bloodPressureLineGraph.Location = new System.Drawing.Point(12, 12);
             this.bloodPressureLineGraph.Name = "bloodPressureLineGraph";
             this.bloodPressureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.BorderColor = System.Drawing.Color.Transparent;
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Blood Pressure";
-            this.bloodPressureLineGraph.Series.Add(series1);
+            series29.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series29.BorderColor = System.Drawing.Color.Transparent;
+            series29.BorderWidth = 5;
+            series29.ChartArea = "ChartArea1";
+            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series29.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series29.Legend = "Legend1";
+            series29.Name = "Blood Pressure";
+            this.bloodPressureLineGraph.Series.Add(series29);
             this.bloodPressureLineGraph.Size = new System.Drawing.Size(935, 176);
             this.bloodPressureLineGraph.TabIndex = 0;
             this.bloodPressureLineGraph.Text = "chart1";
@@ -581,33 +581,33 @@
             // pulseRateLineGraph
             // 
             this.pulseRateLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.InnerPlotPosition.Auto = false;
-            chartArea2.InnerPlotPosition.Height = 30.3125F;
-            chartArea2.InnerPlotPosition.Width = 96.74647F;
-            chartArea2.InnerPlotPosition.X = 3F;
-            chartArea2.InnerPlotPosition.Y = 30F;
-            chartArea2.IsSameFontSizeForAllAxes = true;
-            chartArea2.Name = "ChartArea1";
-            chartArea2.Position.Auto = false;
-            chartArea2.Position.Height = 100F;
-            chartArea2.Position.Width = 100F;
-            this.pulseRateLineGraph.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.pulseRateLineGraph.Legends.Add(legend2);
+            chartArea30.BackColor = System.Drawing.Color.Transparent;
+            chartArea30.InnerPlotPosition.Auto = false;
+            chartArea30.InnerPlotPosition.Height = 30.3125F;
+            chartArea30.InnerPlotPosition.Width = 96.74647F;
+            chartArea30.InnerPlotPosition.X = 3F;
+            chartArea30.InnerPlotPosition.Y = 30F;
+            chartArea30.IsSameFontSizeForAllAxes = true;
+            chartArea30.Name = "ChartArea1";
+            chartArea30.Position.Auto = false;
+            chartArea30.Position.Height = 100F;
+            chartArea30.Position.Width = 100F;
+            this.pulseRateLineGraph.ChartAreas.Add(chartArea30);
+            legend30.Enabled = false;
+            legend30.Name = "Legend1";
+            this.pulseRateLineGraph.Legends.Add(legend30);
             this.pulseRateLineGraph.Location = new System.Drawing.Point(12, 194);
             this.pulseRateLineGraph.Name = "pulseRateLineGraph";
             this.pulseRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Pulse Rate";
-            this.pulseRateLineGraph.Series.Add(series2);
+            series30.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series30.BorderColor = System.Drawing.Color.Transparent;
+            series30.BorderWidth = 5;
+            series30.ChartArea = "ChartArea1";
+            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series30.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series30.Legend = "Legend1";
+            series30.Name = "Pulse Rate";
+            this.pulseRateLineGraph.Series.Add(series30);
             this.pulseRateLineGraph.Size = new System.Drawing.Size(935, 176);
             this.pulseRateLineGraph.TabIndex = 6;
             this.pulseRateLineGraph.Text = "chart1";
@@ -615,33 +615,33 @@
             // breathingRateLineGraph
             // 
             this.breathingRateLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea3.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.InnerPlotPosition.Auto = false;
-            chartArea3.InnerPlotPosition.Height = 30.3125F;
-            chartArea3.InnerPlotPosition.Width = 96.74647F;
-            chartArea3.InnerPlotPosition.X = 3F;
-            chartArea3.InnerPlotPosition.Y = 30F;
-            chartArea3.IsSameFontSizeForAllAxes = true;
-            chartArea3.Name = "ChartArea1";
-            chartArea3.Position.Auto = false;
-            chartArea3.Position.Height = 100F;
-            chartArea3.Position.Width = 100F;
-            this.breathingRateLineGraph.ChartAreas.Add(chartArea3);
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            this.breathingRateLineGraph.Legends.Add(legend3);
+            chartArea31.BackColor = System.Drawing.Color.Transparent;
+            chartArea31.InnerPlotPosition.Auto = false;
+            chartArea31.InnerPlotPosition.Height = 30.3125F;
+            chartArea31.InnerPlotPosition.Width = 96.74647F;
+            chartArea31.InnerPlotPosition.X = 3F;
+            chartArea31.InnerPlotPosition.Y = 30F;
+            chartArea31.IsSameFontSizeForAllAxes = true;
+            chartArea31.Name = "ChartArea1";
+            chartArea31.Position.Auto = false;
+            chartArea31.Position.Height = 100F;
+            chartArea31.Position.Width = 100F;
+            this.breathingRateLineGraph.ChartAreas.Add(chartArea31);
+            legend31.Enabled = false;
+            legend31.Name = "Legend1";
+            this.breathingRateLineGraph.Legends.Add(legend31);
             this.breathingRateLineGraph.Location = new System.Drawing.Point(12, 376);
             this.breathingRateLineGraph.Name = "breathingRateLineGraph";
             this.breathingRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series3.BorderColor = System.Drawing.Color.Transparent;
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Breathing Rate";
-            this.breathingRateLineGraph.Series.Add(series3);
+            series31.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series31.BorderColor = System.Drawing.Color.Transparent;
+            series31.BorderWidth = 5;
+            series31.ChartArea = "ChartArea1";
+            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series31.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series31.Legend = "Legend1";
+            series31.Name = "Breathing Rate";
+            this.breathingRateLineGraph.Series.Add(series31);
             this.breathingRateLineGraph.Size = new System.Drawing.Size(935, 176);
             this.breathingRateLineGraph.TabIndex = 7;
             this.breathingRateLineGraph.Text = "chart1";
@@ -649,33 +649,33 @@
             // temperatureLineGraph
             // 
             this.temperatureLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea4.BackColor = System.Drawing.Color.Transparent;
-            chartArea4.InnerPlotPosition.Auto = false;
-            chartArea4.InnerPlotPosition.Height = 30.3125F;
-            chartArea4.InnerPlotPosition.Width = 96.74647F;
-            chartArea4.InnerPlotPosition.X = 3F;
-            chartArea4.InnerPlotPosition.Y = 30F;
-            chartArea4.IsSameFontSizeForAllAxes = true;
-            chartArea4.Name = "ChartArea1";
-            chartArea4.Position.Auto = false;
-            chartArea4.Position.Height = 100F;
-            chartArea4.Position.Width = 100F;
-            this.temperatureLineGraph.ChartAreas.Add(chartArea4);
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.temperatureLineGraph.Legends.Add(legend4);
+            chartArea32.BackColor = System.Drawing.Color.Transparent;
+            chartArea32.InnerPlotPosition.Auto = false;
+            chartArea32.InnerPlotPosition.Height = 30.3125F;
+            chartArea32.InnerPlotPosition.Width = 96.74647F;
+            chartArea32.InnerPlotPosition.X = 3F;
+            chartArea32.InnerPlotPosition.Y = 30F;
+            chartArea32.IsSameFontSizeForAllAxes = true;
+            chartArea32.Name = "ChartArea1";
+            chartArea32.Position.Auto = false;
+            chartArea32.Position.Height = 100F;
+            chartArea32.Position.Width = 100F;
+            this.temperatureLineGraph.ChartAreas.Add(chartArea32);
+            legend32.Enabled = false;
+            legend32.Name = "Legend1";
+            this.temperatureLineGraph.Legends.Add(legend32);
             this.temperatureLineGraph.Location = new System.Drawing.Point(12, 555);
             this.temperatureLineGraph.Name = "temperatureLineGraph";
             this.temperatureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series4.BorderColor = System.Drawing.Color.Transparent;
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series4.Legend = "Legend1";
-            series4.Name = "Temperature";
-            this.temperatureLineGraph.Series.Add(series4);
+            series32.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series32.BorderColor = System.Drawing.Color.Transparent;
+            series32.BorderWidth = 5;
+            series32.ChartArea = "ChartArea1";
+            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series32.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series32.Legend = "Legend1";
+            series32.Name = "Temperature";
+            this.temperatureLineGraph.Series.Add(series32);
             this.temperatureLineGraph.Size = new System.Drawing.Size(935, 176);
             this.temperatureLineGraph.TabIndex = 8;
             this.temperatureLineGraph.Text = "chart1";
@@ -683,32 +683,29 @@
             // backgroundWorkerBeep
             // 
             this.backgroundWorkerBeep.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBeep_DoWork);
+            this.backgroundWorkerBeep.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerBeep_RunWorkerCompleted);
             // 
-            // warningPanel
+            // backgroundWorkerAlarmReading
             // 
-            this.warningPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.warningPanel.BackColor = System.Drawing.Color.Red;
-            this.warningPanel.Controls.Add(this.label5);
-            this.warningPanel.Location = new System.Drawing.Point(12, 210);
-            this.warningPanel.Name = "warningPanel";
-            this.warningPanel.Size = new System.Drawing.Size(1357, 264);
-            this.warningPanel.TabIndex = 9;
+            this.backgroundWorkerAlarmReading.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAlarmReading_DoWork);
             // 
-            // label5
+            // backgroundWorkerAlarmZero
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(410, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(529, 128);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "WARNING";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.backgroundWorkerAlarmZero.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAlarmZero_DoWork);
+            // 
+            // muteAlarmBtn
+            // 
+            this.muteAlarmBtn.BackColor = System.Drawing.Color.Red;
+            this.muteAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.muteAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.muteAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.muteAlarmBtn.Location = new System.Drawing.Point(1236, 647);
+            this.muteAlarmBtn.Name = "muteAlarmBtn";
+            this.muteAlarmBtn.Size = new System.Drawing.Size(116, 81);
+            this.muteAlarmBtn.TabIndex = 9;
+            this.muteAlarmBtn.Text = "Mute";
+            this.muteAlarmBtn.UseVisualStyleBackColor = false;
+            this.muteAlarmBtn.Click += new System.EventHandler(this.muteAlarmBtn_Click);
             // 
             // BedsideMainScreen
             // 
@@ -716,7 +713,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1384, 761);
-            this.Controls.Add(this.warningPanel);
+            this.Controls.Add(this.muteAlarmBtn);
             this.Controls.Add(this.temperatureLineGraph);
             this.Controls.Add(this.breathingRateLineGraph);
             this.Controls.Add(this.pulseRateLineGraph);
@@ -754,8 +751,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pulseRateLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.breathingRateLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureLineGraph)).EndInit();
-            this.warningPanel.ResumeLayout(false);
-            this.warningPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -776,36 +771,37 @@
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button historyBtn;
         private System.Windows.Forms.Label testLabel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label maxBloodPressureLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label pulseRateCurrentValue;
         private System.Windows.Forms.Label breathingRateCurrentValue;
         private System.Windows.Forms.Label temperatureCurrentValue;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label minBloodPressureLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart bloodPressureLineGraph;
         private System.Windows.Forms.Button setAlarmBtn;
         private System.Windows.Forms.Label bloodPressureStatus;
         private System.Windows.Forms.Label pulseRateStatus;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label minPulseRateLabel;
+        private System.Windows.Forms.Label maxPulseRateLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label breathingRateStatus;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label minBreathingRateLabel;
+        private System.Windows.Forms.Label maxBreathingRateLabel;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label temperatureStatus;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label minTemperatureLabel;
+        private System.Windows.Forms.Label maxTemperatureLabel;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DataVisualization.Charting.Chart pulseRateLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart breathingRateLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperatureLineGraph;
         private System.ComponentModel.BackgroundWorker backgroundWorkerBeep;
-        private System.Windows.Forms.Panel warningPanel;
-        private System.Windows.Forms.Label label5;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerAlarmReading;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerAlarmZero;
+        private System.Windows.Forms.Button muteAlarmBtn;
     }
 }
