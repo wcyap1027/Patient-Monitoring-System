@@ -11,19 +11,20 @@ namespace Patient_Monitoring_System
     {
         public int addNewAlarm(MySqlConnection conn, Alarm alarm)
         {
-            string sql = "INSERT into alarm( reading_id, specific_id, triggerValue, dateTimeTrigger, dateTimeMuted, remark)" + "VALUES('" + alarm.ReadingId + "', '"+alarm.SpecificId+"','" + alarm.TriggerValue + "', '" + alarm.DateTimeTrigger.ToString("yyyy-MM-dd HH:mm:ss")+ "', '" + alarm.DateTimeMuted.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + alarm.Remark+"')";
+            string sql = "INSERT into alarm( patient_id,reading_id, specific_id, triggerValue, dateTimeTrigger, dateTimeMuted, remark)" + "VALUES('"+alarm.PatientId+"','" + alarm.ReadingId + "', '"+alarm.SpecificId+"','" + alarm.TriggerValue + "', '" + alarm.DateTimeTrigger.ToString("yyyy-MM-dd HH:mm:ss")+ "', '" + alarm.DateTimeMuted.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + alarm.Remark+"')";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             return sqlComm.ExecuteNonQuery();
 
         }
 
-        public bool triggerAlarm(MySqlConnection conn, double value, int readingId, int specificId, string remark)
+        public bool triggerAlarm(MySqlConnection conn, double value, int patientId, int readingId, int specificId, string remark)
         {
             bool status = false;
             DateTime currentDateTime = DateTime.Now;
             AlarmHandler alarmHandler = new AlarmHandler();
             Alarm newAlarm = new Alarm();
+            newAlarm.PatientId = patientId;
             newAlarm.ReadingId = readingId;
             newAlarm.SpecificId = specificId;
             newAlarm.TriggerValue = value;
@@ -77,7 +78,31 @@ namespace Patient_Monitoring_System
             return id;
         }
 
-        
+        public int getLastId(MySqlConnection conn, int patientId)
+        {
+            int id = 0;
+
+            string sql = "SELECT MAX(ID) FROM alarm WHERE patient_id='" + patientId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (query != null)
+            {
+                id = Convert.ToInt32(query);
+            }
+
+            return id;
+        }
+
+        public int updateDateTimeMuted(MySqlConnection conn, int patientId, int maxId)
+        {
+            DateTime currentDate = DateTime.Now;
+            string sql = "UPDATE alarm SET dateTimeMuted='" + currentDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE patient_id='" + patientId + "' AND id='" + maxId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            return sqlComm.ExecuteNonQuery();
+        }
 
        
     }

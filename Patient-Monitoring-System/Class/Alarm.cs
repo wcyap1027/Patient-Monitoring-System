@@ -8,6 +8,7 @@ namespace Patient_Monitoring_System
 {
     public class Alarm
     {
+        private int patientId;
         private int readingId;
         private int specificId;
         private double triggerValue;
@@ -21,5 +22,6 @@ namespace Patient_Monitoring_System
         public string Remark { get => remark; set => remark = value; }
         public int ReadingId { get => readingId; set => readingId = value; }
         public int SpecificId { get => specificId; set => specificId = value; }
+        public int PatientId { get => patientId; set => patientId = value; }
     }
 }

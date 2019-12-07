@@ -128,7 +128,7 @@ namespace BedsideSystem
             dbC.connect();
             if(bedsideIdExistingComboBox.SelectedIndex != 0)
             {
-                Patient existPatient = bedsideHandler.getSpecificPatientInBedside(dbC.getConn(), bedsideIdExistingComboBox.SelectedItem.ToString());
+                Patient existPatient = bedsideHandler.getSpecificPatientInBedside(dbC.getConn(), int.Parse(bedsideIdExistingComboBox.SelectedItem.ToString()));
                 patientIdTextBox.Text = existPatient.Id.ToString();
             }
             

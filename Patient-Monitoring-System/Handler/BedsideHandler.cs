@@ -117,11 +117,36 @@ namespace Patient_Monitoring_System.Handler
             return updateComm.ExecuteNonQuery();
         }
 
-        public Patient getSpecificPatientInBedside(MySqlConnection conn, string selectedId)
+        public bool checkExistBedside(MySqlConnection conn, int selectedId)
         {
-            int userId = int.Parse(selectedId);
+            bool status = false;
+            int id = 0;
+            string sql = "SELECT bedsideId FROM patient WHERE bedsideId='" + selectedId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (query != null)
+            {
+                id = Convert.ToInt32(query);
+            }
+
+            if(id != 0)
+            {
+                status = true;
+            }
+            else
+            {
+                status = false;
+            }
+
+            return status;
+        }
+
+        public Patient getSpecificPatientInBedside(MySqlConnection conn, int selectedId)
+        {
             Patient oldPatient = new Patient();
-            string sql = "SELECT * FROM patient WHERE bedsideId= '" + userId + "'";
+            string sql = "SELECT * FROM patient WHERE bedsideId= '" + selectedId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             try
             {

@@ -9,8 +9,10 @@ using System.Windows.Forms;
 using Patient_Monitoring_System;
 using rtChart;
 using Patient_Monitoring_System.Handler;
+using Patient_Monitoring_System.Screen;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Media;
+
 namespace BedsideSystem
 {
     public partial class BedsideMainScreen : Form
@@ -34,6 +36,7 @@ namespace BedsideSystem
         public BedsideMainScreen()
         {
             InitializeComponent();
+            getAllReading();
         }
 
         private async void readTemperatureData()
@@ -91,21 +94,23 @@ namespace BedsideSystem
 
                                 if (specificId > 0)
                                 {
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, 0, specificId, "Temperature");
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listTemperature.Add(newTemperature);
-                                    //}
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,0, specificId, "Temperature");
+                                    if (triggerStatus)
+                                    {
+                                        listTemperature.Add(newTemperature);
+                                    }
                                 }
 
-                                
-                                if (!backgroundWorkerAlarmZero.IsBusy)
+
+
+                                if (backgroundWorkerAlarmZero.IsBusy != true)
                                 {
-                                   beepStatus = false;
-                                   alarmReadingStatus = false;
-                                   backgroundWorkerAlarmZero.RunWorkerAsync(1000);
+
+                                    backgroundWorkerBeep.CancelAsync();
+                                    backgroundWorkerAlarmReading.CancelAsync();
+                                    backgroundWorkerAlarmZero.RunWorkerAsync();
                                 }
-                                
+
 
                             }
                             else
@@ -120,24 +125,30 @@ namespace BedsideSystem
                                 if (id > 0)
                                 {
                                     AlarmHandler alarmHandler = new AlarmHandler();
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, id, 0, "Temperature");
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listTemperature.Add(newTemperature);
-                                    //}
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,id, 0, "Temperature");
+                                    if (triggerStatus)
+                                    {
+                                        listTemperature.Add(newTemperature);
+                                    }
                                 }
 
-                                
-                                    if (!backgroundWorkerAlarmZero.IsBusy)
+
+                                if (backgroundWorkerAlarmReading.IsBusy != true)
+                                {
+                                    if (backgroundWorkerAlarmZero.IsBusy != true)
                                     {
-                                        beepStatus = false;
-                                        backgroundWorkerAlarmReading.RunWorkerAsync(1000);
+
+                                        backgroundWorkerBeep.CancelAsync();
+                                        backgroundWorkerAlarmReading.RunWorkerAsync();
                                     }
                                     else
                                     {
-                                        alarmReading.Stop();
+
+                                        backgroundWorkerAlarmReading.CancelAsync();
                                     }
-                                
+
+                                }
+
                             }
                             else
                             {
@@ -220,21 +231,22 @@ namespace BedsideSystem
 
                                 if (specificId > 0)
                                 {
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, 0, specificId, "Blood Pressure");
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listbloodPressure.Add(bloodPressureData);
-                                    //}
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id, 0, specificId, "Blood Pressure");
+                                    if (triggerStatus)
+                                    {
+                                        listbloodPressure.Add(bloodPressureData);
+                                    }
                                 }
 
-                                
-                                    if (!backgroundWorkerAlarmZero.IsBusy)
-                                    {
-                                        beepStatus = false;
-                                        alarmReadingStatus = false;
-                                        backgroundWorkerAlarmZero.RunWorkerAsync(1000);
-                                    }
-                                
+
+                                if (backgroundWorkerAlarmZero.IsBusy != true)
+                                {
+
+                                    backgroundWorkerBeep.CancelAsync();
+                                    backgroundWorkerAlarmReading.CancelAsync();
+                                    backgroundWorkerAlarmZero.RunWorkerAsync();
+                                }
+
 
                             }
                             else
@@ -249,25 +261,31 @@ namespace BedsideSystem
                                 if (id > 0)
                                 {
                                     AlarmHandler alarmHandler = new AlarmHandler();
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, id, 0, "Blood Pressure");
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,id, 0, "Blood Pressure");
 
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listbloodPressure.Add(bloodPressureData);
-                                    //}
+                                    if (triggerStatus)
+                                    {
+                                        listbloodPressure.Add(bloodPressureData);
+                                    }
                                 }
 
-                               
-                                    if (!backgroundWorkerAlarmZero.IsBusy)
+
+                                if (backgroundWorkerAlarmReading.IsBusy != true)
+                                {
+                                    if (backgroundWorkerAlarmZero.IsBusy != true)
                                     {
-                                        beepStatus = false;
-                                        backgroundWorkerAlarmReading.RunWorkerAsync(1000);
+
+                                        backgroundWorkerBeep.CancelAsync();
+                                        backgroundWorkerAlarmReading.RunWorkerAsync();
                                     }
                                     else
                                     {
-                                        alarmReading.Stop();
+
+                                        backgroundWorkerAlarmReading.CancelAsync();
                                     }
-                                
+
+                                }
+
                             }
                             else
                             {
@@ -351,26 +369,24 @@ namespace BedsideSystem
 
                                 if (specificId > 0)
                                 {
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, 0, specificId, "Pulse Rate");
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listPulseRate.Add(pulseRateData);
-                                    //}
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value,BedsideLoginScreen.bedside_patient_id, 0, specificId, "Pulse Rate");
+                                    if (triggerStatus)
+                                    {
+                                        listPulseRate.Add(pulseRateData);
+                                    }
                                 }
 
-                                if (alarmZeroStatus)
+                                if (backgroundWorkerAlarmZero.IsBusy != true)
                                 {
-                                    if (!backgroundWorkerAlarmZero.IsBusy)
-                                    {
-                                        beepStatus = false;
-                                        alarmReadingStatus = false;
-                                        backgroundWorkerAlarmZero.RunWorkerAsync(1000);
-                                    }
+
+                                    backgroundWorkerBeep.CancelAsync();
+                                    backgroundWorkerAlarmReading.CancelAsync();
+                                    backgroundWorkerAlarmZero.RunWorkerAsync();
                                 }
 
                             }
                             else
-                            if (value >= double.Parse(maxPulseRateLabel.Text) || value <= double.Parse(minPulseRateLabel.Text))
+                            if (value >= double.Parse(maxPulseRateLabel.Text) || (value <= double.Parse(minPulseRateLabel.Text)))
                             {
                                 pulseRateLineGraph.Series["Pulse Rate"].Color = Color.Yellow;
                                 pulseRateCurrentValue.ForeColor = Color.Yellow;
@@ -381,25 +397,28 @@ namespace BedsideSystem
                                 if (id > 0)
                                 {
                                     AlarmHandler alarmHandler = new AlarmHandler();
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, id, 0, "Pulse Rate");
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,id, 0, "Pulse Rate");
 
-                                    //if (triggerStatus)
-                                    //{
-                                    //    listPulseRate.Add(pulseRateData);
-                                    //}
+                                    if (triggerStatus)
+                                    {
+                                        listPulseRate.Add(pulseRateData);
+                                    }
                                 }
 
-                                if (alarmReadingStatus)
+                                if (backgroundWorkerAlarmReading.IsBusy != true)
                                 {
-                                    if (!backgroundWorkerAlarmZero.IsBusy)
+                                    if (backgroundWorkerAlarmZero.IsBusy != true)
                                     {
-                                        beepStatus = false;
-                                        backgroundWorkerAlarmReading.RunWorkerAsync(1000);
+
+                                        backgroundWorkerBeep.CancelAsync();
+                                        backgroundWorkerAlarmReading.RunWorkerAsync();
                                     }
                                     else
                                     {
-                                        alarmReading.Stop();
+
+                                        backgroundWorkerAlarmReading.CancelAsync();
                                     }
+
                                 }
                             }
                             else
@@ -490,7 +509,7 @@ namespace BedsideSystem
 
                                 if (specificId > 0)
                                 {
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, 0, specificId, "Breathing Rate");
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,0, specificId, "Breathing Rate");
                                     if (triggerStatus)
                                     {
                                         listbreathingRate.Add(newBreathingRate);
@@ -509,6 +528,7 @@ namespace BedsideSystem
 
 
                             }
+                            else
                             if (value >= double.Parse(maxBreathingRateLabel.Text) || value <= double.Parse(minBreathingRateLabel.Text))
                             {
                                 breathingRateLineGraph.Series["Breathing Rate"].Color = Color.Yellow;
@@ -520,7 +540,7 @@ namespace BedsideSystem
                                 if (id > 0)
                                 {
                                     AlarmHandler alarmHandler = new AlarmHandler();
-                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, id, 0, "Breathing Rate");
+                                    bool triggerStatus = alarmHandler.triggerAlarm(dBConn.getConn(), value, BedsideLoginScreen.bedside_patient_id,id, 0, "Breathing Rate");
 
                                     if (triggerStatus)
                                     {
@@ -597,14 +617,12 @@ namespace BedsideSystem
                 BorderWidth = 5,
                 ChartType = SeriesChartType.Spline
             };
-
             var seriesPulseRate = new Series
             {
                 Name = "Pulse Rate",
                 BorderWidth = 5,
                 ChartType = SeriesChartType.Spline
             };
-
             var seriesBreathingRate = new Series
             {
                 Name = "Breathing Rate",
@@ -625,30 +643,121 @@ namespace BedsideSystem
             //--------------------------------------------------------//
 
             //start spline chart and read data
-            //readBloodPressureData();
-            //readPulseRateData();
-            //readTemperatureData();
+            readBloodPressureData();
+            readPulseRateData();
+            readTemperatureData();
             readBreathingRateData();
             beepStatus = true;
             backgroundWorkerBeep.RunWorkerAsync(1500);
             
         }
 
-
-
-        private void historyBtn_Click(object sender, EventArgs e)
+        public string MinBP
         {
-            HistoryScreen historyScreen = new HistoryScreen();
-            historyScreen.Show();
-            historyScreen.LabelText = "Blood Pressure Occurs: " + listbloodPressure.Count + 
-                Environment.NewLine + "Breathing Rate Occurs: "+ listbreathingRate.Count+ 
-                Environment.NewLine + "Pulse Rate Occurs: "+ listPulseRate.Count+
-                Environment.NewLine + "Temperature Occurs: "+listTemperature.Count;
+            get
+            {
+                return minBloodPressureLabel.Text;
+            }
+
+            set
+            {
+                minBloodPressureLabel.Text = value;
+            }
         }
 
-        private void BedsideMainScreen_Load(object sender, EventArgs e)
+        public string MaxBP
         {
+            get
+            {
+                return maxBloodPressureLabel.Text;
+            }
 
+            set
+            {
+                maxBloodPressureLabel.Text = value;
+            }
+        }
+
+        public string MinBR
+        {
+            get
+            {
+                return minBreathingRateLabel.Text;
+            }
+
+            set
+            {
+                minBreathingRateLabel.Text = value;
+            }
+        }
+
+        public string MaxBR
+        {
+            get
+            {
+                return maxBreathingRateLabel.Text;
+            }
+
+            set
+            {
+                maxBreathingRateLabel.Text = value;
+            }
+        }
+
+        public string MinPR
+        {
+            get
+            {
+                return minPulseRateLabel.Text;
+            }
+
+            set
+            {
+                minPulseRateLabel.Text = value;
+            }
+        }
+
+        public string MaxPR
+        {
+            get
+            {
+                return maxPulseRateLabel.Text;
+            }
+
+            set
+            {
+                maxPulseRateLabel.Text = value;
+            }
+        }
+
+        public string MinT
+        {
+            get
+            {
+                return minTemperatureLabel.Text;
+            }
+
+            set
+            {
+                minTemperatureLabel.Text = value;
+            }
+        }
+
+        public string MaxT
+        {
+            get
+            {
+                return maxTemperatureLabel.Text;
+            }
+
+            set
+            {
+                maxTemperatureLabel.Text = value;
+            }
+        }
+
+        public void getAllReading()
+        {
             Reading patientReading = new Reading();
             ReadingHandler readingHandler = new ReadingHandler();
             DBConnector dbConn = new DBConnector();
@@ -665,7 +774,7 @@ namespace BedsideSystem
                 minPulseRateLabel.Text = patientReading.MinPulse.ToString();
                 maxPulseRateLabel.Text = patientReading.MaxPulse.ToString();
                 minTemperatureLabel.Text = patientReading.MinTemperature.ToString();
-                maxTemperatureLabel.Text = patientReading.MaxTemperature.ToString();   
+                maxTemperatureLabel.Text = patientReading.MaxTemperature.ToString();
             }
             else
             {
@@ -678,8 +787,11 @@ namespace BedsideSystem
                 minTemperatureLabel.Text = "--";
                 maxTemperatureLabel.Text = "--";
             }
-           
+        }
 
+        private void BedsideMainScreen_Load(object sender, EventArgs e)
+        {
+            getAllReading();
             backgroundWorkerBeep.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
@@ -713,14 +825,13 @@ namespace BedsideSystem
             startBtn.Visible = true;
             haltButton.Visible = false;
             run = false;
-            beepStatus = false;
-            
+            beepStatus = false;     
         }
         
 
         private void backgroundWorkerAlarmZero_DoWork(object sender, DoWorkEventArgs e)
         {
-            alarmZero.SoundLocation = "../../../Patient-Monitoring-System/Sound/alarm.wav";
+            alarmZero.SoundLocation = "../../../Patient-Monitoring-System/Sound/beep.wav";
             
             while (alarmZeroStatus)
             {
@@ -731,7 +842,7 @@ namespace BedsideSystem
                 }
                 else
                 {
-                    Console.Beep(1000,1000);
+                    Console.Beep(2000, 2000);
                 }
             }
         }
@@ -748,7 +859,7 @@ namespace BedsideSystem
                 }
                 else
                 {
-                    Console.Beep(1000,1000);
+                    Console.Beep(1000,1000);  
                 }
                 
             }
@@ -756,20 +867,40 @@ namespace BedsideSystem
 
         private void muteAlarmBtn_Click(object sender, EventArgs e)
         {
-            alarmReadingStatus = false;
-            alarmZeroStatus = false;
-           
-            if (backgroundWorkerAlarmReading.IsBusy)
+            DBConnector dBConn = new DBConnector();
+            dBConn.connect();
+            AlarmHandler alarmHandler = new AlarmHandler();
+            int id = alarmHandler.getLastId(dBConn.getConn(), BedsideLoginScreen.bedside_patient_id);
+            int result = alarmHandler.updateDateTimeMuted(dBConn.getConn(), BedsideLoginScreen.bedside_patient_id, id);
+
+            if(id > 0)
             {
-                backgroundWorkerAlarmReading.CancelAsync();
+                if (result == 1)
+                {
+                    MessageBox.Show("Muted Alarm", "Muted Alarm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    alarmReadingStatus = false;
+                    alarmZeroStatus = false;
+
+                    if (backgroundWorkerAlarmReading.IsBusy)
+                    {
+                        backgroundWorkerAlarmReading.CancelAsync();
+                    }
+
+                    if (backgroundWorkerAlarmZero.IsBusy)
+                    {
+                        backgroundWorkerAlarmZero.CancelAsync();
+                    }
+
+                    backgroundWorkerBeep.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Alarm cannot be muted", "Muted Alarm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
-            if (backgroundWorkerAlarmZero.IsBusy)
-            {
-                backgroundWorkerAlarmZero.CancelAsync();
-            }
-
-            backgroundWorkerBeep.RunWorkerAsync();
+            
+            
         }
 
         private void patientProfileBtn_Click(object sender, EventArgs e)
@@ -791,6 +922,30 @@ namespace BedsideSystem
                 Environment.NewLine + "Pulse Rate Occurs: " + listPulseRate.Count +
                 Environment.NewLine + "Temperature Occurs: " + listTemperature.Count;
 
+        }
+
+        private void BedsideMainScreen_Activated(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            getAllReading();
+            ReadingScreen readingScreen = new ReadingScreen();
+            minBloodPressureLabel.Text = readingScreen.MinB; 
+        }
+
+        private void setAlarmBtn_Click(object sender, EventArgs e)
+        {
+            ReadingScreen readingScreen = new ReadingScreen();
+            readingScreen.Show();
+        }
+
+        private void BedsideMainScreen_DoubleClick(object sender, EventArgs e)
+        { 
+            minBloodPressureLabel.Text = ReadingScreen.minb;
+        }
+
+        private void minBloodPressureLabel_DoubleClick(object sender, EventArgs e)
+        {
+            minBloodPressureLabel.Text = ReadingScreen.minb;
         }
     }
 }

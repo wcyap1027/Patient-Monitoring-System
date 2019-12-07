@@ -41,6 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.registerDeregisterBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -201,6 +202,23 @@
             this.panel4.Size = new System.Drawing.Size(267, 60);
             this.panel4.TabIndex = 19;
             // 
+            // registerDeregisterBtn
+            // 
+            this.registerDeregisterBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.registerDeregisterBtn.AutoSize = true;
+            this.registerDeregisterBtn.BackColor = System.Drawing.Color.Transparent;
+            this.registerDeregisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerDeregisterBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerDeregisterBtn.Image = ((System.Drawing.Image)(resources.GetObject("registerDeregisterBtn.Image")));
+            this.registerDeregisterBtn.Location = new System.Drawing.Point(542, 41);
+            this.registerDeregisterBtn.Name = "registerDeregisterBtn";
+            this.registerDeregisterBtn.Size = new System.Drawing.Size(228, 71);
+            this.registerDeregisterBtn.TabIndex = 20;
+            this.registerDeregisterBtn.Text = "Register/deregister";
+            this.registerDeregisterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.registerDeregisterBtn.UseVisualStyleBackColor = false;
+            this.registerDeregisterBtn.Click += new System.EventHandler(this.registerDeregisterBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -208,6 +226,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.registerDeregisterBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -249,5 +268,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button registerDeregisterBtn;
     }
 }

@@ -99,7 +99,7 @@ namespace Patient_Monitoring_System
 
         private void setAlarmBtn_Click(object sender, EventArgs e)
         {
-            AlarmScreen alarmScreen = new AlarmScreen();
+            ReadingScreen alarmScreen = new ReadingScreen();
             alarmScreen.Show();
         }
     }

@@ -64,5 +64,127 @@ namespace Patient_Monitoring_System.Handler
             MySqlCommand insertComm2 = new MySqlCommand(insertSql, conn);
             return insertComm2.ExecuteNonQuery();
         }
+
+        public bool updateWorkStatus(MySqlConnection conn, string type, string userId, string selectedDepartment)
+        {
+            int registerStatus = 1;
+            int deregisterStatus = 0;
+            bool loginstatus = false;
+            string department = selectedDepartment.ToLower();
+            if(type == "Register")
+            {
+                if (department == "nurse")
+                {
+                    string sql = "UPDATE nurse SET nurse.work_status='" + registerStatus + "' WHERE nurse.nurse_id='" + userId + "'";
+                    MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                    int update = updateComm.ExecuteNonQuery();
+                    if (update == 1)
+                    {
+                        loginstatus = true;
+                    }
+                }
+                else
+                {
+                    if (department == "consultant")
+                    {
+                        string sql = "UPDATE consultant SET consultant.work_status='" + registerStatus + "' WHERE consultant.consultant_id='" + userId + "'";
+                        MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                        int update = updateComm.ExecuteNonQuery();
+                        if (update >= 0)
+                        {
+                            loginstatus = true;
+                        }
+                    }
+                    else
+                    {
+                        if (department == "medical staff")
+                        {
+                            string sql = "UPDATE medicalstaff SET medicalstaff.work_status='" + registerStatus + "' WHERE medicalstaff.medicalStaff_id='" + userId + "'";
+                            MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                            int update = updateComm.ExecuteNonQuery();
+                            if (update >= 0)
+                            {
+                                loginstatus = true;
+                            }
+                        }
+                        else
+                        {
+                            if (department == "management")
+                            {
+                                string sql = "UPDATE management SET management.work_status='" + registerStatus + "' WHERE management.management_id='" + userId + "'";
+                                MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                                int update = updateComm.ExecuteNonQuery();
+                                if (update >= 0)
+                                {
+                                    loginstatus = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if(type == "Deregister")
+            {
+                if (department == "nurse")
+                {
+                    string sql = "UPDATE nurse SET nurse.work_status='" + deregisterStatus + "' WHERE nurse.nurse_id='" + userId + "'";
+                    MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                    int update = updateComm.ExecuteNonQuery();
+                    if (update == 1)
+                    {
+                        loginstatus = true;
+                    }
+                }
+                else
+                {
+                    if (department == "consultant")
+                    {
+                        string sql = "UPDATE consultant SET consultant.work_status='" + deregisterStatus + "' WHERE consultant.consultant_id='" + userId + "'";
+                        MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                        int update = updateComm.ExecuteNonQuery();
+                        if (update >= 0)
+                        {
+                            loginstatus = true;
+                        }
+                    }
+                    else
+                    {
+                        if (department == "medical staff")
+                        {
+                            string sql = "UPDATE medicalstaff SET medicalstaff.work_status='" + deregisterStatus + "' WHERE medicalstaff.medicalStaff_id='" + userId + "'";
+                            MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                            int update = updateComm.ExecuteNonQuery();
+                            if (update >= 0)
+                            {
+                                loginstatus = true;
+                            }
+                        }
+                        else
+                        {
+                            if (department == "management")
+                            {
+                                string sql = "UPDATE management SET management.work_status='" + deregisterStatus + "' WHERE management.management_id='" + userId + "'";
+                                MySqlCommand updateComm = new MySqlCommand(sql, conn);
+
+                                int update = updateComm.ExecuteNonQuery();
+                                if (update >= 0)
+                                {
+                                    loginstatus = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            return loginstatus;
+        }
     }
 }

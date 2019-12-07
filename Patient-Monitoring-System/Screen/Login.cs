@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Patient_Monitoring_System.Handler;
+using Patient_Monitoring_System.Screen;
 
 namespace Patient_Monitoring_System
 {
@@ -178,6 +179,12 @@ namespace Patient_Monitoring_System
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void registerDeregisterBtn_Click(object sender, EventArgs e)
+        {
+            RegisterDeregisterScreen registerDeregisterScreen = new RegisterDeregisterScreen();
+            registerDeregisterScreen.Show();
         }
     }
 }
