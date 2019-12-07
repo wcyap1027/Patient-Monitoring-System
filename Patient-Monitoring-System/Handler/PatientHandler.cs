@@ -197,11 +197,10 @@ namespace Patient_Monitoring_System
             return listpatient;
         }
 
-        public Patient getSpecificPatient(MySqlConnection conn, string selectedId)
+        public Patient getSpecificPatient(MySqlConnection conn, int selectedId)
         {
-            int userId = int.Parse(selectedId);
             Patient oldPatient = new Patient();
-            string sql = "SELECT * FROM patient WHERE id= '" + userId + "'";
+            string sql = "SELECT * FROM patient WHERE id= '" + selectedId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             try
             {

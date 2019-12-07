@@ -15,7 +15,7 @@ namespace BedsideSystem
     public partial class BedsideLoginScreen : Form
     {
         public static int bedside_patient_id = 0;
-
+        public static int bedsideIDPass = 0;
         public BedsideLoginScreen()
         {
             InitializeComponent();
@@ -66,6 +66,7 @@ namespace BedsideSystem
 
                 if (statusResult == 1)
                 {
+                    bedside_patient_id = patientId;
                     BedsideMainScreen ms = new BedsideMainScreen();
                     ms.Show();
                     this.Close();
@@ -151,7 +152,7 @@ namespace BedsideSystem
             if (status)
             {
                 bedside_patient_id = patientId;
-           
+                bedsideIDPass = bedsideId;
                 BedsideMainScreen bedsideMainScreen = new BedsideMainScreen();
                 bedsideMainScreen.Show();
                 

@@ -287,7 +287,7 @@ namespace Patient_Monitoring_System
             }
             else
             {
-                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDUpdateComboBox.SelectedItem.ToString());
+                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), int.Parse(choosePatientIDUpdateComboBox.SelectedItem.ToString()));
             }
 
             if ((oldPatientData.Nric.ToString() != nricUpdateTextBox.Text) || (oldPatientData.FullName != fullNameUpdateTextBox.Text) || (oldPatientData.Email != emailUpdateTextBox.Text) || (oldPatientData.Gender != genderUpdatecomboBox.SelectedItem.ToString()) || (oldPatientData.Phone.ToString() != phoneUpdateTextBox.Text) || (oldPatientData.Address != addressUpdateTextBox.Text) || (oldPatientData.Age.ToString() != ageUpdateTextBox.Text) || (oldPatientData.BedsideId.ToString() != bedsideIdUpdateTextBox.Text))
@@ -400,7 +400,7 @@ namespace Patient_Monitoring_System
             }
             else
             {
-                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), choosePatientIDDeleteComboBox.SelectedItem.ToString());
+                oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), int.Parse(choosePatientIDDeleteComboBox.SelectedItem.ToString()));
             }
 
             int deleteResult = patientHandler.deletePatientData(dbC.getConn(), oldPatientData.Id);

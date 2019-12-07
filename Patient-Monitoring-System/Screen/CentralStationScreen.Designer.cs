@@ -31,6 +31,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.bayName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.centralStationNameComboBox = new System.Windows.Forms.ComboBox();
             this.bedsideNumber1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,54 +40,53 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.centralStationtableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.bedsideStatus1 = new System.Windows.Forms.Label();
-            this.bloodPressureValue1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.bedsideNumber2 = new System.Windows.Forms.Label();
-            this.bedsideStatus2 = new System.Windows.Forms.Label();
-            this.bloodPressureValue2 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.bedsideNumber3 = new System.Windows.Forms.Label();
-            this.bedsideStatus3 = new System.Windows.Forms.Label();
-            this.bloodPressureValue3 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.bedsideNumber4 = new System.Windows.Forms.Label();
-            this.bedsideStatus4 = new System.Windows.Forms.Label();
-            this.bloodPressureValue4 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.bedsideNumber5 = new System.Windows.Forms.Label();
-            this.bedsideStatus5 = new System.Windows.Forms.Label();
-            this.bloodPressureValue5 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.bedsideNumber6 = new System.Windows.Forms.Label();
-            this.bedsideStatus6 = new System.Windows.Forms.Label();
-            this.bloodPressureValue6 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.bedsideNumber7 = new System.Windows.Forms.Label();
-            this.bedsideStatus7 = new System.Windows.Forms.Label();
-            this.bloodPressureValue7 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.bedsideNumber8 = new System.Windows.Forms.Label();
-            this.bedsideStatus8 = new System.Windows.Forms.Label();
-            this.bloodPressureValue8 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.centralStationNameComboBox = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.bloodPressureValue8 = new System.Windows.Forms.Label();
+            this.bedsideStatus8 = new System.Windows.Forms.Label();
+            this.bedsideNumber8 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.bloodPressureValue7 = new System.Windows.Forms.Label();
+            this.bedsideStatus7 = new System.Windows.Forms.Label();
+            this.bedsideNumber7 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.bloodPressureValue6 = new System.Windows.Forms.Label();
+            this.bedsideStatus6 = new System.Windows.Forms.Label();
+            this.bedsideNumber6 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.bloodPressureValue5 = new System.Windows.Forms.Label();
+            this.bedsideStatus5 = new System.Windows.Forms.Label();
+            this.bedsideNumber5 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.bloodPressureValue4 = new System.Windows.Forms.Label();
+            this.bedsideStatus4 = new System.Windows.Forms.Label();
+            this.bedsideNumber4 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.bloodPressureValue3 = new System.Windows.Forms.Label();
+            this.bedsideStatus3 = new System.Windows.Forms.Label();
+            this.bedsideNumber3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.bloodPressureValue2 = new System.Windows.Forms.Label();
+            this.bedsideStatus2 = new System.Windows.Forms.Label();
+            this.bedsideNumber2 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bloodPressureValue1 = new System.Windows.Forms.Label();
+            this.bedsideStatus1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.centralStationtableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -126,13 +126,23 @@
             this.panel1.Size = new System.Drawing.Size(1432, 95);
             this.panel1.TabIndex = 7;
             // 
+            // centralStationNameComboBox
+            // 
+            this.centralStationNameComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.centralStationNameComboBox.FormattingEnabled = true;
+            this.centralStationNameComboBox.Location = new System.Drawing.Point(163, 24);
+            this.centralStationNameComboBox.Name = "centralStationNameComboBox";
+            this.centralStationNameComboBox.Size = new System.Drawing.Size(121, 33);
+            this.centralStationNameComboBox.TabIndex = 7;
+            this.centralStationNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.centralStationNameComboBox_KeyPress);
+            // 
             // bedsideNumber1
             // 
             this.bedsideNumber1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bedsideNumber1.AutoSize = true;
             this.bedsideNumber1.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber1.Location = new System.Drawing.Point(101, 99);
+            this.bedsideNumber1.Location = new System.Drawing.Point(101, 100);
             this.bedsideNumber1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber1.Name = "bedsideNumber1";
             this.bedsideNumber1.Size = new System.Drawing.Size(39, 37);
@@ -283,7 +293,7 @@
             this.centralStationtableLayoutPanel.Controls.Add(this.label4, 1, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label2, 0, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber1, 0, 1);
-            this.centralStationtableLayoutPanel.Location = new System.Drawing.Point(0, 98);
+            this.centralStationtableLayoutPanel.Location = new System.Drawing.Point(0, 97);
             this.centralStationtableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.centralStationtableLayoutPanel.Name = "centralStationtableLayoutPanel";
             this.centralStationtableLayoutPanel.RowCount = 9;
@@ -299,658 +309,13 @@
             this.centralStationtableLayoutPanel.Size = new System.Drawing.Size(1444, 712);
             this.centralStationtableLayoutPanel.TabIndex = 4;
             // 
-            // bedsideStatus1
-            // 
-            this.bedsideStatus1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus1.AutoSize = true;
-            this.bedsideStatus1.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bedsideStatus1.Location = new System.Drawing.Point(341, 99);
-            this.bedsideStatus1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus1.Name = "bedsideStatus1";
-            this.bedsideStatus1.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus1.TabIndex = 16;
-            this.bedsideStatus1.Text = "--";
-            this.bedsideStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue1
-            // 
-            this.bloodPressureValue1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue1.AutoSize = true;
-            this.bloodPressureValue1.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue1.Location = new System.Drawing.Point(581, 99);
-            this.bloodPressureValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue1.Name = "bloodPressureValue1";
-            this.bloodPressureValue1.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue1.TabIndex = 17;
-            this.bloodPressureValue1.Text = "--";
-            this.bloodPressureValue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(821, 99);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 37);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "--";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1061, 99);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 37);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "--";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1302, 99);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 37);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "--";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber2
-            // 
-            this.bedsideNumber2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber2.AutoSize = true;
-            this.bedsideNumber2.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber2.Location = new System.Drawing.Point(101, 177);
-            this.bedsideNumber2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber2.Name = "bedsideNumber2";
-            this.bedsideNumber2.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber2.TabIndex = 21;
-            this.bedsideNumber2.Text = "--";
-            this.bedsideNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus2
-            // 
-            this.bedsideStatus2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus2.AutoSize = true;
-            this.bedsideStatus2.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus2.Location = new System.Drawing.Point(341, 177);
-            this.bedsideStatus2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus2.Name = "bedsideStatus2";
-            this.bedsideStatus2.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus2.TabIndex = 22;
-            this.bedsideStatus2.Text = "--";
-            this.bedsideStatus2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue2
-            // 
-            this.bloodPressureValue2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue2.AutoSize = true;
-            this.bloodPressureValue2.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue2.Location = new System.Drawing.Point(581, 177);
-            this.bloodPressureValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue2.Name = "bloodPressureValue2";
-            this.bloodPressureValue2.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue2.TabIndex = 23;
-            this.bloodPressureValue2.Text = "--";
-            this.bloodPressureValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(821, 177);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 37);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "--";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1061, 177);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 37);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "--";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1302, 177);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 37);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "--";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber3
-            // 
-            this.bedsideNumber3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber3.AutoSize = true;
-            this.bedsideNumber3.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber3.Location = new System.Drawing.Point(101, 255);
-            this.bedsideNumber3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber3.Name = "bedsideNumber3";
-            this.bedsideNumber3.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber3.TabIndex = 27;
-            this.bedsideNumber3.Text = "--";
-            this.bedsideNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus3
-            // 
-            this.bedsideStatus3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus3.AutoSize = true;
-            this.bedsideStatus3.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus3.Location = new System.Drawing.Point(341, 255);
-            this.bedsideStatus3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus3.Name = "bedsideStatus3";
-            this.bedsideStatus3.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus3.TabIndex = 28;
-            this.bedsideStatus3.Text = "--";
-            this.bedsideStatus3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue3
-            // 
-            this.bloodPressureValue3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue3.AutoSize = true;
-            this.bloodPressureValue3.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue3.Location = new System.Drawing.Point(581, 255);
-            this.bloodPressureValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue3.Name = "bloodPressureValue3";
-            this.bloodPressureValue3.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue3.TabIndex = 29;
-            this.bloodPressureValue3.Text = "--";
-            this.bloodPressureValue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(821, 255);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(39, 37);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "--";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(1061, 255);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(39, 37);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "--";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(1302, 255);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(39, 37);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "--";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber4
-            // 
-            this.bedsideNumber4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber4.AutoSize = true;
-            this.bedsideNumber4.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber4.Location = new System.Drawing.Point(101, 333);
-            this.bedsideNumber4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber4.Name = "bedsideNumber4";
-            this.bedsideNumber4.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber4.TabIndex = 33;
-            this.bedsideNumber4.Text = "--";
-            this.bedsideNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus4
-            // 
-            this.bedsideStatus4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus4.AutoSize = true;
-            this.bedsideStatus4.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus4.Location = new System.Drawing.Point(341, 333);
-            this.bedsideStatus4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus4.Name = "bedsideStatus4";
-            this.bedsideStatus4.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus4.TabIndex = 34;
-            this.bedsideStatus4.Text = "--";
-            this.bedsideStatus4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue4
-            // 
-            this.bloodPressureValue4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue4.AutoSize = true;
-            this.bloodPressureValue4.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue4.Location = new System.Drawing.Point(581, 333);
-            this.bloodPressureValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue4.Name = "bloodPressureValue4";
-            this.bloodPressureValue4.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue4.TabIndex = 35;
-            this.bloodPressureValue4.Text = "--";
-            this.bloodPressureValue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(821, 333);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(39, 37);
-            this.label29.TabIndex = 36;
-            this.label29.Text = "--";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(1061, 333);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(39, 37);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "--";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(1302, 333);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(39, 37);
-            this.label31.TabIndex = 38;
-            this.label31.Text = "--";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber5
-            // 
-            this.bedsideNumber5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber5.AutoSize = true;
-            this.bedsideNumber5.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber5.Location = new System.Drawing.Point(101, 411);
-            this.bedsideNumber5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber5.Name = "bedsideNumber5";
-            this.bedsideNumber5.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber5.TabIndex = 39;
-            this.bedsideNumber5.Text = "--";
-            this.bedsideNumber5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus5
-            // 
-            this.bedsideStatus5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus5.AutoSize = true;
-            this.bedsideStatus5.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus5.Location = new System.Drawing.Point(341, 411);
-            this.bedsideStatus5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus5.Name = "bedsideStatus5";
-            this.bedsideStatus5.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus5.TabIndex = 40;
-            this.bedsideStatus5.Text = "--";
-            this.bedsideStatus5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue5
-            // 
-            this.bloodPressureValue5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue5.AutoSize = true;
-            this.bloodPressureValue5.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue5.Location = new System.Drawing.Point(581, 411);
-            this.bloodPressureValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue5.Name = "bloodPressureValue5";
-            this.bloodPressureValue5.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue5.TabIndex = 41;
-            this.bloodPressureValue5.Text = "--";
-            this.bloodPressureValue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(821, 411);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(39, 37);
-            this.label35.TabIndex = 42;
-            this.label35.Text = "--";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(1061, 411);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(39, 37);
-            this.label36.TabIndex = 43;
-            this.label36.Text = "--";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(1302, 411);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(39, 37);
-            this.label37.TabIndex = 44;
-            this.label37.Text = "--";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber6
-            // 
-            this.bedsideNumber6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber6.AutoSize = true;
-            this.bedsideNumber6.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber6.Location = new System.Drawing.Point(101, 489);
-            this.bedsideNumber6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber6.Name = "bedsideNumber6";
-            this.bedsideNumber6.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber6.TabIndex = 45;
-            this.bedsideNumber6.Text = "--";
-            this.bedsideNumber6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus6
-            // 
-            this.bedsideStatus6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus6.AutoSize = true;
-            this.bedsideStatus6.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus6.Location = new System.Drawing.Point(341, 489);
-            this.bedsideStatus6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus6.Name = "bedsideStatus6";
-            this.bedsideStatus6.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus6.TabIndex = 46;
-            this.bedsideStatus6.Text = "--";
-            this.bedsideStatus6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue6
-            // 
-            this.bloodPressureValue6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue6.AutoSize = true;
-            this.bloodPressureValue6.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue6.Location = new System.Drawing.Point(581, 489);
-            this.bloodPressureValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue6.Name = "bloodPressureValue6";
-            this.bloodPressureValue6.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue6.TabIndex = 47;
-            this.bloodPressureValue6.Text = "--";
-            this.bloodPressureValue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(821, 489);
-            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(39, 37);
-            this.label41.TabIndex = 48;
-            this.label41.Text = "--";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label42
-            // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(1061, 489);
-            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(39, 37);
-            this.label42.TabIndex = 49;
-            this.label42.Text = "--";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label43
-            // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.Transparent;
-            this.label43.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(1302, 489);
-            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(39, 37);
-            this.label43.TabIndex = 50;
-            this.label43.Text = "--";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber7
-            // 
-            this.bedsideNumber7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber7.AutoSize = true;
-            this.bedsideNumber7.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber7.Location = new System.Drawing.Point(101, 567);
-            this.bedsideNumber7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber7.Name = "bedsideNumber7";
-            this.bedsideNumber7.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber7.TabIndex = 51;
-            this.bedsideNumber7.Text = "--";
-            this.bedsideNumber7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus7
-            // 
-            this.bedsideStatus7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus7.AutoSize = true;
-            this.bedsideStatus7.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus7.Location = new System.Drawing.Point(341, 567);
-            this.bedsideStatus7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus7.Name = "bedsideStatus7";
-            this.bedsideStatus7.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus7.TabIndex = 52;
-            this.bedsideStatus7.Text = "--";
-            this.bedsideStatus7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue7
-            // 
-            this.bloodPressureValue7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue7.AutoSize = true;
-            this.bloodPressureValue7.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue7.Location = new System.Drawing.Point(581, 567);
-            this.bloodPressureValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue7.Name = "bloodPressureValue7";
-            this.bloodPressureValue7.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue7.TabIndex = 53;
-            this.bloodPressureValue7.Text = "--";
-            this.bloodPressureValue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label47
-            // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.Transparent;
-            this.label47.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(821, 567);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(39, 37);
-            this.label47.TabIndex = 54;
-            this.label47.Text = "--";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label48
-            // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.Transparent;
-            this.label48.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(1061, 567);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(39, 37);
-            this.label48.TabIndex = 55;
-            this.label48.Text = "--";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label49
-            // 
-            this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.Transparent;
-            this.label49.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(1302, 567);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 37);
-            this.label49.TabIndex = 56;
-            this.label49.Text = "--";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideNumber8
-            // 
-            this.bedsideNumber8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideNumber8.AutoSize = true;
-            this.bedsideNumber8.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideNumber8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber8.Location = new System.Drawing.Point(101, 649);
-            this.bedsideNumber8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideNumber8.Name = "bedsideNumber8";
-            this.bedsideNumber8.Size = new System.Drawing.Size(39, 37);
-            this.bedsideNumber8.TabIndex = 57;
-            this.bedsideNumber8.Text = "--";
-            this.bedsideNumber8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bedsideStatus8
-            // 
-            this.bedsideStatus8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bedsideStatus8.AutoSize = true;
-            this.bedsideStatus8.BackColor = System.Drawing.Color.Transparent;
-            this.bedsideStatus8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus8.Location = new System.Drawing.Point(341, 649);
-            this.bedsideStatus8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bedsideStatus8.Name = "bedsideStatus8";
-            this.bedsideStatus8.Size = new System.Drawing.Size(39, 37);
-            this.bedsideStatus8.TabIndex = 58;
-            this.bedsideStatus8.Text = "--";
-            this.bedsideStatus8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bloodPressureValue8
-            // 
-            this.bloodPressureValue8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bloodPressureValue8.AutoSize = true;
-            this.bloodPressureValue8.BackColor = System.Drawing.Color.Transparent;
-            this.bloodPressureValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue8.Location = new System.Drawing.Point(581, 649);
-            this.bloodPressureValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bloodPressureValue8.Name = "bloodPressureValue8";
-            this.bloodPressureValue8.Size = new System.Drawing.Size(39, 37);
-            this.bloodPressureValue8.TabIndex = 59;
-            this.bloodPressureValue8.Text = "--";
-            this.bloodPressureValue8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label53
-            // 
-            this.label53.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.Color.Transparent;
-            this.label53.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(821, 649);
-            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(39, 37);
-            this.label53.TabIndex = 60;
-            this.label53.Text = "--";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label54
-            // 
-            this.label54.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label54.AutoSize = true;
-            this.label54.BackColor = System.Drawing.Color.Transparent;
-            this.label54.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(1061, 649);
-            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(39, 37);
-            this.label54.TabIndex = 61;
-            this.label54.Text = "--";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label55
             // 
             this.label55.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label55.AutoSize = true;
             this.label55.BackColor = System.Drawing.Color.Transparent;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(1302, 649);
+            this.label55.Location = new System.Drawing.Point(1302, 653);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(39, 37);
@@ -958,15 +323,650 @@
             this.label55.Text = "--";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // centralStationNameComboBox
+            // label54
             // 
-            this.centralStationNameComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.centralStationNameComboBox.FormattingEnabled = true;
-            this.centralStationNameComboBox.Location = new System.Drawing.Point(163, 24);
-            this.centralStationNameComboBox.Name = "centralStationNameComboBox";
-            this.centralStationNameComboBox.Size = new System.Drawing.Size(121, 33);
-            this.centralStationNameComboBox.TabIndex = 7;
-            this.centralStationNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.centralStationNameComboBox_KeyPress);
+            this.label54.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Transparent;
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(1061, 653);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(39, 37);
+            this.label54.TabIndex = 61;
+            this.label54.Text = "--";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label53
+            // 
+            this.label53.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(821, 653);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(39, 37);
+            this.label53.TabIndex = 60;
+            this.label53.Text = "--";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue8
+            // 
+            this.bloodPressureValue8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue8.AutoSize = true;
+            this.bloodPressureValue8.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue8.Location = new System.Drawing.Point(581, 653);
+            this.bloodPressureValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue8.Name = "bloodPressureValue8";
+            this.bloodPressureValue8.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue8.TabIndex = 59;
+            this.bloodPressureValue8.Text = "--";
+            this.bloodPressureValue8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus8
+            // 
+            this.bedsideStatus8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus8.AutoSize = true;
+            this.bedsideStatus8.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus8.Location = new System.Drawing.Point(341, 653);
+            this.bedsideStatus8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus8.Name = "bedsideStatus8";
+            this.bedsideStatus8.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus8.TabIndex = 58;
+            this.bedsideStatus8.Text = "--";
+            this.bedsideStatus8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber8
+            // 
+            this.bedsideNumber8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber8.AutoSize = true;
+            this.bedsideNumber8.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber8.Location = new System.Drawing.Point(101, 653);
+            this.bedsideNumber8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber8.Name = "bedsideNumber8";
+            this.bedsideNumber8.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber8.TabIndex = 57;
+            this.bedsideNumber8.Text = "--";
+            this.bedsideNumber8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.Transparent;
+            this.label49.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(1302, 574);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(39, 37);
+            this.label49.TabIndex = 56;
+            this.label49.Text = "--";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.Color.Transparent;
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(1061, 574);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(39, 37);
+            this.label48.TabIndex = 55;
+            this.label48.Text = "--";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.Transparent;
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(821, 574);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(39, 37);
+            this.label47.TabIndex = 54;
+            this.label47.Text = "--";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue7
+            // 
+            this.bloodPressureValue7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue7.AutoSize = true;
+            this.bloodPressureValue7.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue7.Location = new System.Drawing.Point(581, 574);
+            this.bloodPressureValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue7.Name = "bloodPressureValue7";
+            this.bloodPressureValue7.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue7.TabIndex = 53;
+            this.bloodPressureValue7.Text = "--";
+            this.bloodPressureValue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus7
+            // 
+            this.bedsideStatus7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus7.AutoSize = true;
+            this.bedsideStatus7.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus7.Location = new System.Drawing.Point(341, 574);
+            this.bedsideStatus7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus7.Name = "bedsideStatus7";
+            this.bedsideStatus7.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus7.TabIndex = 52;
+            this.bedsideStatus7.Text = "--";
+            this.bedsideStatus7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber7
+            // 
+            this.bedsideNumber7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber7.AutoSize = true;
+            this.bedsideNumber7.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber7.Location = new System.Drawing.Point(101, 574);
+            this.bedsideNumber7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber7.Name = "bedsideNumber7";
+            this.bedsideNumber7.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber7.TabIndex = 51;
+            this.bedsideNumber7.Text = "--";
+            this.bedsideNumber7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.Color.Transparent;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(1302, 495);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(39, 37);
+            this.label43.TabIndex = 50;
+            this.label43.Text = "--";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(1061, 495);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(39, 37);
+            this.label42.TabIndex = 49;
+            this.label42.Text = "--";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.Transparent;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(821, 495);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(39, 37);
+            this.label41.TabIndex = 48;
+            this.label41.Text = "--";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue6
+            // 
+            this.bloodPressureValue6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue6.AutoSize = true;
+            this.bloodPressureValue6.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue6.Location = new System.Drawing.Point(581, 495);
+            this.bloodPressureValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue6.Name = "bloodPressureValue6";
+            this.bloodPressureValue6.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue6.TabIndex = 47;
+            this.bloodPressureValue6.Text = "--";
+            this.bloodPressureValue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus6
+            // 
+            this.bedsideStatus6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus6.AutoSize = true;
+            this.bedsideStatus6.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus6.Location = new System.Drawing.Point(341, 495);
+            this.bedsideStatus6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus6.Name = "bedsideStatus6";
+            this.bedsideStatus6.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus6.TabIndex = 46;
+            this.bedsideStatus6.Text = "--";
+            this.bedsideStatus6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber6
+            // 
+            this.bedsideNumber6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber6.AutoSize = true;
+            this.bedsideNumber6.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber6.Location = new System.Drawing.Point(101, 495);
+            this.bedsideNumber6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber6.Name = "bedsideNumber6";
+            this.bedsideNumber6.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber6.TabIndex = 45;
+            this.bedsideNumber6.Text = "--";
+            this.bedsideNumber6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(1302, 416);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(39, 37);
+            this.label37.TabIndex = 44;
+            this.label37.Text = "--";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(1061, 416);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(39, 37);
+            this.label36.TabIndex = 43;
+            this.label36.Text = "--";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(821, 416);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(39, 37);
+            this.label35.TabIndex = 42;
+            this.label35.Text = "--";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue5
+            // 
+            this.bloodPressureValue5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue5.AutoSize = true;
+            this.bloodPressureValue5.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue5.Location = new System.Drawing.Point(581, 416);
+            this.bloodPressureValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue5.Name = "bloodPressureValue5";
+            this.bloodPressureValue5.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue5.TabIndex = 41;
+            this.bloodPressureValue5.Text = "--";
+            this.bloodPressureValue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus5
+            // 
+            this.bedsideStatus5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus5.AutoSize = true;
+            this.bedsideStatus5.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus5.Location = new System.Drawing.Point(341, 416);
+            this.bedsideStatus5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus5.Name = "bedsideStatus5";
+            this.bedsideStatus5.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus5.TabIndex = 40;
+            this.bedsideStatus5.Text = "--";
+            this.bedsideStatus5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber5
+            // 
+            this.bedsideNumber5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber5.AutoSize = true;
+            this.bedsideNumber5.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber5.Location = new System.Drawing.Point(101, 416);
+            this.bedsideNumber5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber5.Name = "bedsideNumber5";
+            this.bedsideNumber5.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber5.TabIndex = 39;
+            this.bedsideNumber5.Text = "--";
+            this.bedsideNumber5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(1302, 337);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(39, 37);
+            this.label31.TabIndex = 38;
+            this.label31.Text = "--";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(1061, 337);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(39, 37);
+            this.label30.TabIndex = 37;
+            this.label30.Text = "--";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(821, 337);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(39, 37);
+            this.label29.TabIndex = 36;
+            this.label29.Text = "--";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue4
+            // 
+            this.bloodPressureValue4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue4.AutoSize = true;
+            this.bloodPressureValue4.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue4.Location = new System.Drawing.Point(581, 337);
+            this.bloodPressureValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue4.Name = "bloodPressureValue4";
+            this.bloodPressureValue4.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue4.TabIndex = 35;
+            this.bloodPressureValue4.Text = "--";
+            this.bloodPressureValue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus4
+            // 
+            this.bedsideStatus4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus4.AutoSize = true;
+            this.bedsideStatus4.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus4.Location = new System.Drawing.Point(341, 337);
+            this.bedsideStatus4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus4.Name = "bedsideStatus4";
+            this.bedsideStatus4.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus4.TabIndex = 34;
+            this.bedsideStatus4.Text = "--";
+            this.bedsideStatus4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber4
+            // 
+            this.bedsideNumber4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber4.AutoSize = true;
+            this.bedsideNumber4.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber4.Location = new System.Drawing.Point(101, 337);
+            this.bedsideNumber4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber4.Name = "bedsideNumber4";
+            this.bedsideNumber4.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber4.TabIndex = 33;
+            this.bedsideNumber4.Text = "--";
+            this.bedsideNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(1302, 258);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(39, 37);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "--";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(1061, 258);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(39, 37);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "--";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(821, 258);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(39, 37);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "--";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue3
+            // 
+            this.bloodPressureValue3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue3.AutoSize = true;
+            this.bloodPressureValue3.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue3.Location = new System.Drawing.Point(581, 258);
+            this.bloodPressureValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue3.Name = "bloodPressureValue3";
+            this.bloodPressureValue3.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue3.TabIndex = 29;
+            this.bloodPressureValue3.Text = "--";
+            this.bloodPressureValue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus3
+            // 
+            this.bedsideStatus3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus3.AutoSize = true;
+            this.bedsideStatus3.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus3.Location = new System.Drawing.Point(341, 258);
+            this.bedsideStatus3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus3.Name = "bedsideStatus3";
+            this.bedsideStatus3.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus3.TabIndex = 28;
+            this.bedsideStatus3.Text = "--";
+            this.bedsideStatus3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber3
+            // 
+            this.bedsideNumber3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber3.AutoSize = true;
+            this.bedsideNumber3.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber3.Location = new System.Drawing.Point(101, 258);
+            this.bedsideNumber3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber3.Name = "bedsideNumber3";
+            this.bedsideNumber3.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber3.TabIndex = 27;
+            this.bedsideNumber3.Text = "--";
+            this.bedsideNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1302, 179);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(39, 37);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "--";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1061, 179);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 37);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "--";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(821, 179);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 37);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "--";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue2
+            // 
+            this.bloodPressureValue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue2.AutoSize = true;
+            this.bloodPressureValue2.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue2.Location = new System.Drawing.Point(581, 179);
+            this.bloodPressureValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue2.Name = "bloodPressureValue2";
+            this.bloodPressureValue2.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue2.TabIndex = 23;
+            this.bloodPressureValue2.Text = "--";
+            this.bloodPressureValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus2
+            // 
+            this.bedsideStatus2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus2.AutoSize = true;
+            this.bedsideStatus2.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus2.Location = new System.Drawing.Point(341, 179);
+            this.bedsideStatus2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus2.Name = "bedsideStatus2";
+            this.bedsideStatus2.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus2.TabIndex = 22;
+            this.bedsideStatus2.Text = "--";
+            this.bedsideStatus2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideNumber2
+            // 
+            this.bedsideNumber2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideNumber2.AutoSize = true;
+            this.bedsideNumber2.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideNumber2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideNumber2.Location = new System.Drawing.Point(101, 179);
+            this.bedsideNumber2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideNumber2.Name = "bedsideNumber2";
+            this.bedsideNumber2.Size = new System.Drawing.Size(39, 37);
+            this.bedsideNumber2.TabIndex = 21;
+            this.bedsideNumber2.Text = "--";
+            this.bedsideNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1302, 100);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 37);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "--";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1061, 100);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 37);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "--";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(821, 100);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 37);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "--";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bloodPressureValue1
+            // 
+            this.bloodPressureValue1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bloodPressureValue1.AutoSize = true;
+            this.bloodPressureValue1.BackColor = System.Drawing.Color.Transparent;
+            this.bloodPressureValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bloodPressureValue1.Location = new System.Drawing.Point(581, 100);
+            this.bloodPressureValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bloodPressureValue1.Name = "bloodPressureValue1";
+            this.bloodPressureValue1.Size = new System.Drawing.Size(39, 37);
+            this.bloodPressureValue1.TabIndex = 17;
+            this.bloodPressureValue1.Text = "--";
+            this.bloodPressureValue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bedsideStatus1
+            // 
+            this.bedsideStatus1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bedsideStatus1.AutoSize = true;
+            this.bedsideStatus1.BackColor = System.Drawing.Color.Transparent;
+            this.bedsideStatus1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bedsideStatus1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bedsideStatus1.Location = new System.Drawing.Point(341, 100);
+            this.bedsideStatus1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bedsideStatus1.Name = "bedsideStatus1";
+            this.bedsideStatus1.Size = new System.Drawing.Size(39, 37);
+            this.bedsideStatus1.TabIndex = 16;
+            this.bedsideStatus1.Text = "--";
+            this.bedsideStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // central_station_screen
             // 

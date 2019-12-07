@@ -44,6 +44,8 @@ namespace Patient_Monitoring_System.Handler
             return updateComm.ExecuteNonQuery();
         }
 
+        
+
         public Reading getReading(MySqlConnection conn, int patientId)
         {
             string sql = "SELECT * FROM reading WHERE patient_id='" + patientId + "'";
