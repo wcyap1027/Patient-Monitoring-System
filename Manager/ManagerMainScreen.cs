@@ -277,7 +277,7 @@ namespace Manager
             {
                 if (optional1ComboBox.SelectedIndex > 0)
                 {
-                    AlarmGridView.DataSource = patientHandler.patientAlarm(dbConn.getConn(), patientId, selected);
+                   // AlarmGridView.DataSource = patientHandler.patientAlarm(dbConn.getConn(), patientId, selected);
                 }
             }
             else

@@ -24,5 +24,25 @@ namespace Manager
             mainScreen.ShowDialog();
             this.Close();
         }
+
+   
+
+        private void StaffSchedule_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Date");
+            dt.Columns.Add("Nurse ID");
+            dt.Columns.Add("First Name");
+            dt.Columns.Add("Last Name");
+
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
+            StaffSchedulerHandler scheduleHnd = new StaffSchedulerHandler();
+            dataOnDutyGridView.DataSource = scheduleHnd.getOnDutySchedule(dbConn.getConn());
+            dataOffDutyGridView.DataSource = scheduleHnd.getOffDutySchedule(dbConn.getConn());
+        }
+
+      
     }
 }
