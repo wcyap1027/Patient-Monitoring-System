@@ -15,6 +15,8 @@ namespace Manager
 {
     public partial class ManagerMainScreen : Form
     {
+        public static int patient_alarm_id = 0;
+
         public ManagerMainScreen()
         {
             InitializeComponent();
@@ -147,7 +149,10 @@ namespace Manager
             DbConnector dBConn = new DbConnector();
             dBConn.connect();
             PatientHandler patientHandler = new PatientHandler();
+            AlarmHandler alarmhd = new AlarmHandler();
             patientHandler.FetchId(patientComboBox);
+            alarmhd.FetchPatientAlarmId(AlarmIDcomboBox);
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -263,26 +268,44 @@ namespace Manager
 
         private void ViewButton_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-            PatientHandler patientHandler = new PatientHandler();
-
-            int patientId = int.Parse(patientComboBox.Text);
-
-            bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
-
-            string selected = optional1ComboBox.SelectedItem.ToString().ToLower();
-
-            if (status)
+            if (patientComboBox.SelectedIndex == 0)
             {
-                if (optional1ComboBox.SelectedIndex > 0)
+                MessageBox.Show("Please select valid patient id");
+                return;
+            }
+
+            if (AlarmIDcomboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select valid alarm id");
+                return;
+            }
+
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            int patientId = int.Parse(patientComboBox.SelectedItem.ToString());
+            int alarmId = int.Parse(AlarmIDcomboBox.SelectedItem.ToString());
+            AlarmHandler alarmhd = new AlarmHandler();
+            int assignResult = alarmhd.assignPatient(dbC.getConn(), alarmId, patientId);
+
+            if (assignResult == 1)
+            {
+                int statusResult = alarmhd.updateStatus(dbC.getConn(), patientId);
+
+                if (statusResult == 1)
                 {
-                    //AlarmGridView.DataSource = patientHandler.patientAlarm(dbConn.getConn(), patientId, selected);
+                    patient_alarm_id = alarmId;
+                    ManagerMainScreen mms = new ManagerMainScreen();
+                    mms.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to access");
                 }
             }
             else
             {
-                MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Failed to access");
             }
         }
 
