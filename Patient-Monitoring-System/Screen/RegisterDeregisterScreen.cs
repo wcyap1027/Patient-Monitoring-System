@@ -65,6 +65,7 @@ namespace Patient_Monitoring_System.Screen
             }
         }
 
+        //register
         private void registerbtn_Click(object sender, EventArgs e)
         {
             //validate department value
@@ -91,9 +92,9 @@ namespace Patient_Monitoring_System.Screen
             //check user whether he exist in database
             DBConnector dBConn = new DBConnector();
             dBConn.connect();
-            LoginHandler loginHandler = new LoginHandler();
+           
             UserHandler userHandler = new UserHandler();
-            bool status = loginHandler.proceedLogin(dBConn.getConn(), registerDepartmentcomboBox.SelectedItem.ToString(), userIdtextBox.Text, passwordtextBox.Text);
+            bool status = userHandler.proceedLogin(dBConn.getConn(), registerDepartmentcomboBox.SelectedItem.ToString().ToLower(), userIdtextBox.Text, passwordtextBox.Text);
 
             if (status)
             {
@@ -115,6 +116,7 @@ namespace Patient_Monitoring_System.Screen
             }
         }
 
+        //deregister
         private void deRegisterbtn_Click(object sender, EventArgs e)
         {
             //validate department value
@@ -141,9 +143,9 @@ namespace Patient_Monitoring_System.Screen
             //check user whether he exist in database 
             DBConnector dBConn = new DBConnector();
             dBConn.connect();
-            LoginHandler loginHandler = new LoginHandler();
+            
             UserHandler userHandler = new UserHandler();
-            bool status = loginHandler.proceedLogin(dBConn.getConn(), registerDepartmentcomboBox.SelectedItem.ToString(), userIdtextBox.Text, passwordtextBox.Text);
+            bool status = userHandler.proceedLogin(dBConn.getConn(), registerDepartmentcomboBox.SelectedItem.ToString().ToLower(), userIdtextBox.Text, passwordtextBox.Text);
 
             if (status)
             {

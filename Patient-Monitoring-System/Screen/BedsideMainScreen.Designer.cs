@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedsideMainScreen));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.temperatureCurrentValue = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.setAlarmBtn = new System.Windows.Forms.Button();
             this.muteAlarmBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.haltButton = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.setAlarmBtn = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,7 +170,6 @@
             this.minBloodPressureLabel.Size = new System.Drawing.Size(45, 25);
             this.minBloodPressureLabel.TabIndex = 4;
             this.minBloodPressureLabel.Text = "120";
-            this.minBloodPressureLabel.DoubleClick += new System.EventHandler(this.minBloodPressureLabel_DoubleClick);
             // 
             // maxBloodPressureLabel
             // 
@@ -417,6 +416,20 @@
             this.panel9.Size = new System.Drawing.Size(148, 560);
             this.panel9.TabIndex = 5;
             // 
+            // setAlarmBtn
+            // 
+            this.setAlarmBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.setAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.setAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.setAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setAlarmBtn.Image = ((System.Drawing.Image)(resources.GetObject("setAlarmBtn.Image")));
+            this.setAlarmBtn.Location = new System.Drawing.Point(92, 503);
+            this.setAlarmBtn.Name = "setAlarmBtn";
+            this.setAlarmBtn.Size = new System.Drawing.Size(53, 54);
+            this.setAlarmBtn.TabIndex = 10;
+            this.setAlarmBtn.UseVisualStyleBackColor = false;
+            this.setAlarmBtn.Click += new System.EventHandler(this.setAlarmBtn_Click);
+            // 
             // muteAlarmBtn
             // 
             this.muteAlarmBtn.BackColor = System.Drawing.Color.Red;
@@ -477,34 +490,34 @@
             // bloodPressureLineGraph
             // 
             this.bloodPressureLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea9.BackColor = System.Drawing.Color.Transparent;
-            chartArea9.BorderWidth = 5;
-            chartArea9.InnerPlotPosition.Auto = false;
-            chartArea9.InnerPlotPosition.Height = 30.3125F;
-            chartArea9.InnerPlotPosition.Width = 96.74647F;
-            chartArea9.InnerPlotPosition.X = 3F;
-            chartArea9.InnerPlotPosition.Y = 30F;
-            chartArea9.IsSameFontSizeForAllAxes = true;
-            chartArea9.Name = "ChartArea1";
-            chartArea9.Position.Auto = false;
-            chartArea9.Position.Height = 100F;
-            chartArea9.Position.Width = 100F;
-            this.bloodPressureLineGraph.ChartAreas.Add(chartArea9);
-            legend9.Enabled = false;
-            legend9.Name = "Legend1";
-            this.bloodPressureLineGraph.Legends.Add(legend9);
+            chartArea5.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.BorderWidth = 5;
+            chartArea5.InnerPlotPosition.Auto = false;
+            chartArea5.InnerPlotPosition.Height = 30.3125F;
+            chartArea5.InnerPlotPosition.Width = 96.74647F;
+            chartArea5.InnerPlotPosition.X = 3F;
+            chartArea5.InnerPlotPosition.Y = 30F;
+            chartArea5.IsSameFontSizeForAllAxes = true;
+            chartArea5.Name = "ChartArea1";
+            chartArea5.Position.Auto = false;
+            chartArea5.Position.Height = 100F;
+            chartArea5.Position.Width = 100F;
+            this.bloodPressureLineGraph.ChartAreas.Add(chartArea5);
+            legend5.Enabled = false;
+            legend5.Name = "Legend1";
+            this.bloodPressureLineGraph.Legends.Add(legend5);
             this.bloodPressureLineGraph.Location = new System.Drawing.Point(12, 12);
             this.bloodPressureLineGraph.Name = "bloodPressureLineGraph";
             this.bloodPressureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series9.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series9.BorderColor = System.Drawing.Color.Transparent;
-            series9.BorderWidth = 5;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series9.Legend = "Legend1";
-            series9.Name = "Blood Pressure";
-            this.bloodPressureLineGraph.Series.Add(series9);
+            series5.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series5.BorderColor = System.Drawing.Color.Transparent;
+            series5.BorderWidth = 5;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series5.Legend = "Legend1";
+            series5.Name = "Blood Pressure";
+            this.bloodPressureLineGraph.Series.Add(series5);
             this.bloodPressureLineGraph.Size = new System.Drawing.Size(979, 176);
             this.bloodPressureLineGraph.TabIndex = 0;
             this.bloodPressureLineGraph.Text = "chart1";
@@ -512,33 +525,33 @@
             // pulseRateLineGraph
             // 
             this.pulseRateLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea10.BackColor = System.Drawing.Color.Transparent;
-            chartArea10.InnerPlotPosition.Auto = false;
-            chartArea10.InnerPlotPosition.Height = 30.3125F;
-            chartArea10.InnerPlotPosition.Width = 96.74647F;
-            chartArea10.InnerPlotPosition.X = 3F;
-            chartArea10.InnerPlotPosition.Y = 30F;
-            chartArea10.IsSameFontSizeForAllAxes = true;
-            chartArea10.Name = "ChartArea1";
-            chartArea10.Position.Auto = false;
-            chartArea10.Position.Height = 100F;
-            chartArea10.Position.Width = 100F;
-            this.pulseRateLineGraph.ChartAreas.Add(chartArea10);
-            legend10.Enabled = false;
-            legend10.Name = "Legend1";
-            this.pulseRateLineGraph.Legends.Add(legend10);
+            chartArea6.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.InnerPlotPosition.Auto = false;
+            chartArea6.InnerPlotPosition.Height = 30.3125F;
+            chartArea6.InnerPlotPosition.Width = 96.74647F;
+            chartArea6.InnerPlotPosition.X = 3F;
+            chartArea6.InnerPlotPosition.Y = 30F;
+            chartArea6.IsSameFontSizeForAllAxes = true;
+            chartArea6.Name = "ChartArea1";
+            chartArea6.Position.Auto = false;
+            chartArea6.Position.Height = 100F;
+            chartArea6.Position.Width = 100F;
+            this.pulseRateLineGraph.ChartAreas.Add(chartArea6);
+            legend6.Enabled = false;
+            legend6.Name = "Legend1";
+            this.pulseRateLineGraph.Legends.Add(legend6);
             this.pulseRateLineGraph.Location = new System.Drawing.Point(12, 194);
             this.pulseRateLineGraph.Name = "pulseRateLineGraph";
             this.pulseRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series10.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series10.BorderColor = System.Drawing.Color.Transparent;
-            series10.BorderWidth = 5;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series10.Legend = "Legend1";
-            series10.Name = "Pulse Rate";
-            this.pulseRateLineGraph.Series.Add(series10);
+            series6.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series6.BorderColor = System.Drawing.Color.Transparent;
+            series6.BorderWidth = 5;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series6.Legend = "Legend1";
+            series6.Name = "Pulse Rate";
+            this.pulseRateLineGraph.Series.Add(series6);
             this.pulseRateLineGraph.Size = new System.Drawing.Size(979, 176);
             this.pulseRateLineGraph.TabIndex = 6;
             this.pulseRateLineGraph.Text = "chart1";
@@ -546,33 +559,33 @@
             // breathingRateLineGraph
             // 
             this.breathingRateLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea11.BackColor = System.Drawing.Color.Transparent;
-            chartArea11.InnerPlotPosition.Auto = false;
-            chartArea11.InnerPlotPosition.Height = 30.3125F;
-            chartArea11.InnerPlotPosition.Width = 96.74647F;
-            chartArea11.InnerPlotPosition.X = 3F;
-            chartArea11.InnerPlotPosition.Y = 30F;
-            chartArea11.IsSameFontSizeForAllAxes = true;
-            chartArea11.Name = "ChartArea1";
-            chartArea11.Position.Auto = false;
-            chartArea11.Position.Height = 100F;
-            chartArea11.Position.Width = 100F;
-            this.breathingRateLineGraph.ChartAreas.Add(chartArea11);
-            legend11.Enabled = false;
-            legend11.Name = "Legend1";
-            this.breathingRateLineGraph.Legends.Add(legend11);
+            chartArea7.BackColor = System.Drawing.Color.Transparent;
+            chartArea7.InnerPlotPosition.Auto = false;
+            chartArea7.InnerPlotPosition.Height = 30.3125F;
+            chartArea7.InnerPlotPosition.Width = 96.74647F;
+            chartArea7.InnerPlotPosition.X = 3F;
+            chartArea7.InnerPlotPosition.Y = 30F;
+            chartArea7.IsSameFontSizeForAllAxes = true;
+            chartArea7.Name = "ChartArea1";
+            chartArea7.Position.Auto = false;
+            chartArea7.Position.Height = 100F;
+            chartArea7.Position.Width = 100F;
+            this.breathingRateLineGraph.ChartAreas.Add(chartArea7);
+            legend7.Enabled = false;
+            legend7.Name = "Legend1";
+            this.breathingRateLineGraph.Legends.Add(legend7);
             this.breathingRateLineGraph.Location = new System.Drawing.Point(12, 376);
             this.breathingRateLineGraph.Name = "breathingRateLineGraph";
             this.breathingRateLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series11.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series11.BorderColor = System.Drawing.Color.Transparent;
-            series11.BorderWidth = 5;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series11.Legend = "Legend1";
-            series11.Name = "Breathing Rate";
-            this.breathingRateLineGraph.Series.Add(series11);
+            series7.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series7.BorderColor = System.Drawing.Color.Transparent;
+            series7.BorderWidth = 5;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series7.Legend = "Legend1";
+            series7.Name = "Breathing Rate";
+            this.breathingRateLineGraph.Series.Add(series7);
             this.breathingRateLineGraph.Size = new System.Drawing.Size(979, 176);
             this.breathingRateLineGraph.TabIndex = 7;
             this.breathingRateLineGraph.Text = "chart1";
@@ -580,33 +593,33 @@
             // temperatureLineGraph
             // 
             this.temperatureLineGraph.BackColor = System.Drawing.Color.Black;
-            chartArea12.BackColor = System.Drawing.Color.Transparent;
-            chartArea12.InnerPlotPosition.Auto = false;
-            chartArea12.InnerPlotPosition.Height = 30.3125F;
-            chartArea12.InnerPlotPosition.Width = 96.74647F;
-            chartArea12.InnerPlotPosition.X = 3F;
-            chartArea12.InnerPlotPosition.Y = 30F;
-            chartArea12.IsSameFontSizeForAllAxes = true;
-            chartArea12.Name = "ChartArea1";
-            chartArea12.Position.Auto = false;
-            chartArea12.Position.Height = 100F;
-            chartArea12.Position.Width = 100F;
-            this.temperatureLineGraph.ChartAreas.Add(chartArea12);
-            legend12.Enabled = false;
-            legend12.Name = "Legend1";
-            this.temperatureLineGraph.Legends.Add(legend12);
+            chartArea8.BackColor = System.Drawing.Color.Transparent;
+            chartArea8.InnerPlotPosition.Auto = false;
+            chartArea8.InnerPlotPosition.Height = 30.3125F;
+            chartArea8.InnerPlotPosition.Width = 96.74647F;
+            chartArea8.InnerPlotPosition.X = 3F;
+            chartArea8.InnerPlotPosition.Y = 30F;
+            chartArea8.IsSameFontSizeForAllAxes = true;
+            chartArea8.Name = "ChartArea1";
+            chartArea8.Position.Auto = false;
+            chartArea8.Position.Height = 100F;
+            chartArea8.Position.Width = 100F;
+            this.temperatureLineGraph.ChartAreas.Add(chartArea8);
+            legend8.Enabled = false;
+            legend8.Name = "Legend1";
+            this.temperatureLineGraph.Legends.Add(legend8);
             this.temperatureLineGraph.Location = new System.Drawing.Point(12, 555);
             this.temperatureLineGraph.Name = "temperatureLineGraph";
             this.temperatureLineGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series12.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series12.BorderColor = System.Drawing.Color.Transparent;
-            series12.BorderWidth = 5;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series12.Legend = "Legend1";
-            series12.Name = "Temperature";
-            this.temperatureLineGraph.Series.Add(series12);
+            series8.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series8.BorderColor = System.Drawing.Color.Transparent;
+            series8.BorderWidth = 5;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series8.Legend = "Legend1";
+            series8.Name = "Temperature";
+            this.temperatureLineGraph.Series.Add(series8);
             this.temperatureLineGraph.Size = new System.Drawing.Size(979, 176);
             this.temperatureLineGraph.TabIndex = 8;
             this.temperatureLineGraph.Text = "chart1";
@@ -677,20 +690,6 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Critical";
             // 
-            // setAlarmBtn
-            // 
-            this.setAlarmBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.setAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.setAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.setAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setAlarmBtn.Image = ((System.Drawing.Image)(resources.GetObject("setAlarmBtn.Image")));
-            this.setAlarmBtn.Location = new System.Drawing.Point(92, 503);
-            this.setAlarmBtn.Name = "setAlarmBtn";
-            this.setAlarmBtn.Size = new System.Drawing.Size(53, 54);
-            this.setAlarmBtn.TabIndex = 10;
-            this.setAlarmBtn.UseVisualStyleBackColor = false;
-            this.setAlarmBtn.Click += new System.EventHandler(this.setAlarmBtn_Click);
-            // 
             // BedsideMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -717,9 +716,7 @@
             this.Name = "BedsideMainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainScreen";
-            this.Activated += new System.EventHandler(this.BedsideMainScreen_Activated);
             this.Load += new System.EventHandler(this.BedsideMainScreen_Load);
-            this.DoubleClick += new System.EventHandler(this.BedsideMainScreen_DoubleClick);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -78,15 +78,31 @@ namespace Patient_Monitoring_System.Handler
             return listbloodpressure;
         }
 
-        public double getMaxBloodPressure(MySqlConnection conn, int patientId)
+        public int getLastIdBloodPressure(MySqlConnection conn, int patientId)
         {
-            double maxBP = 0.0;
+            int id = 0;
             string sql = "SELECT MAX(ID) FROM bloodpressure WHERE patient_id='" + patientId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             var query = sqlComm.ExecuteScalar();
 
             if(!(query is DBNull))
+            {
+                id = Convert.ToInt32(query);
+            }
+
+            return id;
+        }
+
+        public double getLastBloodPressure(MySqlConnection conn, int patientId, int lastId)
+        {
+            double maxBP = 0.0;
+            string sql = "SELECT bloodPressureValue FROM bloodpressure WHERE patient_id='" + patientId + "' AND id='"+lastId+"'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (!(query is DBNull))
             {
                 maxBP = Convert.ToDouble(query);
             }

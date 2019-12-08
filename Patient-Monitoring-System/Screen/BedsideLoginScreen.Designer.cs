@@ -148,7 +148,7 @@
             this.assignPanel.Name = "assignPanel";
             this.assignPanel.Size = new System.Drawing.Size(159, 174);
             this.assignPanel.TabIndex = 10;
-            this.assignPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.assignPanel_Paint);
+            
             // 
             // backAssignBtn
             // 

@@ -182,6 +182,7 @@ namespace Patient_Monitoring_System
                     {
                         oldPatient.BedsideId = 0;
                     }
+                    oldPatient.RegisterDateTime = (DateTime)myReader.GetValue(8);
                     listpatient.Add(oldPatient);
 
 

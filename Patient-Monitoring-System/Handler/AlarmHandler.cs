@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Patient_Monitoring_System
 {
@@ -123,6 +124,16 @@ namespace Patient_Monitoring_System
             return updateComm.ExecuteNonQuery();
         }
 
+        //get all alarm from one patient
+        public DataTable getAllAlarmPatient(MySqlConnection conn, int patientId)
+        {
+            string sql = "SELECT * FROM alarm WHERE patient_id='" + patientId + "'";
+            DataTable dt = new DataTable();
+            MySqlDataAdapter sqlAdapter = new MySqlDataAdapter(sql, conn);
+            sqlAdapter.Fill(dt);
+            return dt;
+        }
+
         //example
         public List<Alarm> getAllAlarm(MySqlConnection conn)
         {
@@ -137,13 +148,14 @@ namespace Patient_Monitoring_System
                 while (myReader.Read())
                 {
                     Alarm alarms = new Alarm ();
-                    alarms.SpecificId = (int)myReader.GetValue(0);
-                    alarms.ReadingId = (int)myReader.GetValue(1);
-                    alarms.PatientId = (int)myReader.GetValue(2);
-                    alarms.DateTimeTrigger = (DateTime)myReader.GetValue(3);
-                    alarms.DateTimeMuted = (DateTime)myReader.GetValue(4);
-                    alarms.TriggerValue = (int)myReader.GetValue(5);
-                    alarms.Remark = (string)myReader.GetValue(6);
+                    alarms.PatientId = (int)myReader.GetValue(1);
+                    alarms.ReadingId = (int)myReader.GetValue(2);
+                    alarms.SpecificId = (int)myReader.GetValue(3);
+                    alarms.TriggerValue = (int)myReader.GetValue(4);
+                    alarms.DateTimeTrigger = (DateTime)myReader.GetValue(5);
+                    alarms.DateTimeMuted = (DateTime)myReader.GetValue(6);
+                    
+                    alarms.Remark = (string)myReader.GetValue(7);
 
                     listAlarm.Add(alarms);
                 }

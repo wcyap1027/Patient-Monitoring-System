@@ -24,11 +24,7 @@ namespace Patient_Monitoring_System
         private List<BloodPressure> listBP = new List<BloodPressure>();
         public central_station_screen()
         {
-            InitializeComponent();
-            
-        
-backgroundWorkerTrackValue.WorkerSupportsCancellation = true;
-            
+            InitializeComponent();   
         }
 
         
@@ -128,77 +124,61 @@ backgroundWorkerTrackValue.WorkerSupportsCancellation = true;
                     }
 
                 }
-                //InitTimer();
-                //backgroundWorkerTrackValue.RunWorkerAsync(1000);
+                InitDataTimerBedside8();
+
+
             }
         }
 
+        public void InitDataTimerBedside8()
+        {
+            dataTimerBedside8 = new System.Windows.Forms.Timer();
+            dataTimerBedside8.Tick += new EventHandler(dataTimerBedside8_Tick);
+            dataTimerBedside8.Interval = 1000;
+            dataTimerBedside8.Start();
+        }
 
-        private void backgroundWorkerTrackValue_DoWork(object sender, DoWorkEventArgs e)
+       
+        private void dataTimerBedside8_Tick(object sender, EventArgs e)
         {
             CentralStationHandler csHandler = new CentralStationHandler();
             DBConnector dBc = new DBConnector();
             dBc.connect();
-            int x = 0;
-            while (x == 0)
+            int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[7].Id);
+            BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
+            BreathingRateHandler breathingRateHandler = new BreathingRateHandler();
+            PulseRateHandler pulseRateHandler = new PulseRateHandler();
+            TemperatureHandler temperatureHandler = new TemperatureHandler();
+            if (listLabelBedsideStatus[7].Text == "ONLINE")
             {
-                int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[x].Id);
-                int bedsideId = csHandler.checkBedsideAvailableForPatient(dBc.getConn(), patientId);
-                MessageBox.Show(patientId.ToString() + " "+ bedsideId.ToString());
-                if((bedsideId == listbedsides[x].Id) && (bedsideId == int.Parse(listLabelBedsideNumber[x].Text)))
-                {
-                    BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
-                    double value = bloodPressureHandler.getMaxBloodPressure(dBc.getConn(), patientId);
-                    listLabelBPValue[x].Invoke(new MethodInvoker(delegate { listLabelBPValue[x].Text = value.ToString(); }));
-                }
-                else
-                {
-                    string value = "--";
-                    listLabelBPValue[x].Invoke(new MethodInvoker(delegate { listLabelBPValue[x].Text = value; }));
-                }
+                //get last blood pressure
+                int lastIdBP = bloodPressureHandler.getLastIdBloodPressure(dBc.getConn(), patientId);
+                double lastBP = bloodPressureHandler.getLastBloodPressure(dBc.getConn(), patientId, lastIdBP);
 
+                //get last breathing rate
+                int lastIdBR = breathingRateHandler.getLastIdBreathingRate(dBc.getConn(), patientId);
+                double lastBR = breathingRateHandler.getLastBreathingRate(dBc.getConn(), patientId, lastIdBR);
 
-                if(x >= 8)
-                {
-                    x = x - x;
-                }
-                else
-                {
-                    x++;
-                }
+                //get last pulserate
+                int lastIdPR = pulseRateHandler.getLastIdPulseRate(dBc.getConn(), patientId);
+                double lastPR = pulseRateHandler.getLastPulseRate(dBc.getConn(), patientId, lastIdPR);
+
+                //get last temperature
+                int lastIdTemp = temperatureHandler.getLastIdTemperature(dBc.getConn(), patientId);
+                double lastTemp = temperatureHandler.getLastTemperature(dBc.getConn(), patientId, lastIdTemp);
+
+                bloodPressureValue8.Text = lastBP.ToString();
+                breathingRateValue8.Text = lastBR.ToString();
+                pulseRateValue8.Text = lastPR.ToString();
+                temperatureValue8.Text = lastTemp.ToString();
+
             }
-        }
-
-        public void InitTimer()
-        {
-            dataTimer = new System.Windows.Forms.Timer();
-            dataTimer.Tick += new EventHandler(dataTimer_Tick);
-            dataTimer.Interval = 1000;
-            dataTimer.Start();
-        }
-
-        private void dataTimer_Tick(object sender, EventArgs e)
-        {
-            CentralStationHandler csHandler = new CentralStationHandler();
-            DBConnector dBc = new DBConnector();
-            dBc.connect();
-
-            for(int i = 0; i < listbedsides.Count; i++)
+            else
             {
-                int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[i].Id);
-                int bedsideId = csHandler.checkBedsideAvailableForPatient(dBc.getConn(), patientId);
-                MessageBox.Show(patientId.ToString() + " " + bedsideId.ToString());
-                if ((bedsideId == listbedsides[i].Id) && (bedsideId == int.Parse(listLabelBedsideNumber[i].Text)))
-                {
-                    BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
-                    double value = bloodPressureHandler.getMaxBloodPressure(dBc.getConn(), patientId);
-                    listLabelBPValue[i].Invoke(new MethodInvoker(delegate { listLabelBPValue[i].Text = value.ToString(); }));
-                }
-                else
-                {
-                    string value = "--";
-                    listLabelBPValue[i].Invoke(new MethodInvoker(delegate { listLabelBPValue[i].Text = value; }));
-                }
+                bloodPressureValue8.Text = "--";
+                breathingRateValue8.Text = "--";
+                pulseRateValue8.Text = "--";
+                temperatureValue8.Text = "--";
             }
         }
     }

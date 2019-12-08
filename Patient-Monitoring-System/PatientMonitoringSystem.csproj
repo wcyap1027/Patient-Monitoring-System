@@ -88,7 +88,6 @@
       <DependentUpon>CentralStationScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\DBConnector.cs" />
-    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\PulseRateHandler.cs" />
     <Compile Include="Handler\RoleHandler.cs" />
     <Compile Include="Handler\TemperatureHandler.cs" />

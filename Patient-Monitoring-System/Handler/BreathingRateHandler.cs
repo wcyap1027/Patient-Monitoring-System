@@ -16,5 +16,38 @@ namespace Patient_Monitoring_System.Handler
             return sqlComm.ExecuteNonQuery();
 
         }
+        //get last id for breathing rate
+        public int getLastIdBreathingRate(MySqlConnection conn, int patientId)
+        {
+            int id = 0;
+            string sql = "SELECT MAX(ID) FROM breathingrate WHERE patient_id='" + patientId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (!(query is DBNull))
+            {
+                id = Convert.ToInt32(query);
+            }
+
+            return id;
+        }
+
+        //get last breathing rate
+        public double getLastBreathingRate(MySqlConnection conn, int patientId, int lastId)
+        {
+            double maxBP = 0.0;
+            string sql = "SELECT breathingRateValue FROM breathingrate WHERE patient_id='" + patientId + "' AND id='" + lastId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (!(query is DBNull))
+            {
+                maxBP = Convert.ToDouble(query);
+            }
+
+            return maxBP;
+        }
     }
 }

@@ -37,11 +37,13 @@ namespace BedsideSystem
         {
             InitializeComponent();
             getAllReading();
+            backgroundWorkerBeep.WorkerSupportsCancellation = true;
+            backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
+            backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
         }
 
         private async void readTemperatureData()
         {
-            kayChart dataCha = new kayChart(temperatureLineGraph, 60);
             kayChart dataChart = new kayChart(temperatureLineGraph, 60);
             dataChart.serieName = "Temperature";
             string path = "../../../Patient-Monitoring-System/data files/temperatureCSV.csv";
@@ -466,12 +468,9 @@ namespace BedsideSystem
                     string[] columns = line.Split(',');
                     foreach (string column in columns)
                     {
-                       
-
                         if (run)
                         {
 
-                           
                             double value = double.Parse(column);
                             //add each value to database *DONT Delete*
                             DateTime currentDate = DateTime.Now;
@@ -643,117 +642,13 @@ namespace BedsideSystem
             //--------------------------------------------------------//
 
             //start spline chart and read data
-            readBloodPressureData();
+           readBloodPressureData();
             readPulseRateData();
             readTemperatureData();
             readBreathingRateData();
             beepStatus = true;
             backgroundWorkerBeep.RunWorkerAsync(1500);
             
-        }
-
-        public string MinBP
-        {
-            get
-            {
-                return minBloodPressureLabel.Text;
-            }
-
-            set
-            {
-                minBloodPressureLabel.Text = value;
-            }
-        }
-
-        public string MaxBP
-        {
-            get
-            {
-                return maxBloodPressureLabel.Text;
-            }
-
-            set
-            {
-                maxBloodPressureLabel.Text = value;
-            }
-        }
-
-        public string MinBR
-        {
-            get
-            {
-                return minBreathingRateLabel.Text;
-            }
-
-            set
-            {
-                minBreathingRateLabel.Text = value;
-            }
-        }
-
-        public string MaxBR
-        {
-            get
-            {
-                return maxBreathingRateLabel.Text;
-            }
-
-            set
-            {
-                maxBreathingRateLabel.Text = value;
-            }
-        }
-
-        public string MinPR
-        {
-            get
-            {
-                return minPulseRateLabel.Text;
-            }
-
-            set
-            {
-                minPulseRateLabel.Text = value;
-            }
-        }
-
-        public string MaxPR
-        {
-            get
-            {
-                return maxPulseRateLabel.Text;
-            }
-
-            set
-            {
-                maxPulseRateLabel.Text = value;
-            }
-        }
-
-        public string MinT
-        {
-            get
-            {
-                return minTemperatureLabel.Text;
-            }
-
-            set
-            {
-                minTemperatureLabel.Text = value;
-            }
-        }
-
-        public string MaxT
-        {
-            get
-            {
-                return maxTemperatureLabel.Text;
-            }
-
-            set
-            {
-                maxTemperatureLabel.Text = value;
-            }
         }
 
         public void getAllReading()
@@ -792,9 +687,9 @@ namespace BedsideSystem
         private void BedsideMainScreen_Load(object sender, EventArgs e)
         {
             getAllReading();
-            backgroundWorkerBeep.WorkerSupportsCancellation = true;
-            backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
-            backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
+            //backgroundWorkerBeep.WorkerSupportsCancellation = true;
+            //backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
+            //backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
         }
 
         private void backgroundWorkerBeep_DoWork(object sender, DoWorkEventArgs e)
@@ -926,10 +821,10 @@ namespace BedsideSystem
 
         private void BedsideMainScreen_Activated(object sender, EventArgs e)
         {
-            InitializeComponent();
-            getAllReading();
-            ReadingScreen readingScreen = new ReadingScreen();
-            minBloodPressureLabel.Text = readingScreen.MinB; 
+            //InitializeComponent();
+            //getAllReading();
+            //ReadingScreen readingScreen = new ReadingScreen();
+            //minBloodPressureLabel.Text = readingScreen.MinB; 
         }
 
         private void setAlarmBtn_Click(object sender, EventArgs e)
@@ -938,14 +833,8 @@ namespace BedsideSystem
             readingScreen.Show();
         }
 
-        private void BedsideMainScreen_DoubleClick(object sender, EventArgs e)
-        { 
-            minBloodPressureLabel.Text = ReadingScreen.minb;
-        }
+       
 
-        private void minBloodPressureLabel_DoubleClick(object sender, EventArgs e)
-        {
-            minBloodPressureLabel.Text = ReadingScreen.minb;
-        }
+        
     }
 }

@@ -33,6 +33,7 @@
             this.patientButton = new System.Windows.Forms.Button();
             this.bedsideBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.logOutbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // centralStationbtn
@@ -44,9 +45,9 @@
             this.centralStationbtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.centralStationbtn.Image = ((System.Drawing.Image)(resources.GetObject("centralStationbtn.Image")));
             this.centralStationbtn.Location = new System.Drawing.Point(66, 156);
-            this.centralStationbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.centralStationbtn.Margin = new System.Windows.Forms.Padding(2);
             this.centralStationbtn.Name = "centralStationbtn";
-            this.centralStationbtn.Size = new System.Drawing.Size(168, 98);
+            this.centralStationbtn.Size = new System.Drawing.Size(168, 108);
             this.centralStationbtn.TabIndex = 1;
             this.centralStationbtn.Text = "Central Station";
             this.centralStationbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -62,9 +63,9 @@
             this.patientButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientButton.Image = ((System.Drawing.Image)(resources.GetObject("patientButton.Image")));
             this.patientButton.Location = new System.Drawing.Point(249, 156);
-            this.patientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.patientButton.Margin = new System.Windows.Forms.Padding(2);
             this.patientButton.Name = "patientButton";
-            this.patientButton.Size = new System.Drawing.Size(150, 98);
+            this.patientButton.Size = new System.Drawing.Size(150, 108);
             this.patientButton.TabIndex = 2;
             this.patientButton.Text = "Patient";
             this.patientButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -79,7 +80,7 @@
             this.bedsideBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bedsideBtn.Image = ((System.Drawing.Image)(resources.GetObject("bedsideBtn.Image")));
             this.bedsideBtn.Location = new System.Drawing.Point(422, 156);
-            this.bedsideBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bedsideBtn.Margin = new System.Windows.Forms.Padding(2);
             this.bedsideBtn.Name = "bedsideBtn";
             this.bedsideBtn.Size = new System.Drawing.Size(150, 108);
             this.bedsideBtn.TabIndex = 3;
@@ -101,6 +102,20 @@
             this.label1.Text = "Patient Monitoring System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logOutbtn
+            // 
+            this.logOutbtn.BackColor = System.Drawing.Color.Lime;
+            this.logOutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.logOutbtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutbtn.Image")));
+            this.logOutbtn.Location = new System.Drawing.Point(524, 308);
+            this.logOutbtn.Name = "logOutbtn";
+            this.logOutbtn.Size = new System.Drawing.Size(86, 48);
+            this.logOutbtn.TabIndex = 5;
+            this.logOutbtn.Text = "LogOut";
+            this.logOutbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.logOutbtn.UseVisualStyleBackColor = false;
+            this.logOutbtn.Click += new System.EventHandler(this.logOutbtn_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,11 +123,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(632, 368);
+            this.Controls.Add(this.logOutbtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bedsideBtn);
             this.Controls.Add(this.patientButton);
             this.Controls.Add(this.centralStationbtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Screen";
@@ -126,6 +142,7 @@
         private System.Windows.Forms.Button patientButton;
         private System.Windows.Forms.Button bedsideBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button logOutbtn;
     }
 }
 
