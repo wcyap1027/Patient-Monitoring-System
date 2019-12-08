@@ -28,61 +28,61 @@ namespace Patient_Monitoring_System
         //login
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (departmentComboBox.SelectedIndex == 0)
-            {
-                MessageBox.Show("Please select department");
-                return;
-            }
+            //if (departmentComboBox.SelectedIndex == 0)
+            //{
+            //    MessageBox.Show("Please select department");
+            //    return;
+            //}
 
-            if (usernameTextBox.Text == "Enter your user id")
-            {
-                MessageBox.Show("Please enter username");
-                return;
-            }
+            //if (usernameTextBox.Text == "Enter your user id")
+            //{
+            //    MessageBox.Show("Please enter username");
+            //    return;
+            //}
 
-            if (passwordTextBox.Text == "Enter password")
-            {
-                MessageBox.Show("Please enter password");
-                return;
-            }
+            //if (passwordTextBox.Text == "Enter password")
+            //{
+            //    MessageBox.Show("Please enter password");
+            //    return;
+            //}
 
 
 
-            DBConnector dbC = new DBConnector();
-            dbC.connect();
-            UserHandler userHandler = new UserHandler();
-            bool login = userHandler.proceedLogin(dbC.getConn(), departmentComboBox.SelectedItem.ToString().ToLower(), usernameTextBox.Text, passwordTextBox.Text);
+            //DBConnector dbC = new DBConnector();
+            //dbC.connect();
+            //UserHandler userHandler = new UserHandler();
+            //bool login = userHandler.proceedLogin(dbC.getConn(), departmentComboBox.SelectedItem.ToString().ToLower(), usernameTextBox.Text, passwordTextBox.Text);
 
-            if (login)
-            {
-                bool status = userHandler.changeLoginStatus(dbC.getConn(), usernameTextBox.Text, login, departmentComboBox.SelectedItem.ToString());
+            //if (login)
+            //{
+            //    bool status = userHandler.changeLoginStatus(dbC.getConn(), usernameTextBox.Text, login, departmentComboBox.SelectedItem.ToString());
 
-                if (status)
-                {
-                    userIdStatic = usernameTextBox.Text;
-                    userDepartment = departmentComboBox.SelectedItem.ToString().ToLower();
-                    MainScreen mainscreen = new MainScreen();
-                    mainscreen.Show();
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password");
-                    usernameTextBox.Text = "";
-                    passwordTextBox.Text = "";
-                }
+            //    if (status)
+            //    {
+            //        userIdStatic = usernameTextBox.Text;
+            //        userDepartment = departmentComboBox.SelectedItem.ToString().ToLower();
+            //        MainScreen mainscreen = new MainScreen();
+            //        mainscreen.Show();
+            //        Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid username or password");
+            //        usernameTextBox.Text = "";
+            //        passwordTextBox.Text = "";
+            //    }
 
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password");
-                usernameTextBox.Text = "";
-                passwordTextBox.Text = "";
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid username or password");
+            //    usernameTextBox.Text = "";
+            //    passwordTextBox.Text = "";
+            //}
 
-            //MainScreen mainscreen = new MainScreen();
-            //mainscreen.Show();
-            //Close();
+            MainScreen mainscreen = new MainScreen();
+            mainscreen.Show();
+            Close();
 
         }
 

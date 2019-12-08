@@ -47,48 +47,77 @@
             this.bloodPressureValue8 = new System.Windows.Forms.Label();
             this.bedsideStatus8 = new System.Windows.Forms.Label();
             this.bedsideNumber8 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
+            this.temperatureValue7 = new System.Windows.Forms.Label();
+            this.pulseRateValue7 = new System.Windows.Forms.Label();
+            this.breathingRateValue7 = new System.Windows.Forms.Label();
             this.bloodPressureValue7 = new System.Windows.Forms.Label();
             this.bedsideStatus7 = new System.Windows.Forms.Label();
             this.bedsideNumber7 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
+            this.temperatureValue6 = new System.Windows.Forms.Label();
+            this.pulseRateValue6 = new System.Windows.Forms.Label();
+            this.breathingRateValue6 = new System.Windows.Forms.Label();
             this.bloodPressureValue6 = new System.Windows.Forms.Label();
             this.bedsideStatus6 = new System.Windows.Forms.Label();
             this.bedsideNumber6 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
+            this.temperatureValue5 = new System.Windows.Forms.Label();
+            this.pulseRateValue5 = new System.Windows.Forms.Label();
+            this.breathingRateValue5 = new System.Windows.Forms.Label();
             this.bloodPressureValue5 = new System.Windows.Forms.Label();
             this.bedsideStatus5 = new System.Windows.Forms.Label();
             this.bedsideNumber5 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.temperatureValue4 = new System.Windows.Forms.Label();
+            this.pulseRateValue4 = new System.Windows.Forms.Label();
+            this.breathingRateValue4 = new System.Windows.Forms.Label();
             this.bloodPressureValue4 = new System.Windows.Forms.Label();
             this.bedsideStatus4 = new System.Windows.Forms.Label();
             this.bedsideNumber4 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.temperatureValue3 = new System.Windows.Forms.Label();
+            this.pulseRateValue3 = new System.Windows.Forms.Label();
+            this.breathingRateValue3 = new System.Windows.Forms.Label();
             this.bloodPressureValue3 = new System.Windows.Forms.Label();
             this.bedsideStatus3 = new System.Windows.Forms.Label();
             this.bedsideNumber3 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.temperatureValue2 = new System.Windows.Forms.Label();
+            this.pulseRateValue2 = new System.Windows.Forms.Label();
+            this.breathingRateValue2 = new System.Windows.Forms.Label();
             this.bloodPressureValue2 = new System.Windows.Forms.Label();
             this.bedsideStatus2 = new System.Windows.Forms.Label();
             this.bedsideNumber2 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.temperatureValue1 = new System.Windows.Forms.Label();
+            this.pulseRateValue1 = new System.Windows.Forms.Label();
+            this.breathingRateValue1 = new System.Windows.Forms.Label();
             this.bloodPressureValue1 = new System.Windows.Forms.Label();
             this.bedsideStatus1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.alarmStatusBtn2 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn3 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn4 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn5 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn6 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn7 = new System.Windows.Forms.Button();
+            this.alarmStatusBtn1 = new System.Windows.Forms.Button();
+            this.alarmStatusbtn8 = new System.Windows.Forms.Button();
             this.dataTimerBedside8 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer8 = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorkerAlarm = new System.ComponentModel.BackgroundWorker();
+            this.dataTimerBedside7 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside6 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside5 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside4 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside3 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside2 = new System.Windows.Forms.Timer(this.components);
+            this.dataTimerBedside1 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer7 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.timer6 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.centralStationtableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +147,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.centralStationNameComboBox);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.bayName);
@@ -144,7 +177,7 @@
             this.bedsideNumber1.AutoSize = true;
             this.bedsideNumber1.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber1.Location = new System.Drawing.Point(101, 100);
+            this.bedsideNumber1.Location = new System.Drawing.Point(84, 100);
             this.bedsideNumber1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber1.Name = "bedsideNumber1";
             this.bedsideNumber1.Size = new System.Drawing.Size(39, 37);
@@ -157,7 +190,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 27);
+            this.label2.Location = new System.Drawing.Point(64, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
@@ -169,7 +202,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(328, 27);
+            this.label4.Location = new System.Drawing.Point(277, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 25);
@@ -181,7 +214,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(531, 27);
+            this.label5.Location = new System.Drawing.Point(446, 27);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 25);
@@ -194,7 +227,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(771, 27);
+            this.label6.Location = new System.Drawing.Point(652, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 25);
@@ -207,7 +240,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1030, 27);
+            this.label8.Location = new System.Drawing.Point(877, 27);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 25);
@@ -220,7 +253,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1262, 27);
+            this.label10.Location = new System.Drawing.Point(1073, 27);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 25);
@@ -233,68 +266,77 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.centralStationtableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.centralStationtableLayoutPanel.ColumnCount = 6;
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.centralStationtableLayoutPanel.ColumnCount = 7;
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.centralStationtableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue8, 5, 8);
             this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue8, 4, 8);
             this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue8, 3, 8);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue8, 2, 8);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus8, 1, 8);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber8, 0, 8);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label49, 5, 7);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label48, 4, 7);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label47, 3, 7);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue7, 5, 7);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue7, 4, 7);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue7, 3, 7);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue7, 2, 7);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus7, 1, 7);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber7, 0, 7);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label43, 5, 6);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label42, 4, 6);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label41, 3, 6);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue6, 5, 6);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue6, 4, 6);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue6, 3, 6);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue6, 2, 6);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus6, 1, 6);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber6, 0, 6);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label37, 5, 5);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label36, 4, 5);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label35, 3, 5);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue5, 5, 5);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue5, 4, 5);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue5, 3, 5);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue5, 2, 5);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus5, 1, 5);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber5, 0, 5);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label31, 5, 4);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label30, 4, 4);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label29, 3, 4);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue4, 5, 4);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue4, 4, 4);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue4, 3, 4);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue4, 2, 4);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus4, 1, 4);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber4, 0, 4);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label25, 5, 3);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label24, 4, 3);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label23, 3, 3);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue3, 5, 3);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue3, 4, 3);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue3, 3, 3);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue3, 2, 3);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus3, 1, 3);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber3, 0, 3);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label19, 5, 2);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label18, 4, 2);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label17, 3, 2);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue2, 5, 2);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue2, 4, 2);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue2, 3, 2);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue2, 2, 2);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus2, 1, 2);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber2, 0, 2);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label13, 5, 1);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label12, 4, 1);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label11, 3, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.temperatureValue1, 5, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.pulseRateValue1, 4, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.breathingRateValue1, 3, 1);
             this.centralStationtableLayoutPanel.Controls.Add(this.bloodPressureValue1, 2, 1);
-            this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus1, 1, 1);
-            this.centralStationtableLayoutPanel.Controls.Add(this.label10, 5, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label8, 4, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label6, 3, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label5, 2, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label4, 1, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.label2, 0, 0);
             this.centralStationtableLayoutPanel.Controls.Add(this.bedsideNumber1, 0, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.bedsideStatus1, 1, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.label10, 5, 0);
+            this.centralStationtableLayoutPanel.Controls.Add(this.label1, 6, 0);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn2, 6, 2);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn3, 6, 3);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn4, 6, 4);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn5, 6, 5);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn6, 6, 6);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn7, 6, 7);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusBtn1, 6, 1);
+            this.centralStationtableLayoutPanel.Controls.Add(this.alarmStatusbtn8, 6, 8);
             this.centralStationtableLayoutPanel.Location = new System.Drawing.Point(0, 97);
             this.centralStationtableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.centralStationtableLayoutPanel.Name = "centralStationtableLayoutPanel";
@@ -308,6 +350,7 @@
             this.centralStationtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.centralStationtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.centralStationtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.centralStationtableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.centralStationtableLayoutPanel.Size = new System.Drawing.Size(1444, 712);
             this.centralStationtableLayoutPanel.TabIndex = 4;
             // 
@@ -317,7 +360,7 @@
             this.temperatureValue8.AutoSize = true;
             this.temperatureValue8.BackColor = System.Drawing.Color.Transparent;
             this.temperatureValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temperatureValue8.Location = new System.Drawing.Point(1302, 653);
+            this.temperatureValue8.Location = new System.Drawing.Point(1114, 653);
             this.temperatureValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.temperatureValue8.Name = "temperatureValue8";
             this.temperatureValue8.Size = new System.Drawing.Size(39, 37);
@@ -331,7 +374,7 @@
             this.pulseRateValue8.AutoSize = true;
             this.pulseRateValue8.BackColor = System.Drawing.Color.Transparent;
             this.pulseRateValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pulseRateValue8.Location = new System.Drawing.Point(1061, 653);
+            this.pulseRateValue8.Location = new System.Drawing.Point(908, 653);
             this.pulseRateValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pulseRateValue8.Name = "pulseRateValue8";
             this.pulseRateValue8.Size = new System.Drawing.Size(39, 37);
@@ -345,7 +388,7 @@
             this.breathingRateValue8.AutoSize = true;
             this.breathingRateValue8.BackColor = System.Drawing.Color.Transparent;
             this.breathingRateValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breathingRateValue8.Location = new System.Drawing.Point(821, 653);
+            this.breathingRateValue8.Location = new System.Drawing.Point(702, 653);
             this.breathingRateValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.breathingRateValue8.Name = "breathingRateValue8";
             this.breathingRateValue8.Size = new System.Drawing.Size(39, 37);
@@ -359,7 +402,7 @@
             this.bloodPressureValue8.AutoSize = true;
             this.bloodPressureValue8.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue8.Location = new System.Drawing.Point(581, 653);
+            this.bloodPressureValue8.Location = new System.Drawing.Point(496, 653);
             this.bloodPressureValue8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue8.Name = "bloodPressureValue8";
             this.bloodPressureValue8.Size = new System.Drawing.Size(39, 37);
@@ -373,7 +416,7 @@
             this.bedsideStatus8.AutoSize = true;
             this.bedsideStatus8.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus8.Location = new System.Drawing.Point(341, 653);
+            this.bedsideStatus8.Location = new System.Drawing.Point(290, 653);
             this.bedsideStatus8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus8.Name = "bedsideStatus8";
             this.bedsideStatus8.Size = new System.Drawing.Size(39, 37);
@@ -387,7 +430,7 @@
             this.bedsideNumber8.AutoSize = true;
             this.bedsideNumber8.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber8.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber8.Location = new System.Drawing.Point(101, 653);
+            this.bedsideNumber8.Location = new System.Drawing.Point(84, 653);
             this.bedsideNumber8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber8.Name = "bedsideNumber8";
             this.bedsideNumber8.Size = new System.Drawing.Size(39, 37);
@@ -395,47 +438,47 @@
             this.bedsideNumber8.Text = "--";
             this.bedsideNumber8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label49
+            // temperatureValue7
             // 
-            this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.Transparent;
-            this.label49.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(1302, 574);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 37);
-            this.label49.TabIndex = 56;
-            this.label49.Text = "--";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue7.AutoSize = true;
+            this.temperatureValue7.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue7.Location = new System.Drawing.Point(1114, 574);
+            this.temperatureValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue7.Name = "temperatureValue7";
+            this.temperatureValue7.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue7.TabIndex = 56;
+            this.temperatureValue7.Text = "--";
+            this.temperatureValue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label48
+            // pulseRateValue7
             // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.Transparent;
-            this.label48.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(1061, 574);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(39, 37);
-            this.label48.TabIndex = 55;
-            this.label48.Text = "--";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue7.AutoSize = true;
+            this.pulseRateValue7.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue7.Location = new System.Drawing.Point(908, 574);
+            this.pulseRateValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue7.Name = "pulseRateValue7";
+            this.pulseRateValue7.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue7.TabIndex = 55;
+            this.pulseRateValue7.Text = "--";
+            this.pulseRateValue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label47
+            // breathingRateValue7
             // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.Transparent;
-            this.label47.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(821, 574);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(39, 37);
-            this.label47.TabIndex = 54;
-            this.label47.Text = "--";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue7.AutoSize = true;
+            this.breathingRateValue7.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue7.Location = new System.Drawing.Point(702, 574);
+            this.breathingRateValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue7.Name = "breathingRateValue7";
+            this.breathingRateValue7.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue7.TabIndex = 54;
+            this.breathingRateValue7.Text = "--";
+            this.breathingRateValue7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue7
             // 
@@ -443,7 +486,7 @@
             this.bloodPressureValue7.AutoSize = true;
             this.bloodPressureValue7.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue7.Location = new System.Drawing.Point(581, 574);
+            this.bloodPressureValue7.Location = new System.Drawing.Point(496, 574);
             this.bloodPressureValue7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue7.Name = "bloodPressureValue7";
             this.bloodPressureValue7.Size = new System.Drawing.Size(39, 37);
@@ -457,7 +500,7 @@
             this.bedsideStatus7.AutoSize = true;
             this.bedsideStatus7.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus7.Location = new System.Drawing.Point(341, 574);
+            this.bedsideStatus7.Location = new System.Drawing.Point(290, 574);
             this.bedsideStatus7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus7.Name = "bedsideStatus7";
             this.bedsideStatus7.Size = new System.Drawing.Size(39, 37);
@@ -471,7 +514,7 @@
             this.bedsideNumber7.AutoSize = true;
             this.bedsideNumber7.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber7.Location = new System.Drawing.Point(101, 574);
+            this.bedsideNumber7.Location = new System.Drawing.Point(84, 574);
             this.bedsideNumber7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber7.Name = "bedsideNumber7";
             this.bedsideNumber7.Size = new System.Drawing.Size(39, 37);
@@ -479,47 +522,47 @@
             this.bedsideNumber7.Text = "--";
             this.bedsideNumber7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label43
+            // temperatureValue6
             // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.Transparent;
-            this.label43.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(1302, 495);
-            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(39, 37);
-            this.label43.TabIndex = 50;
-            this.label43.Text = "--";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue6.AutoSize = true;
+            this.temperatureValue6.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue6.Location = new System.Drawing.Point(1114, 495);
+            this.temperatureValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue6.Name = "temperatureValue6";
+            this.temperatureValue6.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue6.TabIndex = 50;
+            this.temperatureValue6.Text = "--";
+            this.temperatureValue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label42
+            // pulseRateValue6
             // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(1061, 495);
-            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(39, 37);
-            this.label42.TabIndex = 49;
-            this.label42.Text = "--";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue6.AutoSize = true;
+            this.pulseRateValue6.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue6.Location = new System.Drawing.Point(908, 495);
+            this.pulseRateValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue6.Name = "pulseRateValue6";
+            this.pulseRateValue6.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue6.TabIndex = 49;
+            this.pulseRateValue6.Text = "--";
+            this.pulseRateValue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label41
+            // breathingRateValue6
             // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(821, 495);
-            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(39, 37);
-            this.label41.TabIndex = 48;
-            this.label41.Text = "--";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue6.AutoSize = true;
+            this.breathingRateValue6.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue6.Location = new System.Drawing.Point(702, 495);
+            this.breathingRateValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue6.Name = "breathingRateValue6";
+            this.breathingRateValue6.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue6.TabIndex = 48;
+            this.breathingRateValue6.Text = "--";
+            this.breathingRateValue6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue6
             // 
@@ -527,7 +570,7 @@
             this.bloodPressureValue6.AutoSize = true;
             this.bloodPressureValue6.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue6.Location = new System.Drawing.Point(581, 495);
+            this.bloodPressureValue6.Location = new System.Drawing.Point(496, 495);
             this.bloodPressureValue6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue6.Name = "bloodPressureValue6";
             this.bloodPressureValue6.Size = new System.Drawing.Size(39, 37);
@@ -541,7 +584,7 @@
             this.bedsideStatus6.AutoSize = true;
             this.bedsideStatus6.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus6.Location = new System.Drawing.Point(341, 495);
+            this.bedsideStatus6.Location = new System.Drawing.Point(290, 495);
             this.bedsideStatus6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus6.Name = "bedsideStatus6";
             this.bedsideStatus6.Size = new System.Drawing.Size(39, 37);
@@ -555,7 +598,7 @@
             this.bedsideNumber6.AutoSize = true;
             this.bedsideNumber6.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber6.Location = new System.Drawing.Point(101, 495);
+            this.bedsideNumber6.Location = new System.Drawing.Point(84, 495);
             this.bedsideNumber6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber6.Name = "bedsideNumber6";
             this.bedsideNumber6.Size = new System.Drawing.Size(39, 37);
@@ -563,47 +606,47 @@
             this.bedsideNumber6.Text = "--";
             this.bedsideNumber6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label37
+            // temperatureValue5
             // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(1302, 416);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(39, 37);
-            this.label37.TabIndex = 44;
-            this.label37.Text = "--";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue5.AutoSize = true;
+            this.temperatureValue5.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue5.Location = new System.Drawing.Point(1114, 416);
+            this.temperatureValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue5.Name = "temperatureValue5";
+            this.temperatureValue5.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue5.TabIndex = 44;
+            this.temperatureValue5.Text = "--";
+            this.temperatureValue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label36
+            // pulseRateValue5
             // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(1061, 416);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(39, 37);
-            this.label36.TabIndex = 43;
-            this.label36.Text = "--";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue5.AutoSize = true;
+            this.pulseRateValue5.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue5.Location = new System.Drawing.Point(908, 416);
+            this.pulseRateValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue5.Name = "pulseRateValue5";
+            this.pulseRateValue5.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue5.TabIndex = 43;
+            this.pulseRateValue5.Text = "--";
+            this.pulseRateValue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label35
+            // breathingRateValue5
             // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(821, 416);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(39, 37);
-            this.label35.TabIndex = 42;
-            this.label35.Text = "--";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue5.AutoSize = true;
+            this.breathingRateValue5.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue5.Location = new System.Drawing.Point(702, 416);
+            this.breathingRateValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue5.Name = "breathingRateValue5";
+            this.breathingRateValue5.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue5.TabIndex = 42;
+            this.breathingRateValue5.Text = "--";
+            this.breathingRateValue5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue5
             // 
@@ -611,7 +654,7 @@
             this.bloodPressureValue5.AutoSize = true;
             this.bloodPressureValue5.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue5.Location = new System.Drawing.Point(581, 416);
+            this.bloodPressureValue5.Location = new System.Drawing.Point(496, 416);
             this.bloodPressureValue5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue5.Name = "bloodPressureValue5";
             this.bloodPressureValue5.Size = new System.Drawing.Size(39, 37);
@@ -625,7 +668,7 @@
             this.bedsideStatus5.AutoSize = true;
             this.bedsideStatus5.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus5.Location = new System.Drawing.Point(341, 416);
+            this.bedsideStatus5.Location = new System.Drawing.Point(290, 416);
             this.bedsideStatus5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus5.Name = "bedsideStatus5";
             this.bedsideStatus5.Size = new System.Drawing.Size(39, 37);
@@ -639,7 +682,7 @@
             this.bedsideNumber5.AutoSize = true;
             this.bedsideNumber5.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber5.Location = new System.Drawing.Point(101, 416);
+            this.bedsideNumber5.Location = new System.Drawing.Point(84, 416);
             this.bedsideNumber5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber5.Name = "bedsideNumber5";
             this.bedsideNumber5.Size = new System.Drawing.Size(39, 37);
@@ -647,47 +690,47 @@
             this.bedsideNumber5.Text = "--";
             this.bedsideNumber5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // temperatureValue4
             // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(1302, 337);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(39, 37);
-            this.label31.TabIndex = 38;
-            this.label31.Text = "--";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue4.AutoSize = true;
+            this.temperatureValue4.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue4.Location = new System.Drawing.Point(1114, 337);
+            this.temperatureValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue4.Name = "temperatureValue4";
+            this.temperatureValue4.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue4.TabIndex = 38;
+            this.temperatureValue4.Text = "--";
+            this.temperatureValue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // pulseRateValue4
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(1061, 337);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(39, 37);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "--";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue4.AutoSize = true;
+            this.pulseRateValue4.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue4.Location = new System.Drawing.Point(908, 337);
+            this.pulseRateValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue4.Name = "pulseRateValue4";
+            this.pulseRateValue4.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue4.TabIndex = 37;
+            this.pulseRateValue4.Text = "--";
+            this.pulseRateValue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // breathingRateValue4
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(821, 337);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(39, 37);
-            this.label29.TabIndex = 36;
-            this.label29.Text = "--";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue4.AutoSize = true;
+            this.breathingRateValue4.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue4.Location = new System.Drawing.Point(702, 337);
+            this.breathingRateValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue4.Name = "breathingRateValue4";
+            this.breathingRateValue4.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue4.TabIndex = 36;
+            this.breathingRateValue4.Text = "--";
+            this.breathingRateValue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue4
             // 
@@ -695,7 +738,7 @@
             this.bloodPressureValue4.AutoSize = true;
             this.bloodPressureValue4.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue4.Location = new System.Drawing.Point(581, 337);
+            this.bloodPressureValue4.Location = new System.Drawing.Point(496, 337);
             this.bloodPressureValue4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue4.Name = "bloodPressureValue4";
             this.bloodPressureValue4.Size = new System.Drawing.Size(39, 37);
@@ -709,7 +752,7 @@
             this.bedsideStatus4.AutoSize = true;
             this.bedsideStatus4.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus4.Location = new System.Drawing.Point(341, 337);
+            this.bedsideStatus4.Location = new System.Drawing.Point(290, 337);
             this.bedsideStatus4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus4.Name = "bedsideStatus4";
             this.bedsideStatus4.Size = new System.Drawing.Size(39, 37);
@@ -723,7 +766,7 @@
             this.bedsideNumber4.AutoSize = true;
             this.bedsideNumber4.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber4.Location = new System.Drawing.Point(101, 337);
+            this.bedsideNumber4.Location = new System.Drawing.Point(84, 337);
             this.bedsideNumber4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber4.Name = "bedsideNumber4";
             this.bedsideNumber4.Size = new System.Drawing.Size(39, 37);
@@ -731,47 +774,47 @@
             this.bedsideNumber4.Text = "--";
             this.bedsideNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label25
+            // temperatureValue3
             // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(1302, 258);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(39, 37);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "--";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue3.AutoSize = true;
+            this.temperatureValue3.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue3.Location = new System.Drawing.Point(1114, 258);
+            this.temperatureValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue3.Name = "temperatureValue3";
+            this.temperatureValue3.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue3.TabIndex = 32;
+            this.temperatureValue3.Text = "--";
+            this.temperatureValue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
+            // pulseRateValue3
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(1061, 258);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(39, 37);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "--";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue3.AutoSize = true;
+            this.pulseRateValue3.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue3.Location = new System.Drawing.Point(908, 258);
+            this.pulseRateValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue3.Name = "pulseRateValue3";
+            this.pulseRateValue3.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue3.TabIndex = 31;
+            this.pulseRateValue3.Text = "--";
+            this.pulseRateValue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // breathingRateValue3
             // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(821, 258);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(39, 37);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "--";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue3.AutoSize = true;
+            this.breathingRateValue3.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue3.Location = new System.Drawing.Point(702, 258);
+            this.breathingRateValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue3.Name = "breathingRateValue3";
+            this.breathingRateValue3.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue3.TabIndex = 30;
+            this.breathingRateValue3.Text = "--";
+            this.breathingRateValue3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue3
             // 
@@ -779,7 +822,7 @@
             this.bloodPressureValue3.AutoSize = true;
             this.bloodPressureValue3.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue3.Location = new System.Drawing.Point(581, 258);
+            this.bloodPressureValue3.Location = new System.Drawing.Point(496, 258);
             this.bloodPressureValue3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue3.Name = "bloodPressureValue3";
             this.bloodPressureValue3.Size = new System.Drawing.Size(39, 37);
@@ -793,7 +836,7 @@
             this.bedsideStatus3.AutoSize = true;
             this.bedsideStatus3.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus3.Location = new System.Drawing.Point(341, 258);
+            this.bedsideStatus3.Location = new System.Drawing.Point(290, 258);
             this.bedsideStatus3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus3.Name = "bedsideStatus3";
             this.bedsideStatus3.Size = new System.Drawing.Size(39, 37);
@@ -807,7 +850,7 @@
             this.bedsideNumber3.AutoSize = true;
             this.bedsideNumber3.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber3.Location = new System.Drawing.Point(101, 258);
+            this.bedsideNumber3.Location = new System.Drawing.Point(84, 258);
             this.bedsideNumber3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber3.Name = "bedsideNumber3";
             this.bedsideNumber3.Size = new System.Drawing.Size(39, 37);
@@ -815,47 +858,47 @@
             this.bedsideNumber3.Text = "--";
             this.bedsideNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // temperatureValue2
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1302, 179);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 37);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "--";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue2.AutoSize = true;
+            this.temperatureValue2.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue2.Location = new System.Drawing.Point(1114, 179);
+            this.temperatureValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue2.Name = "temperatureValue2";
+            this.temperatureValue2.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue2.TabIndex = 26;
+            this.temperatureValue2.Text = "--";
+            this.temperatureValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // pulseRateValue2
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1061, 179);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 37);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "--";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue2.AutoSize = true;
+            this.pulseRateValue2.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue2.Location = new System.Drawing.Point(908, 179);
+            this.pulseRateValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue2.Name = "pulseRateValue2";
+            this.pulseRateValue2.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue2.TabIndex = 25;
+            this.pulseRateValue2.Text = "--";
+            this.pulseRateValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // breathingRateValue2
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(821, 179);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 37);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "--";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue2.AutoSize = true;
+            this.breathingRateValue2.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue2.Location = new System.Drawing.Point(702, 179);
+            this.breathingRateValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue2.Name = "breathingRateValue2";
+            this.breathingRateValue2.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue2.TabIndex = 24;
+            this.breathingRateValue2.Text = "--";
+            this.breathingRateValue2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue2
             // 
@@ -863,7 +906,7 @@
             this.bloodPressureValue2.AutoSize = true;
             this.bloodPressureValue2.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue2.Location = new System.Drawing.Point(581, 179);
+            this.bloodPressureValue2.Location = new System.Drawing.Point(496, 179);
             this.bloodPressureValue2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue2.Name = "bloodPressureValue2";
             this.bloodPressureValue2.Size = new System.Drawing.Size(39, 37);
@@ -877,7 +920,7 @@
             this.bedsideStatus2.AutoSize = true;
             this.bedsideStatus2.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideStatus2.Location = new System.Drawing.Point(341, 179);
+            this.bedsideStatus2.Location = new System.Drawing.Point(290, 179);
             this.bedsideStatus2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus2.Name = "bedsideStatus2";
             this.bedsideStatus2.Size = new System.Drawing.Size(39, 37);
@@ -891,7 +934,7 @@
             this.bedsideNumber2.AutoSize = true;
             this.bedsideNumber2.BackColor = System.Drawing.Color.Transparent;
             this.bedsideNumber2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedsideNumber2.Location = new System.Drawing.Point(101, 179);
+            this.bedsideNumber2.Location = new System.Drawing.Point(84, 179);
             this.bedsideNumber2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideNumber2.Name = "bedsideNumber2";
             this.bedsideNumber2.Size = new System.Drawing.Size(39, 37);
@@ -899,47 +942,47 @@
             this.bedsideNumber2.Text = "--";
             this.bedsideNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // temperatureValue1
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1302, 100);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 37);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "--";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureValue1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temperatureValue1.AutoSize = true;
+            this.temperatureValue1.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureValue1.Location = new System.Drawing.Point(1114, 100);
+            this.temperatureValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.temperatureValue1.Name = "temperatureValue1";
+            this.temperatureValue1.Size = new System.Drawing.Size(39, 37);
+            this.temperatureValue1.TabIndex = 20;
+            this.temperatureValue1.Text = "--";
+            this.temperatureValue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // pulseRateValue1
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1061, 100);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 37);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "--";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pulseRateValue1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pulseRateValue1.AutoSize = true;
+            this.pulseRateValue1.BackColor = System.Drawing.Color.Transparent;
+            this.pulseRateValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pulseRateValue1.Location = new System.Drawing.Point(908, 100);
+            this.pulseRateValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pulseRateValue1.Name = "pulseRateValue1";
+            this.pulseRateValue1.Size = new System.Drawing.Size(39, 37);
+            this.pulseRateValue1.TabIndex = 19;
+            this.pulseRateValue1.Text = "--";
+            this.pulseRateValue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // breathingRateValue1
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(821, 100);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 37);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "--";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.breathingRateValue1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.breathingRateValue1.AutoSize = true;
+            this.breathingRateValue1.BackColor = System.Drawing.Color.Transparent;
+            this.breathingRateValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breathingRateValue1.Location = new System.Drawing.Point(702, 100);
+            this.breathingRateValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.breathingRateValue1.Name = "breathingRateValue1";
+            this.breathingRateValue1.Size = new System.Drawing.Size(39, 37);
+            this.breathingRateValue1.TabIndex = 18;
+            this.breathingRateValue1.Text = "--";
+            this.breathingRateValue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bloodPressureValue1
             // 
@@ -947,7 +990,7 @@
             this.bloodPressureValue1.AutoSize = true;
             this.bloodPressureValue1.BackColor = System.Drawing.Color.Transparent;
             this.bloodPressureValue1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureValue1.Location = new System.Drawing.Point(581, 100);
+            this.bloodPressureValue1.Location = new System.Drawing.Point(496, 100);
             this.bloodPressureValue1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bloodPressureValue1.Name = "bloodPressureValue1";
             this.bloodPressureValue1.Size = new System.Drawing.Size(39, 37);
@@ -962,7 +1005,7 @@
             this.bedsideStatus1.BackColor = System.Drawing.Color.Transparent;
             this.bedsideStatus1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bedsideStatus1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bedsideStatus1.Location = new System.Drawing.Point(341, 100);
+            this.bedsideStatus1.Location = new System.Drawing.Point(290, 100);
             this.bedsideStatus1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bedsideStatus1.Name = "bedsideStatus1";
             this.bedsideStatus1.Size = new System.Drawing.Size(39, 37);
@@ -970,9 +1013,181 @@
             this.bedsideStatus1.Text = "--";
             this.bedsideStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1279, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 25);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Alarm Status";
+            // 
+            // alarmStatusBtn2
+            // 
+            this.alarmStatusBtn2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn2.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn2.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn2.Location = new System.Drawing.Point(1240, 162);
+            this.alarmStatusBtn2.Name = "alarmStatusBtn2";
+            this.alarmStatusBtn2.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn2.TabIndex = 65;
+            this.alarmStatusBtn2.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusBtn3
+            // 
+            this.alarmStatusBtn3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn3.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn3.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn3.Location = new System.Drawing.Point(1240, 241);
+            this.alarmStatusBtn3.Name = "alarmStatusBtn3";
+            this.alarmStatusBtn3.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn3.TabIndex = 66;
+            this.alarmStatusBtn3.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusBtn4
+            // 
+            this.alarmStatusBtn4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn4.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn4.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn4.Location = new System.Drawing.Point(1240, 320);
+            this.alarmStatusBtn4.Name = "alarmStatusBtn4";
+            this.alarmStatusBtn4.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn4.TabIndex = 67;
+            this.alarmStatusBtn4.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusBtn5
+            // 
+            this.alarmStatusBtn5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn5.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn5.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn5.Location = new System.Drawing.Point(1240, 399);
+            this.alarmStatusBtn5.Name = "alarmStatusBtn5";
+            this.alarmStatusBtn5.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn5.TabIndex = 68;
+            this.alarmStatusBtn5.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusBtn6
+            // 
+            this.alarmStatusBtn6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn6.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn6.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn6.Location = new System.Drawing.Point(1240, 478);
+            this.alarmStatusBtn6.Name = "alarmStatusBtn6";
+            this.alarmStatusBtn6.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn6.TabIndex = 69;
+            this.alarmStatusBtn6.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusBtn7
+            // 
+            this.alarmStatusBtn7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn7.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn7.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn7.Location = new System.Drawing.Point(1240, 557);
+            this.alarmStatusBtn7.Name = "alarmStatusBtn7";
+            this.alarmStatusBtn7.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn7.TabIndex = 70;
+            this.alarmStatusBtn7.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn7.Click += new System.EventHandler(this.alarmStatusBtn7_Click);
+            // 
+            // alarmStatusBtn1
+            // 
+            this.alarmStatusBtn1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusBtn1.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusBtn1.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusBtn1.Location = new System.Drawing.Point(1240, 83);
+            this.alarmStatusBtn1.Name = "alarmStatusBtn1";
+            this.alarmStatusBtn1.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusBtn1.TabIndex = 71;
+            this.alarmStatusBtn1.UseVisualStyleBackColor = false;
+            // 
+            // alarmStatusbtn8
+            // 
+            this.alarmStatusbtn8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmStatusbtn8.BackColor = System.Drawing.Color.Green;
+            this.alarmStatusbtn8.ForeColor = System.Drawing.Color.Black;
+            this.alarmStatusbtn8.Location = new System.Drawing.Point(1240, 636);
+            this.alarmStatusbtn8.Name = "alarmStatusbtn8";
+            this.alarmStatusbtn8.Size = new System.Drawing.Size(200, 72);
+            this.alarmStatusbtn8.TabIndex = 64;
+            this.alarmStatusbtn8.UseVisualStyleBackColor = false;
+            this.alarmStatusbtn8.Click += new System.EventHandler(this.alarmStatusbtn8_Click);
+            // 
             // dataTimerBedside8
             // 
             this.dataTimerBedside8.Tick += new System.EventHandler(this.dataTimerBedside8_Tick);
+            // 
+            // trackAlarmTimer8
+            // 
+            this.trackAlarmTimer8.Tick += new System.EventHandler(this.trackAlarmTimer8_Tick);
+            // 
+            // backgroundWorkerAlarm
+            // 
+            this.backgroundWorkerAlarm.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAlarm_DoWork);
+            // 
+            // dataTimerBedside7
+            // 
+            this.dataTimerBedside7.Tick += new System.EventHandler(this.dataTimerBedside7_Tick);
+            // 
+            // trackAlarmTimer7
+            // 
+            this.trackAlarmTimer7.Tick += new System.EventHandler(this.trackAlarmTimer7_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Green;
+            this.panel2.Location = new System.Drawing.Point(721, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(61, 37);
+            this.panel2.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(787, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Normal";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(869, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(61, 37);
+            this.panel3.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(935, 32);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 25);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Alarm Trigger";
             // 
             // central_station_screen
             // 
@@ -1016,48 +1231,77 @@
         private System.Windows.Forms.Label bloodPressureValue8;
         private System.Windows.Forms.Label bedsideStatus8;
         private System.Windows.Forms.Label bedsideNumber8;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label temperatureValue7;
+        private System.Windows.Forms.Label pulseRateValue7;
+        private System.Windows.Forms.Label breathingRateValue7;
         private System.Windows.Forms.Label bloodPressureValue7;
         private System.Windows.Forms.Label bedsideStatus7;
         private System.Windows.Forms.Label bedsideNumber7;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label temperatureValue6;
+        private System.Windows.Forms.Label pulseRateValue6;
+        private System.Windows.Forms.Label breathingRateValue6;
         private System.Windows.Forms.Label bloodPressureValue6;
         private System.Windows.Forms.Label bedsideStatus6;
         private System.Windows.Forms.Label bedsideNumber6;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label temperatureValue5;
+        private System.Windows.Forms.Label pulseRateValue5;
+        private System.Windows.Forms.Label breathingRateValue5;
         private System.Windows.Forms.Label bloodPressureValue5;
         private System.Windows.Forms.Label bedsideStatus5;
         private System.Windows.Forms.Label bedsideNumber5;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label temperatureValue4;
+        private System.Windows.Forms.Label pulseRateValue4;
+        private System.Windows.Forms.Label breathingRateValue4;
         private System.Windows.Forms.Label bloodPressureValue4;
         private System.Windows.Forms.Label bedsideStatus4;
         private System.Windows.Forms.Label bedsideNumber4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label temperatureValue3;
+        private System.Windows.Forms.Label pulseRateValue3;
+        private System.Windows.Forms.Label breathingRateValue3;
         private System.Windows.Forms.Label bloodPressureValue3;
         private System.Windows.Forms.Label bedsideStatus3;
         private System.Windows.Forms.Label bedsideNumber3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label temperatureValue2;
+        private System.Windows.Forms.Label pulseRateValue2;
+        private System.Windows.Forms.Label breathingRateValue2;
         private System.Windows.Forms.Label bloodPressureValue2;
         private System.Windows.Forms.Label bedsideStatus2;
         private System.Windows.Forms.Label bedsideNumber2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label temperatureValue1;
+        private System.Windows.Forms.Label pulseRateValue1;
+        private System.Windows.Forms.Label breathingRateValue1;
         private System.Windows.Forms.Label bloodPressureValue1;
         private System.Windows.Forms.Label bedsideStatus1;
         private System.Windows.Forms.ComboBox centralStationNameComboBox;
         private System.Windows.Forms.Timer dataTimerBedside8;
+        private System.Windows.Forms.Timer trackAlarmTimer8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button alarmStatusbtn8;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerAlarm;
+        private System.Windows.Forms.Timer dataTimerBedside7;
+        private System.Windows.Forms.Timer dataTimerBedside6;
+        private System.Windows.Forms.Timer dataTimerBedside5;
+        private System.Windows.Forms.Timer dataTimerBedside4;
+        private System.Windows.Forms.Timer dataTimerBedside3;
+        private System.Windows.Forms.Timer dataTimerBedside2;
+        private System.Windows.Forms.Timer dataTimerBedside1;
+        private System.Windows.Forms.Button alarmStatusBtn2;
+        private System.Windows.Forms.Button alarmStatusBtn3;
+        private System.Windows.Forms.Button alarmStatusBtn4;
+        private System.Windows.Forms.Button alarmStatusBtn5;
+        private System.Windows.Forms.Button alarmStatusBtn6;
+        private System.Windows.Forms.Button alarmStatusBtn7;
+        private System.Windows.Forms.Button alarmStatusBtn1;
+        private System.Windows.Forms.Timer trackAlarmTimer7;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Timer timer6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

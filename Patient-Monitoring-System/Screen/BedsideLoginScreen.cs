@@ -92,7 +92,7 @@ namespace BedsideSystem
                 {
                     //static int field get value from patientId
                     bedside_patient_id = patientId;
-
+                    bedsideIDPass = bedsideId;
                     //create new object bedside main screen
                     BedsideMainScreen ms = new BedsideMainScreen();
 
