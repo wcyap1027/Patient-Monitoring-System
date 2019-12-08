@@ -262,7 +262,7 @@
             this.panel2.Controls.Add(this.ViewButton);
             this.panel2.Controls.Add(this.AlarmIDcomboBox);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(581, 178);
+            this.panel2.Location = new System.Drawing.Point(493, 188);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(603, 276);
             this.panel2.TabIndex = 11;

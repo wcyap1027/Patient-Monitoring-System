@@ -164,5 +164,10 @@ namespace BedsideSystem
         {
 
         }
+
+        private void assignPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
