@@ -88,17 +88,10 @@
       <DependentUpon>CentralStationScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\DBConnector.cs" />
-    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\PulseRateHandler.cs" />
     <Compile Include="Handler\RoleHandler.cs" />
     <Compile Include="Handler\TemperatureHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
-    <Compile Include="Screen\HistoryScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\HistoryScreen.Designer.cs">
-      <DependentUpon>HistoryScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screen\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +134,12 @@
     </Compile>
     <Compile Include="Class\Temperature.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Screen\RegisterDeregisterScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\RegisterDeregisterScreen.Designer.cs">
+      <DependentUpon>RegisterDeregisterScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Screen\ReadingScreen.resx">
       <DependentUpon>ReadingScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\CentralStationScreen.resx">
       <DependentUpon>CentralStationScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screen\HistoryScreen.resx">
-      <DependentUpon>HistoryScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -179,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="Screen\BedsideScreen.resx">
       <DependentUpon>BedsideScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\RegisterDeregisterScreen.resx">
+      <DependentUpon>RegisterDeregisterScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="data files\bloodPressureCSV.csv" />
     <None Include="data files\breathingRateCSV.csv" />

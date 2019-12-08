@@ -64,7 +64,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(402, 275);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -145,10 +144,11 @@
             this.assignPanel.Controls.Add(this.patientIDAssignComboBox);
             this.assignPanel.Controls.Add(this.bedsideIdAssignComboBox);
             this.assignPanel.Controls.Add(this.label2);
-            this.assignPanel.Location = new System.Drawing.Point(758, 144);
+            this.assignPanel.Location = new System.Drawing.Point(774, 153);
             this.assignPanel.Name = "assignPanel";
-            this.assignPanel.Size = new System.Drawing.Size(47, 110);
+            this.assignPanel.Size = new System.Drawing.Size(159, 174);
             this.assignPanel.TabIndex = 10;
+            
             // 
             // backAssignBtn
             // 
@@ -292,7 +292,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(814, 261);
+            this.ClientSize = new System.Drawing.Size(963, 352);
             this.Controls.Add(this.existingPanel);
             this.Controls.Add(this.showMenuPanel);
             this.Controls.Add(this.assignPanel);

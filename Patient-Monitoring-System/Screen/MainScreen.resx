@@ -171,6 +171,27 @@
         6Jp1oGVfsdaqVsYqovYVa60qIYQQQgghBaPRX3jdDhZNshogAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="logOutbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAOhSURBVEhLtZVLbFNHFIanUhddVGJRFiyQKiEeaaTSQpukQjwKRC2NVJBgFVUsgR2bsuqCiqIK
+        JBBCsABBW6TSXYQIBCg05SmR8oYYojycGzs2sZ04Jo7Dte+9jv3zn/HcYkNE7Uoc6bPvnJnzn7ln7swo
+        3/ozmN2Xw5oBB82WTx7Nw/+BjPHHS6wQdFFvZEsWAt7rdxBnBywS8oAwGTb/0h6i/1XKx8mzxA6SARfF
+        PgfrjbxSPcD7FM/44n6AiASyRfye8rAznsP2aFYjz+LrZl95IkHakiToYbORL9mQg0VDHrZQvEcCJHh3
+        LIe1/ZNY1Tcz0vczx/iJmOA3xm8NO/gGwDtGWikLmDXsYF7UwYKQi4vXpwrYGJzCyt7JqtjEsRLDiW0T
+        HSGYxVwtLq/C7J5fltt2AS2c3YqedE2sY0zX84L/JlqLJb+g+LPHr1/QAVqDGSx/MvG/+I6x/Iq0uEyY
+        yUb0Aofz+J6l2bs7mvtzWWACwponaVyb9LD3qa3b1XJizJWZ94Rd/MREn+oy+fbFw2cPCFZ3T+DeVJ7r
+        BJxLuRBftbSyVIMe9lcsslhTd2pu4/1UcRUH3c/w/Yx1jDugv2qayD2uI8uTjuaxzsgr1XB3vPlLdgbM
+        zH3rfZ7H4ag9IzsGMmi4M/4a7dwjZrEPGHmlPu9Ktv7KetdiBbL67jg++ydZwb5w9jLrf4AnxBwVnkYL
+        G4k2Ls7GBymkPAl7aUm3gFtpd0ZOjthYenMUS15hadfo12beSslryGd1LZ3HJzcS2MAZjVHUtzOJrPbX
+        wsdXY3VGXh90c5jgIM+PkbVdY+yM49vbSYw60zpBezyrfTUQMtKVxn2wcxcXrb4zpmm5OYYEk/wSnvrX
+        Vx3xH41kyTj7Jpapm/+FgF1E45UYFl18qln81wjqL5Weq6Hh79j0I7sY4hdkRTw84uHZqLgpDssayFEh
+        n1Ybj+KF5yOYf642JKYtkau4T5jgkOp3UUfnaTo6yVU+O8dDNurORjCvfbgqPuqIsJS2vgcoHuA51BnK
+        4zRvuYWmUC+NSY7JLDpGHXx1OYYPT4XeiIw5Xzp/RFw20rtGqtIGHR54Hq4wu+uXS67QkxEbW24lsexC
+        FAtOhTXyvJW+PyJZPcYvi5ygjH3M2B+MbMl6M/iA96h+RbPFNRIkbRGQvnLE5wvLWP8+EZ8kFU0jXzJe
+        0keYxGKwRVGLgy0GWgzU/9IuR3zl/RIjUNyi1lEj+7ZNqRcqzmaQ2vjfXwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYG

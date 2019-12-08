@@ -1,6 +1,6 @@
 ﻿namespace Patient_Monitoring_System
 {
-    partial class AlarmScreen
+    partial class ReadingScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlarmScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadingScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bPMax = new System.Windows.Forms.TextBox();
             this.bPMin = new System.Windows.Forms.TextBox();

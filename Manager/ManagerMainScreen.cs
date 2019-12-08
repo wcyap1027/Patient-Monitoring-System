@@ -15,6 +15,8 @@ namespace Manager
 {
     public partial class ManagerMainScreen : Form
     {
+        public static int patient_alarm_id = 0;
+
         public ManagerMainScreen()
         {
             InitializeComponent();
@@ -22,19 +24,19 @@ namespace Manager
 
         private void ManagerMainScreen_Load(object sender, EventArgs e)
         {
-            panel1.Hide();
+            panelInformationPanel.Hide();
             panel2.Hide();
             panel3.Hide();
 
-            panel1.Width = 852;
-            panel1.Height = 386;
-            panel1.Location = new Point(50, 170);
-            panel2.Width = 852;
-            panel2.Height = 386;
-            panel2.Location = new Point(50, 170);
-            panel3.Width = 852;
-            panel3.Height = 386;
-            panel3.Location = new Point(50, 170);
+            panelInformationPanel.Width = 627;
+            panelInformationPanel.Height = 361;
+            panelInformationPanel.Location = new Point(12, 171);
+            panel2.Width = 627;
+            panel2.Height = 361;
+            panel2.Location = new Point(12, 171);
+            panel3.Width = 627;
+            panel3.Height = 361;
+            panel3.Location = new Point(12, 171);
         }
 
         private void staffScheduleBtn_Click(object sender, EventArgs e)
@@ -45,14 +47,10 @@ namespace Manager
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void patientInformationBtn_Click(object sender, EventArgs e)
         {
-            panel1.Show();
+            panelInformationPanel.Show();
             panel2.Hide();
             panel3.Hide();
             DbConnector dBConn = new DbConnector();
@@ -75,7 +73,7 @@ namespace Manager
 
         private void readingBtn_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
+            panelInformationPanel.Hide();
             panel2.Hide();
             panel3.Show();
             DbConnector dBConn = new DbConnector();
@@ -141,13 +139,16 @@ namespace Manager
 
         private void alarmReportBtn_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
+            panelInformationPanel.Hide();
             panel2.Show();
             panel3.Hide();
             DbConnector dBConn = new DbConnector();
             dBConn.connect();
             PatientHandler patientHandler = new PatientHandler();
+            AlarmHandler alarmhd = new AlarmHandler();
             patientHandler.FetchId(patientComboBox);
+            //alarmhd.FetchPatientAlarmId(AlarmIDcomboBox);
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -162,13 +163,15 @@ namespace Manager
 
         private void patientIDcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PatientHandler patientHandler = new PatientHandler();
-            DBConnector dbC = new DBConnector();
-            dbC.connect();
-            //if (patientIDcomboBox.SelectedIndex != 0)
-            //{
-            //    Patient existingPatient = patientHandler.FetchId(dbC.getConn(), patientIDcomboBox.SelectedItem.ToString());
-            //}
+            if(patientIDcomboBox.SelectedIndex > 0)
+            {
+                DbConnector dbConn = new DbConnector();
+                dbConn.connect();
+                PatientHandler patientHandler = new PatientHandler();
+
+                patientGridView.DataSource = patientHandler.getSpecificPatientList(dbConn.getConn(), patientIDcomboBox.SelectedItem.ToString());
+            }
+           
 
         }
 
@@ -256,34 +259,50 @@ namespace Manager
             
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void ViewButton_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-            PatientHandler patientHandler = new PatientHandler();
-
-            int patientId = int.Parse(patientComboBox.Text);
-
-            bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
-
-            string selected = optional1ComboBox.SelectedItem.ToString().ToLower();
-
-            if (status)
+            if (patientComboBox.SelectedIndex == 0)
             {
-                if (optional1ComboBox.SelectedIndex > 0)
-                {
-                   // AlarmGridView.DataSource = patientHandler.patientAlarm(dbConn.getConn(), patientId, selected);
-                }
+                MessageBox.Show("Please select valid patient id");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+            //if (AlarmIDcomboBox.SelectedIndex == 0)
+            //{
+            //    MessageBox.Show("Please select valid alarm id");
+            //    return;
+            //}
+
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            int patientId = int.Parse(patientComboBox.SelectedItem.ToString());
+            //int alarmId = int.Parse(AlarmIDcomboBox.SelectedItem.ToString());
+            AlarmHandler alarmhd = new AlarmHandler();
+            AlarmGridView.DataSource = alarmhd.getAllAlarmPatient(dbC.getConn(), patientId);
+            //int assignResult = alarmhd.assignPatient(dbC.getConn(), alarmId, patientId);
+
+            //if (assignResult == 1)
+            //{
+            //    int statusResult = alarmhd.updateStatus(dbC.getConn(), patientId);
+
+            //    if (statusResult == 1)
+            //    {
+            //        patient_alarm_id = alarmId;
+            //        ManagerMainScreen mms = new ManagerMainScreen();
+            //        mms.Show();
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Failed to access");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Failed to access");
+            //}
         }
 
         private void alarmDateTimePicker_ValueChanged(object sender, EventArgs e)

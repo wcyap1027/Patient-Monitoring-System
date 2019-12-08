@@ -182,6 +182,7 @@ namespace Patient_Monitoring_System
                     {
                         oldPatient.BedsideId = 0;
                     }
+                    oldPatient.RegisterDateTime = (DateTime)myReader.GetValue(8);
                     listpatient.Add(oldPatient);
 
 
@@ -303,7 +304,7 @@ namespace Patient_Monitoring_System
             return dt;
         }
 
-        public DataTable patientAlarm(MySqlConnection conn, int patientId, ComboBox selectedComboBox)
+        /*public DataTable patientAlarm(MySqlConnection conn, int patientId, ComboBox selectedComboBox)
         {
             
             string sql = "SELECT alarm.id, alarm.alarmLevel, alarm.dateTimeTrigger, alarm.dateTimeMuted, reading.patient_id FROM alarm INNER JOIN reading ON alarm.reading_id = reading.id where reading.patient_id = ;" + patientId;
@@ -313,7 +314,7 @@ namespace Patient_Monitoring_System
             mySqlDataAdapter.Fill(dt);
             conn.Close();
             return dt;
-        }
+        }*/
 
         //public DataTable patientWith2Optional(MySqlConnection conn, int patientId, string optional1, string optional2)
         //{

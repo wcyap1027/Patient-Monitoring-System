@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedsideMainScreen));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
@@ -70,6 +71,8 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.temperatureCurrentValue = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.setAlarmBtn = new System.Windows.Forms.Button();
+            this.muteAlarmBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.haltButton = new System.Windows.Forms.Button();
             this.patientProfileBtn = new System.Windows.Forms.Button();
@@ -80,13 +83,13 @@
             this.backgroundWorkerBeep = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerAlarmReading = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerAlarmZero = new System.ComponentModel.BackgroundWorker();
-            this.muteAlarmBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.trackAlarmTimer = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -204,7 +207,7 @@
             // 
             this.bloodPressureCurrentValue.AutoSize = true;
             this.bloodPressureCurrentValue.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bloodPressureCurrentValue.Location = new System.Drawing.Point(80, 60);
+            this.bloodPressureCurrentValue.Location = new System.Drawing.Point(59, 56);
             this.bloodPressureCurrentValue.Name = "bloodPressureCurrentValue";
             this.bloodPressureCurrentValue.Size = new System.Drawing.Size(48, 47);
             this.bloodPressureCurrentValue.TabIndex = 0;
@@ -269,7 +272,7 @@
             // 
             this.pulseRateCurrentValue.AutoSize = true;
             this.pulseRateCurrentValue.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pulseRateCurrentValue.Location = new System.Drawing.Point(80, 45);
+            this.pulseRateCurrentValue.Location = new System.Drawing.Point(59, 45);
             this.pulseRateCurrentValue.Name = "pulseRateCurrentValue";
             this.pulseRateCurrentValue.Size = new System.Drawing.Size(48, 47);
             this.pulseRateCurrentValue.TabIndex = 1;
@@ -333,7 +336,7 @@
             // 
             this.breathingRateCurrentValue.AutoSize = true;
             this.breathingRateCurrentValue.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breathingRateCurrentValue.Location = new System.Drawing.Point(80, 37);
+            this.breathingRateCurrentValue.Location = new System.Drawing.Point(59, 49);
             this.breathingRateCurrentValue.Name = "breathingRateCurrentValue";
             this.breathingRateCurrentValue.Size = new System.Drawing.Size(48, 47);
             this.breathingRateCurrentValue.TabIndex = 2;
@@ -397,7 +400,7 @@
             // 
             this.temperatureCurrentValue.AutoSize = true;
             this.temperatureCurrentValue.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temperatureCurrentValue.Location = new System.Drawing.Point(80, 50);
+            this.temperatureCurrentValue.Location = new System.Drawing.Point(59, 59);
             this.temperatureCurrentValue.Name = "temperatureCurrentValue";
             this.temperatureCurrentValue.Size = new System.Drawing.Size(48, 47);
             this.temperatureCurrentValue.TabIndex = 3;
@@ -405,6 +408,7 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.setAlarmBtn);
             this.panel9.Controls.Add(this.muteAlarmBtn);
             this.panel9.Controls.Add(this.startBtn);
             this.panel9.Controls.Add(this.haltButton);
@@ -413,6 +417,34 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(148, 560);
             this.panel9.TabIndex = 5;
+            // 
+            // setAlarmBtn
+            // 
+            this.setAlarmBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.setAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.setAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.setAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setAlarmBtn.Image = ((System.Drawing.Image)(resources.GetObject("setAlarmBtn.Image")));
+            this.setAlarmBtn.Location = new System.Drawing.Point(92, 503);
+            this.setAlarmBtn.Name = "setAlarmBtn";
+            this.setAlarmBtn.Size = new System.Drawing.Size(53, 54);
+            this.setAlarmBtn.TabIndex = 10;
+            this.setAlarmBtn.UseVisualStyleBackColor = false;
+            this.setAlarmBtn.Click += new System.EventHandler(this.setAlarmBtn_Click);
+            // 
+            // muteAlarmBtn
+            // 
+            this.muteAlarmBtn.BackColor = System.Drawing.Color.Red;
+            this.muteAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.muteAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.muteAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.muteAlarmBtn.Location = new System.Drawing.Point(16, 196);
+            this.muteAlarmBtn.Name = "muteAlarmBtn";
+            this.muteAlarmBtn.Size = new System.Drawing.Size(116, 81);
+            this.muteAlarmBtn.TabIndex = 9;
+            this.muteAlarmBtn.Text = "Mute";
+            this.muteAlarmBtn.UseVisualStyleBackColor = false;
+            this.muteAlarmBtn.Click += new System.EventHandler(this.muteAlarmBtn_Click);
             // 
             // startBtn
             // 
@@ -606,20 +638,6 @@
             // 
             this.backgroundWorkerAlarmZero.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAlarmZero_DoWork);
             // 
-            // muteAlarmBtn
-            // 
-            this.muteAlarmBtn.BackColor = System.Drawing.Color.Red;
-            this.muteAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.muteAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.muteAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.muteAlarmBtn.Location = new System.Drawing.Point(16, 196);
-            this.muteAlarmBtn.Name = "muteAlarmBtn";
-            this.muteAlarmBtn.Size = new System.Drawing.Size(116, 81);
-            this.muteAlarmBtn.TabIndex = 9;
-            this.muteAlarmBtn.Text = "Mute";
-            this.muteAlarmBtn.UseVisualStyleBackColor = false;
-            this.muteAlarmBtn.Click += new System.EventHandler(this.muteAlarmBtn_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
@@ -673,6 +691,10 @@
             this.label7.Size = new System.Drawing.Size(72, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Critical";
+            // 
+            // trackAlarmTimer
+            // 
+            this.trackAlarmTimer.Tick += new System.EventHandler(this.trackAlarmTimer_Tick);
             // 
             // BedsideMainScreen
             // 
@@ -774,5 +796,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button setAlarmBtn;
+        private System.Windows.Forms.Timer trackAlarmTimer;
     }
 }

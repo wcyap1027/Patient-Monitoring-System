@@ -8,15 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Patient_Monitoring_System.Handler;
+using BedsideSystem;
 
 namespace Patient_Monitoring_System
 {
-    public partial class AlarmScreen : Form
+    public partial class ReadingScreen : Form
     {
         public static int sessionId = 0;
-        public AlarmScreen()
+        public static string minb;
+        public ReadingScreen()
         {
             InitializeComponent();
+        }
+
+        public string MinB
+        {
+            get
+            {
+                return bPMin.Text;
+            }
+
+            set
+            {
+                bPMin.Text = value;
+            }
         }
 
         private void confirmBtnAlarm_Click(object sender, EventArgs e)
@@ -102,6 +117,7 @@ namespace Patient_Monitoring_System
             reading.MaxTemperature = double.Parse(tempMax.Text);
             reading.MinBreathing = double.Parse(breathMin.Text);
             reading.MaxBreathing = double.Parse(breathMax.Text);
+            minb = bPMin.Text;
 
             DBConnector dbcon = new DBConnector();
             dbcon.connect();
@@ -116,6 +132,17 @@ namespace Patient_Monitoring_System
                 if(updateResult == 1)
                 {
                     MessageBox.Show("The minimum and maximum value is up to date");
+                    BedsideMainScreen mainScreen = new BedsideMainScreen();
+                    //mainScreen.MinBP = reading.MinBloodPressure.ToString();
+                    //mainScreen.MaxBP = reading.MaxBloodPressure.ToString();
+                    //mainScreen.MinBR = reading.MinBreathing.ToString();
+                    //mainScreen.MaxBR = reading.MaxBreathing.ToString();
+                    //mainScreen.MinPR = reading.MinPulse.ToString();
+                    //mainScreen.MaxPR = reading.MaxPulse.ToString();
+                    //mainScreen.MinT = reading.MinTemperature.ToString();
+                    //mainScreen.MaxT = reading.MaxTemperature.ToString();
+                    mainScreen.Show(this);
+                    Close();
                 }
                 else
                 {
@@ -130,6 +157,16 @@ namespace Patient_Monitoring_System
                 if (result == 1)
                 {
                     MessageBox.Show("The minimum and maximum value is ready to test");
+                    BedsideMainScreen mainScreen = new BedsideMainScreen();
+                    //mainScreen.MinBP = reading.MinBloodPressure.ToString();
+                    //mainScreen.MaxBP = reading.MaxBloodPressure.ToString();
+                    //mainScreen.MinBR = reading.MinBreathing.ToString();
+                    //mainScreen.MaxBR = reading.MaxBreathing.ToString();
+                    //mainScreen.MinPR = reading.MinPulse.ToString();
+                    //mainScreen.MaxPR = reading.MaxPulse.ToString();
+                    //mainScreen.MinT = reading.MinTemperature.ToString();
+                    //mainScreen.MaxT = reading.MaxTemperature.ToString();
+                    mainScreen.Refresh();
                     Close();
                 }
                 else

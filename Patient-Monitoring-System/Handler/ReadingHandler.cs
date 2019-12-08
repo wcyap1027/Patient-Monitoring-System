@@ -38,7 +38,7 @@ namespace Patient_Monitoring_System.Handler
 
         public int updateReading(MySqlConnection conn, Reading reading, int patientId)
         {
-            string sql = "UPDATE reading SET minValueBloodPressure='" + reading.MinBloodPressure + "', maxValueBloodPressure= '" + reading.MaxBloodPressure + "', minValueTemperature='" + reading.MinTemperature + "', maxValueTemperature='" + reading.MaxTemperature + "', minValueBreathingRate='" + reading.MaxBreathing + "', maxValueBreathingRate='" + reading.MinBreathing + "', minValuePulseRate='" + reading.MinPulse + "', maxValuePulseRate='" + reading.MaxPulse + "' WHERE patient_id='" + patientId + "'";
+            string sql = "UPDATE reading SET minValueBloodPressure='" + reading.MinBloodPressure + "', maxValueBloodPressure= '" + reading.MaxBloodPressure + "', minValueTemperature='" + reading.MinTemperature + "', maxValueTemperature='" + reading.MaxTemperature + "', minValueBreathingRate='" + reading.MinBreathing + "', maxValueBreathingRate='" + reading.MaxBreathing + "', minValuePulseRate='" + reading.MinPulse + "', maxValuePulseRate='" + reading.MaxPulse + "' WHERE patient_id='" + patientId + "'";
             MySqlCommand updateComm = new MySqlCommand(sql, conn);
 
             return updateComm.ExecuteNonQuery();

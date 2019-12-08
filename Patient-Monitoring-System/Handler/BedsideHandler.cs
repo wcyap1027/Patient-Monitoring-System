@@ -60,7 +60,6 @@ namespace Patient_Monitoring_System.Handler
             }
         }
 
-
         public void FetchBedsidePatientId(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");
@@ -117,11 +116,36 @@ namespace Patient_Monitoring_System.Handler
             return updateComm.ExecuteNonQuery();
         }
 
-        public Patient getSpecificPatientInBedside(MySqlConnection conn, string selectedId)
+        public bool checkExistBedside(MySqlConnection conn, int selectedId)
         {
-            int userId = int.Parse(selectedId);
+            bool status = false;
+            int id = 0;
+            string sql = "SELECT bedsideId FROM patient WHERE bedsideId='" + selectedId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (query != null)
+            {
+                id = Convert.ToInt32(query);
+            }
+
+            if(id != 0)
+            {
+                status = true;
+            }
+            else
+            {
+                status = false;
+            }
+
+            return status;
+        }
+
+        public Patient getSpecificPatientInBedside(MySqlConnection conn, int selectedId)
+        {
             Patient oldPatient = new Patient();
-            string sql = "SELECT * FROM patient WHERE bedsideId= '" + userId + "'";
+            string sql = "SELECT * FROM patient WHERE bedsideId= '" + selectedId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             try
             {
@@ -171,6 +195,54 @@ namespace Patient_Monitoring_System.Handler
             }
 
             return continueStatus;
+        }
+
+        public int updateAlarmStatus(MySqlConnection conn, int bedsideId, int alarmStatus)
+        {
+            string sql = "UPDATE bedsidemonitor SET alarmStatus='" + alarmStatus + "' WHERE id='" + bedsideId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int updateAlarmZeroStatus(MySqlConnection conn, int bedsideId, int alarmStatus)
+        {
+            string sql = "UPDATE bedsidemonitor SET alarmZeroStatus='" + alarmStatus + "' WHERE id='" + bedsideId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int SelectAlarmStatusBedside(MySqlConnection conn, int bedsideId)
+        {
+            int status = 0;
+            string sql = "SELECT alarmStatus FROM bedsidemonitor WHERE id='" + bedsideId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (query != null)
+            {
+                status = Convert.ToInt32(query);
+            }
+
+            return status;
+        }
+
+        public int SelectAlarmZeroStatusBedside(MySqlConnection conn, int bedsideId)
+        {
+            int status = 0;
+            string sql = "SELECT alarmZeroStatus FROM bedsidemonitor WHERE id='" + bedsideId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if (query != null)
+            {
+                status = Convert.ToInt32(query);
+            }
+
+            return status;
         }
     }
 }
