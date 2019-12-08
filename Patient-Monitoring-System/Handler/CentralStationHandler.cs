@@ -104,6 +104,39 @@ namespace Patient_Monitoring_System
             return listBedside;
         }
 
+        public int checkPatientAvailableInBedside(MySqlConnection conn, int bedsideId)
+        {
+            int id = 0;
+
+            string sql = "SELECT id FROM patient WHERE bedsideId ='" + bedsideId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            var query = sqlComm.ExecuteScalar();
+
+            if(query != null)
+            {
+                id = Convert.ToInt32(query);
+            }
+            return id;
+        }
+
+        public int checkBedsideAvailableForPatient(MySqlConnection conn ,int patientId)
+        {
+            
+            int id = 0;
+            string sql = "SELECT bedsideId FROM patient WHERE id ='" + patientId + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+
+            var query = sqlComm.ExecuteScalar();
+
+            if(query!= null)
+            {
+                id = Convert.ToInt32(query);
+                   
+            }
+
+            return id;
+        }
+
         public double getMaxValue(MySqlConnection conn, Bedside bedside)
         {
             int id = 0;
@@ -134,6 +167,10 @@ namespace Patient_Monitoring_System
                         {
                             bloodpressurevalue = Convert.ToDouble(lastBloodPressureValue);
                         }
+                    }
+                    else
+                    {
+                        bloodpressurevalue = 0.0;
                     }
 
                 }

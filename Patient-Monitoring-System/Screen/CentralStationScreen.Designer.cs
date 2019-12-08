@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label7 = new System.Windows.Forms.Label();
             this.bayName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,6 +88,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.bloodPressureValue1 = new System.Windows.Forms.Label();
             this.bedsideStatus1 = new System.Windows.Forms.Label();
+            this.backgroundWorkerTrackValue = new System.ComponentModel.BackgroundWorker();
+            this.dataTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.centralStationtableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -968,6 +971,14 @@
             this.bedsideStatus1.Text = "--";
             this.bedsideStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // backgroundWorkerTrackValue
+            // 
+            this.backgroundWorkerTrackValue.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerTrackValue_DoWork);
+            // 
+            // dataTimer
+            // 
+            this.dataTimer.Tick += new System.EventHandler(this.dataTimer_Tick);
+            // 
             // central_station_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1052,5 +1063,7 @@
         private System.Windows.Forms.Label bloodPressureValue1;
         private System.Windows.Forms.Label bedsideStatus1;
         private System.Windows.Forms.ComboBox centralStationNameComboBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerTrackValue;
+        private System.Windows.Forms.Timer dataTimer;
     }
 }

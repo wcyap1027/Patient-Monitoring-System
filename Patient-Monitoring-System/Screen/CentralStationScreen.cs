@@ -9,15 +9,25 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Patient_Monitoring_System.Class;
+using Patient_Monitoring_System.Handler;
+
 
 namespace Patient_Monitoring_System
 {
     public partial class central_station_screen : Form
     {
         private static int counter = 0;
+        private List<Label> listLabelBedsideNumber = new List<Label>();
+        private List<Label> listLabelBedsideStatus = new List<Label>();
+        private List<Label> listLabelBPValue = new List<Label>();
+        private List<Bedside> listbedsides = new List<Bedside>();
+        private List<BloodPressure> listBP = new List<BloodPressure>();
         public central_station_screen()
         {
             InitializeComponent();
+            
+        
+backgroundWorkerTrackValue.WorkerSupportsCancellation = true;
             
         }
 
@@ -65,9 +75,7 @@ namespace Patient_Monitoring_System
 
             if(centralStationNameComboBox.SelectedIndex > 0)
             {
-                List<Label> listLabelBedsideNumber = new List<Label>();
-                List<Label> listLabelBedsideStatus = new List<Label>();
-                List<Label> listLabelBPValue = new List<Label>();
+                
                 //add bedsideNumber to list
                 listLabelBedsideNumber.Add(bedsideNumber1);
                 listLabelBedsideNumber.Add(bedsideNumber2);
@@ -98,21 +106,20 @@ namespace Patient_Monitoring_System
                 listLabelBPValue.Add(bloodPressureValue7);
                 listLabelBPValue.Add(bloodPressureValue8);
 
-                List<Bedside> listbedsides = new List<Bedside>();
-                List<BloodPressure> listBP = new List<BloodPressure>();
+                
                 CentralStationHandler csHandler = new CentralStationHandler();
                 DBConnector dBc = new DBConnector();
                 dBc.connect();
-                bayName.Text = centralStationNameComboBox.SelectedItem.ToString();
+                //bayName.Text = centralStationNameComboBox.SelectedItem.ToString();
                 listbedsides = csHandler.getAllBedsideMonitor(dBc.getConn(), centralStationNameComboBox.SelectedItem.ToString());
-               
+
                 for (int i = 0; i < listbedsides.Count; i++)
                 {
                     listLabelBedsideNumber[i].Text = listbedsides[i].Id.ToString();
                     if (listbedsides[i].Status == true)
                     {
                         listLabelBedsideStatus[i].Text = "ONLINE";
-                        listLabelBedsideStatus[i].ForeColor = Color.Lime;
+                        listLabelBedsideStatus[i].ForeColor = Color.Green;
                     }
                     else
                     {
@@ -120,34 +127,79 @@ namespace Patient_Monitoring_System
                         listLabelBedsideStatus[i].ForeColor = Color.Red;
                     }
 
-                    //listLabelBPValue[i].Text = csHandler.getMaxValue(dBc.getConn(), listbedsides[i]).ToString();
-                    
+                }
+                //InitTimer();
+                //backgroundWorkerTrackValue.RunWorkerAsync(1000);
+            }
+        }
+
+
+        private void backgroundWorkerTrackValue_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CentralStationHandler csHandler = new CentralStationHandler();
+            DBConnector dBc = new DBConnector();
+            dBc.connect();
+            int x = 0;
+            while (x == 0)
+            {
+                int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[x].Id);
+                int bedsideId = csHandler.checkBedsideAvailableForPatient(dBc.getConn(), patientId);
+                MessageBox.Show(patientId.ToString() + " "+ bedsideId.ToString());
+                if((bedsideId == listbedsides[x].Id) && (bedsideId == int.Parse(listLabelBedsideNumber[x].Text)))
+                {
+                    BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
+                    double value = bloodPressureHandler.getMaxBloodPressure(dBc.getConn(), patientId);
+                    listLabelBPValue[x].Invoke(new MethodInvoker(delegate { listLabelBPValue[x].Text = value.ToString(); }));
+                }
+                else
+                {
+                    string value = "--";
+                    listLabelBPValue[x].Invoke(new MethodInvoker(delegate { listLabelBPValue[x].Text = value; }));
                 }
 
-                while (true)
+
+                if(x >= 8)
                 {
-                    //Thread.Sleep(1000);
-                    
-                    listLabelBPValue[0].Text = csHandler.getMaxValue(dBc.getConn(), listbedsides[0]).ToString();
-                    
-
-                    
-
+                    x = x - x;
+                }
+                else
+                {
+                    x++;
                 }
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void InitTimer()
         {
-            //CentralStationHandler csHandler = new CentralStationHandler();
-            //DBConnector dBc = new DBConnector();
-            //dBc.connect();
-            //List<BloodPressure> listBP = new List<BloodPressure>();
-            //listBP = csHandler.getMaxValue(dBc.getConn(), centralStationNameComboBox.SelectedItem.ToString());
-            //foreach(BloodPressure i in listBP)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            dataTimer = new System.Windows.Forms.Timer();
+            dataTimer.Tick += new EventHandler(dataTimer_Tick);
+            dataTimer.Interval = 1000;
+            dataTimer.Start();
+        }
+
+        private void dataTimer_Tick(object sender, EventArgs e)
+        {
+            CentralStationHandler csHandler = new CentralStationHandler();
+            DBConnector dBc = new DBConnector();
+            dBc.connect();
+
+            for(int i = 0; i < listbedsides.Count; i++)
+            {
+                int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[i].Id);
+                int bedsideId = csHandler.checkBedsideAvailableForPatient(dBc.getConn(), patientId);
+                MessageBox.Show(patientId.ToString() + " " + bedsideId.ToString());
+                if ((bedsideId == listbedsides[i].Id) && (bedsideId == int.Parse(listLabelBedsideNumber[i].Text)))
+                {
+                    BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
+                    double value = bloodPressureHandler.getMaxBloodPressure(dBc.getConn(), patientId);
+                    listLabelBPValue[i].Invoke(new MethodInvoker(delegate { listLabelBPValue[i].Text = value.ToString(); }));
+                }
+                else
+                {
+                    string value = "--";
+                    listLabelBPValue[i].Invoke(new MethodInvoker(delegate { listLabelBPValue[i].Text = value; }));
+                }
+            }
         }
     }
 }
