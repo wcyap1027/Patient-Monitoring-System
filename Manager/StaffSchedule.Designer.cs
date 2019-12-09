@@ -47,10 +47,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.datatestGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataOnDutyGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataOffDutyGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datatestGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -242,20 +240,11 @@
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // datatestGridView1
-            // 
-            this.datatestGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datatestGridView1.Location = new System.Drawing.Point(500, 220);
-            this.datatestGridView1.Name = "datatestGridView1";
-            this.datatestGridView1.Size = new System.Drawing.Size(240, 150);
-            this.datatestGridView1.TabIndex = 29;
-            // 
             // StaffSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 619);
-            this.Controls.Add(this.datatestGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
@@ -281,7 +270,6 @@
             this.Load += new System.EventHandler(this.StaffSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataOnDutyGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataOffDutyGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datatestGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,6 +295,5 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView datatestGridView1;
     }
 }
