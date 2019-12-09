@@ -10,6 +10,8 @@ namespace Patient_Monitoring_System.Handler
 {
     public class UserHandler
     {
+
+        //insert new nurse into database
         public int addNewNurse(MySqlConnection conn, Nurse nurse)
         {
             int lastId = 0;

@@ -11,6 +11,8 @@ namespace Patient_Monitoring_System
 {
     public class AlarmHandler
     {
+
+        //adding new alarm to the database
         public int addNewAlarm(MySqlConnection conn, Alarm alarm)
         {
             string sql = "INSERT into alarm( patient_id,reading_id, specific_id, triggerValue, dateTimeTrigger, dateTimeMuted, remark)" + "VALUES('"+alarm.PatientId+"','" + alarm.ReadingId + "', '"+alarm.SpecificId+"','" + alarm.TriggerValue + "', '" + alarm.DateTimeTrigger.ToString("yyyy-MM-dd HH:mm:ss")+ "', '" + alarm.DateTimeMuted.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + alarm.Remark+"')";
@@ -20,6 +22,8 @@ namespace Patient_Monitoring_System
 
         }
 
+
+        //alarm triggering
         public bool triggerAlarm(MySqlConnection conn, double value, int patientId, int readingId, int specificId, string remark)
         {
             bool status = false;
@@ -47,6 +51,8 @@ namespace Patient_Monitoring_System
             return status;
         }
 
+
+        //retrieve specific id
         public int getSpecificId(MySqlConnection conn, double value, string readingtype)
         {
             int id = 0;
@@ -80,6 +86,8 @@ namespace Patient_Monitoring_System
             return id;
         }
 
+
+        //retrieve last id
         public int getLastId(MySqlConnection conn, int patientId)
         {
             int id = 0;
@@ -97,6 +105,8 @@ namespace Patient_Monitoring_System
             return id;
         }
 
+
+        //add new datetime to database if an alarm is muted
         public int updateDateTimeMuted(MySqlConnection conn, int patientId, int maxId)
         {
             DateTime currentDate = DateTime.Now;
@@ -106,7 +116,7 @@ namespace Patient_Monitoring_System
             return sqlComm.ExecuteNonQuery();
         }
 
-        //example
+        //assign alarm to the patient
         public int assignPatient(MySqlConnection conn, int alarmId, int patientId)
         {
             string sql = "UPDATE alarm SET patientId ='" + patientId + "' WHERE id='" + alarmId + "'";
@@ -115,7 +125,7 @@ namespace Patient_Monitoring_System
             return updateComm.ExecuteNonQuery();
         }
 
-        //example
+        //update alarm
         public int updateStatus(MySqlConnection conn, int patientId)
         {
             int status = 1;
@@ -134,7 +144,7 @@ namespace Patient_Monitoring_System
             return dt;
         }
 
-        //example
+        //retrieve everything from alarm
         public List<Alarm> getAllAlarm(MySqlConnection conn)
         {
             List<Alarm> listAlarm = new List<Alarm>();
@@ -170,7 +180,9 @@ namespace Patient_Monitoring_System
 
             return listAlarm;
         }
-        //example
+
+
+        //fetch patient alarm id
         public void FetchPatientAlarmId(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");

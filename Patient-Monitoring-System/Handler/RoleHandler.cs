@@ -10,6 +10,9 @@ namespace Patient_Monitoring_System.Handler
 {
     public class RoleHandler
     {
+     
+        
+        //add new role to user in the database
         public int addNewRole(MySqlConnection conn, Role role)
         {
             string sql = "INSERT into role( represent, position)" + "VALUES('" + role.Represent + "', '" + role.Position + "')";
@@ -19,6 +22,8 @@ namespace Patient_Monitoring_System.Handler
         }
 
 
+
+        //retrieve all user's role from database
         public List<Role> getAllRole(MySqlConnection conn)
         {
             List<Role> listRoles = new List<Role>();

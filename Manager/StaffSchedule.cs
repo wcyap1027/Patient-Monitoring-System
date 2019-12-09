@@ -31,18 +31,37 @@ namespace Manager
         {
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("Date");
-            dt.Columns.Add("Nurse ID");
-            dt.Columns.Add("First Name");
-            dt.Columns.Add("Last Name");
+            
 
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
             StaffSchedulerHandler scheduleHnd = new StaffSchedulerHandler();
-            dataOnDutyGridView.DataSource = scheduleHnd.getOnDutySchedule(dbConn.getConn());
-            dataOffDutyGridView.DataSource = scheduleHnd.getOffDutySchedule(dbConn.getConn());
+            List<Schedule> listSchedules = new List<Schedule>();
+            listSchedules = scheduleHnd.getDutySchedule(dbConn.getConn(), 0);
+            dataOnDutyGridView.DataSource = scheduleHnd.getDutySchedule(dbConn.getConn(), 1);
+            //dataOffDutyGridView.DataSource = listSchedules;
+            datatestGridView1.DataSource = listSchedules;
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StaffSchedulerHandler scheduleHandler = new StaffSchedulerHandler();
+            DbConnector dbC = new DbConnector();
+            dbC.connect();
+            if (StaffIDcomboBox.SelectedIndex != 0)
+            {
+                Schedule existSchedule = scheduleHandler.getSpecificStaffDetails(dbC.getConn(), int.Parse(StaffIDcomboBox.SelectedItem.ToString()));
+                firstNameTextBox.Text = existSchedule.FName.ToString();
+                lastNameTextBox.Text = existSchedule.LName.ToString();
+                todayDate.Text = existSchedule.Date.ToString();
+            }
+        }
     }
 }

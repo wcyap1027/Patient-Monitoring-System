@@ -10,6 +10,8 @@ namespace Patient_Monitoring_System.Handler
 {
     public class BloodPressureHandler
     {
+
+        //add new bloodpressure values to the patient
         public int addNewBloodPressure(MySqlConnection conn, BloodPressure bloodPressure, int patientId)
         {
             string sql = "INSERT into bloodpressure( patient_id, bloodPressureValue, bloodPressureTime, bloodPressureDate)" + "VALUES('" + patientId + "', '" + bloodPressure.BloodPressureValue + "', '" + bloodPressure.BloodPressureTime.ToString("HH:mm:ss") + "', '" + bloodPressure.BloodPressureDate.ToString("yyyy-MM-dd") + "')";

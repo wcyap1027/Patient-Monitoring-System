@@ -9,13 +9,18 @@ namespace Manager
     public class Schedule
     {
         private DateTime date;
-        private string nurseid;
+        private int id;
+        private string staffid;
         private string fName;
         private string lName;
         private Boolean dutystatus;
 
+        
+        public int Id { get => id; set => id = value; }
+
         public DateTime Date { get => date; set => date = value; }
-        public string Nurseid { get => nurseid; set => nurseid = value; }
+
+        public string Staffid { get => staffid; set => staffid = value; }
         public string FName { get => fName; set => fName = value; }
         public string LName { get => lName; set => lName = value; }
         public bool Dutystatus { get => dutystatus; set => dutystatus = value; }
