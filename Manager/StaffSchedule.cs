@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Patient_Monitoring_System;
 
 namespace Manager
 {
@@ -14,7 +15,14 @@ namespace Manager
     {
         public StaffSchedule()
         {
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
             InitializeComponent();
+            StaffSchedulerHandler schedulerHandler = new StaffSchedulerHandler();
+            dataOffDutyGridView.DataSource = schedulerHandler.getAllScheduleStatus(dbConn.getConn(), 0);
+            schedulerHandler.FetchStaffId(staffIDcomboBox);
+            //PatientHandler patientHandler = new PatientHandler();
+            //dataOffDutyGridView.DataSource = patientHandler.getAllPatient(dbConn.getConn());
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -29,18 +37,11 @@ namespace Manager
 
         private void StaffSchedule_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Date");
-            dt.Columns.Add("Nurse ID");
-            dt.Columns.Add("First Name");
-            dt.Columns.Add("Last Name");
-
             DbConnector dbConn = new DbConnector();
             dbConn.connect();
-            StaffSchedulerHandler scheduleHnd = new StaffSchedulerHandler();
-            dataOnDutyGridView.DataSource = scheduleHnd.getOnDutySchedule(dbConn.getConn());
-            dataOffDutyGridView.DataSource = scheduleHnd.getOffDutySchedule(dbConn.getConn());
+            //StaffSchedulerHandler scheduleHnd = new StaffSchedulerHandler();
+            //dataOnDutyGridView.DataSource = scheduleHnd.getDuty(dbConn.getConn(), 1);
+            //dataOffDutyGridView.DataSource = scheduleHnd.getDutySchedule(dbConn.getConn(), 0);
         }
 
       

@@ -60,7 +60,6 @@ namespace Patient_Monitoring_System
                     listPatient.Add(sPatient);
                 }
                 myReader.Close();
-                myReader.Close();
             }
             catch(Exception e)
             {

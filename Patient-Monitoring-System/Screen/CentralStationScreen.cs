@@ -163,18 +163,18 @@ namespace Patient_Monitoring_System
                 int lastIdTemp = temperatureHandler.getLastIdTemperature(dBc.getConn(), patientId);
                 double lastTemp = temperatureHandler.getLastTemperature(dBc.getConn(), patientId, lastIdTemp);
 
-                bloodPressureValue5.Text = lastBP.ToString();
-                breathingRateValue5.Text = lastBR.ToString();
-                pulseRateValue5.Text = lastPR.ToString();
-                temperatureValue5.Text = lastTemp.ToString();
+                bloodPressureValue6.Text = lastBP.ToString();
+                breathingRateValue6.Text = lastBR.ToString();
+                pulseRateValue6.Text = lastPR.ToString();
+                temperatureValue6.Text = lastTemp.ToString();
 
             }
             else
             {
-                bloodPressureValue5.Text = "--";
-                breathingRateValue5.Text = "--";
-                pulseRateValue5.Text = "--";
-                temperatureValue5.Text = "--";
+                bloodPressureValue6.Text = "--";
+                breathingRateValue6.Text = "--";
+                pulseRateValue6.Text = "--";
+                temperatureValue6.Text = "--";
             }
         }
 
@@ -191,10 +191,10 @@ namespace Patient_Monitoring_System
             DBConnector dBc = new DBConnector();
             dBc.connect();
             BedsideHandler bedsideHandler = new BedsideHandler();
-            int alarmStatus5 = bedsideHandler.SelectAlarmStatusBedside(dBc.getConn(), listbedsides[5].Id);
-            int alarmZeroStatus5 = bedsideHandler.SelectAlarmZeroStatusBedside(dBc.getConn(), listbedsides[5].Id);
+            int alarmStatus6 = bedsideHandler.SelectAlarmStatusBedside(dBc.getConn(), listbedsides[5].Id);
+            int alarmZeroStatus6 = bedsideHandler.SelectAlarmZeroStatusBedside(dBc.getConn(), listbedsides[5].Id);
 
-            if ((alarmStatus5 == 1) || (alarmZeroStatus5 == 1))
+            if ((alarmStatus6 == 1) || (alarmZeroStatus6 == 1))
             {
                 if (!backgroundWorkerAlarm.IsBusy)
                 {

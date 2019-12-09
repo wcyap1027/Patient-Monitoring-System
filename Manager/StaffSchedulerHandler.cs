@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using Patient_Monitoring_System;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Manager
 {
@@ -24,62 +26,105 @@ namespace Manager
             return dt;
         }
 
-        public List<Schedule> getOnDutySchedule(MySqlConnection conn)
+        public void FetchStaffId(ComboBox selectedcomboBox)
+        {
+            selectedcomboBox.Items.Add("--Select ID--");
+
+            selectedcomboBox.SelectedIndex = 0;
+            DBConnector dbC = new DBConnector();
+            dbC.connect();
+            StaffSchedulerHandler scheduleHandler = new StaffSchedulerHandler();
+            List<Schedule> listSchedule = new List<Schedule>();
+            listSchedule = scheduleHandler.getAllSchedule(dbC.getConn());
+            for (int i = 0; i < listSchedule.Count; i++)
+            {
+                
+                selectedcomboBox.Items.Add(listSchedule[i].StaffId);
+            }
+        }
+
+        public List<Schedule> getAllSchedule(MySqlConnection conn)
         {
             List<Schedule> listSchedule = new List<Schedule>();
-            string sql = "SELECT * FROM schedule WHERE dutystatus =" + 1;
+            string sql = "SELECT * FROM schedule";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             try
             {
                 MySqlDataReader myReader;
                 myReader = sqlComm.ExecuteReader();
-                while(myReader.Read())
+                while (myReader.Read())
                 {
-                    Schedule schedule1 = new Schedule();
-                    schedule1.Date = (DateTime)myReader.GetValue(0);
-                    schedule1.Nurseid = (string)myReader.GetValue(1);
-                    schedule1.FName = (string)myReader.GetValue(2);
-                    schedule1.LName = (string)myReader.GetValue(3);
-                    schedule1.Dutystatus = (bool)myReader.GetValue(4);
-                    listSchedule.Add(schedule1);
+                    Schedule schedule = new Schedule();
+                    schedule.Id = (int)myReader.GetValue(0);
+                    schedule.StaffId = (string)myReader.GetValue(1);
+                    schedule.FirstName = (string)myReader.GetValue(2);
+                    schedule.LastName = (string)myReader.GetValue(3);
+                    schedule.TodayDate = (DateTime)myReader.GetValue(4);
+                    schedule.DutyStatus = (bool)myReader.GetValue(5);
+
+
+
+                    listSchedule.Add(schedule);
                 }
+                myReader.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 Console.WriteLine(e.ToString());
             }
 
             return listSchedule;
         }
 
-        public List<Schedule> getOffDutySchedule(MySqlConnection conn)
+
+        public List<Schedule> getAllScheduleStatus(MySqlConnection conn, int dutyStatus)
         {
             List<Schedule> listSchedule = new List<Schedule>();
-            string sql = "SELECT * FROM schedule where dutystatus =" + 0;
+            string sql = "SELECT * FROM schedule WHERE dutyStatus='"+dutyStatus+"'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             try
             {
                 MySqlDataReader myReader;
                 myReader = sqlComm.ExecuteReader();
-                while(myReader.Read())
+                while (myReader.Read())
                 {
-                    Schedule schedule2 = new Schedule();
-                    schedule2.Date = (DateTime)myReader.GetValue(0);
-                    schedule2.Nurseid = (string)myReader.GetValue(1);
-                    schedule2.FName = (string)myReader.GetValue(2);
-                    schedule2.LName = (string)myReader.GetValue(3);
-                    schedule2.Dutystatus = (bool)myReader.GetValue(4);
-                    listSchedule.Add(schedule2);
+                    Schedule schedule = new Schedule();
+                    schedule.Id = (int)myReader.GetValue(0);
+                    schedule.StaffId = (string)myReader.GetValue(1);
+                    schedule.FirstName = (string)myReader.GetValue(2);
+                    schedule.LastName = (string)myReader.GetValue(3);
+                    schedule.TodayDate = (DateTime)myReader.GetValue(4);
+                    schedule.DutyStatus = (bool)myReader.GetValue(5);
+
+
+
+                    listSchedule.Add(schedule);
                 }
+                myReader.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 Console.WriteLine(e.ToString());
             }
 
             return listSchedule;
         }
+
+        public DataTable getDuty(MySqlConnection conn, int status)
+        {
+            string sql = "SELECT * FROM schedule WHERE dutyStatus='" + status + "'";
+            MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            sqlDataAdapter.Fill(dt);
+            conn.Close();
+
+            return dt;
+        }
+
+        
     }
 }
