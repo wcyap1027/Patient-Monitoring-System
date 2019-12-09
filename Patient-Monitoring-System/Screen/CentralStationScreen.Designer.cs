@@ -32,6 +32,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.bayName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.centralStationNameComboBox = new System.Windows.Forms.ComboBox();
             this.bedsideNumber1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,16 +112,12 @@
             this.dataTimerBedside2 = new System.Windows.Forms.Timer(this.components);
             this.dataTimerBedside1 = new System.Windows.Forms.Timer(this.components);
             this.trackAlarmTimer7 = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer6 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.centralStationtableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +160,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1432, 95);
             this.panel1.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(935, 32);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 25);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Alarm Trigger";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(869, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(61, 37);
+            this.panel3.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(787, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Normal";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Green;
+            this.panel2.Location = new System.Drawing.Point(721, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(61, 37);
+            this.panel2.TabIndex = 8;
             // 
             // centralStationNameComboBox
             // 
@@ -1089,6 +1127,7 @@
             this.alarmStatusBtn6.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn6.TabIndex = 69;
             this.alarmStatusBtn6.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn6.Click += new System.EventHandler(this.alarmStatusBtn6_Click);
             // 
             // alarmStatusBtn7
             // 
@@ -1147,47 +1186,17 @@
             // 
             this.dataTimerBedside7.Tick += new System.EventHandler(this.dataTimerBedside7_Tick);
             // 
+            // dataTimerBedside6
+            // 
+            this.dataTimerBedside6.Tick += new System.EventHandler(this.dataTimerBedside6_Tick);
+            // 
             // trackAlarmTimer7
             // 
             this.trackAlarmTimer7.Tick += new System.EventHandler(this.trackAlarmTimer7_Tick);
             // 
-            // panel2
+            // trackAlarmTimer6
             // 
-            this.panel2.BackColor = System.Drawing.Color.Green;
-            this.panel2.Location = new System.Drawing.Point(721, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(61, 37);
-            this.panel2.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(787, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Normal";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(869, 24);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(61, 37);
-            this.panel3.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(935, 32);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Alarm Trigger";
+            this.trackAlarmTimer6.Tick += new System.EventHandler(this.trackAlarmTimer6_Tick);
             // 
             // central_station_screen
             // 
@@ -1293,7 +1302,7 @@
         private System.Windows.Forms.Button alarmStatusBtn7;
         private System.Windows.Forms.Button alarmStatusBtn1;
         private System.Windows.Forms.Timer trackAlarmTimer7;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer trackAlarmTimer6;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;

@@ -115,10 +115,13 @@ namespace Patient_Monitoring_System
                     }
 
                 }
-                InitDataTimerBedside8();
-                InitTrackAlarmTimerBedside8();
+                InitDataTimerBedside6();
+                InitTrackAlarmTimerBedside6();
                 InitDataTimerBedside7();
                 InitTrackAlarmTimerBedside7();
+                InitDataTimerBedside8();
+                InitTrackAlarmTimerBedside8();
+                
 
             }
         }
@@ -130,8 +133,123 @@ namespace Patient_Monitoring_System
 
 
 
+        //bedside 6
 
+        private void dataTimerBedside6_Tick(object sender, EventArgs e)
+        {
+            CentralStationHandler csHandler = new CentralStationHandler();
+            DBConnector dBc = new DBConnector();
+            dBc.connect();
+            int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[5].Id);
+            BloodPressureHandler bloodPressureHandler = new BloodPressureHandler();
+            BreathingRateHandler breathingRateHandler = new BreathingRateHandler();
+            PulseRateHandler pulseRateHandler = new PulseRateHandler();
+            TemperatureHandler temperatureHandler = new TemperatureHandler();
+            if (listLabelBedsideStatus[5].Text == "ONLINE")
+            {
+                //get last blood pressure
+                int lastIdBP = bloodPressureHandler.getLastIdBloodPressure(dBc.getConn(), patientId);
+                double lastBP = bloodPressureHandler.getLastBloodPressure(dBc.getConn(), patientId, lastIdBP);
 
+                //get last breathing rate
+                int lastIdBR = breathingRateHandler.getLastIdBreathingRate(dBc.getConn(), patientId);
+                double lastBR = breathingRateHandler.getLastBreathingRate(dBc.getConn(), patientId, lastIdBR);
+
+                //get last pulserate
+                int lastIdPR = pulseRateHandler.getLastIdPulseRate(dBc.getConn(), patientId);
+                double lastPR = pulseRateHandler.getLastPulseRate(dBc.getConn(), patientId, lastIdPR);
+
+                //get last temperature
+                int lastIdTemp = temperatureHandler.getLastIdTemperature(dBc.getConn(), patientId);
+                double lastTemp = temperatureHandler.getLastTemperature(dBc.getConn(), patientId, lastIdTemp);
+
+                bloodPressureValue5.Text = lastBP.ToString();
+                breathingRateValue5.Text = lastBR.ToString();
+                pulseRateValue5.Text = lastPR.ToString();
+                temperatureValue5.Text = lastTemp.ToString();
+
+            }
+            else
+            {
+                bloodPressureValue5.Text = "--";
+                breathingRateValue5.Text = "--";
+                pulseRateValue5.Text = "--";
+                temperatureValue5.Text = "--";
+            }
+        }
+
+        public void InitDataTimerBedside6()
+        {
+            dataTimerBedside6 = new System.Windows.Forms.Timer();
+            dataTimerBedside6.Tick += new EventHandler(dataTimerBedside6_Tick);
+            dataTimerBedside6.Interval = 1000;
+            dataTimerBedside6.Start();
+        }
+
+        private void trackAlarmTimer6_Tick(object sender, EventArgs e)
+        {
+            DBConnector dBc = new DBConnector();
+            dBc.connect();
+            BedsideHandler bedsideHandler = new BedsideHandler();
+            int alarmStatus5 = bedsideHandler.SelectAlarmStatusBedside(dBc.getConn(), listbedsides[5].Id);
+            int alarmZeroStatus5 = bedsideHandler.SelectAlarmZeroStatusBedside(dBc.getConn(), listbedsides[5].Id);
+
+            if ((alarmStatus5 == 1) || (alarmZeroStatus5 == 1))
+            {
+                if (!backgroundWorkerAlarm.IsBusy)
+                {
+                    alarmStatus = true;
+                    backgroundWorkerAlarm.RunWorkerAsync();
+                }
+
+            }
+            else
+            {
+                backgroundWorkerAlarm.CancelAsync();
+            }
+        }
+
+        public void InitTrackAlarmTimerBedside6()
+        {
+            trackAlarmTimer6 = new System.Windows.Forms.Timer();
+            trackAlarmTimer6.Tick += new EventHandler(trackAlarmTimer8_Tick);
+            trackAlarmTimer6.Interval = 1000;
+            trackAlarmTimer6.Start();
+        }
+
+        private void alarmStatusBtn6_Click(object sender, EventArgs e)
+        {
+            DBConnector dBc = new DBConnector();
+            dBc.connect();
+            BedsideHandler bedsideHandler = new BedsideHandler();
+            CentralStationHandler csHandler = new CentralStationHandler();
+            int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[5].Id);
+            //int alarmStatus8 = bedsideHandler.SelectAlarmStatusBedside(dBc.getConn(), listbedsides[7].Id);
+            int alarmZeroStatus5 = bedsideHandler.SelectAlarmZeroStatusBedside(dBc.getConn(), listbedsides[5].Id);
+            if (alarmZeroStatus5 == 1)
+            {
+                MessageBox.Show("Cannot Mute Alarm, This bedside reading is trigger 0");
+            }
+            else
+            {
+                int updateResult = bedsideHandler.updateAlarmStatus(dBc.getConn(), listbedsides[5].Id, 0);
+
+                if (updateResult == 1)
+                {
+                    AlarmHandler alarmHandler = new AlarmHandler();
+                    int id = alarmHandler.getLastId(dBc.getConn(), patientId);
+                    int result = alarmHandler.updateDateTimeMuted(dBc.getConn(), patientId, id);
+
+                    if (result == 1)
+                    {
+                        backgroundWorkerAlarm.CancelAsync();
+                        MessageBox.Show("Muted Alarm");
+                        alarmStatusbtn8.BackColor = Color.Green;
+                    }
+
+                }
+            }
+        }
 
 
         //bedside 7
@@ -222,6 +340,8 @@ namespace Patient_Monitoring_System
             dBc.connect();
             BedsideHandler bedsideHandler = new BedsideHandler();
             int alarmZeroStatus8 = bedsideHandler.SelectAlarmZeroStatusBedside(dBc.getConn(), listbedsides[6].Id);
+            CentralStationHandler csHandler = new CentralStationHandler();
+            int patientId = csHandler.checkPatientAvailableInBedside(dBc.getConn(), listbedsides[7].Id);
             if (alarmZeroStatus8 == 1)
             {
                 MessageBox.Show("Cannot Mute Alarm, This bedside reading is trigger 0");
