@@ -74,6 +74,8 @@ namespace Patient_Monitoring_System.Screen
             if(centralbedsideIdcomboBox.SelectedIndex > 0)
             {
                 int index = centralbedsideIdcomboBox.SelectedIndex;
+              
+
                 if (listBedside[index].Status)
                 {
                     DBConnector dBConn = new DBConnector();
@@ -147,10 +149,11 @@ namespace Patient_Monitoring_System.Screen
                     
                 }
 
-                if (centralPatientIdLabel.Text == "No Assigned Patient ID")
-                {
-                    setAssignPatientId();
-                }
+                //if (centralPatientIdLabel.Text == "No Assigned Patient ID")
+                //{
+                //    assignPatientIdcomboBox.Items.Clear();
+                //    setAssignPatientId();
+                //}
 
 
             }

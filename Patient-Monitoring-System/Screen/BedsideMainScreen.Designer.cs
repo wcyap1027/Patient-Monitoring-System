@@ -90,6 +90,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.trackAlarmTimer = new System.Windows.Forms.Timer(this.components);
+            this.trackReadingtimer = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -696,6 +697,10 @@
             // 
             this.trackAlarmTimer.Tick += new System.EventHandler(this.trackAlarmTimer_Tick);
             // 
+            // trackReadingtimer
+            // 
+            this.trackReadingtimer.Tick += new System.EventHandler(this.trackReadingtimer_Tick);
+            // 
             // BedsideMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -798,5 +803,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button setAlarmBtn;
         private System.Windows.Forms.Timer trackAlarmTimer;
+        private System.Windows.Forms.Timer trackReadingtimer;
     }
 }

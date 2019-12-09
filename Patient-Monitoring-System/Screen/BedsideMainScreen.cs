@@ -40,6 +40,7 @@ namespace BedsideSystem
             backgroundWorkerBeep.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
+            InitTrackReading();
         }
 
         private async void readTemperatureData()
@@ -853,7 +854,7 @@ namespace BedsideSystem
             profileScreen.BedsideId = BedsideLoginScreen.bedsideIDPass.ToString();
             profileScreen.PatientId = oldPatient.Id.ToString();
             profileScreen.PatientName = oldPatient.FullName;
-            profileScreen.PatientNRIC = oldPatient.Nric.ToString();
+            profileScreen.PatientNRIC = oldPatient.IdentityCard.ToString();
             profileScreen.Age = oldPatient.Age.ToString();
             profileScreen.AlarmDetails = "Blood Pressure Occurs: " + listbloodPressure.Count +
                 Environment.NewLine + "Breathing Rate Occurs: " + listbreathingRate.Count +
@@ -862,13 +863,7 @@ namespace BedsideSystem
 
         }
 
-        private void BedsideMainScreen_Activated(object sender, EventArgs e)
-        {
-            //InitializeComponent();
-            //getAllReading();
-            //ReadingScreen readingScreen = new ReadingScreen();
-            //minBloodPressureLabel.Text = readingScreen.MinB; 
-        }
+        
 
         private void setAlarmBtn_Click(object sender, EventArgs e)
         {
@@ -915,6 +910,47 @@ namespace BedsideSystem
             {
                 backgroundWorkerAlarmZero.CancelAsync();
                 backgroundWorkerAlarmReading.CancelAsync();
+            }
+        }
+
+        public void InitTrackReading()
+        {
+            trackReadingtimer = new System.Windows.Forms.Timer();
+            trackReadingtimer.Tick += new EventHandler(trackReadingtimer_Tick);
+            trackReadingtimer.Interval = 1000;
+            trackReadingtimer.Start();
+        }
+
+        private void trackReadingtimer_Tick(object sender, EventArgs e)
+        {
+            Reading patientReading = new Reading();
+            ReadingHandler readingHandler = new ReadingHandler();
+            DBConnector dbConn = new DBConnector();
+            dbConn.connect();
+            bool status = readingHandler.checkExistsReading(dbConn.getConn(), BedsideLoginScreen.bedside_patient_id);
+
+            if (status)
+            {
+                patientReading = readingHandler.getReading(dbConn.getConn(), BedsideLoginScreen.bedside_patient_id);
+                minBloodPressureLabel.Text = patientReading.MinBloodPressure.ToString();
+                maxBloodPressureLabel.Text = patientReading.MaxBloodPressure.ToString();
+                minBreathingRateLabel.Text = patientReading.MinBreathing.ToString();
+                maxBreathingRateLabel.Text = patientReading.MaxBreathing.ToString();
+                minPulseRateLabel.Text = patientReading.MinPulse.ToString();
+                maxPulseRateLabel.Text = patientReading.MaxPulse.ToString();
+                minTemperatureLabel.Text = patientReading.MinTemperature.ToString();
+                maxTemperatureLabel.Text = patientReading.MaxTemperature.ToString();
+            }
+            else
+            {
+                minBloodPressureLabel.Text = "--";
+                maxBloodPressureLabel.Text = "--";
+                minBreathingRateLabel.Text = "--";
+                maxBreathingRateLabel.Text = "--";
+                minPulseRateLabel.Text = "--";
+                maxPulseRateLabel.Text = "--";
+                minTemperatureLabel.Text = "--";
+                maxTemperatureLabel.Text = "--";
             }
         }
     }

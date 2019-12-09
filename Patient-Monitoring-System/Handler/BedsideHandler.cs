@@ -171,7 +171,7 @@ namespace Patient_Monitoring_System.Handler
                 {
 
                     oldPatient.Id = (int)myReader.GetValue(0);
-                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.IdentityCard = (long)myReader.GetValue(1);
                     oldPatient.FullName = (string)myReader.GetValue(2);
                     oldPatient.Address = (string)myReader.GetValue(3);
                     oldPatient.Email = (string)myReader.GetValue(4);

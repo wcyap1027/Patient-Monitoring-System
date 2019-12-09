@@ -104,33 +104,8 @@ namespace Manager
                 MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
-            /*if (string.IsNullOrEmpty(patientIDTextBox.Text))
-            {
-                MessageBox.Show("Please enter a correct patient ID", "Invalid key", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int patientId = int.Parse(patientIDTextBox.Text);
-
-            bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
-
-            if (status)
-            {
-                patientGridView.DataSource = patientHandler.getSpecificPatientList(dbConn.getConn(), patientIDTextBox.Text);
-            }
-            else
-            {
-                MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            */
-
-
         }
-        private void patientIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
@@ -145,16 +120,10 @@ namespace Manager
             DbConnector dBConn = new DbConnector();
             dBConn.connect();
             PatientHandler patientHandler = new PatientHandler();
-            AlarmHandler alarmhd = new AlarmHandler();
+            
             patientHandler.FetchId(patientComboBox);
-            //alarmhd.FetchPatientAlarmId(AlarmIDcomboBox);
-
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -180,72 +149,42 @@ namespace Manager
 
         }
 
-        private void readingTypeTB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                       
-        }
-
         private void ViewB_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-            PatientHandler patientHandler = new PatientHandler();
-            //BloodPressureHandler bphandler = new BloodPressureHandler();
-
-            int patientId = int.Parse(patientIDcb.Text);
-            //string optionId = option1ComboBox.Text;
-
-            bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
-            //bool status1 = bphandler.checkOption(dbConn.getConn(), optionId);
-
-            string selected1 = optional1ComboBox.SelectedItem.ToString().ToLower();
-            //string selected2 = optional2ComboBox.SelectedItem.ToString().ToLower();
-            //string selected3 = optional3ComboBox.SelectedItem.ToString().ToLower();
-
-            if (status)
+            if(patientIDcb.SelectedIndex == 0)
             {
-                if(optional1ComboBox.SelectedIndex > 0 /*&& optional2ComboBox.SelectedIndex == 0 && optional3ComboBox.SelectedIndex == 0*/)
+                MessageBox.Show("Please select valid Id");
+                return;
+            }
+
+            if(patientIDcb.SelectedIndex > 0)
+            {
+                DbConnector dbConn = new DbConnector();
+                dbConn.connect();
+                PatientHandler patientHandler = new PatientHandler();
+                int patientId = int.Parse(patientIDcb.SelectedItem.ToString());
+                bool status = patientHandler.checkPatientID(dbConn.getConn(), patientId);
+                string selected1 = optional1ComboBox.SelectedItem.ToString().ToLower();
+
+                if (status)
                 {
-                    readingGridView.DataSource = patientHandler.patientWithOptional(dbConn.getConn(), patientId, selected1);
+                    if(optional1ComboBox.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Please select valid value for reading");
+                        return;
+                    }
+                    if (optional1ComboBox.SelectedIndex > 0)
+                    {
+                        readingGridView.DataSource = patientHandler.patientWithOptional(dbConn.getConn(), patientId, selected1);
+                    }
+
                 }
-                //else if (optional1ComboBox.SelectedIndex > 0 && optional2ComboBox.SelectedIndex > 0 && optional3ComboBox.SelectedIndex == 0)
-                //{
-                //    readingGridView.DataSource = patientHandler.patientWith2Optional(dbConn.getConn(), patientId, selected1, selected2);
-                //}
-
-                //if(selected == "Blood Pressure")
-                //{
-                //    status = true;
-                //    MessageBox.Show("Exist");
-                //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), optionalComboBox.Text);
-                //}
-
-                    //string sql = "SELECT patient_id FROM bloodpressure WHERE patient_id='" + patientIDcb.Text + "'";
-                    //MySqlCommand sqlComm = new MySqlCommand(sql, dbConn.getConn());
-
-                    //var qId = sqlComm.ExecuteScalar();
-
-                    //if (qId != null)
-                    //{
-                    //    status = true;
-                    //    MessageBox.Show("Exist");
-                    //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
-                    //}
-                    //else
-                    //{
-                    //    status = false;
-                    //}
-
-                    //if (status1)
-                    //{
-
-                    //    readingGridView.DataSource = bphandler.getSpecificBloodPressureList(dbConn.getConn(), option1ComboBox.Text);
-                    //}
+                else
+                {
+                    MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid patient ID. Please try again", "Patient Not In Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
 
         }
 
@@ -305,7 +244,9 @@ namespace Manager
             //}
         }
 
-        private void alarmDateTimePicker_ValueChanged(object sender, EventArgs e)
+        
+
+        private void patientComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
