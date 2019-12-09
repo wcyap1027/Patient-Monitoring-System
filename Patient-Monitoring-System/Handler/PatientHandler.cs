@@ -59,7 +59,6 @@ namespace Patient_Monitoring_System
                     
                     listPatient.Add(sPatient);
                 }
-               
                 myReader.Close();
             }
             catch(Exception e)
@@ -156,9 +155,6 @@ namespace Patient_Monitoring_System
             return status;
         }
 
-        
-
-      //retrieve data and display in datagridviewtable
         public List<Patient> getSpecificPatientList(MySqlConnection conn, string selectedId)
         {
             int userId = int.Parse(selectedId);
@@ -201,8 +197,6 @@ namespace Patient_Monitoring_System
             return listpatient;
         }
 
-
-        //retrieve patient details by selecting patient ID from comboBox
         public Patient getSpecificPatient(MySqlConnection conn, int selectedId)
         {
             Patient oldPatient = new Patient();
@@ -241,8 +235,6 @@ namespace Patient_Monitoring_System
             return oldPatient;
         }
 
-
-        //update patient data 
         public int updatePatientData(MySqlConnection conn, Patient patient)
         {
             string sql = "UPDATE patient SET NRIC='" + patient.Nric + "', fullName= '"+patient.FullName+"', address='" + patient.Address + "', email='"+patient.Email +"', gender='"+patient.Gender+"', phone='"+patient.Phone+"', age='"+patient.Age+"', bedsideId='" + patient.BedsideId+"' WHERE id='" + patient.Id + "'";
@@ -252,8 +244,6 @@ namespace Patient_Monitoring_System
             
         }
 
-
-        //remove patient data
         public int deletePatientData(MySqlConnection conn, int id)
         {
             string sql = "DELETE FROM patient WHERE id= '" + id + "'";
@@ -268,8 +258,6 @@ namespace Patient_Monitoring_System
         //    return alterCommand.ExecuteNonQuery();
         //}
 
-
-        //retrieve patient id 
         public void FetchId(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");
@@ -286,8 +274,6 @@ namespace Patient_Monitoring_System
             }
         }
 
-
-        //retrive patient's reading from database
         public DataTable patientWithOptional(MySqlConnection conn, int patientId, string optional1)
         {
             string columnName = "";
