@@ -178,7 +178,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(884, 148);
+            this.label2.Size = new System.Drawing.Size(1144, 148);
             this.label2.TabIndex = 40;
             this.label2.Text = "Patient Monitoring System";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,7 +192,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 148);
+            this.panel1.Size = new System.Drawing.Size(1144, 148);
             this.panel1.TabIndex = 41;
             // 
             // viewRecordBtn
@@ -232,7 +232,7 @@
             this.viewControlPanel.Location = new System.Drawing.Point(840, 167);
             this.viewControlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.viewControlPanel.Name = "viewControlPanel";
-            this.viewControlPanel.Size = new System.Drawing.Size(197, 110);
+            this.viewControlPanel.Size = new System.Drawing.Size(304, 361);
             this.viewControlPanel.TabIndex = 44;
             // 
             // addRecordPanel
@@ -884,7 +884,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1144, 561);
             this.Controls.Add(this.deleteRecordPanel);
             this.Controls.Add(this.updateRecordPanel);
             this.Controls.Add(this.addRecordPanel);
