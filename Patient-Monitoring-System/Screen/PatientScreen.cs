@@ -12,7 +12,6 @@ namespace Patient_Monitoring_System
 {
     public partial class PatientScreen : Form
     {
-
         public PatientScreen()
         {
             InitializeComponent();
@@ -35,7 +34,6 @@ namespace Patient_Monitoring_System
 
 
         }
-
 
         private void PatientScreen_Load(object sender, EventArgs e)
         {

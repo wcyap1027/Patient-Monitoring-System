@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patient_Monitoring_System
 {
-    class MedicalStaff : User
+    public class MedicalStaff : User
     {
         private string id, fullname, email, address;
         private int nric, phoneNumber;

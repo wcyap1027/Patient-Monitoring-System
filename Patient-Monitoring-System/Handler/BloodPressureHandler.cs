@@ -20,66 +20,8 @@ namespace Patient_Monitoring_System.Handler
             return sqlComm.ExecuteNonQuery();
 
         }
-
-        //public bool checkOption(MySqlConnection conn, int userOption)
-        //{
-        //    bool status = false;
-        //    string sql = "SELECT id FROM bloodpressure WHERE id='" + userOption + "'";
-        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-
-        //    var qId = sqlComm.ExecuteScalar();
-
-        //    if (qId != null)
-        //    {
-        //        status = true;
-        //        MessageBox.Show("Exist");
-        //    }
-        //    else
-        //    {
-        //        status = false;
-        //    }
-
-        //    return status;
-        //}
-
-        public List<BloodPressure> getSpecificBloodPressureList(MySqlConnection conn, string optionId)
-        {
-            int bpId = int.Parse(optionId);
-            List<BloodPressure> listbloodpressure = new List<BloodPressure>();
-            Patient patientinfo = new Patient();
-            BloodPressure bloodpressurereading = new BloodPressure();
-            string sql = "SELECT * FROM bloodpressure WHERE id= '" + bpId + "'";
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            try
-            {
-                MySqlDataReader myReader;
-                myReader = sqlComm.ExecuteReader();
-                if (myReader.Read())
-                {
-
-                    bloodpressurereading.BloodPressureDate = (DateTime)myReader.GetValue(0);
-                    bloodpressurereading.BloodPressureTime = (DateTime)myReader.GetValue(1);
-                    bloodpressurereading.BloodPressureValue = (int)myReader.GetValue(2);
-
-                    if (myReader.GetValue(2) == null)
-                    {
-                        bloodpressurereading.BloodPressureId = 0;
-                    }
-                    listbloodpressure.Add(bloodpressurereading);
-
-
-                }
-                myReader.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                Console.WriteLine(e.ToString());
-            }
-
-            return listbloodpressure;
-        }
-
+        
+        //get last id blood pressure
         public int getLastIdBloodPressure(MySqlConnection conn, int patientId)
         {
             int id = 0;
@@ -96,6 +38,7 @@ namespace Patient_Monitoring_System.Handler
             return id;
         }
 
+        //get latest value blood pressure
         public double getLastBloodPressure(MySqlConnection conn, int patientId, int lastId)
         {
             double maxBP = 0.0;

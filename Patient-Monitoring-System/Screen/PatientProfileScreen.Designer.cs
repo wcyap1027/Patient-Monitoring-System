@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientProfileScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,7 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.patientNameLabel = new System.Windows.Forms.Label();
-            this.setAlarmBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,7 +80,6 @@
             this.panel1.BackColor = System.Drawing.Color.Snow;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.setAlarmBtn);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.bedsideIdLabel);
@@ -157,9 +154,9 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(30, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 30);
+            this.label11.Size = new System.Drawing.Size(147, 30);
             this.label11.TabIndex = 2;
-            this.label11.Text = "Alarm Occurs";
+            this.label11.Text = "Alarm Trigger";
             // 
             // alarmDetailsLabel
             // 
@@ -269,20 +266,6 @@
             this.patientNameLabel.TabIndex = 6;
             this.patientNameLabel.Text = "--";
             // 
-            // setAlarmBtn
-            // 
-            this.setAlarmBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.setAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.setAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.setAlarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setAlarmBtn.Image = ((System.Drawing.Image)(resources.GetObject("setAlarmBtn.Image")));
-            this.setAlarmBtn.Location = new System.Drawing.Point(518, 3);
-            this.setAlarmBtn.Name = "setAlarmBtn";
-            this.setAlarmBtn.Size = new System.Drawing.Size(53, 54);
-            this.setAlarmBtn.TabIndex = 6;
-            this.setAlarmBtn.UseVisualStyleBackColor = false;
-            this.setAlarmBtn.Click += new System.EventHandler(this.setAlarmBtn_Click);
-            // 
             // PatientProfileScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +306,5 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label patientNRICLabel;
         private System.Windows.Forms.Label patientAGELabel;
-        private System.Windows.Forms.Button setAlarmBtn;
     }
 }
