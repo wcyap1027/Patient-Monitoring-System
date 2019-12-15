@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Patient_Monitoring_System;
 using Patient_Monitoring_System.Handler;
 
-
 namespace PatientMonitoringSystemUnitTest
 {
     [TestClass]
@@ -16,6 +15,7 @@ namespace PatientMonitoringSystemUnitTest
             DBConnector dbC = new DBConnector();
             string resp = dbC.connect();
             Assert.AreEqual("Done", resp);
+            PatientHandler phd = new PatientHandler();
             Patient patient1 = new Patient();
             Assert.IsInstanceOfType(patient1, typeof(object));
 
@@ -30,6 +30,23 @@ namespace PatientMonitoringSystemUnitTest
             //int resp2 = PatientHandler.Instance.addNewPatient(dbC.getConn(), patient1);
             //Assert.IsNotNull(resp2);
 
+            //string resp2 = phd.getLastRecordID(dbC.getConn());
+            //Assert.IsNotNull(resp2);
+
+            //int patientId = 1001;
+            //bool resp2 = phd.checkPatientID(dbC.getConn(), patientId);
+            //Assert.IsNotNull(resp2);
+
+            //int selectedId = 1001;
+            //Patient _ = phd.getSpecificPatient(dbC.getConn(), selectedId);
+
+            //int resp2 = phd.updatePatientData(dbC.getConn(), patient1);
+            //Assert.IsNotNull(resp2);
+
+            //int id = 1001;
+            //int resp2 = phd.deletePatientData(dbC.getConn(), id);
+
+            
 
         }
     }
