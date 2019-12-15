@@ -106,6 +106,10 @@ namespace Manager
             if(result == 1)
             {
                 MessageBox.Show("Update Successfully");
+                dataOnDutyGridView.DataSource = staffhnd.getOnScheduleStatus(dbCon.getConn(), 0);
+                dataOffDutyGridView.DataSource = staffhnd.getOffScheduleStatus(dbCon.getConn(), 0);
+
+
             }
             else
             {
@@ -121,6 +125,14 @@ namespace Manager
             dateBox.Text = "";
             staffIDcomboBox.Text = "";
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ManagerMainScreen mngScreen = new ManagerMainScreen();
+            this.Hide();
+            mngScreen.ShowDialog();
+            this.Close();
         }
     }
 }

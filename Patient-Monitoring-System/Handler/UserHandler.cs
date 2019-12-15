@@ -34,7 +34,7 @@ namespace Patient_Monitoring_System.Handler
                     lastId = Convert.ToInt32(qrId);
                 }
 
-                string insertsql = "INSERT into nurse( user_account_id, first_name, last_name, NRIC, address, email, phone)" + "VALUES('" + lastId + "', '" + nurse.FirstName + "', '" + nurse.LastName + "', '" + nurse.NRIC1 + "', '" + nurse.Address + "', '" + nurse.Email + "', '" + nurse.Phone + "')";
+                string insertsql = "INSERT into nurse( user_account_id, first_name, last_name, identityCard, address, email, phone)" + "VALUES('" + lastId + "', '" + nurse.FirstName + "', '" + nurse.LastName + "', '" + nurse.IdentityCard + "', '" + nurse.Address + "', '" + nurse.Email + "', '" + nurse.Phone + "')";
                 MySqlCommand insertComm = new MySqlCommand(insertsql, conn);
                 int result2 = insertComm.ExecuteNonQuery();
 
