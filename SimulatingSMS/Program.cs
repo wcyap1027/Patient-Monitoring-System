@@ -12,7 +12,7 @@ namespace SimulatingSMS
     class Program
     {
         private static int id = 0;
-        private static int duplicateId = 0;
+        
         static void Main(string[] args)
         {
             Timer timer = new Timer();

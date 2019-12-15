@@ -19,8 +19,6 @@ namespace PatientMonitoringSystemUnitTest
 
             CentralStation cs = new CentralStation();
             Assert.IsInstanceOfType(cs, typeof(object));
-
-            //List<CentralStation> centralstation = new List<CentralStation>();
             
         }
     }

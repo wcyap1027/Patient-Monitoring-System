@@ -143,7 +143,7 @@ namespace Patient_Monitoring_System
             }
 
             return id;
-        }
+        } 
 
         //retrieve patient value from beside
         public double getMaxValue(MySqlConnection conn, Bedside bedside)
