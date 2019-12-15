@@ -41,6 +41,7 @@
             this.patientIdLabel = new System.Windows.Forms.Label();
             this.patientGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.optional1ComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.patientIDcb = new System.Windows.Forms.ComboBox();
@@ -48,13 +49,12 @@
             this.ResetB = new System.Windows.Forms.Button();
             this.ViewB = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.patientComboBox = new System.Windows.Forms.ComboBox();
             this.AlarmGridView = new System.Windows.Forms.DataGridView();
             this.ResetButton = new System.Windows.Forms.Button();
             this.ViewButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelInformationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel3.SuspendLayout();
@@ -128,9 +128,8 @@
             this.panelInformationPanel.Controls.Add(this.patientGridView);
             this.panelInformationPanel.Location = new System.Drawing.Point(12, 171);
             this.panelInformationPanel.Name = "panelInformationPanel";
-            this.panelInformationPanel.Size = new System.Drawing.Size(262, 358);
+            this.panelInformationPanel.Size = new System.Drawing.Size(95, 77);
             this.panelInformationPanel.TabIndex = 10;
-            this.panelInformationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // patientIDcomboBox
             // 
@@ -191,10 +190,20 @@
             this.panel3.Controls.Add(this.readingGridView);
             this.panel3.Controls.Add(this.ResetB);
             this.panel3.Controls.Add(this.ViewB);
-            this.panel3.Location = new System.Drawing.Point(303, 179);
+            this.panel3.Location = new System.Drawing.Point(155, 182);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(104, 109);
+            this.panel3.Size = new System.Drawing.Size(141, 147);
             this.panel3.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 21);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Patient ID :";
             // 
             // optional1ComboBox
             // 
@@ -229,17 +238,18 @@
             // readingGridView
             // 
             this.readingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.readingGridView.Location = new System.Drawing.Point(3, 83);
+            this.readingGridView.Location = new System.Drawing.Point(3, 95);
             this.readingGridView.Name = "readingGridView";
-            this.readingGridView.Size = new System.Drawing.Size(622, 2755);
+            this.readingGridView.Size = new System.Drawing.Size(622, 2743);
             this.readingGridView.TabIndex = 5;
             this.readingGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.readingGridView_CellContentClick);
             // 
             // ResetB
             // 
-            this.ResetB.Location = new System.Drawing.Point(182, 83);
+            this.ResetB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetB.Location = new System.Drawing.Point(336, 43);
             this.ResetB.Name = "ResetB";
-            this.ResetB.Size = new System.Drawing.Size(75, 23);
+            this.ResetB.Size = new System.Drawing.Size(75, 35);
             this.ResetB.TabIndex = 7;
             this.ResetB.Text = "Reset";
             this.ResetB.UseVisualStyleBackColor = true;
@@ -247,9 +257,10 @@
             // 
             // ViewB
             // 
-            this.ViewB.Location = new System.Drawing.Point(63, 83);
+            this.ViewB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewB.Location = new System.Drawing.Point(255, 42);
             this.ViewB.Name = "ViewB";
-            this.ViewB.Size = new System.Drawing.Size(75, 23);
+            this.ViewB.Size = new System.Drawing.Size(75, 36);
             this.ViewB.TabIndex = 5;
             this.ViewB.Text = "View";
             this.ViewB.UseVisualStyleBackColor = true;
@@ -262,10 +273,20 @@
             this.panel2.Controls.Add(this.AlarmGridView);
             this.panel2.Controls.Add(this.ResetButton);
             this.panel2.Controls.Add(this.ViewButton);
-            this.panel2.Location = new System.Drawing.Point(322, 320);
+            this.panel2.Location = new System.Drawing.Point(337, 189);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(94, 180);
+            this.panel2.Size = new System.Drawing.Size(300, 340);
             this.panel2.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 21);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Patient ID :";
             // 
             // patientComboBox
             // 
@@ -275,6 +296,7 @@
             this.patientComboBox.Name = "patientComboBox";
             this.patientComboBox.Size = new System.Drawing.Size(121, 29);
             this.patientComboBox.TabIndex = 14;
+            this.patientComboBox.SelectedIndexChanged += new System.EventHandler(this.patientComboBox_SelectedIndexChanged);
             // 
             // AlarmGridView
             // 
@@ -313,26 +335,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(641, 100);
             this.panel4.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 21);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Patient ID :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 21);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Patient ID :";
             // 
             // ManagerMainScreen
             // 

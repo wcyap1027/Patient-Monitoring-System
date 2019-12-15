@@ -54,8 +54,10 @@
   <ItemGroup>
     <Compile Include="Class\Alarm.cs" />
     <Compile Include="Class\Bedside.cs" />
+    <Compile Include="Class\SMS.cs" />
     <Compile Include="Handler\AlarmHandler.cs" />
     <Compile Include="Handler\ReadingHandler.cs" />
+    <Compile Include="Handler\SMSHandler.cs" />
     <Compile Include="Screen\ReadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>

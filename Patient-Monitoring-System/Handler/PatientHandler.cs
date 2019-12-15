@@ -25,7 +25,7 @@ namespace Patient_Monitoring_System
         {
             DateTime currentDateTime = DateTime.Now;
             patient.RegisterDateTime = currentDateTime;
-            string sql = "INSERT into patient( fullName, NRIC, address, email, gender, phone, age, registerDateTime, bedsideId)" + "VALUES('" + patient.FullName + "', '" + patient.Nric + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "', '" + patient.RegisterDateTime.ToString("yyyy-MM-dd HH:mm:ss") + "' , '" + patient.BedsideId + "')";
+            string sql = "INSERT into patient( fullName, identityCard, address, email, gender, phone, age, registerDateTime, bedsideId)" + "VALUES('" + patient.FullName + "', '" + patient.IdentityCard + "', '" + patient.Address + "', '" + patient.Email + "', '" + patient.Gender + "', '" + patient.Phone + "', '" + patient.Age + "', '" + patient.RegisterDateTime.ToString("yyyy-MM-dd HH:mm:ss") + "' , '" + patient.BedsideId + "')";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             return sqlComm.ExecuteNonQuery();
@@ -46,7 +46,7 @@ namespace Patient_Monitoring_System
                 {
                     Patient sPatient = new Patient();
                     sPatient.Id = (int)myReader.GetValue(0);
-                    sPatient.Nric = (long)myReader.GetValue(1);
+                    sPatient.IdentityCard = (long)myReader.GetValue(1);
                     sPatient.FullName = (string)myReader.GetValue(2);
                     sPatient.Address = (string)myReader.GetValue(3);
                     sPatient.Email = (string)myReader.GetValue(4);
@@ -60,7 +60,6 @@ namespace Patient_Monitoring_System
                     listPatient.Add(sPatient);
                 }
                 myReader.Close();
-                myReader.Close();
             }
             catch(Exception e)
             {
@@ -71,36 +70,30 @@ namespace Patient_Monitoring_System
             return listPatient;
         }
 
-        //public DataTable searchPatientData(MySqlConnection conn, object searchText)
-        //{
-     
-        //    //string sql = "SELECT * FROM patient where id LIKE '"+Convert.ToInt32(fullName)+ "%' OR fullName LIKE '" + fullName+ "%' OR NRIC LIKE '" + Convert.ToInt32(fullName)+ "%' OR address LIKE '" + fullName+ "%' OR email  LIKE '" + fullName+ "%' OR gender LIKE '" + fullName+ "%' OR phone LIKE '" + Convert.ToInt32(fullName)+ "%' OR age LIKE '" + fullName+ "%' OR bedsideId LIKE '" + Convert.ToInt32(fullName)+"%'";
-
-        //    int queryInt;
-            
-
-        //    //string sql = "SELECT * FROM patient where id LIKE '" + queryInt + "%' OR fullName LIKE '" + queryString + "%'";
-        //    DBConnector dBConn = new DBConnector();
-        //    dBConn.connect();
-        //    MySqlDataAdapter sqlData = new MySqlDataAdapter(sql, dBConn.getConn());
-        //    DataTable table = new DataTable();
-        //    sqlData.Fill(table);
-        //    dBConn.getConn().Close();
-
-        //    return table;
-        //}
-
-        public DataTable BindSource()
+        public DataTable searchPatientData(MySqlConnection conn, string searchText)
         {
+            bool status = int.TryParse(searchText, out int result);
+            string sql;
+            if (status)
+            {
+                sql = "SELECT * FROM patient WHERE id LIKE '" + result + "%' OR identityCard LIKE '" + result + "%' OR phone LIKE '" + result + "%' OR age LIKE '" + result + "%' OR bedsideId LIKE '" + result + "%'";
+            }
+            else
+            {
+                sql = "SELECT * FROM patient WHERe fullName LIKE '" + searchText + "%' OR address LIKE '" + searchText + "%' OR email LIKE '" + searchText + "%' OR gender LIKE '" + searchText + "%'";
+            }
+           
             DBConnector dBConn = new DBConnector();
             dBConn.connect();
-            MySqlDataAdapter sqlData = new MySqlDataAdapter("SELECT * FROM patient", dBConn.getConn());
+            MySqlDataAdapter sqlData = new MySqlDataAdapter(sql, dBConn.getConn());
             DataTable table = new DataTable();
             sqlData.Fill(table);
             dBConn.getConn().Close();
 
             return table;
         }
+
+
 
         public DataTable searchData(string value)
         {
@@ -146,7 +139,6 @@ namespace Patient_Monitoring_System
             if(qId != null)
             {
                 status = true;
-                MessageBox.Show("Exist");
             }
             else
             {
@@ -171,7 +163,7 @@ namespace Patient_Monitoring_System
                 {
 
                     oldPatient.Id = (int)myReader.GetValue(0);
-                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.IdentityCard = (long)myReader.GetValue(1);
                     oldPatient.FullName = (string)myReader.GetValue(2);
                     oldPatient.Address = (string)myReader.GetValue(3);
                     oldPatient.Email = (string)myReader.GetValue(4);
@@ -211,7 +203,7 @@ namespace Patient_Monitoring_System
                 {
                     
                     oldPatient.Id = (int)myReader.GetValue(0);
-                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.IdentityCard = (long)myReader.GetValue(1);
                     oldPatient.FullName = (string)myReader.GetValue(2);
                     oldPatient.Address = (string)myReader.GetValue(3);
                     oldPatient.Email = (string)myReader.GetValue(4);
@@ -238,7 +230,7 @@ namespace Patient_Monitoring_System
 
         public int updatePatientData(MySqlConnection conn, Patient patient)
         {
-            string sql = "UPDATE patient SET NRIC='" + patient.Nric + "', fullName= '"+patient.FullName+"', address='" + patient.Address + "', email='"+patient.Email +"', gender='"+patient.Gender+"', phone='"+patient.Phone+"', age='"+patient.Age+"', bedsideId='" + patient.BedsideId+"' WHERE id='" + patient.Id + "'";
+            string sql = "UPDATE patient SET NRIC='" + patient.IdentityCard + "', fullName= '"+patient.FullName+"', address='" + patient.Address + "', email='"+patient.Email +"', gender='"+patient.Gender+"', phone='"+patient.Phone+"', age='"+patient.Age+"', bedsideId='" + patient.BedsideId+"' WHERE id='" + patient.Id + "'";
             MySqlCommand updateComm = new MySqlCommand(sql, conn);
 
             return updateComm.ExecuteNonQuery();

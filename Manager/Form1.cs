@@ -24,34 +24,34 @@ namespace Manager
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(usernameT.Text))
-            //{
-            //    MessageBox.Show("Please enter username");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(usernameT.Text))
+            {
+                MessageBox.Show("Please enter username");
+                return;
+            }
 
-            //if (string.IsNullOrEmpty(passwordT.Text))
-            //{
-            //    MessageBox.Show("Please enter password");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(passwordT.Text))
+            {
+                MessageBox.Show("Please enter password");
+                return;
+            }
 
-            //if ((usernameT.Text == "monitor") && (passwordT.Text == "123456"))
-            //{
-            //    this.Hide();
-            //    ManagerMainScreen mainScreen = new ManagerMainScreen();
-            //    mainScreen.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid username or password");
-            //    usernameT.Text = "";
-            //    passwordT.Text = "";
-            //}
-            ManagerMainScreen mainScreen = new ManagerMainScreen();
-            mainScreen.Show();
-            this.Close();
+            if ((usernameT.Text == "monitor") && (passwordT.Text == "123456"))
+            {
+                this.Hide();
+                ManagerMainScreen mainScreen = new ManagerMainScreen();
+                mainScreen.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+                usernameT.Text = "";
+                passwordT.Text = "";
+            }
+            //ManagerMainScreen mainScreen = new ManagerMainScreen();
+            //mainScreen.Show();
+            //this.Close();
         }
 
         private void ManagerForm_Load(object sender, EventArgs e)

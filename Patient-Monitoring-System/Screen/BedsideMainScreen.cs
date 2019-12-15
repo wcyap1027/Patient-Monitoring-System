@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Patient_Monitoring_System;
 using rtChart;
 using Patient_Monitoring_System.Handler;
-using Patient_Monitoring_System.Screen;
+using Patient_Monitoring_System.Class;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Media;
 
@@ -17,6 +17,7 @@ namespace BedsideSystem
 {
     public partial class BedsideMainScreen : Form
     {
+        public static int smsTrigger = 1;
         public static bool run = true;
         public static bool beepStatus = false;
         public static bool alarmZeroStatus = false;
@@ -40,6 +41,7 @@ namespace BedsideSystem
             backgroundWorkerBeep.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmReading.WorkerSupportsCancellation = true;
             backgroundWorkerAlarmZero.WorkerSupportsCancellation = true;
+            InitTrackReading();
         }
 
         private async void readTemperatureData()
@@ -87,6 +89,13 @@ namespace BedsideSystem
 
                             if (value == 0)
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 temperatureLineGraph.Series["Temperature"].Color = Color.Red;
                                 temperatureCurrentValue.ForeColor = Color.Red;
                                 BedsideHandler bedsideHandler = new BedsideHandler();
@@ -106,20 +115,17 @@ namespace BedsideSystem
                                 }
 
 
-
-                                //if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //{
-
-                                //    backgroundWorkerBeep.CancelAsync();
-                                //    backgroundWorkerAlarmReading.CancelAsync();
-                                //    backgroundWorkerAlarmZero.RunWorkerAsync();
-                                //}
-
-
                             }
                             else
                             if (value >= double.Parse(maxTemperatureLabel.Text) || value <= double.Parse(minTemperatureLabel.Text))
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 temperatureLineGraph.Series["Temperature"].Color = Color.Yellow;
                                 temperatureCurrentValue.ForeColor = Color.Yellow;
 
@@ -138,23 +144,6 @@ namespace BedsideSystem
                                         listTemperature.Add(newTemperature);
                                     }
                                 }
-
-
-                                //if (backgroundWorkerAlarmReading.IsBusy != true)
-                                //{
-                                //    if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //    {
-
-                                //        backgroundWorkerBeep.CancelAsync();
-                                //        backgroundWorkerAlarmReading.RunWorkerAsync();
-                                //    }
-                                //    else
-                                //    {
-
-                                //        backgroundWorkerAlarmReading.CancelAsync();
-                                //    }
-
-                                //}
 
                             }
                             else
@@ -228,6 +217,13 @@ namespace BedsideSystem
 
                             if (value == 0)
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 bloodPressureLineGraph.Series["Blood Pressure"].Color = Color.Red;
                                 bloodPressureCurrentValue.ForeColor = Color.Red;
                                 BedsideHandler bedsideHandler = new BedsideHandler();
@@ -246,21 +242,17 @@ namespace BedsideSystem
                                         listbloodPressure.Add(bloodPressureData);
                                     }
                                 }
-
-
-                                //if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //{
-
-                                //    backgroundWorkerBeep.CancelAsync();
-                                //    backgroundWorkerAlarmReading.CancelAsync();
-                                //    backgroundWorkerAlarmZero.RunWorkerAsync();
-                                //}
-
-
                             }
                             else
                             if (value >= double.Parse(maxBloodPressureLabel.Text) || value <= double.Parse(minBloodPressureLabel.Text))
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 bloodPressureLineGraph.Series["Blood Pressure"].Color = Color.Yellow;
                                 bloodPressureCurrentValue.ForeColor = Color.Yellow;
                                 BedsideHandler bedsideHandler = new BedsideHandler();
@@ -280,24 +272,6 @@ namespace BedsideSystem
                                         listbloodPressure.Add(bloodPressureData);
                                     }
                                 }
-
-
-                                //if (backgroundWorkerAlarmReading.IsBusy != true)
-                                //{
-                                //    if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //    {
-
-                                //        backgroundWorkerBeep.CancelAsync();
-                                //        backgroundWorkerAlarmReading.RunWorkerAsync();
-                                //    }
-                                //    else
-                                //    {
-
-                                //        backgroundWorkerAlarmReading.CancelAsync();
-                                //    }
-
-                                //}
-
                             }
                             else
                             {
@@ -312,9 +286,6 @@ namespace BedsideSystem
                         {
                             break;
                         }
-
-
-
                     }
 
                     line = sr.ReadLine();
@@ -372,6 +343,13 @@ namespace BedsideSystem
 
                             if (value == 0)
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 pulseRateLineGraph.Series["Pulse Rate"].Color = Color.Red;
                                 pulseRateCurrentValue.ForeColor = Color.Red;
                                 BedsideHandler bedsideHandler = new BedsideHandler();
@@ -389,19 +367,17 @@ namespace BedsideSystem
                                         listPulseRate.Add(pulseRateData);
                                     }
                                 }
-
-                                //if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //{
-
-                                //    backgroundWorkerBeep.CancelAsync();
-                                //    backgroundWorkerAlarmReading.CancelAsync();
-                                //    backgroundWorkerAlarmZero.RunWorkerAsync();
-                                //}
-
                             }
                             else
                             if (value >= double.Parse(maxPulseRateLabel.Text) || (value <= double.Parse(minPulseRateLabel.Text)))
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 pulseRateLineGraph.Series["Pulse Rate"].Color = Color.Yellow;
                                 pulseRateCurrentValue.ForeColor = Color.Yellow;
                                 BedsideHandler bedsideHandler = new BedsideHandler();
@@ -421,22 +397,6 @@ namespace BedsideSystem
                                         listPulseRate.Add(pulseRateData);
                                     }
                                 }
-
-                                //if (backgroundWorkerAlarmReading.IsBusy != true)
-                                //{
-                                //    if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //    {
-
-                                //        backgroundWorkerBeep.CancelAsync();
-                                //        backgroundWorkerAlarmReading.RunWorkerAsync();
-                                //    }
-                                //    else
-                                //    {
-
-                                //        backgroundWorkerAlarmReading.CancelAsync();
-                                //    }
-
-                                //}
                             }
                             else
                             {
@@ -514,7 +474,13 @@ namespace BedsideSystem
 
                             if (value == 0)
                             {
-                                
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
 
                                 breathingRateLineGraph.Series["Breathing Rate"].Color = Color.Red;
                                 breathingRateCurrentValue.ForeColor = Color.Red;
@@ -540,13 +506,7 @@ namespace BedsideSystem
                                 
 
 
-                                //if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //{
-                                    
-                                //    backgroundWorkerBeep.CancelAsync();
-                                //    backgroundWorkerAlarmReading.CancelAsync();
-                                //    backgroundWorkerAlarmZero.RunWorkerAsync();
-                                //}
+                               
                                 
 
 
@@ -554,6 +514,13 @@ namespace BedsideSystem
                             else
                             if (value >= double.Parse(maxBreathingRateLabel.Text) || value <= double.Parse(minBreathingRateLabel.Text))
                             {
+                                if (smsTrigger == 1)
+                                {
+                                    if (!backgroundWorkerSendSMS.IsBusy)
+                                    {
+                                        backgroundWorkerSendSMS.RunWorkerAsync();
+                                    }
+                                }
                                 breathingRateLineGraph.Series["Breathing Rate"].Color = Color.Yellow;
                                 breathingRateCurrentValue.ForeColor = Color.Yellow;
                                 
@@ -576,23 +543,6 @@ namespace BedsideSystem
                                         }
                                     }
                                 }
-                               
-
-                                //if (backgroundWorkerAlarmReading.IsBusy != true)
-                                //{
-                                //    if (backgroundWorkerAlarmZero.IsBusy != true)
-                                //    {
-                                        
-                                //            backgroundWorkerBeep.CancelAsync();
-                                //            backgroundWorkerAlarmReading.RunWorkerAsync();        
-                                //    }
-                                //    else 
-                                //    {
-                                        
-                                //        backgroundWorkerAlarmReading.CancelAsync();
-                                //    }
-                                    
-                                //}    
                             }
                             else
                             {
@@ -608,9 +558,6 @@ namespace BedsideSystem
                         {
                             break;
                         }
-
-
-
                     }
 
                     line = sr.ReadLine();
@@ -625,13 +572,13 @@ namespace BedsideSystem
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            if((minBloodPressureLabel.Text == "--") && (maxBloodPressureLabel.Text == "--") && (minBreathingRateLabel.Text == "--") && (maxBreathingRateLabel.Text == "--") && (minPulseRateLabel.Text == "--") && (maxPulseRateLabel.Text == "--") && (minTemperatureLabel.Text == "--") && (maxTemperatureLabel.Text == "--"))
+            if ((minBloodPressureLabel.Text == "--") && (maxBloodPressureLabel.Text == "--") && (minBreathingRateLabel.Text == "--") && (maxBreathingRateLabel.Text == "--") && (minPulseRateLabel.Text == "--") && (maxPulseRateLabel.Text == "--") && (minTemperatureLabel.Text == "--") && (maxTemperatureLabel.Text == "--"))
             {
-                MessageBox.Show("Please go to Details to set up the minimum and maximum reading", "Start Bedside Monitor",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Please go to Details to set up the minimum and maximum reading", "Start Bedside Monitor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-           
+
+
             run = true;
             haltButton.Visible = true;
             startBtn.Visible = false;
@@ -666,21 +613,21 @@ namespace BedsideSystem
                 ChartType = SeriesChartType.Spline
             };
 
-            bloodPressureLineGraph.Series.Add(seriesBloodPressure); 
+            bloodPressureLineGraph.Series.Add(seriesBloodPressure);
             breathingRateLineGraph.Series.Add(seriesBreathingRate);
             pulseRateLineGraph.Series.Add(seriesPulseRate);
             temperatureLineGraph.Series.Add(seriesTemperature);
             //--------------------------------------------------------//
 
             //start spline chart and read data
-           readBloodPressureData();
+            readBloodPressureData();
             readPulseRateData();
             readTemperatureData();
             readBreathingRateData();
             beepStatus = true;
             backgroundWorkerBeep.RunWorkerAsync(1500);
             InitTrackAlarm();
-            
+
         }
 
         public void getAllReading()
@@ -745,10 +692,9 @@ namespace BedsideSystem
             
         }   
 
-           
-
         private void haltButton_Click(object sender, EventArgs e)
         {
+            smsTrigger = 1;
             startBtn.Visible = true;
             haltButton.Visible = false;
             run = false;
@@ -794,6 +740,7 @@ namespace BedsideSystem
 
         private void muteAlarmBtn_Click(object sender, EventArgs e)
         {
+            smsTrigger = 1;
             DBConnector dBConn = new DBConnector();
             dBConn.connect();
             AlarmHandler alarmHandler = new AlarmHandler();
@@ -853,7 +800,7 @@ namespace BedsideSystem
             profileScreen.BedsideId = BedsideLoginScreen.bedsideIDPass.ToString();
             profileScreen.PatientId = oldPatient.Id.ToString();
             profileScreen.PatientName = oldPatient.FullName;
-            profileScreen.PatientNRIC = oldPatient.Nric.ToString();
+            profileScreen.PatientNRIC = oldPatient.IdentityCard.ToString();
             profileScreen.Age = oldPatient.Age.ToString();
             profileScreen.AlarmDetails = "Blood Pressure Occurs: " + listbloodPressure.Count +
                 Environment.NewLine + "Breathing Rate Occurs: " + listbreathingRate.Count +
@@ -862,13 +809,7 @@ namespace BedsideSystem
 
         }
 
-        private void BedsideMainScreen_Activated(object sender, EventArgs e)
-        {
-            //InitializeComponent();
-            //getAllReading();
-            //ReadingScreen readingScreen = new ReadingScreen();
-            //minBloodPressureLabel.Text = readingScreen.MinB; 
-        }
+        
 
         private void setAlarmBtn_Click(object sender, EventArgs e)
         {
@@ -915,6 +856,70 @@ namespace BedsideSystem
             {
                 backgroundWorkerAlarmZero.CancelAsync();
                 backgroundWorkerAlarmReading.CancelAsync();
+            }
+        }
+
+        public void InitTrackReading()
+        {
+            trackReadingtimer = new System.Windows.Forms.Timer();
+            trackReadingtimer.Tick += new EventHandler(trackReadingtimer_Tick);
+            trackReadingtimer.Interval = 1000;
+            trackReadingtimer.Start();
+        }
+
+        private void trackReadingtimer_Tick(object sender, EventArgs e)
+        {
+            Reading patientReading = new Reading();
+            ReadingHandler readingHandler = new ReadingHandler();
+            DBConnector dbConn = new DBConnector();
+            dbConn.connect();
+            bool status = readingHandler.checkExistsReading(dbConn.getConn(), BedsideLoginScreen.bedside_patient_id);
+
+            if (status)
+            {
+                patientReading = readingHandler.getReading(dbConn.getConn(), BedsideLoginScreen.bedside_patient_id);
+                minBloodPressureLabel.Text = patientReading.MinBloodPressure.ToString();
+                maxBloodPressureLabel.Text = patientReading.MaxBloodPressure.ToString();
+                minBreathingRateLabel.Text = patientReading.MinBreathing.ToString();
+                maxBreathingRateLabel.Text = patientReading.MaxBreathing.ToString();
+                minPulseRateLabel.Text = patientReading.MinPulse.ToString();
+                maxPulseRateLabel.Text = patientReading.MaxPulse.ToString();
+                minTemperatureLabel.Text = patientReading.MinTemperature.ToString();
+                maxTemperatureLabel.Text = patientReading.MaxTemperature.ToString();
+            }
+            else
+            {
+                minBloodPressureLabel.Text = "--";
+                maxBloodPressureLabel.Text = "--";
+                minBreathingRateLabel.Text = "--";
+                maxBreathingRateLabel.Text = "--";
+                minPulseRateLabel.Text = "--";
+                maxPulseRateLabel.Text = "--";
+                minTemperatureLabel.Text = "--";
+                maxTemperatureLabel.Text = "--";
+            }
+        }
+
+        private void backgroundWorkerSendSMS_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DBConnector dBConn = new DBConnector();
+            dBConn.connect();
+            smsTrigger = 2;
+            SMSHandler sMSHandler = new SMSHandler();
+            List<MedicalStaff> listMedicalStaff = sMSHandler.getMedicalStaff(dBConn.getConn(), BedsideLoginScreen.bedsideIDPass);
+            for (int i = 0; i < listMedicalStaff.Count; i++)
+            {
+                DateTime currentDateTime = DateTime.Now;
+                SMS sms = new SMS();
+                sms.BedsideId = BedsideLoginScreen.bedsideIDPass;
+                sms.StaffId = listMedicalStaff[i].MedicalStafID;
+                sms.Description = "Bedside " + BedsideLoginScreen.bedsideIDPass + " is trigger alarm";
+                sms.DateTimeSent = currentDateTime;
+                int r = sMSHandler.addSMS(dBConn.getConn(), sms);
+                if (r == 1)
+                {
+                    MessageBox.Show("Sent");
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ namespace Patient_Monitoring_System.Handler
 {
     public class ReadingHandler
     {
+        //add minimum and maximum value to patient according to bloodpressure,pulserate,temperature,breathingrate
         public int addNewReading(MySqlConnection conn, Reading reading, int patientId)
         {
             string sql = "INSERT into reading( patient_id, minValueBloodPressure, maxValueBloodPressure, minValueTemperature,maxValueTemperature, minValueBreathingRate, maxValueBreathingRate, minValuePulseRate, maxValuePulseRate)" + "VALUES('" + patientId + "', '" + reading.MinBloodPressure + "', '" + reading.MaxBloodPressure + "', '" + reading.MinTemperature + "', '"+reading.MaxTemperature+"','"+reading.MinBreathing+"','"+reading.MaxBreathing+"', '"+reading.MinPulse+"','"+reading.MaxPulse+"')";
@@ -16,6 +17,8 @@ namespace Patient_Monitoring_System.Handler
             return sqlComm.ExecuteNonQuery();
         }
 
+
+        //validate existing value for reading
         public bool checkExistsReading(MySqlConnection conn, int patientId)
         {
             bool status = false;
@@ -36,6 +39,8 @@ namespace Patient_Monitoring_System.Handler
             return status;
         }
 
+
+        //update new minimum and maximum value to the bloodpressure,breathingrate,temperature,pulserate
         public int updateReading(MySqlConnection conn, Reading reading, int patientId)
         {
             string sql = "UPDATE reading SET minValueBloodPressure='" + reading.MinBloodPressure + "', maxValueBloodPressure= '" + reading.MaxBloodPressure + "', minValueTemperature='" + reading.MinTemperature + "', maxValueTemperature='" + reading.MaxTemperature + "', minValueBreathingRate='" + reading.MinBreathing + "', maxValueBreathingRate='" + reading.MaxBreathing + "', minValuePulseRate='" + reading.MinPulse + "', maxValuePulseRate='" + reading.MaxPulse + "' WHERE patient_id='" + patientId + "'";
@@ -45,7 +50,7 @@ namespace Patient_Monitoring_System.Handler
         }
 
         
-
+        //retrieve all reading datas from patient
         public Reading getReading(MySqlConnection conn, int patientId)
         {
             string sql = "SELECT * FROM reading WHERE patient_id='" + patientId + "'";
@@ -76,6 +81,8 @@ namespace Patient_Monitoring_System.Handler
             return reading;
         }
 
+
+        //retrieve alarm triggered
         public int getIdAlarmTrigger(MySqlConnection conn, double value)
         {
             int id = 0;

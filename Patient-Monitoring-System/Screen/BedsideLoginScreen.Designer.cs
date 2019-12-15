@@ -144,11 +144,10 @@
             this.assignPanel.Controls.Add(this.patientIDAssignComboBox);
             this.assignPanel.Controls.Add(this.bedsideIdAssignComboBox);
             this.assignPanel.Controls.Add(this.label2);
-            this.assignPanel.Location = new System.Drawing.Point(774, 153);
+            this.assignPanel.Location = new System.Drawing.Point(577, 153);
             this.assignPanel.Name = "assignPanel";
-            this.assignPanel.Size = new System.Drawing.Size(159, 174);
+            this.assignPanel.Size = new System.Drawing.Size(356, 174);
             this.assignPanel.TabIndex = 10;
-            
             // 
             // backAssignBtn
             // 
@@ -217,7 +216,7 @@
             this.existingPanel.Controls.Add(this.label5);
             this.existingPanel.Location = new System.Drawing.Point(423, 76);
             this.existingPanel.Name = "existingPanel";
-            this.existingPanel.Size = new System.Drawing.Size(304, 178);
+            this.existingPanel.Size = new System.Drawing.Size(76, 78);
             this.existingPanel.TabIndex = 12;
             // 
             // patientIdTextBox

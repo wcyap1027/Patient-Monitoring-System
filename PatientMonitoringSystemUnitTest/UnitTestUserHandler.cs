@@ -11,12 +11,12 @@ namespace PatientMonitoringSystemUnitTest
         [TestMethod]
         public void addNewUser()
         {
-            DBConnector dbC = new DBConnector();
-            string resp = dbC.connect();
-            Assert.AreEqual("Done", resp);
+            //DBConnector dbC = new DBConnector();
+            //string resp = dbC.connect();
+            //Assert.AreEqual("Done", resp);
 
-            Nurse nurse = new Nurse();
-            Assert.IsInstanceOfType(nurse, typeof(object));
+            //Nurse nurse = new Nurse();
+            //Assert.IsInstanceOfType(nurse, typeof(object));
 
             //nurse.RoleRepresentative = "N";
             //nurse.Password = "123456";

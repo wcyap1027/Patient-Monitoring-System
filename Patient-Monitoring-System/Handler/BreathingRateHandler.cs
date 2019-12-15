@@ -8,6 +8,7 @@ namespace Patient_Monitoring_System.Handler
 {
     public class BreathingRateHandler
     {
+        //insert new breathing rate items to the patient
         public int addNewBreathingRate(MySqlConnection conn, BreathingRate breathingRate, int patientId)
         {
             string sql = "INSERT into breathingrate( patient_id, breathingRateValue, breathingRateTime, breathingRateDate)" + "VALUES('" + patientId + "', '" + breathingRate.BreathingRateValue + "', '" + breathingRate.BreathingRateTime.ToString("HH:mm:ss") + "', '" + breathingRate.BreathingRateDate.ToString("yyyy-MM-dd") + "')";

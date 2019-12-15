@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadingScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bPMax = new System.Windows.Forms.TextBox();
             this.bPMin = new System.Windows.Forms.TextBox();
@@ -69,7 +68,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(51, 29);
+            this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 150);
@@ -122,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -139,7 +138,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(401, 29);
+            this.panel2.Location = new System.Drawing.Point(331, 11);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 150);
@@ -192,14 +191,14 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(11, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 25);
+            this.label8.Size = new System.Drawing.Size(285, 25);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Temperature";
+            this.label8.Text = "Temperature (Celsius)";
             // 
             // panel3
             // 
@@ -209,7 +208,7 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(51, 196);
+            this.panel3.Location = new System.Drawing.Point(11, 165);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(299, 150);
@@ -262,7 +261,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(11, 9);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -279,7 +278,7 @@
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Location = new System.Drawing.Point(401, 196);
+            this.panel4.Location = new System.Drawing.Point(331, 165);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(299, 150);
@@ -332,26 +331,26 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(11, 9);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 25);
+            this.label16.Size = new System.Drawing.Size(194, 25);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Breathing";
+            this.label16.Text = "Breathing Rate";
             // 
             // confirmBtnAlarm
             // 
             this.confirmBtnAlarm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.confirmBtnAlarm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmBtnAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmBtnAlarm.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtnAlarm.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmBtnAlarm.ForeColor = System.Drawing.Color.White;
-            this.confirmBtnAlarm.Location = new System.Drawing.Point(284, 407);
+            this.confirmBtnAlarm.Location = new System.Drawing.Point(204, 333);
             this.confirmBtnAlarm.Margin = new System.Windows.Forms.Padding(2);
             this.confirmBtnAlarm.Name = "confirmBtnAlarm";
-            this.confirmBtnAlarm.Size = new System.Drawing.Size(96, 32);
+            this.confirmBtnAlarm.Size = new System.Drawing.Size(106, 37);
             this.confirmBtnAlarm.TabIndex = 7;
             this.confirmBtnAlarm.Text = "Confirm";
             this.confirmBtnAlarm.UseVisualStyleBackColor = false;
@@ -362,25 +361,24 @@
             this.resetAlarmBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.resetAlarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetAlarmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.resetAlarmBtn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetAlarmBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetAlarmBtn.ForeColor = System.Drawing.Color.White;
-            this.resetAlarmBtn.Location = new System.Drawing.Point(425, 407);
+            this.resetAlarmBtn.Location = new System.Drawing.Point(331, 333);
             this.resetAlarmBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetAlarmBtn.Name = "resetAlarmBtn";
-            this.resetAlarmBtn.Size = new System.Drawing.Size(96, 32);
+            this.resetAlarmBtn.Size = new System.Drawing.Size(106, 37);
             this.resetAlarmBtn.TabIndex = 8;
             this.resetAlarmBtn.Text = "Reset";
             this.resetAlarmBtn.UseVisualStyleBackColor = false;
             this.resetAlarmBtn.Click += new System.EventHandler(this.resetAlarmBtn_Click);
             // 
-            // AlarmScreen
+            // ReadingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(634, 411);
             this.Controls.Add(this.resetAlarmBtn);
             this.Controls.Add(this.confirmBtnAlarm);
             this.Controls.Add(this.panel4);
@@ -389,7 +387,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "AlarmScreen";
+            this.Name = "ReadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reading Screen";
             this.panel1.ResumeLayout(false);

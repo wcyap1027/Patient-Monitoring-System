@@ -11,6 +11,8 @@ namespace Patient_Monitoring_System.Handler
 {
     public class BedsideHandler
     {
+
+        //retrieve all bedside
         public List<Bedside> getAllBedside(MySqlConnection conn)
         {
             List<Bedside> listBedside = new List<Bedside>();
@@ -40,6 +42,8 @@ namespace Patient_Monitoring_System.Handler
             return listBedside;
         }
 
+
+        //fetch bedside id by selecting comboBox
         public void FetchBedsideId(ComboBox selectedcomboBox, bool status)
         {
             selectedcomboBox.Items.Add("--Select ID--");
@@ -60,6 +64,8 @@ namespace Patient_Monitoring_System.Handler
             }
         }
 
+
+        //retrieve patient id by selecting bedside combobox
         public void FetchBedsidePatientId(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");
@@ -80,6 +86,8 @@ namespace Patient_Monitoring_System.Handler
             }
         }
 
+
+        //validate existing bedside from patient id
         public void FetchBedsideExistingPatientId(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");
@@ -100,6 +108,8 @@ namespace Patient_Monitoring_System.Handler
             }
         }
 
+
+        //update patient by adding a new or changing a bedside id to them
         public int assignBedside(MySqlConnection conn, int bedsideId, int patientId)
         {
             string sql = "UPDATE patient SET bedsideId='" + bedsideId + "' WHERE id='" + patientId + "'";
@@ -108,6 +118,8 @@ namespace Patient_Monitoring_System.Handler
             return updateComm.ExecuteNonQuery();
         }
 
+
+        //update bedside monitor status
         public int updateStatus(MySqlConnection conn, int bedsideId)
         {
             int status = 1;
@@ -116,6 +128,8 @@ namespace Patient_Monitoring_System.Handler
             return updateComm.ExecuteNonQuery();
         }
 
+
+        //validate existing bedside
         public bool checkExistBedside(MySqlConnection conn, int selectedId)
         {
             bool status = false;
@@ -142,6 +156,8 @@ namespace Patient_Monitoring_System.Handler
             return status;
         }
 
+
+        //retrieve all datas from patient by searching bedside
         public Patient getSpecificPatientInBedside(MySqlConnection conn, int selectedId)
         {
             Patient oldPatient = new Patient();
@@ -155,7 +171,7 @@ namespace Patient_Monitoring_System.Handler
                 {
 
                     oldPatient.Id = (int)myReader.GetValue(0);
-                    oldPatient.Nric = (long)myReader.GetValue(1);
+                    oldPatient.IdentityCard = (long)myReader.GetValue(1);
                     oldPatient.FullName = (string)myReader.GetValue(2);
                     oldPatient.Address = (string)myReader.GetValue(3);
                     oldPatient.Email = (string)myReader.GetValue(4);
@@ -177,6 +193,8 @@ namespace Patient_Monitoring_System.Handler
             return oldPatient;
         }
 
+
+        //condition Yes if a bedside is existing
         public bool continueBedside(MySqlConnection conn, int bedsideId, int patientId)
         {
             bool continueStatus;
@@ -197,6 +215,8 @@ namespace Patient_Monitoring_System.Handler
             return continueStatus;
         }
 
+
+        //update alarm status
         public int updateAlarmStatus(MySqlConnection conn, int bedsideId, int alarmStatus)
         {
             string sql = "UPDATE bedsidemonitor SET alarmStatus='" + alarmStatus + "' WHERE id='" + bedsideId + "'";
@@ -205,6 +225,8 @@ namespace Patient_Monitoring_System.Handler
             return sqlComm.ExecuteNonQuery();
         }
 
+
+        //update the alarm if the alarm is triggered
         public int updateAlarmZeroStatus(MySqlConnection conn, int bedsideId, int alarmStatus)
         {
             string sql = "UPDATE bedsidemonitor SET alarmZeroStatus='" + alarmStatus + "' WHERE id='" + bedsideId + "'";
@@ -213,6 +235,8 @@ namespace Patient_Monitoring_System.Handler
             return sqlComm.ExecuteNonQuery();
         }
 
+
+        //retrieve alarmstatus from bedside according to bedside id
         public int SelectAlarmStatusBedside(MySqlConnection conn, int bedsideId)
         {
             int status = 0;
@@ -229,6 +253,8 @@ namespace Patient_Monitoring_System.Handler
             return status;
         }
 
+
+        //select alarm zero status
         public int SelectAlarmZeroStatusBedside(MySqlConnection conn, int bedsideId)
         {
             int status = 0;

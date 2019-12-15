@@ -95,9 +95,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.choosePatientIDDeleteComboBox = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.viewControlPanel.SuspendLayout();
@@ -131,7 +131,7 @@
             this.addRecordBtn.Name = "addRecordBtn";
             this.addRecordBtn.Size = new System.Drawing.Size(120, 39);
             this.addRecordBtn.TabIndex = 33;
-            this.addRecordBtn.Text = "Add Record";
+            this.addRecordBtn.Text = "Add Patient";
             this.addRecordBtn.UseVisualStyleBackColor = true;
             this.addRecordBtn.Click += new System.EventHandler(this.addRecordBtn_Click);
             // 
@@ -166,7 +166,7 @@
             this.updateRecordBtn.Name = "updateRecordBtn";
             this.updateRecordBtn.Size = new System.Drawing.Size(131, 39);
             this.updateRecordBtn.TabIndex = 39;
-            this.updateRecordBtn.Text = "Update Record";
+            this.updateRecordBtn.Text = "Update Patient";
             this.updateRecordBtn.UseVisualStyleBackColor = true;
             this.updateRecordBtn.Click += new System.EventHandler(this.updateRecordBtn_Click);
             // 
@@ -205,7 +205,7 @@
             this.viewRecordBtn.Name = "viewRecordBtn";
             this.viewRecordBtn.Size = new System.Drawing.Size(120, 39);
             this.viewRecordBtn.TabIndex = 42;
-            this.viewRecordBtn.Text = "View Record";
+            this.viewRecordBtn.Text = "View Patient";
             this.viewRecordBtn.UseVisualStyleBackColor = true;
             this.viewRecordBtn.Click += new System.EventHandler(this.viewRecordBtn_Click);
             // 
@@ -219,7 +219,7 @@
             this.deleteRecordBtn.Name = "deleteRecordBtn";
             this.deleteRecordBtn.Size = new System.Drawing.Size(125, 39);
             this.deleteRecordBtn.TabIndex = 43;
-            this.deleteRecordBtn.Text = "Delete Record";
+            this.deleteRecordBtn.Text = "Delete Patient";
             this.deleteRecordBtn.UseVisualStyleBackColor = true;
             this.deleteRecordBtn.Click += new System.EventHandler(this.deleteRecordBtn_Click);
             // 
@@ -255,9 +255,9 @@
             this.addRecordPanel.Controls.Add(this.label4);
             this.addRecordPanel.Controls.Add(this.label3);
             this.addRecordPanel.Controls.Add(this.label1);
-            this.addRecordPanel.Location = new System.Drawing.Point(222, 221);
+            this.addRecordPanel.Location = new System.Drawing.Point(413, 221);
             this.addRecordPanel.Name = "addRecordPanel";
-            this.addRecordPanel.Size = new System.Drawing.Size(459, 316);
+            this.addRecordPanel.Size = new System.Drawing.Size(129, 316);
             this.addRecordPanel.TabIndex = 45;
             // 
             // resetPatientBtn
@@ -436,12 +436,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(432, 15);
+            this.label3.Location = new System.Drawing.Point(361, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 30);
+            this.label3.Size = new System.Drawing.Size(143, 30);
             this.label3.TabIndex = 51;
-            this.label3.Text = "NRIC: ";
+            this.label3.Text = "Identity Card:";
             // 
             // label1
             // 
@@ -477,7 +477,7 @@
             this.updateRecordPanel.Controls.Add(this.label11);
             this.updateRecordPanel.Location = new System.Drawing.Point(5, 196);
             this.updateRecordPanel.Name = "updateRecordPanel";
-            this.updateRecordPanel.Size = new System.Drawing.Size(92, 93);
+            this.updateRecordPanel.Size = new System.Drawing.Size(402, 107);
             this.updateRecordPanel.TabIndex = 46;
             // 
             // genderUpdatecomboBox
@@ -549,9 +549,9 @@
             // 
             this.nricUpdateTextBox.Enabled = false;
             this.nricUpdateTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nricUpdateTextBox.Location = new System.Drawing.Point(134, 48);
+            this.nricUpdateTextBox.Location = new System.Drawing.Point(161, 48);
             this.nricUpdateTextBox.Name = "nricUpdateTextBox";
-            this.nricUpdateTextBox.Size = new System.Drawing.Size(210, 33);
+            this.nricUpdateTextBox.Size = new System.Drawing.Size(183, 33);
             this.nricUpdateTextBox.TabIndex = 69;
             // 
             // updatePatientButton
@@ -641,11 +641,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(54, 51);
+            this.label12.Location = new System.Drawing.Point(18, 47);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 30);
+            this.label12.Size = new System.Drawing.Size(137, 30);
             this.label12.TabIndex = 2;
-            this.label12.Text = "NRIC:";
+            this.label12.Text = "Identity Card:";
             // 
             // choosePatientIDUpdateComboBox
             // 
@@ -669,6 +669,7 @@
             // 
             // deleteRecordPanel
             // 
+            this.deleteRecordPanel.Controls.Add(this.label27);
             this.deleteRecordPanel.Controls.Add(this.genderDeleteComboBox);
             this.deleteRecordPanel.Controls.Add(this.phoneDeleteTextBox);
             this.deleteRecordPanel.Controls.Add(this.bedsideIdDeleteTextBox);
@@ -685,12 +686,11 @@
             this.deleteRecordPanel.Controls.Add(this.label24);
             this.deleteRecordPanel.Controls.Add(this.label25);
             this.deleteRecordPanel.Controls.Add(this.label26);
-            this.deleteRecordPanel.Controls.Add(this.label27);
             this.deleteRecordPanel.Controls.Add(this.choosePatientIDDeleteComboBox);
             this.deleteRecordPanel.Controls.Add(this.label28);
             this.deleteRecordPanel.Location = new System.Drawing.Point(16, 321);
             this.deleteRecordPanel.Name = "deleteRecordPanel";
-            this.deleteRecordPanel.Size = new System.Drawing.Size(103, 103);
+            this.deleteRecordPanel.Size = new System.Drawing.Size(333, 186);
             this.deleteRecordPanel.TabIndex = 47;
             // 
             // genderDeleteComboBox
@@ -744,27 +744,27 @@
             // 
             this.emailDeleteTextBox.Enabled = false;
             this.emailDeleteTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailDeleteTextBox.Location = new System.Drawing.Point(134, 151);
+            this.emailDeleteTextBox.Location = new System.Drawing.Point(161, 151);
             this.emailDeleteTextBox.Name = "emailDeleteTextBox";
-            this.emailDeleteTextBox.Size = new System.Drawing.Size(210, 33);
+            this.emailDeleteTextBox.Size = new System.Drawing.Size(183, 33);
             this.emailDeleteTextBox.TabIndex = 71;
             // 
             // fullNameDeleteTextBox
             // 
             this.fullNameDeleteTextBox.Enabled = false;
             this.fullNameDeleteTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullNameDeleteTextBox.Location = new System.Drawing.Point(134, 98);
+            this.fullNameDeleteTextBox.Location = new System.Drawing.Point(161, 98);
             this.fullNameDeleteTextBox.Name = "fullNameDeleteTextBox";
-            this.fullNameDeleteTextBox.Size = new System.Drawing.Size(210, 33);
+            this.fullNameDeleteTextBox.Size = new System.Drawing.Size(183, 33);
             this.fullNameDeleteTextBox.TabIndex = 70;
             // 
             // nricDeleteTextBox
             // 
             this.nricDeleteTextBox.Enabled = false;
             this.nricDeleteTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nricDeleteTextBox.Location = new System.Drawing.Point(134, 48);
+            this.nricDeleteTextBox.Location = new System.Drawing.Point(161, 48);
             this.nricDeleteTextBox.Name = "nricDeleteTextBox";
-            this.nricDeleteTextBox.Size = new System.Drawing.Size(210, 33);
+            this.nricDeleteTextBox.Size = new System.Drawing.Size(183, 33);
             this.nricDeleteTextBox.TabIndex = 69;
             // 
             // deletePatientRecordBtn
@@ -834,7 +834,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(54, 154);
+            this.label25.Location = new System.Drawing.Point(60, 155);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(68, 30);
             this.label25.TabIndex = 4;
@@ -844,21 +844,11 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(7, 98);
+            this.label26.Location = new System.Drawing.Point(26, 97);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(118, 30);
             this.label26.TabIndex = 3;
             this.label26.Text = "Full Name: ";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(54, 51);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(66, 30);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "NRIC:";
             // 
             // choosePatientIDDeleteComboBox
             // 
@@ -879,6 +869,16 @@
             this.label28.Size = new System.Drawing.Size(148, 21);
             this.label28.TabIndex = 0;
             this.label28.Text = "Choose Patient ID: ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(7, 51);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(137, 30);
+            this.label27.TabIndex = 77;
+            this.label27.Text = "Identity Card:";
             // 
             // PatientScreen
             // 
@@ -981,8 +981,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox choosePatientIDDeleteComboBox;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
     }
 }

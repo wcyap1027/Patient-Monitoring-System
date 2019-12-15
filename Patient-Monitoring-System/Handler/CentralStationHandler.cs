@@ -11,6 +11,8 @@ namespace Patient_Monitoring_System
 {
     public class CentralStationHandler
     {
+
+        //list centralstation
         public List<CentralStation> getAllCentralStation(MySqlConnection conn)
         {
             List<CentralStation> listCentralStation = new List<CentralStation>();
@@ -37,6 +39,8 @@ namespace Patient_Monitoring_System
 
             return listCentralStation;
         }
+
+        //retrive bay name
         public string getBayName(MySqlConnection conn, string bayN)
         {
             CentralStation centralStation = new CentralStation();
@@ -64,7 +68,8 @@ namespace Patient_Monitoring_System
             bayName = centralStation.CentralStationName;
             return bayName;
         }
-
+        
+        //list all beside id
         public List<Bedside> getAllBedsideMonitor(MySqlConnection conn, string bayN)
         {
             int id = 0;
@@ -104,6 +109,8 @@ namespace Patient_Monitoring_System
             return listBedside;
         }
 
+
+        //check patient available in beside
         public int checkPatientAvailableInBedside(MySqlConnection conn, int bedsideId)
         {
             int id = 0;
@@ -119,6 +126,7 @@ namespace Patient_Monitoring_System
             return id;
         }
 
+        //check which bedside availability for patient
         public int checkBedsideAvailableForPatient(MySqlConnection conn ,int patientId)
         {
             
@@ -137,6 +145,7 @@ namespace Patient_Monitoring_System
             return id;
         }
 
+        //retrieve patient value from beside
         public double getMaxValue(MySqlConnection conn, Bedside bedside)
         {
             int id = 0;
@@ -179,6 +188,8 @@ namespace Patient_Monitoring_System
             return bloodpressurevalue;
         }
 
+
+        //fetch centralstation name
         public void FetchCentralStationName(ComboBox selectedcomboBox)
         {
             selectedcomboBox.Items.Add("--Select ID--");

@@ -19,8 +19,8 @@ namespace Patient_Monitoring_System
             //database name
             //port
             //password
-            string connstr = "server=172.21.0.89;user=administrator;database=patientmonitoringdb;port=3306;password=admin123";
-            //string connstr = "server=localhost;user=root;database=patientmonitoringdb;port=3306;password=";
+            //string connstr = "server=172.21.0.89;user=administrator;database=patientmonitoringdb;port=3306;password=admin123";
+            string connstr = "server=localhost;user=root;database=patientmonitoringdb;port=3306;password=";
             //assign connection string to variable conn
             conn = new MySqlConnection(connstr);
             try

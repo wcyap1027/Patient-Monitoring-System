@@ -10,7 +10,7 @@ namespace Patient_Monitoring_System
     {
         private int userAccountId, phone;
         private string nurseId, firstName, lastName, address, email;
-        private long NRIC;
+        private long identityCard;
 
         public int UserAccountId { get => userAccountId; set => userAccountId = value; }
         public int Phone { get => phone; set => phone = value; }
@@ -19,6 +19,6 @@ namespace Patient_Monitoring_System
         public string LastName { get => lastName; set => lastName = value; }
         public string Address { get => address; set => address = value; }
         public string Email { get => email; set => email = value; }
-        public long NRIC1 { get => NRIC; set => NRIC = value; }
+        public long IdentityCard { get => identityCard; set => identityCard = value; }
     }
 }

@@ -12,6 +12,8 @@ namespace Manager
     {
         private DataTable dt = new DataTable();
 
+
+        //display all patient info
         public int displayPatientInfo(MySqlConnection conn, patientInformation patientss)
         {
             string sql = "SELECT * FROM patient (id, NRIC, fullName, address, email, gender, phone, age, bedsideId) "
@@ -24,6 +26,7 @@ namespace Manager
             return sqlComm.ExecuteNonQuery();
         }
 
+        //datatable
         public DataTable BindSource()
         {
             DbConnector dbConn = new DbConnector();
@@ -36,6 +39,8 @@ namespace Manager
             return dt;
         }
 
+
+        //list everything from patient
         public List<patientInformation> getAllPatient(MySqlConnection conn)
         {
             List<patientInformation> listpatientInfo = new List<patientInformation>();

@@ -12,9 +12,6 @@ namespace Patient_Monitoring_System
 {
     public partial class PatientScreen : Form
     {
-        
-        
-
         public PatientScreen()
         {
             InitializeComponent();
@@ -27,17 +24,16 @@ namespace Patient_Monitoring_System
 
         private void searchtextBox_TextChanged(object sender, EventArgs e)
         {
-            //DBConnector dBconn = new DBConnector();
-            //dBconn.connect();
-            //PatientHandler patientHandler = new PatientHandler();
-            //if(searchtextBox.Text != "")
-            //{
-            //    patientGridView.DataSource = patientHandler.searchPatientData(dBconn.getConn(), searchtextBox.Text);
-            //}
-           
-            
-        }
+            DBConnector dBconn = new DBConnector();
+            dBconn.connect();
+            PatientHandler patientHandler = new PatientHandler();
+            if (searchtextBox.Text != "")
+            {
+                patientGridView.DataSource = patientHandler.searchPatientData(dBconn.getConn(), searchtextBox.Text);
+            }
 
+
+        }
 
         private void PatientScreen_Load(object sender, EventArgs e)
         {
@@ -140,7 +136,7 @@ namespace Patient_Monitoring_System
             Patient newPatient = new Patient();
 
             newPatient.FullName = fullNameTextBox.Text;
-            newPatient.Nric = long.Parse(nricTextBox.Text);
+            newPatient.IdentityCard = long.Parse(nricTextBox.Text);
             newPatient.Address = addressTextBox.Text;
             newPatient.Email = emailTextBox.Text;
             newPatient.Gender = genderComboBox.SelectedItem.ToString();
@@ -246,7 +242,7 @@ namespace Patient_Monitoring_System
                     {
                         if(choosePatientIDUpdateComboBox.SelectedItem.ToString() == patientList[i].Id.ToString())
                         {
-                            nricUpdateTextBox.Text = patientList[i].Nric.ToString();
+                            nricUpdateTextBox.Text = patientList[i].IdentityCard.ToString();
                             fullNameUpdateTextBox.Text = patientList[i].FullName;
                             emailUpdateTextBox.Text = patientList[i].Email;
 
@@ -290,11 +286,11 @@ namespace Patient_Monitoring_System
                 oldPatientData = patientHandler.getSpecificPatient(dbC.getConn(), int.Parse(choosePatientIDUpdateComboBox.SelectedItem.ToString()));
             }
 
-            if ((oldPatientData.Nric.ToString() != nricUpdateTextBox.Text) || (oldPatientData.FullName != fullNameUpdateTextBox.Text) || (oldPatientData.Email != emailUpdateTextBox.Text) || (oldPatientData.Gender != genderUpdatecomboBox.SelectedItem.ToString()) || (oldPatientData.Phone.ToString() != phoneUpdateTextBox.Text) || (oldPatientData.Address != addressUpdateTextBox.Text) || (oldPatientData.Age.ToString() != ageUpdateTextBox.Text) || (oldPatientData.BedsideId.ToString() != bedsideIdUpdateTextBox.Text))
+            if ((oldPatientData.IdentityCard.ToString() != nricUpdateTextBox.Text) || (oldPatientData.FullName != fullNameUpdateTextBox.Text) || (oldPatientData.Email != emailUpdateTextBox.Text) || (oldPatientData.Gender != genderUpdatecomboBox.SelectedItem.ToString()) || (oldPatientData.Phone.ToString() != phoneUpdateTextBox.Text) || (oldPatientData.Address != addressUpdateTextBox.Text) || (oldPatientData.Age.ToString() != ageUpdateTextBox.Text) || (oldPatientData.BedsideId.ToString() != bedsideIdUpdateTextBox.Text))
             {
                 Patient newPatientData = new Patient();
                 newPatientData.Id = int.Parse(choosePatientIDUpdateComboBox.SelectedItem.ToString());
-                newPatientData.Nric = long.Parse(nricUpdateTextBox.Text);
+                newPatientData.IdentityCard = long.Parse(nricUpdateTextBox.Text);
                 newPatientData.FullName = fullNameUpdateTextBox.Text;
                 newPatientData.Email = emailUpdateTextBox.Text;
                 newPatientData.Gender = genderUpdatecomboBox.SelectedItem.ToString();
@@ -358,7 +354,7 @@ namespace Patient_Monitoring_System
                     {
                         if (choosePatientIDDeleteComboBox.SelectedItem.ToString() == patientList[i].Id.ToString())
                         {
-                            nricDeleteTextBox.Text = patientList[i].Nric.ToString();
+                            nricDeleteTextBox.Text = patientList[i].IdentityCard.ToString();
                             fullNameDeleteTextBox.Text = patientList[i].FullName;
                             emailDeleteTextBox.Text = patientList[i].Email;
 

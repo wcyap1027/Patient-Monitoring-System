@@ -103,7 +103,7 @@
             this.alarmStatusbtn8 = new System.Windows.Forms.Button();
             this.dataTimerBedside8 = new System.Windows.Forms.Timer(this.components);
             this.trackAlarmTimer8 = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorkerAlarm = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker8 = new System.ComponentModel.BackgroundWorker();
             this.dataTimerBedside7 = new System.Windows.Forms.Timer(this.components);
             this.dataTimerBedside6 = new System.Windows.Forms.Timer(this.components);
             this.dataTimerBedside5 = new System.Windows.Forms.Timer(this.components);
@@ -113,11 +113,18 @@
             this.dataTimerBedside1 = new System.Windows.Forms.Timer(this.components);
             this.trackAlarmTimer7 = new System.Windows.Forms.Timer(this.components);
             this.trackAlarmTimer6 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.timer6 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer5 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer4 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer3 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer2 = new System.Windows.Forms.Timer(this.components);
+            this.trackAlarmTimer1 = new System.Windows.Forms.Timer(this.components);
+            this.backgroundAlarmWorker7 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker6 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker5 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundAlarmWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.centralStationtableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -1075,6 +1082,7 @@
             this.alarmStatusBtn2.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn2.TabIndex = 65;
             this.alarmStatusBtn2.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn2.Click += new System.EventHandler(this.alarmStatusBtn2_Click);
             // 
             // alarmStatusBtn3
             // 
@@ -1088,6 +1096,7 @@
             this.alarmStatusBtn3.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn3.TabIndex = 66;
             this.alarmStatusBtn3.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn3.Click += new System.EventHandler(this.alarmStatusBtn3_Click);
             // 
             // alarmStatusBtn4
             // 
@@ -1101,6 +1110,7 @@
             this.alarmStatusBtn4.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn4.TabIndex = 67;
             this.alarmStatusBtn4.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn4.Click += new System.EventHandler(this.alarmStatusBtn4_Click);
             // 
             // alarmStatusBtn5
             // 
@@ -1114,6 +1124,7 @@
             this.alarmStatusBtn5.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn5.TabIndex = 68;
             this.alarmStatusBtn5.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn5.Click += new System.EventHandler(this.alarmStatusBtn5_Click);
             // 
             // alarmStatusBtn6
             // 
@@ -1155,6 +1166,7 @@
             this.alarmStatusBtn1.Size = new System.Drawing.Size(200, 72);
             this.alarmStatusBtn1.TabIndex = 71;
             this.alarmStatusBtn1.UseVisualStyleBackColor = false;
+            this.alarmStatusBtn1.Click += new System.EventHandler(this.alarmStatusBtn1_Click);
             // 
             // alarmStatusbtn8
             // 
@@ -1178,9 +1190,9 @@
             // 
             this.trackAlarmTimer8.Tick += new System.EventHandler(this.trackAlarmTimer8_Tick);
             // 
-            // backgroundWorkerAlarm
+            // backgroundAlarmWorker8
             // 
-            this.backgroundWorkerAlarm.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAlarm_DoWork);
+            this.backgroundAlarmWorker8.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker8_DoWork);
             // 
             // dataTimerBedside7
             // 
@@ -1190,6 +1202,26 @@
             // 
             this.dataTimerBedside6.Tick += new System.EventHandler(this.dataTimerBedside6_Tick);
             // 
+            // dataTimerBedside5
+            // 
+            this.dataTimerBedside5.Tick += new System.EventHandler(this.dataTimerBedside5_Tick);
+            // 
+            // dataTimerBedside4
+            // 
+            this.dataTimerBedside4.Tick += new System.EventHandler(this.dataTimerBedside4_Tick);
+            // 
+            // dataTimerBedside3
+            // 
+            this.dataTimerBedside3.Tick += new System.EventHandler(this.dataTimerBedside3_Tick);
+            // 
+            // dataTimerBedside2
+            // 
+            this.dataTimerBedside2.Tick += new System.EventHandler(this.dataTimerBedside2_Tick);
+            // 
+            // dataTimerBedside1
+            // 
+            this.dataTimerBedside1.Tick += new System.EventHandler(this.dataTimerBedside1_Tick);
+            // 
             // trackAlarmTimer7
             // 
             this.trackAlarmTimer7.Tick += new System.EventHandler(this.trackAlarmTimer7_Tick);
@@ -1197,6 +1229,54 @@
             // trackAlarmTimer6
             // 
             this.trackAlarmTimer6.Tick += new System.EventHandler(this.trackAlarmTimer6_Tick);
+            // 
+            // trackAlarmTimer5
+            // 
+            this.trackAlarmTimer5.Tick += new System.EventHandler(this.trackAlarmTimer5_Tick);
+            // 
+            // trackAlarmTimer4
+            // 
+            this.trackAlarmTimer4.Tick += new System.EventHandler(this.trackAlarmTimer4_Tick);
+            // 
+            // trackAlarmTimer3
+            // 
+            this.trackAlarmTimer3.Tick += new System.EventHandler(this.trackAlarmTimer3_Tick);
+            // 
+            // trackAlarmTimer2
+            // 
+            this.trackAlarmTimer2.Tick += new System.EventHandler(this.trackAlarmTimer2_Tick);
+            // 
+            // trackAlarmTimer1
+            // 
+            this.trackAlarmTimer1.Tick += new System.EventHandler(this.trackAlarmTimer1_Tick);
+            // 
+            // backgroundAlarmWorker7
+            // 
+            this.backgroundAlarmWorker7.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker7_DoWork);
+            // 
+            // backgroundAlarmWorker6
+            // 
+            this.backgroundAlarmWorker6.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker6_DoWork);
+            // 
+            // backgroundAlarmWorker5
+            // 
+            this.backgroundAlarmWorker5.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker5_DoWork);
+            // 
+            // backgroundAlarmWorker4
+            // 
+            this.backgroundAlarmWorker4.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker4_DoWork);
+            // 
+            // backgroundAlarmWorker3
+            // 
+            this.backgroundAlarmWorker3.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker3_DoWork);
+            // 
+            // backgroundAlarmWorker2
+            // 
+            this.backgroundAlarmWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker2_DoWork);
+            // 
+            // backgroundAlarmWorker1
+            // 
+            this.backgroundAlarmWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundAlarmWorker1_DoWork);
             // 
             // central_station_screen
             // 
@@ -1286,7 +1366,7 @@
         private System.Windows.Forms.Timer trackAlarmTimer8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button alarmStatusbtn8;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerAlarm;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker8;
         private System.Windows.Forms.Timer dataTimerBedside7;
         private System.Windows.Forms.Timer dataTimerBedside6;
         private System.Windows.Forms.Timer dataTimerBedside5;
@@ -1303,14 +1383,21 @@
         private System.Windows.Forms.Button alarmStatusBtn1;
         private System.Windows.Forms.Timer trackAlarmTimer7;
         private System.Windows.Forms.Timer trackAlarmTimer6;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Timer timer5;
-        private System.Windows.Forms.Timer timer6;
+        private System.Windows.Forms.Timer trackAlarmTimer5;
+        private System.Windows.Forms.Timer trackAlarmTimer4;
+        private System.Windows.Forms.Timer trackAlarmTimer3;
+        private System.Windows.Forms.Timer trackAlarmTimer2;
+        private System.Windows.Forms.Timer trackAlarmTimer1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker7;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker6;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker5;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker4;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker3;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundAlarmWorker1;
     }
 }
