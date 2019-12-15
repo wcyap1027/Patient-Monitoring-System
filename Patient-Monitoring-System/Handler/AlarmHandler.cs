@@ -107,22 +107,22 @@ namespace Patient_Monitoring_System
         }
 
         //example
-        public int assignPatient(MySqlConnection conn, int alarmId, int patientId)
-        {
-            string sql = "UPDATE alarm SET patientId ='" + patientId + "' WHERE id='" + alarmId + "'";
-            MySqlCommand updateComm = new MySqlCommand(sql, conn);
+        //public int assignPatient(MySqlConnection conn, int alarmId, int patientId)
+        //{
+        //    string sql = "UPDATE alarm SET patientId ='" + patientId + "' WHERE id='" + alarmId + "'";
+        //    MySqlCommand updateComm = new MySqlCommand(sql, conn);
 
-            return updateComm.ExecuteNonQuery();
-        }
+        //    return updateComm.ExecuteNonQuery();
+        //}
 
         //example
-        public int updateStatus(MySqlConnection conn, int patientId)
-        {
-            int status = 1;
-            string sql = "UPDATE alarm SET status='" + status + "' WHERE id='" + patientId + "'";
-            MySqlCommand updateComm = new MySqlCommand(sql, conn);
-            return updateComm.ExecuteNonQuery();
-        }
+        //public int updateStatus(MySqlConnection conn, int patientId)
+        //{
+        //    int status = 1;
+        //    string sql = "UPDATE alarm SET status='" + status + "' WHERE id='" + patientId + "'";
+        //    MySqlCommand updateComm = new MySqlCommand(sql, conn);
+        //    return updateComm.ExecuteNonQuery();
+        //}
 
         //get all alarm from one patient
         public DataTable getAllAlarmPatient(MySqlConnection conn, int patientId)
@@ -134,61 +134,7 @@ namespace Patient_Monitoring_System
             return dt;
         }
 
-        //example
-        public List<Alarm> getAllAlarm(MySqlConnection conn)
-        {
-            List<Alarm> listAlarm = new List<Alarm>();
-            string sql = "SELECT * FROM alarm";
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-
-            try
-            {
-                MySqlDataReader myReader;
-                myReader = sqlComm.ExecuteReader();
-                while (myReader.Read())
-                {
-                    Alarm alarms = new Alarm ();
-                    alarms.PatientId = (int)myReader.GetValue(1);
-                    alarms.ReadingId = (int)myReader.GetValue(2);
-                    alarms.SpecificId = (int)myReader.GetValue(3);
-                    alarms.TriggerValue = (int)myReader.GetValue(4);
-                    alarms.DateTimeTrigger = (DateTime)myReader.GetValue(5);
-                    alarms.DateTimeMuted = (DateTime)myReader.GetValue(6);
-                    
-                    alarms.Remark = (string)myReader.GetValue(7);
-
-                    listAlarm.Add(alarms);
-                }
-                myReader.Close();
-                myReader.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                Console.WriteLine(e.ToString());
-            }
-
-            return listAlarm;
-        }
-        //example
-        public void FetchPatientAlarmId(ComboBox selectedcomboBox)
-        {
-            selectedcomboBox.Items.Add("--Select ID--");
-
-            selectedcomboBox.SelectedIndex = 0;
-            DBConnector dbC = new DBConnector();
-            dbC.connect();
-            AlarmHandler alarmhd = new AlarmHandler();
-            List<Alarm> alarmList = new List<Alarm>();
-            alarmList = alarmhd.getAllAlarm(dbC.getConn());
-            for (int i = 0; i < alarmList.Count; i++)
-            {
-                if ((alarmList[i].PatientId == 0))
-                {
-                    selectedcomboBox.Items.Add(alarmList[i].SpecificId);
-                }
-
-            }
-        }
+        
+        
     }
 }
