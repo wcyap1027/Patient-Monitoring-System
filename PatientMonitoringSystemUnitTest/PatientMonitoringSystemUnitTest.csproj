@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestScheduleHandler.cs" />
     <Compile Include="UnitTestSMSHandler.cs" />
     <Compile Include="UnitTestUserHandler.cs" />
     <Compile Include="UnitTestPatientHandler.cs" />
@@ -68,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Manager\Manager.csproj">
+      <Project>{9a9f91dc-6cf3-4c41-8f63-20dcae4f87e3}</Project>
+      <Name>Manager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Patient-Monitoring-System\PatientMonitoringSystem.csproj">
       <Project>{147731c9-13b1-4197-9dce-31652583bb2e}</Project>
       <Name>PatientMonitoringSystem</Name>
