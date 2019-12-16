@@ -8,46 +8,19 @@ namespace Patient_Monitoring_System
 {
     class Manager : User
     {
-        //string
-        private string manager_id, manager_fullname, manager_email, manager_address;
+        //string 
+        private string id, firstName, lastName, email, address;
 
-        //int
-        private int manager_nric, manager_phonenumber;
+        //long
+        private long identityCard;
+        private int phone;
 
-        public string ManagerID
-        {
-            get { return manager_id; }
-            set { manager_id = value; }
-        }
-
-        public string ManagerFullName
-        {
-            get { return manager_fullname; }
-            set { manager_fullname = value; }
-        }
-
-        public string ManagerEmail
-        {
-            get { return manager_email; }
-            set { manager_email = value; }
-        }
-
-        public string ManagerAddress
-        {
-            get { return manager_address; }
-            set { manager_address = value; }
-        }
-
-        public int ManagerNRIC
-        {
-            get { return manager_nric; }
-            set { manager_nric = value; }
-        }
-
-        public int ManagerPhoneNumber
-        {
-            get { return manager_nric; }
-            set { manager_phonenumber = value; }
-        }
+        public string Id { get => id; set => id = value; }
+        public string Email { get => email; set => email = value; }
+        public string Address { get => address; set => address = value; }
+        public long IdentityCard { get => identityCard; set => identityCard = value; }
+        public int Phone { get => phone; set => phone = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
     }
 }

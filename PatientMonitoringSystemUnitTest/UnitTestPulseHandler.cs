@@ -18,22 +18,22 @@ namespace PatientMonitoringSystemUnitTest
 
             PulseRate pr = new PulseRate();
             Assert.IsInstanceOfType(pr, typeof(object));
+            DateTime currentDate = DateTime.Now;
+            int PatientId = 1001;
+            pr.PulseRateValue = 70.0;
+            pr.PulseRateDate = currentDate;
+            pr.PulseRateTime = currentDate;
+            int resp1 = prhd.addNewPulseRate(dBc.getConn(), pr, PatientId);
+            Assert.AreEqual(1, resp1);
 
-            //int PatientId = 1001;
-            //pr.PulseRateValue = 70.0;
-            //pr.PulseRateDate = new DateTime(15, 12, 2019);
-            //pr.PulseRateTime = new DateTime(03, 15, 30);
-            //int resp2 = prhd.addNewPulseRate(dBc.getConn(), pr, PatientId);
-            //Assert.IsNotNull(resp2);
+           
+            int resp2 = prhd.getLastIdPulseRate(dBc.getConn(), PatientId);
+            Assert.IsNotNull(resp2);
 
-            //int PatientId = 1001;
-            //int resp2 = prhd.getLastIdPulseRate(dBc.getConn(), PatientId);
-            //Assert.IsNotNull(resp2);
-
-            //int PatientId = 1001;
-            //int lastId = 101;
-            //double resp2 = prhd.getLastPulseRate(dBc.getConn(), PatientId, lastId);
-            //Assert.IsNotNull(resp2);
+            
+            int lastId = 101;
+            double resp3 = prhd.getLastPulseRate(dBc.getConn(), PatientId, lastId);
+            Assert.IsNotNull(resp3);
         }
     }
 }

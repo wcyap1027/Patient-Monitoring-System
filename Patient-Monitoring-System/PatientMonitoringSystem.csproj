@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Class\Alarm.cs" />
     <Compile Include="Class\Bedside.cs" />
+    <Compile Include="Class\Consultant.cs" />
     <Compile Include="Class\SMS.cs" />
     <Compile Include="Handler\AlarmHandler.cs" />
     <Compile Include="Handler\ReadingHandler.cs" />

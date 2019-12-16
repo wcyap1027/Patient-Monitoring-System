@@ -12,19 +12,8 @@ namespace Manager
 {
     public class StaffSchedulerHandler
     {
-        private DataTable dt = new DataTable();
+        
 
-        public DataTable BindSource()
-        {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-            MySqlDataAdapter sqlData = new MySqlDataAdapter("SELECT * FROM schedule", dbConn.getConn());
-            dt.Clear();
-            sqlData.Fill(dt);
-            dbConn.getConn().Close();
-
-            return dt;
-        }
 
         public void FetchStaffId(ComboBox selectedcomboBox)
         {
@@ -153,16 +142,7 @@ namespace Manager
             return listSchedule;
         }
 
-        public DataTable getDuty(MySqlConnection conn, int status)
-        {
-            string sql = "SELECT * FROM schedule WHERE dutyStatus='" + status + "'";
-            MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(sql, conn);
-            DataTable dt = new DataTable();
-            sqlDataAdapter.Fill(dt);
-            conn.Close();
-
-            return dt;
-        }
+       
 
         public Schedule getSpecificSchedule(MySqlConnection conn, string staffid)
         {

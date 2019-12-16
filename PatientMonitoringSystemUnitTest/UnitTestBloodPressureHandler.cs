@@ -18,22 +18,22 @@ namespace PatientMonitoringSystemUnitTest
 
             BloodPressure bloodPressure = new BloodPressure();
             Assert.IsInstanceOfType(bloodPressure, typeof(object));
+            DateTime currentDate = DateTime.Now;
+            int PatientId = 1001;
+            bloodPressure.BloodPressureValue = 120;
+            bloodPressure.BloodPressureTime = currentDate;
+            bloodPressure.BloodPressureDate = currentDate;
+            int resp1 = bphd.addNewBloodPressure(dBc.getConn(), bloodPressure, PatientId);
+            Assert.AreEqual(1, resp1);
 
-            //int PatientId = 1001;
-            //bloodPressure.BloodPressureValue = 120;
-            //bloodPressure.BloodPressureTime = new DateTime(03, 05, 19);
-            //bloodPressure.BloodPressureDate = new DateTime(12, 05, 19);
-            //int resp2 = bphd.addNewBloodPressure(dBc.getConn(), bloodPressure, PatientId);
-            //Assert.IsNotNull(resp2);
 
-            //int PatientId = 1001;
             //int resp2 = bphd.getLastIdBloodPressure(dBc.getConn(), PatientId);
             //Assert.IsNotNull(resp2);
 
-            //int PatientId = 1001;
+
             //int lastId = 132;
-            //double resp2 = bphd.getLastBloodPressure(dBc.getConn(), PatientId, lastId);
-            //Assert.IsNotNull(resp2);
+            //double resp3 = bphd.getLastBloodPressure(dBc.getConn(), PatientId, lastId);
+            //Assert.IsNotNull(resp3);
 
         }
     }

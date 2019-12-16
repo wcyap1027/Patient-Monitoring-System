@@ -16,22 +16,23 @@ namespace PatientMonitoringSystemUnitTest
             string result = dBc.connect();
             Assert.AreEqual("Done", result);
             BreathingRateHandler brhd = new BreathingRateHandler();
-
+            DateTime currentDate = DateTime.Now;
             BreathingRate br = new BreathingRate();
             Assert.IsInstanceOfType(br, typeof(object));
 
-            //int patientId = 1001;
-            //br.BreathingRateValue = 14;
-            //br.BreathingRateTime = new DateTime(05, 06, 15);
-            //br.BreathingRateDate = new DateTime(09, 12, 2019);
-            //int resp2 = brhd.addNewBreathingRate(dBc.getConn(), br, patientId);
-
-            //int patientId = 1008;
-            //int resp2 = brhd.getLastIdBreathingRate(dBc.getConn(), patientId);
-
-            //int patientId = 1008;
-            //int lastId = 8;
-            //double resp2 = brhd.getLastBreathingRate(dBc.getConn(), patientId, lastId);
+            int patientId = 1001;
+            br.BreathingRateValue = 14;
+            br.BreathingRateTime = currentDate;
+            br.BreathingRateDate = currentDate;
+            int resp1 = brhd.addNewBreathingRate(dBc.getConn(), br, patientId);
+            Assert.AreEqual(1, resp1);
+            
+            int resp2 = brhd.getLastIdBreathingRate(dBc.getConn(), patientId);
+            Assert.IsNotNull(resp2);
+            
+            int lastId = 8;
+            double resp3 = brhd.getLastBreathingRate(dBc.getConn(), patientId, lastId);
+            Assert.IsNotNull(resp3);
         }
     }
 }

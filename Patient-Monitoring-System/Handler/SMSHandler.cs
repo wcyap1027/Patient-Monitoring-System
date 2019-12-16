@@ -63,7 +63,7 @@ namespace Patient_Monitoring_System.Handler
         {
             List<MedicalStaff> listMedicalStaff = new List<MedicalStaff>();
 
-            string sql = "SELECT medicalStaff_id FROM medicalstaff WHERE currentBedsideId ='" + bedsideId + "'";
+            string sql = "SELECT medicalStaff_id, work_status FROM medicalstaff WHERE currentBedsideId ='" + bedsideId + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             try
@@ -74,7 +74,8 @@ namespace Patient_Monitoring_System.Handler
                 while (myReader.Read())
                 {
                     MedicalStaff ms = new MedicalStaff();
-                    ms.MedicalStafID = (string)myReader.GetValue(0);
+                    ms.Id = (string)myReader.GetValue(0);
+                    ms.WorkStatus = (bool)myReader.GetValue(1);
                     listMedicalStaff.Add(ms);
                 }
                 myReader.Close();
@@ -86,30 +87,6 @@ namespace Patient_Monitoring_System.Handler
             return listMedicalStaff;
         }
 
-        public List<MedicalStaff> getMedicalStaffId(MySqlConnection conn, int bedsideId)
-        {
-            string sql = "SELECT medicalStaff_id FROM medicalstaff WHERE currentBedsideId ='" + bedsideId + "'";
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            List<MedicalStaff> medicalStaffs = new List<MedicalStaff>();
-            try
-            {
-                MySqlDataReader myReader;
-                myReader = sqlComm.ExecuteReader();
-
-                while (myReader.Read())
-                {
-                    MedicalStaff ms = new MedicalStaff();
-                    ms.MedicalStafID = (string)myReader.GetValue(2);
-                    medicalStaffs.Add(ms);
-                }
-                myReader.Close();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-
-            return medicalStaffs;
-        }
+        
     }
 }

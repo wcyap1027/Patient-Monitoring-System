@@ -909,17 +909,25 @@ namespace BedsideSystem
             List<MedicalStaff> listMedicalStaff = sMSHandler.getMedicalStaff(dBConn.getConn(), BedsideLoginScreen.bedsideIDPass);
             for (int i = 0; i < listMedicalStaff.Count; i++)
             {
-                DateTime currentDateTime = DateTime.Now;
-                SMS sms = new SMS();
-                sms.BedsideId = BedsideLoginScreen.bedsideIDPass;
-                sms.StaffId = listMedicalStaff[i].MedicalStafID;
-                sms.Description = "Bedside " + BedsideLoginScreen.bedsideIDPass + " is trigger alarm";
-                sms.DateTimeSent = currentDateTime;
-                int r = sMSHandler.addSMS(dBConn.getConn(), sms);
-                if (r == 1)
+                if (listMedicalStaff[i].WorkStatus)
                 {
-                    MessageBox.Show("Sent");
+                    DateTime currentDateTime = DateTime.Now;
+                    SMS sms = new SMS();
+                    sms.BedsideId = BedsideLoginScreen.bedsideIDPass;
+                    sms.StaffId = listMedicalStaff[i].Id;
+                    sms.Description = "Bedside " + BedsideLoginScreen.bedsideIDPass + " is trigger alarm";
+                    sms.DateTimeSent = currentDateTime;
+                    int r = sMSHandler.addSMS(dBConn.getConn(), sms);
+                    if (r == 1)
+                    {
+                        MessageBox.Show("Sent");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Not Sent");
+                }
+                
             }
         }
     }
